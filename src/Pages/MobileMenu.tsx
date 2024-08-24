@@ -10,9 +10,8 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import NavbarLink from "./NavbarLink";
-import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { ArrowRight } from "lucide-react";
 export default function MobileMenu() {
   return (
     <Sheet>
@@ -35,8 +34,7 @@ export default function MobileMenu() {
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <NavbarLink />
-      </SheetContent>
-      <div className="block lg:hidden items-center gap-x-2">
+        <div className="block lg:hidden items-center gap-x-2">
         <Button
           variant="secondary"
           className="font-semibold mr-2 bg-white hover:bg-white text-md"
@@ -47,6 +45,8 @@ export default function MobileMenu() {
           Get all-access <ArrowRight className="text-md" />
         </Button>
       </div>
+      </SheetContent>
+      
     </Sheet>
   );
 }
