@@ -36,7 +36,7 @@ export default function MobileMenu() {
         </SheetHeader>
         <NavbarLink />
       </SheetContent>
-      <div className="hidden lg:flex items-center gap-x-2items-center gap-x-2">
+      <div className="block lg:hidden items-center gap-x-2">
         <Button
           variant="secondary"
           className="font-semibold mr-2 bg-white hover:bg-white text-md"
