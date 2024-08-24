@@ -1,7 +1,5 @@
 
-import { Button } from './components/ui/button'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Pages/Navbar';
 import Layout from './layout/Layout';
 
 function App() {
