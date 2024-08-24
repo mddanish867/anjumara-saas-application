@@ -15,8 +15,9 @@ function Navbar() {
             </h1>
           </Link>
         </div>
-
-        <NavbarLink />
+        <div className="hidden lg:flex gap-x-2">
+          <NavbarLink />
+        </div>
 
         <div className="flex items-center gap-x-4 ms-auto md:col-span-4">
           <Button
@@ -26,7 +27,7 @@ function Navbar() {
             <Search size={20} />
           </Button>
 
-          <div className="hidden lg:flex items-center gap-x-2">
+          <div className="hidden lg:flex  gap-x-2">
             <Button
               variant="secondary"
               className="font-semibold mr-2 bg-white hover:bg-white text-md"

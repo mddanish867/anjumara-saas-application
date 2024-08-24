@@ -56,7 +56,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationLink() {
   return (
-    <div className="hidden md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
+    <div className=" md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
       <NavigationMenu>
         <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4">
           <NavigationMenuItem className="flex flex-col">

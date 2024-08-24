@@ -12,6 +12,7 @@ import { Menu } from "lucide-react";
 import NavbarLink from "./NavbarLink";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+
 export default function MobileMenu() {
   return (
     <Sheet>
@@ -23,7 +24,7 @@ export default function MobileMenu() {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
-            <div className="md:col-span-3 mr-7">
+            <div className="mr-7">
               <Link to="/">
                 <h1 className="text-2xl font-semibold">
                   Anjum<span className="text-blue-500">Ara</span>
@@ -35,18 +36,17 @@ export default function MobileMenu() {
         </SheetHeader>
         <NavbarLink />
         <div className="block lg:hidden items-center gap-x-2">
-        <Button
-          variant="secondary"
-          className="font-semibold mr-2 bg-white hover:bg-white text-md"
-        >
-          Sign in
-        </Button>
-        <Button className="font-semibold text-1xl">
-          Get all-access <ArrowRight className="text-md" />
-        </Button>
-      </div>
+          <Button
+            variant="secondary"
+            className="font-semibold mr-2 bg-white hover:bg-white text-md"
+          >
+            Sign in
+          </Button>
+          <Button className="font-semibold text-1xl">
+            Get all-access <ArrowRight className="text-md" />
+          </Button>
+        </div>
       </SheetContent>
-      
     </Sheet>
   );
 }
