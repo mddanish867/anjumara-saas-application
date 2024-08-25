@@ -41,27 +41,27 @@ function Recent() {
         </Button>
       </div>
       <div className="mt-6">
-        <ul className="w-full border-b flex items-center gap-x-3 overflow-x-auto">
-          {navigation.map((item, idx) => (
-            // Replace [idx == 0] with [window.location.pathname == item.path] or create your own logic
-            <li
-              key={idx}
-              className={`py-2 border-b-2 ${
-                idx == 0
-                  ? "border-blue-500 text-blue-500"
-                  : "border-white text-gray-500"
-              }`}
-            >
-              <a
-                href={item.href}
-                className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-blue-500 hover:bg-gray-50 active:bg-gray-100 font-medium"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+  <ul className="w-full border-b flex items-center gap-x-3 overflow-x-auto whitespace-nowrap">
+    {navigation.map((item, idx) => (
+      <li
+        key={idx}
+        className={`py-2 border-b-2 flex-shrink-0 ${
+          idx == 0
+            ? "border-blue-500 text-blue-500"
+            : "border-transparent text-gray-500"
+        }`}
+      >
+        <a
+          href={item.href}
+          className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-blue-500 hover:bg-gray-50 active:bg-gray-100 font-medium"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
     </div>
   );
 }
