@@ -17,7 +17,7 @@ export default function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="outline-none border-none">
+        <Button variant="outline" size="icon" className="outline-none border-none bg-transparent">
           <AlignRight className="w-4 h-4" />
         </Button>
       </SheetTrigger>
