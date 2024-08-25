@@ -57,8 +57,8 @@ export default function NavigationLink() {
       <NavigationMenu>
         <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4 text-left">
           <NavigationMenuItem className="flex flex-col">
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Getting started</NavigationMenuTrigger>
+            <NavigationMenuContent className="bg-transparent hover:bg-transparent">
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-left">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
@@ -90,8 +90,8 @@ export default function NavigationLink() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col">
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Components</NavigationMenuTrigger>
+            <NavigationMenuContent className="bg-transparent hover:bg-transparent">
               <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
                 {components.map((component) => (
                   <ListItem
@@ -105,9 +105,9 @@ export default function NavigationLink() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex flex-col">
+          <NavigationMenuItem className="flex flex-col bg-transparent">
             <Link to="/docs">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent")}>
                 Documentation
               </NavigationMenuLink>
             </Link>

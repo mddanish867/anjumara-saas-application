@@ -43,12 +43,11 @@ function Banner() {
         />
       </section>
       <span className="relative flex justify-start mt-10">
-  <div
-    className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-75"
-  ></div>
-
-  <span className="relative z-10 bg-white text-blue-500 px-6 font-semibold sm:-ml-6">Components</span>
-</span>
+        <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-75"></div>
+        <span className="relative z-10 bg-white text-blue-500 px-6 font-semibold text-start">
+          Components
+        </span>
+      </span>
     </>
   );
 }
