@@ -8,7 +8,7 @@ import {
   SheetDescription,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { AlignRight } from "lucide-react";
 import NavbarLink from "./NavbarLink";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -17,8 +17,8 @@ export default function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
-          <Menu className="w-4 h-4" />
+        <Button variant="outline" size="icon" className="outline-none">
+          <AlignRight className="w-4 h-4" />
         </Button>
       </SheetTrigger>
       <SheetContent>
@@ -34,8 +34,8 @@ export default function MobileMenu() {
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
-        <NavbarLink />
-        <div className="block lg:hidden items-center gap-x-2">
+        <div className="flex flex-col justify-start items-start gap-y-2">
+          <NavbarLink />
           <Button
             variant="secondary"
             className="font-semibold mr-2 bg-white hover:bg-white text-md"

@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -13,8 +12,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-
-
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -56,13 +53,13 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function NavigationLink() {
   return (
-    <div className=" md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
+    <div className="md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
       <NavigationMenu>
-        <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4">
+        <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4 text-left">
           <NavigationMenuItem className="flex flex-col">
             <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-left">
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
@@ -95,7 +92,7 @@ export default function NavigationLink() {
           <NavigationMenuItem className="flex flex-col">
             <NavigationMenuTrigger>Components</NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2">
+              <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
                 {components.map((component) => (
                   <ListItem
                     key={component.title}

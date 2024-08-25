@@ -7,7 +7,8 @@ import MobileMenu from "./MobileMenu";
 function Navbar() {
   return (
     <>
-      <nav className=" relative max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-7">
+      <nav className="relative max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-7">
+        {/* Logo Section */}
         <div className="md:col-span-3">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
@@ -15,31 +16,36 @@ function Navbar() {
             </h1>
           </Link>
         </div>
-        <div className="hidden lg:flex gap-x-2">
+
+        {/* Navbar Links */}
+        <div className="hidden lg:flex gap-x-4 md:col-span-5">
           <NavbarLink />
         </div>
 
-        <div className="flex items-center gap-x-4 ms-auto md:col-span-4">
+        {/* Action Buttons */}
+        <div className="flex items-center gap-x-4 ml-auto md:col-span-4 justify-end">
           <Button
             variant="secondary"
-            className="font-semibold mr-2 md:mr-4 lg:mr-2 bg-white hover:bg-white text-md"
+            className="font-semibold bg-white hover:bg-white text-md"
           >
             <Search size={20} />
           </Button>
 
-          <div className="hidden lg:flex  gap-x-2">
+          {/* Desktop and Laptop View Buttons */}
+          <div className="hidden lg:flex gap-x-2">
             <Button
               variant="secondary"
-              className="font-semibold mr-2 bg-white hover:bg-white text-md"
+              className="font-semibold bg-white hover:bg-white text-md"
             >
               Sign in
             </Button>
-            <Button className="font-semibold text-1xl mr-10">
+            <Button className="font-semibold text-1xl">
               Get all-access <ArrowRight className="text-md" />
             </Button>
           </div>
 
-          <div className="md:hidden">
+          {/* Mobile and Tablet View */}
+          <div className="lg:hidden">
             <MobileMenu />
           </div>
         </div>
