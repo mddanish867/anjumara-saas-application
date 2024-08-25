@@ -3,33 +3,28 @@ import { MoveRight } from "lucide-react"
 
 function Recent() {
   return (  
-<section className="overflow-hidden bg-white sm:grid sm:grid-cols-2 sm:items-center">
+<section className=" bg-white sm:grid sm:grid-cols-2 sm:items-center">
   <div className="p-8 md:p-12 lg:px-16 lg:py-24">
-  <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-          <div className="max-w-3xl text-left ltr:sm:text-left rtl:sm:text-right">
-            <h1 className="text-3xl font-extrabold sm:text-5xl">
-              Let's build your
-              <strong className="block font-extrabold text-gray-900">
-                components from scrach{" "}
+  <div className="relative mx-auto max-w-screen-3xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+          <div className="max-w-96 text-left ltr:sm:text-left rtl:sm:text-right">
+            <h1 className="w-full text-2xl font-bold sm:text-5xl">
+            Beautifully crafted UI components,
+              <strong className="block font-bold text-gray-900">
+              ready for your next project.
               </strong>
             </h1>
 
             <p className="mt-4 max-w-lg sm:text-xl/relaxed">
-            Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare the machine code interview
-              preprations!
+            Over 500+ professionally designed, fully responsive, expertly crafted component examples you can drop into your Tailwind projects and customize to your heart’s content.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
-              <Button                
-                className="flex w-full py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring active:bg-gray-700 sm:w-auto"
-              >
-                Browse components <MoveRight className="ml-2"/>
-              </Button>
+              
 
-              <Button   variant="outline"             
-                className="flex w-full py-3 text-sm font-medium text-gary-700 shadow sm:w-auto"
+              <Button   variant="link"             
+                className="flex w-full py-3 text-sm font-medium text-gary-700 shadow sm:w-auto bg-transparent hover:outline-none text-blue-500"
               >
-                Access source code <MoveRight className="ml-2"/>
+                Browse all components <MoveRight className="ml-2"/>
               </Button>
             </div>
           </div>
