@@ -1,7 +1,7 @@
 import { useState } from "react";
 function Pagination() {
-  const [pages, setPages] = useState(["1", "2", "3", , "...", "8", "9", "10"]);
-  const [currentPage, setCurrentPage] = useState("1");
+  const [pages] = useState(["1", "2", "3", , "...", "8", "9", "10"]);
+  const [currentPage] = useState("1");
 
   return (
     <div className="max-w-screen-xl mx-auto mt-24 px-4 text-gray-600 md:px-8">
