@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/sheet";
 import { AlignRight } from "lucide-react";
 import NavbarLink from "./NavbarLink";
-import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export default function MobileMenu() {
@@ -25,11 +24,11 @@ export default function MobileMenu() {
         <SheetHeader>
           <SheetTitle>
             <div className="mr-7">
-              <Link to="/">
+              <a href="/">
                 <h1 className="text-2xl font-semibold">
                   Anjum<span className="text-blue-500">Ara</span>
                 </h1>
-              </Link>
+              </a>
             </div>
           </SheetTitle>
           <SheetDescription></SheetDescription>

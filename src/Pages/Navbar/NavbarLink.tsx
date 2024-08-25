@@ -11,7 +11,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -106,11 +105,11 @@ export default function NavigationLink() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col bg-transparent">
-            <Link to="/docs">
+            <a href="/docs">
               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent")}>
                 Documentation
               </NavigationMenuLink>
-            </Link>
+            </a>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>      
