@@ -7,7 +7,7 @@ import MobileMenu from "./MobileMenu";
 function Navbar() {
   return (
     <>
-      <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-4 bg-white/0 backdrop-blur-lg">
+      <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-4 bg-transparent/0 backdrop-blur-xl">
         {/* Logo Section */}
         <div className="md:col-span-3">
           <Link to="/">
@@ -26,7 +26,7 @@ function Navbar() {
         <div className="flex items-center gap-x-4 ml-auto md:col-span-4 justify-end">
           <Button
             variant="secondary"
-            className="font-semibold bg-white hover:bg-white text-md"
+            className="font-semibold bg-transparent hover:bg-transparent text-md"
           >
             <Search size={20} />
           </Button>
@@ -35,7 +35,7 @@ function Navbar() {
           <div className="hidden lg:flex gap-x-2">
             <Button
               variant="secondary"
-              className="font-semibold bg-white hover:bg-white text-md"
+              className="font-semibold bg-transparent hover:bg-transparent text-md"
             >
               Sign in
             </Button>
