@@ -5,34 +5,29 @@ import { MoveRight } from "lucide-react";
 // Import your components here
 import Login from "../MachinesCodes/Login";
 import SignUp from "../MachinesCodes/SignUp";
-import SignUpValidation from "../MachinesCodes/SigupValication";
+import SignUpValidation from "../MachinesCodes/SigupValication"
 import Pagination from "../MachinesCodes/Pagination";
 import ReviewSystem from "../MachinesCodes/ReviewSystem";
 
 // Define navigation with associated components
 const navigation = [
   {
-    href: "javascript:void(0)",
     name: "Sign in",
     component: Login,
   },
   {
-    href: "javascript:void(0)",
     name: "Sign up",
     component: SignUp,
   },
   {
-    href: "javascript:void(0)",
     name: "Sign up with validation",
     component: SignUpValidation,
   },
   {
-    href: "javascript:void(0)",
     name: "Pagination",
     component: Pagination,
   },
   {
-    href: "javascript:void(0)",
     name: "Review System",
     component: ReviewSystem,
   },
