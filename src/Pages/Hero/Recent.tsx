@@ -23,7 +23,7 @@ const navigation = [
   },
   {
     href: "javascript:void(0)",
-    name: "Sign up validation",
+    name: "Sign up with validation",
     component: SignUpValidation,
   },
   {
