@@ -129,23 +129,23 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Marketing </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Marketing </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
+              <a className="text-gray-700 transition hover:text-blue-500" href="#">
                 Graphic Design
               </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
+              <a className="text-gray-700 transition hover:text-blue-500" href="#">
                 App Development
               </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#">
+              <a className="text-gray-700 transition hover:text-blue-500" href="#">
                 Web Development
               </a>
             </li>
@@ -157,19 +157,19 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> About </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> About </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Careers </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Careers </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> History </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> History </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Our Team </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Our Team </a>
             </li>
           </ul>
         </div>
@@ -179,15 +179,15 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> FAQs </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> FAQs </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Contact </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Contact </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-gray-700/75" href="#"> Live Chat </a>
+              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Live Chat </a>
             </li>
           </ul>
         </div>
@@ -196,16 +196,9 @@ export default function Footer() {
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500">
-        © Company 2022. All rights reserved.
+        © AnjumAra 2024. All rights reserved.
 
-        <br />
-
-        Created with
-        <a href="#" className="text-gray-700 underline transition hover:text-gray-700/75">Laravel</a>
-        and
-        <a href="#" className="text-gray-700 underline transition hover:text-gray-700/75"
-          >Laravel Livewire</a
-        >.
+        
       </p>
     </div>
   </div>
