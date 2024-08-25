@@ -4,23 +4,23 @@ import { MoveRight } from "lucide-react";
 const navigation = [
   {
     href: "javascript:void(0)",
-    name: "Overview",
+    name: "Sign in",
   },
   {
     href: "javascript:void(0)",
-    name: "Integration",
+    name: "Sign up",
   },
   {
     href: "javascript:void(0)",
-    name: "Billing",
+    name: "Sign up validation",
   },
   {
     href: "javascript:void(0)",
-    name: "Transactions",
+    name: "Pagination",
   },
   {
     href: "javascript:void(0)",
-    name: "plans",
+    name: "Review System",
   },
 ];
 
