@@ -3,7 +3,6 @@ import Layout from "./layout/Layout";
 import Banner from "./Pages/Hero/Banner";
 import Recent from "./Pages/Hero/Recent";
 import Footer from "./Pages/Footer/Footer";
-
 function App() {
   return (
     <Router>
@@ -13,7 +12,7 @@ function App() {
           element={
             <Layout>
               <Banner />
-              <Recent/>
+              <Recent/>             
               <Footer/>
             </Layout>
           }
