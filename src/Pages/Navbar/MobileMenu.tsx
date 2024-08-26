@@ -16,12 +16,16 @@ export default function MobileMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="outline-none border-none bg-transparent">
+        <Button
+          variant="outline"
+          size="icon"
+          className="outline-none border-none bg-transparent"
+        >
           <AlignRight className="w-4 h-4" />
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <SheetHeader>
+        <SheetHeader className="flex flex-col items-start">
           <SheetTitle>
             <div className="mr-7">
               <a href="/">
@@ -33,16 +37,16 @@ export default function MobileMenu() {
           </SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
-        <div className="flex flex-col justify-start items-start gap-y-2">
+        <div className="flex flex-col items-start gap-y-4 mt-4">
           <NavbarLink />
           <Button
             variant="secondary"
-            className="font-semibold mr-2 bg-white hover:bg-white text-md"
+            className="font-semibold w-full bg-white hover:bg-white text-md"
           >
             Sign in
           </Button>
-          <Button className="font-semibold text-1xl">
-            Get all-access <ArrowRight className="text-md" />
+          <Button className="font-semibold w-full text-xl flex items-center justify-between">
+            Get all-access <ArrowRight className="text-md ml-2" />
           </Button>
         </div>
       </SheetContent>
