@@ -55,27 +55,12 @@ export default function NavigationLink() {
     <div className="md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
       <NavigationMenu>
         <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4 text-left">
-          <NavigationMenuItem className="flex flex-col">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Getting started</NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-transparent hover:bg-transparent">
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-left">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
-                    <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
-                    >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
-                      </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components that you can copy and
-                        paste into your apps. Accessible. Customizable. Open
-                        Source.
-                      </p>
-                    </a>
-                  </NavigationMenuLink>
-                </li>
+          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
+              Getting started
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-4 sm:p-6 w-full sm:w-auto md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-left">
                 <ListItem href="/docs" title="Introduction">
                   Re-usable components built using Radix UI and Tailwind CSS.
                 </ListItem>
@@ -88,9 +73,11 @@ export default function NavigationLink() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex flex-col">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">Components</NavigationMenuTrigger>
-            <NavigationMenuContent className="bg-transparent hover:bg-transparent">
+          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent focus:bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+              Components
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
               <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
                 {components.map((component) => (
                   <ListItem
@@ -104,15 +91,20 @@ export default function NavigationLink() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem className="flex flex-col bg-transparent">
+          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent">
             <a href="/docs">
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-transparent")}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  "bg-transparent hover:bg-transparent"
+                )}
+              >
                 Documentation
               </NavigationMenuLink>
             </a>
           </NavigationMenuItem>
         </NavigationMenuList>
-      </NavigationMenu>      
+      </NavigationMenu>
     </div>
   );
 }

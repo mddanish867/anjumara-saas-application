@@ -40,7 +40,7 @@ function Navbar() {
               Sign in
             </Button>
             <Button className="font-semibold text-1xl">
-              Get all-access <ArrowRight className="text-md" />
+              Get all-access <ArrowRight size="icon" className="text-md" />
             </Button>
           </div>
 

@@ -10,15 +10,15 @@ export default function Footer() {
         Want us to email you with the latest blockbuster news?
       </strong>
 
-      <form className="mt-6">
-        <div className="relative max-w-lg">
+      <form className="mt-6 ">
+        <div className="relative max-w-lg ">
           <label className="sr-only" htmlFor="email"> Email </label>
 
           <input
-            className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
+            className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-blue-500"
             id="email"
             type="email"
-            placeholder="john@doe.com"
+            placeholder="example@anjumara.com"
           />
 
           <button
@@ -33,8 +33,8 @@ export default function Footer() {
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
       <div className="mx-auto max-w-sm lg:max-w-none">
         <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet
-          aut perferendis distinctio iusto repudiandae, provident velit earum?
+        Over 500+ professionally designed, fully responsive, expertly crafted component examples 
+        you can drop into your Tailwind projects and customize to your heart’s content.
         </p>
 
         <div className="mt-6 flex justify-center gap-4 lg:justify-start">
