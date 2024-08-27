@@ -12,7 +12,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+const components = [
   {
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
@@ -92,16 +92,15 @@ export default function NavigationLink() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent">
-            <a href="/docs">
-              <NavigationMenuLink
-                className={cn(
-                  navigationMenuTriggerStyle(),
-                  "bg-transparent hover:bg-transparent"
-                )}
-              >
-                Documentation
-              </NavigationMenuLink>
-            </a>
+            <NavigationMenuLink
+              href="/docs"
+              className={cn(
+                navigationMenuTriggerStyle(),
+                "bg-transparent hover:bg-transparent"
+              )}
+            >
+              Documentation
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
@@ -112,12 +111,13 @@ export default function NavigationLink() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <a
           ref={ref}
+          href={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className

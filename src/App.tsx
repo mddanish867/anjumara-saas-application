@@ -1,22 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
-import Banner from "./Pages/Hero/Banner";
-import Recent from "./Pages/Hero/Recent";
-import Footer from "./Pages/Footer/Footer";
+import Authorization from "./Pages/MachinesCodes/Auth/Authorization";
+import Home from "./Pages/Home";
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <Banner />
-              <Recent/>             
-              <Footer/>
-            </Layout>
-          }
-        />
+        <Route element={<Layout/>}>
+          <Route path="/" element={<Home />} />
+          <Route path="/authorization" element={<Authorization />} />
+        </Route>
       </Routes>
     </Router>
   );

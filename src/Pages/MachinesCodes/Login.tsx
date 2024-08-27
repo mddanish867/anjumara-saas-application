@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 function Login() {
+  const navigate = useNavigate();
+
+  const handleClick = () =>{
+navigate("/authorization")
+  }
     return (
-      <main className="w-full h-screen flex flex-col items-center justify-center px-4 mt-24">
-        <div className="max-w-sm w-full text-gray-600 space-y-5">
+      <main className="w-full h-screen flex flex-col items-center justify-center px-4 mt-14 shadow cursor-pointer" onClick={handleClick}>
+        <div className="max-w-sm w-full text-gray-600 space-y-5 ">
           <div className="text-center pb-8">
             <h1 className="text-3xl font-semibold">
               Anjum<span className="text-blue-500">Ara</span>
