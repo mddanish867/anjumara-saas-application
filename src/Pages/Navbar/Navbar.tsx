@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import NavbarLink from "./NavbarLink";
-import { ArrowRight, Search } from "lucide-react";
+import { MoveRight, Search } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 
 function Navbar() {
@@ -40,7 +40,7 @@ function Navbar() {
               Sign in
             </Button>
             <Button className="font-semibold text-1xl">
-              Get all-access <ArrowRight size={20}/>
+              Get all-access <MoveRight className="ml-2" />
             </Button>
           </div>
 
