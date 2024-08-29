@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Banner() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/section");
+  };
   return (
     <>
       <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
@@ -23,7 +29,10 @@ function Banner() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
-              <Button className="flex w-full py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring active:bg-gray-700 sm:w-auto">
+              <Button
+                className="flex w-full py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring active:bg-gray-700 sm:w-auto"
+                onClick={handleClick}
+              >
                 Browse components <MoveRight className="ml-2" />
               </Button>
 

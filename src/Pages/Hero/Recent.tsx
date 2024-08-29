@@ -6,19 +6,28 @@ import { MoveRight } from "lucide-react";
 import Login from "../MachinesCodes/Login";
 import Pagination from "../MachinesCodes/Pagination";
 import ReviewSystem from "../MachinesCodes/ReviewSystem";
+import { useNavigate } from "react-router-dom";
 
 // Define navigation with associated components
 const navigation = [
   {
-    name: "Authentication",
+    name: "Frontend",
     component: Login,
-  },  
+  },
   {
-    name: "Pagination",
+    name: "Backend",
     component: Pagination,
   },
   {
-    name: "Review System",
+    name: "Azure",
+    component: ReviewSystem,
+  },
+  {
+    name: "SQL",
+    component: ReviewSystem,
+  },
+  {
+    name: "Git",
     component: ReviewSystem,
   },
 ];
@@ -28,6 +37,11 @@ function Recent() {
 
   // Get the current component to render based on activeTab
   const ActiveComponent = navigation[activeTab].component;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/section");
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-4 md:px-8 mt-10 -ml-4">
@@ -40,7 +54,11 @@ function Recent() {
           component examples you can drop into your Tailwind projects and
           customize to your heart’s content.
         </p>
-        <Button variant="link" className="text-start text-blue-500 -ml-4 mt-4">
+        <Button
+          variant="link"
+          className="text-start text-blue-500 -ml-4 mt-4"
+          onClick={handleClick}
+        >
           Browse all components <MoveRight className="ml-2" />
         </Button>
       </div>
