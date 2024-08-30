@@ -5,12 +5,38 @@ import { useNavigate } from "react-router-dom";
 
 // Define navigation with associated components
 const navigation = [
-  { name: "Frontend", link: "/frontend", img: "/frontendbanner.avif", description: "Frontend development involves creating the user interface and user experience elements of a web application." },
-  { name: "Backend", link: "/backend", img: "/backendbanner.jpeg", description: "Backend development focuses on server-side logic, databases, and APIs that power web applications." },
-  { name: "Azure", link: "/azure", img: "/azurebanner.png", description: "Azure is a cloud computing service offering infrastructure, platform, and software solutions by Microsoft." },
-  { name: "SQL", link: "/sql", img: "/sqlbaner.jpg", description: "SQL (Structured Query Language) is used for managing and manipulating relational databases." },
-  { name: "Git", link: "/git", img: "/gitbanner.png", description: "Git is a version control system that allows developers to track changes and collaborate on projects efficiently." },
+  {
+    name: "Frontend",
+    link: "/frontend",
+    img: "/frontendbanner.avif",
+    description: "Frontend development involves creating the user interface and user experience elements of a web application. Master HTML, CSS, JavaScript, and modern frameworks like React or Angular to build responsive, interactive, and visually appealing web applications. Focus on accessibility, performance, and cross-browser compatibility."
+  },
+  {
+    name: "Backend",
+    link: "/backend",
+    img: "/backendbanner.jpeg",
+    description: "Backend development focuses on server-side logic, databases, and APIs that power web applications. Learn server-side languages such as Node.js, Python, or Java, and master databases like SQL or NoSQL. Understand the importance of security, scalability, and performance in backend architecture."
+  },
+  {
+    name: "Azure",
+    link: "/azure",
+    img: "/azurebanner.png",
+    description: "Azure is a cloud computing service offering infrastructure, platform, and software solutions by Microsoft. Gain expertise in deploying, managing, and scaling applications in the cloud. Learn about Azure services like virtual machines, storage, databases, and DevOps tools, and prepare for Azure certification exams."
+  },
+  {
+    name: "SQL",
+    link: "/sql",
+    img: "/sqlbaner.jpg",
+    description: "SQL (Structured Query Language) is used for managing and manipulating relational databases. Learn how to write complex queries, optimize performance, and manage database transactions. Understand the concepts of normalization, indexing, and database design to ensure data integrity and efficiency."
+  },
+  {
+    name: "Git",
+    link: "/git",
+    img: "/gitbanner.png",
+    description: "Dive deep into Git's version control capabilities, including tracking changes, committing code, and understanding the role of repositories. Master concepts like branching and merging to handle multiple development streams effectively. Learn about different branching strategies such as Git Flow, feature branching, and release branching. Understand how to manage and resolve conflicts that arise during merging, and when to use rebasing versus merging."
+  }
 ];
+
 
 function Recent() {
   const [activeTab, setActiveTab] = useState(0); // Initialize with the first tab active
