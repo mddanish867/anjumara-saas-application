@@ -1,49 +1,26 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
-
-// Import your components here
 import { useNavigate } from "react-router-dom";
-import Sql from "../Database/Sql";
-import Azure from "../Cloud/Azure";
-import Backend from "../Backend/Backend";
-import Git from "../VersionControl/Git";
-import Frontend from "../Frontend/Frontend";
 
 // Define navigation with associated components
 const navigation = [
-  {
-    name: "Frontend",
-    component: Frontend,
-  },
-  {
-    name: "Backend",
-    component: Backend,
-  },
-  {
-    name: "Azure",
-    component: Azure,
-  },
-  {
-    name: "SQL",
-    component: Sql,
-  },
-  {
-    name: "Git",
-    component: Git,
-  },
+  { name: "Frontend", link: "/frontend", img: "/frontendbanner.avif", description: "Frontend development involves creating the user interface and user experience elements of a web application." },
+  { name: "Backend", link: "/backend", img: "/backendbanner.jpeg", description: "Backend development focuses on server-side logic, databases, and APIs that power web applications." },
+  { name: "Azure", link: "/azure", img: "/azurebanner.png", description: "Azure is a cloud computing service offering infrastructure, platform, and software solutions by Microsoft." },
+  { name: "SQL", link: "/sql", img: "/sqlbaner.jpg", description: "SQL (Structured Query Language) is used for managing and manipulating relational databases." },
+  { name: "Git", link: "/git", img: "/gitbanner.png", description: "Git is a version control system that allows developers to track changes and collaborate on projects efficiently." },
 ];
 
 function Recent() {
   const [activeTab, setActiveTab] = useState(0); // Initialize with the first tab active
-
-  // Get the current component to render based on activeTab
-  const ActiveComponent = navigation[activeTab].component;
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/section");
   };
+
+  const { name, link, img, description } = navigation[activeTab];
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-4 md:px-8 mt-10 -ml-4">
@@ -84,8 +61,15 @@ function Recent() {
         </ul>
       </div>
       <div className="mt-6">
-        {/* Render only the active component below the tabs */}
-        {ActiveComponent && <ActiveComponent />}
+        {/* Render the details of the active tab */}
+        <div className="flex flex-col items-center text-center">
+          <img src={img} alt={`${name} Banner`} className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 mb-4 rounded-full shadow-md object-contain" />
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-blue-600 mb-2">{name}</h2>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4">{description}</p>
+          <Button variant="link" className="text-blue-500" onClick={() => navigate(link)}>
+            Learn More <MoveRight className="ml-2" />
+          </Button>
+        </div>
       </div>
     </div>
   );
