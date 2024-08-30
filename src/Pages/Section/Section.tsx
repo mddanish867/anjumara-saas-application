@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Section() {
     // const navigation = [
     //     {
@@ -39,18 +41,18 @@ function Section() {
                 aliquid tempora. Obcaecati, autem.
               </p>
 
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
               >
                 Get Started Today
-              </a>
+              </Link>
             </div>
 
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/frontend"
+                to="/frontend"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -76,11 +78,11 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="#"
+                to="#"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -106,11 +108,11 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="#"
+                to="#"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -136,11 +138,11 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="#"
+                to="#"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -166,11 +168,11 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="#"
+                to="#"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -196,11 +198,11 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="#"
+                to="#"
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -226,7 +228,7 @@ function Section() {
                 <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
