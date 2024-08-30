@@ -27,12 +27,17 @@ function Sql() {
       </div>
 
       {/* Search Input */}
-      <div className="mt-8">
+      <div className="mt-8 flex">
         <input
           type="text"
-          placeholder="Search interview questions..."
-          className="w-full px-4 py-2 border rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Search SQL interview questions..."
+          className="w-full px-4 py-2 border rounded-l-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300 ease-in-out"
+        >
+          Search
+        </button>
       </div>
 
       {/* SQL Interview Tips */}
