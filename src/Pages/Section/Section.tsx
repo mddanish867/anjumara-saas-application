@@ -1,31 +1,16 @@
 import { Link } from "react-router-dom";
 
 function Section() {
-    // const navigation = [
-    //     {
-    //       name: "Frontend",
-    //       component: Login,
-    //     },
-    //     {
-    //       name: "Backend",
-    //       component: Pagination,
-    //     },
-    //     {
-    //       name: "Azure",
-    //       component: ReviewSystem,
-    //     },
-    //     {
-    //       name: "SQL",
-    //       component: ReviewSystem,
-    //     },
-    //     {
-    //       name: "Git",
-    //       component: ReviewSystem,
-    //     },
-    //   ];
+  const navigation = [
+    { name: "Frontend", link: "/frontend", img: "/frontendbanner.avif" },
+    { name: "Backend", link: "/backend", img: "/backendbanner.jpeg" },
+    { name: "Azure", link: "/azure", img: "/azurebanner.png" },
+    { name: "SQL", link: "/sql", img: "/sqlbaner.jpg" },
+    { name: "Git", link: "/git", img: "/gitbanner.png" },
+  ];
+
   return (
     <>  
-
       <section>
         <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mt-10">
           <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
@@ -35,200 +20,35 @@ function Section() {
               </h2>
 
               <p className="mt-4 text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                vero aliquid sint distinctio iure ipsum cupiditate? Quis, odit
-                assumenda? Deleniti quasi inventore, libero reiciendis minima
-                aliquid tempora. Obcaecati, autem.
+              Prepare effectively for your next interview with a structured and personalized approach. Our "Find Your Interview Path" guide helps you navigate through essential topics and skills tailored to your target role. Whether you're focusing on software engineering, data science, or any other field, discover a clear roadmap for mastering core concepts, practicing problem-solving techniques, and acing your interviews.
               </p>
 
               <Link
                 to="#"
-                className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                className="mt-8 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring focus:ring-bluee-500"
               >
                 Get Started Today
               </Link>
             </div>
 
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="/frontend"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+                  to={item.link}
+                >
+                  <span className="inline-block rounded-lg bg-gray-50 p-3">
+                    <img src={item.img}></img>
+                  </span>
 
-                <h2 className="mt-2 font-bold">Frontend</h2>
+                  <h2 className="mt-2 font-bold text-center">{item.name}</h2>
 
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
-
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="#"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
-
-                <h2 className="mt-2 font-bold">Backend</h2>
-
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
-
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="#"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
-
-                <h2 className="mt-2 font-bold">Azure</h2>
-
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
-
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="#"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
-
-                <h2 className="mt-2 font-bold">SQL</h2>
-
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
-
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="#"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
-
-                <h2 className="mt-2 font-bold">GIT</h2>
-
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
-
-              <Link
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                to="#"
-              >
-                <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                    ></path>
-                  </svg>
-                </span>
-
-                <h2 className="mt-2 font-bold">C-Sharp</h2>
-
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur.
-                </p>
-              </Link>
+                  <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </p>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

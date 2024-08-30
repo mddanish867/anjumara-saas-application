@@ -3,10 +3,10 @@ import Recent from "../Pages/Hero/Recent";
 function Home() {
   return (
     <>
-     <Banner />
-              <Recent/>                
+      <Banner />
+      <Recent />
     </>
-  )
+  );
 }
 
-export default Home
+export default Home;

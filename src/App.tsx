@@ -5,6 +5,10 @@ import Home from "./Pages/Home";
 import Section from "./Pages/Section/Section";
 import Frontend from "./Pages/Frontend/Frontend";
 import React from "./Pages/Frontend/React";
+import Backend from "./Pages/Backend/Backend";
+import Sql from "./Pages/Database/Sql";
+import Azure from "./Pages/Cloud/Azure";
+import Git from "./Pages/VersionControl/Git";
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
           <Route path="/section" element={<Section />} />
           <Route path="/frontend" element={<Frontend />} />
           <Route path="/react" element={<React />} />
+          <Route path="/backend" element={<Backend />} />
+          <Route path="/sql" element={<Sql />} />
+          <Route path="/azure" element={<Azure />} />
+          <Route path="/git" element={<Git />} />
 
         </Route>
       </Routes>

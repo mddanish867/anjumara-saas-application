@@ -3,32 +3,34 @@ import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 
 // Import your components here
-import Login from "../MachinesCodes/Login";
-import Pagination from "../MachinesCodes/Pagination";
-import ReviewSystem from "../MachinesCodes/ReviewSystem";
 import { useNavigate } from "react-router-dom";
+import Sql from "../Database/Sql";
+import Azure from "../Cloud/Azure";
+import Backend from "../Backend/Backend";
+import Git from "../VersionControl/Git";
+import Frontend from "../Frontend/Frontend";
 
 // Define navigation with associated components
 const navigation = [
   {
     name: "Frontend",
-    component: Login,
+    component: Frontend,
   },
   {
     name: "Backend",
-    component: Pagination,
+    component: Backend,
   },
   {
     name: "Azure",
-    component: ReviewSystem,
+    component: Azure,
   },
   {
     name: "SQL",
-    component: ReviewSystem,
+    component: Sql,
   },
   {
     name: "Git",
-    component: ReviewSystem,
+    component: Git,
   },
 ];
 
