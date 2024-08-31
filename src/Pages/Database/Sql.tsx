@@ -1,6 +1,50 @@
+import { useState } from 'react';
 import Breadcrumb from "@/BreadCrum/Breadcrum";
+import sql from "@/Data/sql.json";
+import Pagination from '../../Pagination/Pagination';
+
+// Define the types for SQL data
+interface SQLQuestionAnswer {
+  question: string;
+  answer: string;
+}
+
+interface SQLData {
+  Basic: SQLQuestionAnswer[];
+  Intermediate: SQLQuestionAnswer[];
+  Advanced: SQLQuestionAnswer[];
+}
+
+// Define the type for the props of TextBlock component
+interface TextBlockProps {
+  text: string;
+}
+
+function TextBlock({ text }: TextBlockProps) {
+  return (
+    <div className="relative">
+      <p className="text-gray-800">{text}</p>
+    </div>
+  );
+}
 
 function Sql() {
+  // Cast the imported json data to the SQLData type
+  const sqlData = sql as SQLData;
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 15;
+
+  // Calculate the total number of pages
+  const totalItems = Object.values(sqlData).flat().length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  // Get the current page data
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedData = Object.values(sqlData).flat().slice(startIndex, endIndex);
+
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
       {/* Breadcrumb */}
@@ -55,50 +99,24 @@ function Sql() {
         <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
           Common SQL Interview Questions
         </h3>
-        <ul className="space-y-4">
-          <li>
-            <h4 className="font-semibold text-gray-700">
-              1. What is a Primary Key?
-            </h4>
-            <p className="text-gray-600">
-              A primary key is a unique identifier for a record in a table. It
-              ensures that each record is unique and not null. A table can have
-              only one primary key.
-            </p>
-          </li>
-          <li>
-            <h4 className="font-semibold text-gray-700">
-              2. What is a JOIN in SQL?
-            </h4>
-            <p className="text-gray-600">
-              A JOIN clause is used to combine rows from two or more tables,
-              based on a related column between them. Common types of joins are
-              INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
-            </p>
-          </li>
-          <li>
-            <h4 className="font-semibold text-gray-700">
-              3. What is the difference between DELETE and TRUNCATE?
-            </h4>
-            <p className="text-gray-600">
-              DELETE removes rows from a table based on a condition and can be
-              rolled back. TRUNCATE removes all rows from a table without
-              logging individual row deletions and cannot be rolled back.
-            </p>
-          </li>
-          <li>
-            <h4 className="font-semibold text-gray-700">
-              4. What is normalization? Explain its types.
-            </h4>
-            <p className="text-gray-600">
-              Normalization is the process of organizing data to minimize
-              redundancy. The types of normalization include 1NF, 2NF, 3NF, and
-              BCNF, each with specific rules to reduce data redundancy and
-              improve data integrity.
-            </p>
-          </li>
-        </ul>
+        <div className="w-full space-y-4">
+          {paginatedData.map((item, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg">
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                {item.question}
+              </h4>
+              <TextBlock text={item.answer} />
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Pagination */}
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
     </div>
   );
 }

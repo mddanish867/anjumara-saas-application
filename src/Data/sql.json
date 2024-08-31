@@ -1,0 +1,305 @@
+{
+    "Basic": [
+      {
+        "question": "What is SQL?",
+        "answer": "SQL stands for Structured Query Language. It is used to communicate with and manage relational databases, allowing users to perform various operations like querying, inserting, updating, and deleting data."
+      },
+      {
+        "question": "What are the different types of SQL commands?",
+        "answer": "DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE; DDL (Data Definition Language): CREATE, ALTER, DROP; DCL (Data Control Language): GRANT, REVOKE; TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT"
+      },
+      {
+        "question": "How do you retrieve all records from a table?",
+        "answer": "SELECT * FROM table_name;"
+      },
+      {
+        "question": "How do you filter records in a query?",
+        "answer": "SELECT * FROM table_name WHERE condition;"
+      },
+      {
+        "question": "What is Primary key?",
+        "answer": "A primary key is a unique key identifier for a record in a table. It cannot be NULL and must be unique for each record."
+      },
+      {
+        "question": "How do you select all columns from a table?",
+        "answer": "SELECT * FROM table_name;"
+      },
+      {
+        "question": "How do you select specific columns from a table?",
+        "answer": "SELECT column1, column2 FROM table_name;"
+      },
+      {
+        "question": "What is the purpose of WHERE clause?",
+        "answer": "The WHERE clause is used to filter records that meet a specific condition."
+      },
+      {
+        "question": "How do you filter records with multiple conditions?",
+        "answer": "Use logical operators such as AND and OR: SELECT * FROM table_name WHERE condition1 AND condition2;"
+      },
+      {
+        "question": "What is the difference between AND and OR in SQL?",
+        "answer": "AND requires all conditions to be true for a record to be selected, while OR requires only one condition to be true."
+      },
+      {
+        "question": "How do you sort records in ascending and descending order?",
+        "answer": "SELECT * FROM table_name ORDER BY column_name ASC; SELECT * FROM table_name ORDER BY column_name DESC;"
+      },
+      {
+        "question": "What is the purpose of the keyword DISTINCT?",
+        "answer": "The DISTINCT keyword is used to remove duplicate rows from the result set."
+      },
+      {
+        "question": "How do you use the LIMIT or TOP clause to restrict the number of records returned?",
+        "answer": "SQL Server: SELECT TOP 10 * FROM table_name; MYSQL/PostgreSQL: SELECT * FROM table_name LIMIT 10;"
+      },
+      {
+        "question": "How do you create a new table in SQL?",
+        "answer": "CREATE TABLE table_name (column1 datatype constraint, column2 datatype constraint);"
+      },
+      {
+        "question": "How do you add a new column to an existing table?",
+        "answer": "ALTER TABLE table_name ADD column_name datatype;"
+      },
+      {
+        "question": "How do you delete a table from a database?",
+        "answer": "DROP TABLE table_name;"
+      },
+      {
+        "question": "What is the purpose of ALTER TABLE statement?",
+        "answer": "The ALTER TABLE statement is used to modify the structure of an existing table, such as adding or deleting columns."
+      },
+      {
+        "question": "How do you insert a new record into a table?",
+        "answer": "INSERT INTO table_name (column1, column2) VALUES (value1, value2);"
+      },
+      {
+        "question": "How do you update existing records in a table?",
+        "answer": "UPDATE table_name SET column1 = value1 WHERE condition;"
+      },
+      {
+        "question": "How do you delete records from a table?",
+        "answer": "DELETE FROM table_name WHERE condition;"
+      },
+      {
+        "question": "What is the foreign key and how is it used?",
+        "answer": "A foreign key is a column or set of columns in one table that refers to the primary key of another table, establishing a relationship between the two tables."
+      },
+      {
+        "question": "How do you create an index on a table?",
+        "answer": "CREATE INDEX index_name ON table_name (column_name);"
+      },
+      {
+        "question": "What is view and how do you create one?",
+        "answer": "A view is a virtual table based on the result of a query. It can be created with: CREATE VIEW view_name AS SELECT column1, column2 FROM table_name WHERE condition;"
+      },
+      {
+        "question": "How do you drop a view from a database?",
+        "answer": "DROP VIEW view_name;"
+      },
+      {
+        "question": "What is the difference between NULL and an empty string?",
+        "answer": "NULL represents the absence of a value, while an empty string is a value that contains no characters."
+      },
+      {
+        "question": "How do you handle NULL values in SQL?",
+        "answer": "Use IS NULL to check for NULL values and COALESCE to provide a default value: SELECT * FROM table_name WHERE column_name IS NULL; SELECT COALESCE(column_name, 'default_value') FROM table_name;"
+      },
+      {
+        "question": "What is the purpose of GROUP BY clause?",
+        "answer": "The GROUP BY clause groups rows that have the same values into summary rows, often used with aggregate functions."
+      },
+      {
+        "question": "How do you calculate aggregate functions like SUM, COUNT, AVG?",
+        "answer": "SELECT SUM(column_name), COUNT(column_name), AVG(column_name) FROM table_name;"
+      },
+      {
+        "question": "What is a subquery and how is it used?",
+        "answer": "A subquery is a query nested within another query. It can be used to return data that will be used by the outer query. Example 1: Subquery in SELECT Clause: SELECT employee_name, (SELECT department_name FROM departments WHERE departments.department_id = employees.department_id) AS department_name FROM employees; Example 2: Subquery in WHERE Clause: SELECT employee_name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);"
+      },
+      {
+        "question": "How do you use CASE statement?",
+        "answer": "SELECT column_name, CASE WHEN condition THEN result ELSE default_result END FROM table_name; Example: SELECT employee_id, employee_name, salary, CASE WHEN salary < 30000 THEN 'Low' WHEN salary >= 30000 AND salary <= 60000 THEN 'Medium' ELSE 'High' END AS salary_category FROM employees;"
+      },
+      {
+        "question": "What is the purpose of the HAVING clause?",
+        "answer": "The HAVING clause is used to filter groups of records after aggregation."
+      },
+      {
+        "question": "How do you perform a basic INNER JOIN between two tables?",
+        "answer": "SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;"
+      },
+      {
+        "question": "What is the difference between INNER JOIN and LEFT JOIN?",
+        "answer": "INNER JOIN returns only matching rows from both tables, while LEFT JOIN returns all rows from the left table and matching rows from the right table, with NULLs for unmatched rows."
+      },
+      {
+        "question": "How do you perform a LEFT JOIN?",
+        "answer": "SELECT columns FROM table1 LEFT JOIN table2 ON table1.column = table2.column;"
+      },
+      {
+        "question": "How do you perform RIGHT JOIN?",
+        "answer": "SELECT columns FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;"
+      },
+      {
+        "question": "What is self-join?",
+        "answer": "A self-join is a join where a table is joined with itself."
+      },
+      {
+        "question": "How do you use UNION to combine results from two queries?",
+        "answer": "SELECT column_name FROM table1 UNION SELECT column_name FROM table2;"
+      },
+      {
+        "question": "What is the difference between UNION and UNION ALL?",
+        "answer": "UNION removes duplicate records, while UNION ALL includes all records from both queries."
+      },
+      {
+        "question": "How do you create a duplicate table?",
+        "answer": "CREATE TABLE new_table_name AS SELECT * FROM existing_table_name;"
+      },
+      {
+        "question": "What is a schema and how is it used in SQL?",
+        "answer": "A schema is a collection of database objects like tables and views. It helps in organizing and managing database objects."
+      },
+      {
+        "question": "How do you set default values for columns in a table?",
+        "answer": "CREATE TABLE table_name (column_name datatype DEFAULT default_value);"
+      },
+      {
+        "question": "How do you use the BETWEEN operator?",
+        "answer": "SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;"
+      },
+      {
+        "question": "How do you use the LIKE operator for pattern matching?",
+        "answer": "SELECT * FROM table_name WHERE column_name LIKE 'pattern'; Example 1: Using LIKE with %: SELECT customer_id, customer_name FROM customers WHERE customer_name LIKE 'Jo%'; Example 2: Using LIKE with _: SELECT customer_id, customer_name FROM customers WHERE customer_name LIKE '_a__';"
+      },
+      {
+        "question": "How do you use the IN operator to match multiple values?",
+        "answer": "SELECT * FROM table_name WHERE column_name IN (value1, value2, value3);"
+      },
+      {
+        "question": "What is the purpose of the SQL TRUNCATE command?",
+        "answer": "The TRUNCATE command is used to remove all rows from a table, but it does not remove the table itself or its structure."
+      },
+      {
+        "question": "How do you use SQL functions like UPPER, LOWER, and LENGTH?",
+        "answer": "SELECT UPPER(column_name), LOWER(column_name), LENGTH(column_name) FROM table_name;"
+      },
+      {
+        "question": "What is a trigger in SQL?",
+        "answer": "A trigger is a stored procedure that automatically executes or fires when certain events occur in a table or view."
+      },
+      {
+        "question": "How do you create a trigger?",
+        "answer": "CREATE TRIGGER trigger_name ON table_name AFTER INSERT AS BEGIN -- trigger logic END;"
+      }
+    ],
+    "Intermediate": [
+      {
+        "question": "How do you optimize SQL queries for performance?",
+        "answer": "Use indexing, avoid unnecessary columns in SELECT statements, write efficient joins, use WHERE clauses to filter data early, and analyze query execution plans."
+      },
+      {
+        "question": "How do you handle transactions in SQL?",
+        "answer": "Use COMMIT to save changes, ROLLBACK to undo changes, and SAVEPOINT to set intermediate points within a transaction."
+      },
+      {
+        "question": "What is normalization and why is it important?",
+        "answer": "Normalization is the process of organizing data to reduce redundancy and improve data integrity. It involves dividing a database into tables and defining relationships to ensure data consistency."
+      },
+      {
+        "question": "What are the different normal forms in normalization?",
+        "answer": "1NF (First Normal Form): Each column contains atomic values. 2NF (Second Normal Form): Achieved 1NF and all non-key attributes are fully functionally dependent on the primary key. 3NF (Third Normal Form): Achieved 2NF and all attributes are functionally dependent only on the primary key."
+      },
+      {
+        "question": "How do you handle concurrency in SQL?",
+        "answer": "Use transactions with isolation levels such as READ COMMITTED or SERIALIZABLE to manage concurrent access to data."
+      },
+      {
+        "question": "What is indexing and how does it improve query performance?",
+        "answer": "Indexing creates a data structure that improves the speed of data retrieval operations. It reduces the number of records the database needs to scan for queries."
+      },
+      {
+        "question": "How do you use a CTE (Common Table Expression) in SQL?",
+        "answer": "WITH CTE_name AS (SELECT column_name FROM table_name WHERE condition) SELECT * FROM CTE_name;"
+      },
+      {
+        "question": "What is the purpose of window functions?",
+        "answer": "Window functions perform calculations across a set of table rows related to the current row. They are used for analytics and reporting, such as calculating running totals or ranking."
+      },
+      {
+        "question": "How do you create a stored procedure?",
+        "answer": "CREATE PROCEDURE procedure_name AS BEGIN -- SQL statements END;"
+      },
+      {
+        "question": "How do you use SQL Server's TRY...CATCH for error handling?",
+        "answer": "BEGIN TRY -- SQL statements END TRY BEGIN CATCH -- Error handling logic END CATCH;"
+      },
+      {
+        "question": "What is the difference between RDBMS and NoSQL databases?",
+        "answer": "RDBMS (Relational Database Management System) uses structured tables and relationships between them, while NoSQL databases are designed for unstructured or semi-structured data and offer flexibility in data modeling."
+      },
+      {
+        "question": "How do you handle JSON data in SQL Server?",
+        "answer": "Use functions like JSON_VALUE, JSON_QUERY, and OPENJSON to parse and work with JSON data."
+      },
+      {
+        "question": "What is an execution plan and how do you analyze it?",
+        "answer": "An execution plan shows how SQL Server executes a query. It can be analyzed using SQL Server Management Studio (SSMS) to identify performance bottlenecks and optimize queries."
+      },
+      {
+        "question": "How do you implement pagination in SQL?",
+        "answer": "Use the OFFSET and FETCH NEXT clauses in SQL Server or the LIMIT and OFFSET clauses in MySQL/PostgreSQL to retrieve a subset of records."
+      },
+      {
+        "question": "How do you create and use SQL views?",
+        "answer": "Create views with CREATE VIEW view_name AS SELECT columns FROM table_name WHERE condition; Use views in queries as you would use tables."
+      }
+    ],
+    "Advanced": [
+      {
+        "question": "How do you perform data partitioning in SQL?",
+        "answer": "Data partitioning divides large tables into smaller, more manageable pieces. This can be achieved using table partitioning in SQL Server or partitioning features in other RDBMS."
+      },
+      {
+        "question": "What is SQL injection and how do you prevent it?",
+        "answer": "SQL injection is a security vulnerability that allows attackers to execute arbitrary SQL code. Prevent it by using parameterized queries, prepared statements, and input validation."
+      },
+      {
+        "question": "How do you perform database backup and recovery?",
+        "answer": "Use backup commands such as BACKUP DATABASE in SQL Server or the equivalent in other RDBMS. Recovery involves using RESTORE DATABASE to recover from backups."
+      },
+      {
+        "question": "What is a data warehouse and how is it different from an OLTP database?",
+        "answer": "A data warehouse is a system used for reporting and data analysis, optimized for read-heavy operations. OLTP (Online Transaction Processing) databases are optimized for transaction processing and frequent updates."
+      },
+      {
+        "question": "How do you design a star schema for data warehousing?",
+        "answer": "A star schema includes a central fact table with foreign keys to dimension tables. The schema is designed to optimize query performance and ease of use for data analysis."
+      },
+      {
+        "question": "What is database sharding and how does it work?",
+        "answer": "Database sharding is the process of breaking a database into smaller, more manageable pieces called shards. Each shard is stored on a different server, improving scalability and performance."
+      },
+      {
+        "question": "How do you handle multi-tenant architecture in SQL databases?",
+        "answer": "Multi-tenant architecture involves designing the database to support multiple clients (tenants) with shared resources. This can be achieved using separate schemas, tables, or databases for each tenant."
+      },
+      {
+        "question": "What is the difference between a clustered and non-clustered index?",
+        "answer": "A clustered index determines the physical order of data in the table and there can be only one clustered index per table. A non-clustered index creates a separate structure to store index information and can have multiple non-clustered indexes per table."
+      },
+      {
+        "question": "How do you implement and manage replication in SQL Server?",
+        "answer": "Replication involves copying and distributing data and database objects from one database to another. It can be managed using SQL Server Management Studio (SSMS) and involves configuring publishers, distributors, and subscribers."
+      },
+      {
+        "question": "How do you perform data migration between different databases?",
+        "answer": "Data migration involves transferring data from one database to another. This can be done using tools like SQL Server Integration Services (SSIS), data export/import utilities, or ETL processes."
+      },
+      {
+        "question": "What are some best practices for database design?",
+        "answer": "Best practices include normalizing data to reduce redundancy, using appropriate data types, indexing for performance, enforcing data integrity with constraints, and regularly reviewing and optimizing queries."
+      }
+    ]
+  }
+  
