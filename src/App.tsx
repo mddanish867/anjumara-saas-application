@@ -4,7 +4,7 @@ import Authorization from "./Pages/MachinesCodes/Auth/Authorization";
 import Home from "./Pages/Home";
 import Section from "./Pages/Section/Section";
 import Frontend from "./Pages/Frontend/Frontend";
-import React from "./Pages/Frontend/React";
+import ReactPage from "./Pages/Frontend/React";
 import Backend from "./Pages/Backend/Backend";
 import Sql from "./Pages/Database/Sql";
 import Azure from "./Pages/Cloud/Azure";
@@ -19,11 +19,16 @@ function App() {
           <Route path="/authorization" element={<Authorization />} />
           <Route path="/section" element={<Section />} />
           <Route path="/frontend" element={<Frontend />} />
-          <Route path="/react" element={<React />} />
+          <Route path="/section/frontend" element={<Frontend />} />
+          <Route path="/react" element={<ReactPage />} />
           <Route path="/backend" element={<Backend />} />
+          <Route path="/section/backend" element={<Backend />} />
+          <Route path="/section/sql" element={<Sql />} />
           <Route path="/sql" element={<Sql />} />
           <Route path="/azure" element={<Azure />} />
+          <Route path="/section/azure" element={<Azure />} />
           <Route path="/git" element={<Git />} />
+          <Route path="/section/git" element={<Git />} />
 
         </Route>
       </Routes>

@@ -1,6 +1,10 @@
+import Breadcrumb from "@/BreadCrum/Breadcrum";
+
 function Git() {
   return (
-    <a 
+   <div className="mt-20">
+    <Breadcrumb/>
+     <a 
       href="/git-interview-preparation" 
       className="mt-20 flex flex-col md:flex-row items-center px-4 text-center md:text-left hover:bg-gray-50 rounded-lg transition duration-300 ease-in-out"
     >
@@ -16,6 +20,7 @@ function Git() {
         </p>
       </div>
     </a>
+   </div>
   )
 }
 

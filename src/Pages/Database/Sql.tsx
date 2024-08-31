@@ -1,14 +1,10 @@
+import Breadcrumb from "@/BreadCrum/Breadcrum";
 
 function Sql() {
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
       {/* Breadcrumb */}
-      <nav className="text-sm text-gray-500 mb-4">
-        <a href="/" className="hover:text-blue-500">Home</a> &gt; 
-        <a href="/interviews" className="hover:text-blue-500 ml-1"> Interviews</a> &gt; 
-        <span className="text-gray-700 ml-1"> SQL Interview Preparation</span>
-      </nav>
-
+      <Breadcrumb />
       {/* Top Section: Title and Image */}
       <div className="flex flex-col md:flex-row items-center">
         <img
@@ -21,7 +17,9 @@ function Sql() {
             SQL Interview Preparation
           </h2>
           <p className="text-gray-600 text-sm md:text-base lg:text-lg">
-            Enhance your SQL skills with detailed knowledge of database design, query optimization, and advanced SQL concepts. Get ready to impress in your SQL interviews!
+            Enhance your SQL skills with detailed knowledge of database design,
+            query optimization, and advanced SQL concepts. Get ready to impress
+            in your SQL interviews!
           </p>
         </div>
       </div>
@@ -30,50 +28,73 @@ function Sql() {
       <div className="mt-8 flex">
         <input
           type="text"
-          placeholder="Search SQL interview questions..."
+          placeholder="Search interview questions..."
           className="w-full px-4 py-2 border rounded-l-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <button
-          className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300 ease-in-out"
-        >
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300 ease-in-out">
           Search
         </button>
       </div>
 
       {/* SQL Interview Tips */}
       <div className="mt-8">
-        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">SQL Interview Preparation Tips</h3>
+        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+          SQL Interview Preparation Tips
+        </h3>
         <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-4">
-          SQL interviews often focus on your ability to understand and write efficient queries. Be prepared to discuss database normalization, indexing, query optimization, and SQL joins. Practice writing queries that retrieve data from multiple tables and understand the implications of different SQL operations on performance.
+          SQL interviews often focus on your ability to understand and write
+          efficient queries. Be prepared to discuss database normalization,
+          indexing, query optimization, and SQL joins. Practice writing queries
+          that retrieve data from multiple tables and understand the
+          implications of different SQL operations on performance.
         </p>
       </div>
 
       {/* List of Interview Questions and Answers */}
       <div className="mt-8">
-        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">Common SQL Interview Questions</h3>
+        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+          Common SQL Interview Questions
+        </h3>
         <ul className="space-y-4">
           <li>
-            <h4 className="font-semibold text-gray-700">1. What is a Primary Key?</h4>
+            <h4 className="font-semibold text-gray-700">
+              1. What is a Primary Key?
+            </h4>
             <p className="text-gray-600">
-              A primary key is a unique identifier for a record in a table. It ensures that each record is unique and not null. A table can have only one primary key.
+              A primary key is a unique identifier for a record in a table. It
+              ensures that each record is unique and not null. A table can have
+              only one primary key.
             </p>
           </li>
           <li>
-            <h4 className="font-semibold text-gray-700">2. What is a JOIN in SQL?</h4>
+            <h4 className="font-semibold text-gray-700">
+              2. What is a JOIN in SQL?
+            </h4>
             <p className="text-gray-600">
-              A JOIN clause is used to combine rows from two or more tables, based on a related column between them. Common types of joins are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+              A JOIN clause is used to combine rows from two or more tables,
+              based on a related column between them. Common types of joins are
+              INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
             </p>
           </li>
           <li>
-            <h4 className="font-semibold text-gray-700">3. What is the difference between DELETE and TRUNCATE?</h4>
+            <h4 className="font-semibold text-gray-700">
+              3. What is the difference between DELETE and TRUNCATE?
+            </h4>
             <p className="text-gray-600">
-              DELETE removes rows from a table based on a condition and can be rolled back. TRUNCATE removes all rows from a table without logging individual row deletions and cannot be rolled back.
+              DELETE removes rows from a table based on a condition and can be
+              rolled back. TRUNCATE removes all rows from a table without
+              logging individual row deletions and cannot be rolled back.
             </p>
           </li>
           <li>
-            <h4 className="font-semibold text-gray-700">4. What is normalization? Explain its types.</h4>
+            <h4 className="font-semibold text-gray-700">
+              4. What is normalization? Explain its types.
+            </h4>
             <p className="text-gray-600">
-              Normalization is the process of organizing data to minimize redundancy. The types of normalization include 1NF, 2NF, 3NF, and BCNF, each with specific rules to reduce data redundancy and improve data integrity.
+              Normalization is the process of organizing data to minimize
+              redundancy. The types of normalization include 1NF, 2NF, 3NF, and
+              BCNF, each with specific rules to reduce data redundancy and
+              improve data integrity.
             </p>
           </li>
         </ul>
