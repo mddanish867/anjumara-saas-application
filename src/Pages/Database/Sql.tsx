@@ -3,6 +3,7 @@ import Breadcrumb from "@/BreadCrum/Breadcrum";
 import sql from "@/Data/sql.json";
 import Pagination from '../../Pagination/Pagination';
 import html2pdf from 'html2pdf.js';
+import { Search } from "lucide-react";
 
 // Define the types for SQL data
 interface SQLQuestionAnswer {
@@ -73,7 +74,7 @@ function Sql() {
           {level} SQL Interview Questions
         </h3>
         <div className="w-full space-y-4">
-          {questions.map((item:SQLQuestionAnswer, index:number) => (
+          {questions.map((item: SQLQuestionAnswer, index: number) => (
             <div key={index} className="bg-white p-6 rounded-lg">
               <h4 className="text-lg font-semibold text-gray-800 mb-2">
                 {item.question}
@@ -90,16 +91,6 @@ function Sql() {
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
       {/* Breadcrumb */}
       <Breadcrumb />
-
-      {/* Download Button */}
-      <div className="flex justify-end mb-4">
-        <button
-          onClick={handleDownloadPDF}
-          className="bg-[#38bdf8] text-white px-4 py-2 rounded-lg hover:bg-[#38bdf8] transition duration-300 ease-in-out"
-        >
-          Download PDF
-        </button>
-      </div>
 
       {/* Content to be downloaded */}
       <div id="content-to-download">
@@ -122,18 +113,40 @@ function Sql() {
           </div>
         </div>
 
-        {/* SQL Interview Tips */}
-        <div className="mt-8">
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-            SQL Interview Preparation Tips
-          </h3>
-          <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-4">
-            SQL interviews often focus on your ability to understand and write
-            efficient queries. Be prepared to discuss database normalization,
-            indexing, query optimization, and SQL joins. Practice writing queries
-            that retrieve data from multiple tables and understand the
-            implications of different SQL operations on performance.
-          </p>
+        {/* SQL Interview Tips, Search Input, and Download Button */}
+        <div className="mt-8 flex flex-col md:flex-row md:justify-between">
+          <div className="md:flex-grow">
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+              SQL Interview Preparation Tips
+            </h3>
+            <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-4">
+              SQL interviews often focus on your ability to understand and write
+              efficient queries. Be prepared to discuss database normalization,
+              indexing, query optimization, and SQL joins. Practice writing queries
+              that retrieve data from multiple tables and understand the
+              implications of different SQL operations on performance.
+            </p>
+
+            {/* Search Input with Icon */}
+            <div className="relative mt-4">
+              <input
+                type="text"
+                placeholder="Search SQL interview questions..."
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8] border-gray-300 pl-10"
+              />
+              <Search
+                className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5"
+              />
+            </div>
+          </div>
+          <div className="mt-4 md:mt-0">
+            <button
+              onClick={handleDownloadPDF}
+              className="bg-[#38bdf8] text-white px-4 py-2 w-full md:w-40 rounded-lg hover:bg-[#38bdf8] transition duration-300 ease-in-out"
+            >
+              Download PDF
+            </button>
+          </div>
         </div>
 
         {/* List of Interview Questions and Answers */}
