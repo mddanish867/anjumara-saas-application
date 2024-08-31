@@ -9,10 +9,12 @@ import Backend from "./Pages/Backend/Backend";
 import Sql from "./Pages/Database/Sql";
 import Azure from "./Pages/Cloud/Azure";
 import Git from "./Pages/VersionControl/Git";
+import ScrollToTop from "./BreadCrum/ScrollTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
@@ -29,7 +31,6 @@ function App() {
           <Route path="/section/azure" element={<Azure />} />
           <Route path="/git" element={<Git />} />
           <Route path="/section/git" element={<Git />} />
-
         </Route>
       </Routes>
     </Router>
