@@ -13,7 +13,7 @@ function Sql() {
           className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 mb-4 md:mb-0 rounded-full shadow-md object-contain"
         />
         <div className="md:ml-4 text-center md:text-left">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-500 mb-2">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
             SQL Interview Preparation
           </h2>
           <p className="text-gray-600 text-sm md:text-base lg:text-lg">
@@ -29,9 +29,9 @@ function Sql() {
         <input
           type="text"
           placeholder="Search interview questions..."
-          className="w-full px-4 py-2 border rounded-l-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border rounded-l-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#38bdf8]"
         />
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition duration-300 ease-in-out">
+        <button className="bg-[#38bdf8] text-white px-4 py-2 rounded-r-lg hover:bg-[#38bdf8] transition duration-300 ease-in-out">
           Search
         </button>
       </div>

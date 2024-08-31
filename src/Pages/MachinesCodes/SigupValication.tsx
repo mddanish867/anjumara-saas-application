@@ -6,7 +6,7 @@ function SigupValication() {
       <div className="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0">
         <div className="">
           <h1 className="text-3xl font-semibold lg:hidden">
-            Anjum<span className="text-blue-500">Ara</span>
+            Anjum<span className="text-[#38bdf8]">Ara</span>
           </h1>
           <div className="mt-5 space-y-2">
             <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
@@ -15,7 +15,7 @@ function SigupValication() {
             <p className="">
               Already have an account?{" "}
               <button
-                className="font-medium text-blue-500 hover:text-blue-500"
+                className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
               >
                 Log in
               </button>
@@ -131,7 +131,7 @@ function SigupValication() {
             <input
               type="text"
               required
-              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-blue-500 shadow-sm rounded-lg"
+              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
             />
           </div>
           <div>
@@ -139,7 +139,7 @@ function SigupValication() {
             <input
               type="email"
               required
-              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-blue-500 shadow-sm rounded-lg"
+              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
             />
           </div>
           <div>
@@ -147,10 +147,10 @@ function SigupValication() {
             <input
               type="password"
               required
-              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-blue-500 shadow-sm rounded-lg"
+              className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
             />
           </div>
-          <button className="w-full px-4 py-2 text-white font-medium bg-blue-500 hover:bg-blue-500 active:bg-blue-600 rounded-lg duration-150">
+          <button className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-[#38bdf8] rounded-lg duration-150">
             Create account
           </button>
         </form>

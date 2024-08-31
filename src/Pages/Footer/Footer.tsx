@@ -15,14 +15,14 @@ export default function Footer() {
           <label className="sr-only" htmlFor="email"> Email </label>
 
           <input
-            className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-blue-500"
+            className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
             id="email"
             type="email"
             placeholder="example@anjumara.com"
           />
 
           <button
-            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-500 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
           >
             Subscribe
           </button>
@@ -129,23 +129,23 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Marketing </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> Marketing </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#">
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#">
                 Graphic Design
               </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#">
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#">
                 App Development
               </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#">
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#">
                 Web Development
               </a>
             </li>
@@ -157,19 +157,19 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> About </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> About </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Careers </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> Careers </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> History </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> History </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Our Team </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> Our Team </a>
             </li>
           </ul>
         </div>
@@ -179,15 +179,15 @@ export default function Footer() {
 
           <ul className="mt-6 space-y-1">
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> FAQs </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> FAQs </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Contact </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> Contact </a>
             </li>
 
             <li>
-              <a className="text-gray-700 transition hover:text-blue-500" href="#"> Live Chat </a>
+              <a className="text-gray-700 transition hover:text-[#38bdf8]" href="#"> Live Chat </a>
             </li>
           </ul>
         </div>

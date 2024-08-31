@@ -11,7 +11,7 @@ navigate("/authorization")
         <div className="max-w-sm w-full text-gray-600 space-y-5 ">
           <div className="text-center pb-8">
             <h1 className="text-3xl font-semibold">
-              Anjum<span className="text-blue-500">Ara</span>
+              Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
             <div className="mt-5">
               <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
@@ -25,7 +25,7 @@ navigate("/authorization")
               <input
                 type="email"
                 required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-blue-500 shadow-sm rounded-lg"
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
               />
             </div>
             <div>
@@ -33,7 +33,7 @@ navigate("/authorization")
               <input
                 type="password"
                 required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-blue-500 shadow-sm rounded-lg"
+                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
               />
             </div>
             <div className="flex items-center justify-between text-sm">
@@ -45,13 +45,13 @@ navigate("/authorization")
                 />
                 <label
                   htmlFor="remember-me-checkbox"
-                  className="relative flex w-5 h-5 bg-white peer-checked:bg-blue-500 rounded-md border ring-offset-2 ring-blue-500 duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45"
+                  className="relative flex w-5 h-5 bg-white peer-checked:bg-[#38bdf8] rounded-md border ring-offset-2 ring-[#38bdf8] duration-150 peer-active:ring cursor-pointer after:absolute after:inset-x-0 after:top-[3px] after:m-auto after:w-1.5 after:h-2.5 after:border-r-2 after:border-b-2 after:border-white after:rotate-45"
                 ></label>
                 <span>Remember me</span>
               </div>
               <button
                 type="button"
-                className="text-blue-500 hover:text-blue-600"
+                className="text-[#38bdf8] hover:text-[#38bdf8]"
                 onClick={() => {
                   // Handle forgot password action here
                 }}
@@ -61,7 +61,7 @@ navigate("/authorization")
             </div>
             <button
               type="submit"
-              className="w-full px-4 py-2 text-white font-medium bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-lg duration-150"
+              className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-blue-700 rounded-lg duration-150"
             >
               Sign in
             </button>
@@ -110,7 +110,7 @@ navigate("/authorization")
             Don't have an account?{" "}
             <button
               type="button"
-              className="font-medium text-blue-500 hover:text-blue-600"
+              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
               onClick={() => {
                 // Handle sign-up action here
               }}

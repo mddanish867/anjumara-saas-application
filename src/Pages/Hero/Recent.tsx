@@ -61,7 +61,7 @@ function Recent() {
         </p>
         <Button
           variant="link"
-          className="text-start text-blue-500 -ml-4 mt-4"
+          className="text-start text-[#38bdf8] -ml-4 mt-4"
           onClick={handleClick}
         >
           Browse all components <MoveRight className="ml-2" />
@@ -74,12 +74,12 @@ function Recent() {
               key={idx}
               className={`py-2 border-b-2 flex-shrink-0 cursor-pointer ${
                 idx === activeTab
-                  ? "border-blue-500 text-blue-500"
+                  ? "border-[#38bdf8] text-[#38bdf8]"
                   : "border-transparent text-gray-500"
               }`}
               onClick={() => setActiveTab(idx)}
             >
-              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-blue-500 hover:bg-gray-50 active:bg-gray-100 font-medium">
+              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-[#38bdf8] hover:bg-gray-50 active:bg-gray-100 font-medium">
                 {item.name}
               </span>
             </li>
@@ -90,9 +90,9 @@ function Recent() {
         {/* Render the details of the active tab */}
         <div className="flex flex-col items-center text-center">
           <img src={img} alt={`${name} Banner`} className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 mb-4 rounded-full shadow-md object-contain" />
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-blue-600 mb-2">{name}</h2>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#38bdf8] mb-2">{name}</h2>
           <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4">{description}</p>
-          <Button variant="link" className="text-blue-500" onClick={() => navigate(link)}>
+          <Button variant="link" className="text-[#38bdf8]" onClick={() => navigate(link)}>
             Learn More <MoveRight className="ml-2" />
           </Button>
         </div>

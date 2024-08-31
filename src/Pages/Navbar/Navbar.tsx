@@ -12,7 +12,7 @@ function Navbar() {
         <div className="md:col-span-3">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
-              Anjum<span className="text-blue-500">Ara</span>
+              Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
           </Link>
         </div>

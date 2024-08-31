@@ -15,7 +15,7 @@ function ReviewSystem() {
         <button
           aria-label="Previous slide"
           id="keen-slider-previous"
-          className="rounded-full border border-blue-500 p-3 text-blue-500 transition hover:bg-blue-500 hover:text-white"
+          className="rounded-full border border-[#38bdf8] p-3 text-[#38bdf8] transition hover:bg-[#38bdf8] hover:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ function ReviewSystem() {
         <button
           aria-label="Next slide"
           id="keen-slider-next"
-          className="rounded-full border border-blue-500 p-3 text-blue-500 transition hover:bg-blue-500 hover:text-white"
+          className="rounded-full border border-[#38bdf8] p-3 text-[#38bdf8] transition hover:bg-[#38bdf8] hover:text-white"
         >
           <svg
             className="size-5 rtl:rotate-180"
@@ -117,7 +117,7 @@ function ReviewSystem() {
               </div>
 
               <div className="mt-4">
-                <p className="text-2xl font-bold text-blue-500 sm:text-3xl">Stayin' Alive</p>
+                <p className="text-2xl font-bold text-[#38bdf8] sm:text-3xl">Stayin' Alive</p>
 
                 <p className="mt-4 leading-relaxed text-gray-700">
                   No, Rose, they are not breathing. And they have no arms or legs … Where are they?
@@ -196,7 +196,7 @@ function ReviewSystem() {
               </div>
 
               <div className="mt-4">
-                <p className="text-2xl font-bold text-blue-500 sm:text-3xl">Stayin' Alive</p>
+                <p className="text-2xl font-bold text-[#38bdf8] sm:text-3xl">Stayin' Alive</p>
 
                 <p className="mt-4 leading-relaxed text-gray-700">
                   No, Rose, they are not breathing. And they have no arms or legs … Where are they?
@@ -275,7 +275,7 @@ function ReviewSystem() {
               </div>
 
               <div className="mt-4">
-                <p className="text-2xl font-bold text-blue-500 sm:text-3xl">Stayin' Alive</p>
+                <p className="text-2xl font-bold text-[#38bdf8] sm:text-3xl">Stayin' Alive</p>
 
                 <p className="mt-4 leading-relaxed text-gray-700">
                   No, Rose, they are not breathing. And they have no arms or legs … Where are they?

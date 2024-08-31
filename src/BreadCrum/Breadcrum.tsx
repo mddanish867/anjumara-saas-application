@@ -6,7 +6,7 @@ function Breadcrumb() {
 
   return (
     <nav className="text-sm text-gray-500 mb-4">
-      <Link to="/" className="hover:text-blue-500">Home</Link>
+      <Link to="/" className="hover:text-[#38bdf8]">Home</Link>
       {pathnames.map((value, index) => {
         const to = `/${pathnames.slice(0, index + 1).join('/')}`;
         const isLast = index === pathnames.length - 1;
@@ -18,7 +18,7 @@ function Breadcrumb() {
         ) : (
           <span key={to}>
             {' > '}
-            <Link to={to} className="hover:text-blue-500 ml-1">
+            <Link to={to} className="hover:text-[#38bdf8] ml-1">
               {value.charAt(0).toUpperCase() + value.slice(1)}
             </Link>
           </span>

@@ -30,7 +30,7 @@ export default function MobileMenu() {
             <div className="mr-7">
               <a href="/">
                 <h1 className="text-2xl font-semibold">
-                  Anjum<span className="text-blue-500">Ara</span>
+                  Anjum<span className="text-[#38bdf8]">Ara</span>
                 </h1>
               </a>
             </div>

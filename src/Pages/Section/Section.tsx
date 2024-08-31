@@ -32,7 +32,7 @@ function Section() {
 
             <Link
               to="#"
-              className="mt-8 inline-block rounded bg-blue-500 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
+              className="mt-8 inline-block rounded bg-[#38bdf8] px-12 py-3 text-sm font-medium text-white transition hover:bg-[#38bdf8] focus:outline-none focus:ring focus:ring-[#38bdf8]"
             >
               Get Started Today
             </Link>

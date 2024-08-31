@@ -11,7 +11,7 @@ function Pagination() {
       >
         <button
           
-          className="hover:text-indigo-600 flex items-center gap-x-2"
+          className="hover:text-[#38bdf8] flex items-center gap-x-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +36,9 @@ function Pagination() {
                 <button
           
                   aria-current={currentPage == item ? "page" : false}
-                  className={`px-3 py-2 rounded-lg duration-150 hover:text-indigo-600 hover:bg-indigo-50 ${
+                  className={`px-3 py-2 rounded-lg duration-150 hover:text-[#38bdf8] hover:bg-indigo-50 ${
                     currentPage == item
-                      ? "bg-indigo-50 text-indigo-600 font-medium"
+                      ? "bg-indigo-50 text-[#38bdf8] font-medium"
                       : ""
                   }`}
                 >
@@ -49,7 +49,7 @@ function Pagination() {
           ))}
         </ul>
         <button
-          className="hover:text-indigo-600 flex items-center gap-x-2"
+          className="hover:text-[#38bdf8] flex items-center gap-x-2"
         >
           Next
           <svg
