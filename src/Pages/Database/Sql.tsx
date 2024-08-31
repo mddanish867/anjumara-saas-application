@@ -35,7 +35,7 @@ function Sql() {
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 15;
+  const itemsPerPage = 10;
 
   // Calculate the total number of pages
   const totalItems = Object.values(sqlData).flat().length;
