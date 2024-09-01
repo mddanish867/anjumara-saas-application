@@ -49,7 +49,7 @@ function Banner() {
         <img
           alt=""
           src="/bannerimg.png"
-          className="h-84 w-full -mt-24"
+          className="h-84 w-84  sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
         />
       </section>
       <span className="relative flex justify-start mt-10">
