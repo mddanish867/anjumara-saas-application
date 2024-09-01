@@ -54,7 +54,7 @@ function Recent() {
         <h1 className="text-3xl font-extrabold sm:text-5xl">
           Beautifully crafted UI components, ready for your next project.
         </h1>
-        <p className="text-gray-600 mt-2">
+        <p className="mt-2">
           Over 500+ professionally designed, fully responsive, expertly crafted
           component examples you can drop into your Tailwind projects and
           customize to your heart’s content.
@@ -79,7 +79,7 @@ function Recent() {
               }`}
               onClick={() => setActiveTab(idx)}
             >
-              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-[#38bdf8] hover:bg-gray-50 active:bg-gray-100 font-medium">
+              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-[#38bdf8]  active:bg-transparent font-medium">
                 {item.name}
               </span>
             </li>

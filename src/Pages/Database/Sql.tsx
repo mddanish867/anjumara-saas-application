@@ -25,7 +25,7 @@ interface TextBlockProps {
 function TextBlock({ text }: TextBlockProps) {
   return (
     <div className="relative">
-      <p className="text-gray-800">{text}</p>
+      <p>{text}</p>
     </div>
   );
 }
@@ -70,13 +70,13 @@ function Sql() {
   const renderAllQuestions = () => {
     return Object.entries(sqlData).map(([level, questions], levelIndex) => (
       <div key={levelIndex}>
-        <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold mb-4">
           {level} SQL Interview Questions
         </h3>
         <div className="w-full space-y-4">
           {questions.map((item: SQLQuestionAnswer, index: number) => (
             <div key={index} className="bg-white p-6 rounded-lg">
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              <h4 className="text-lg font-semibold  mb-2">
                 {item.question}
               </h4>
               <TextBlock text={item.answer} />
@@ -105,7 +105,7 @@ function Sql() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
               SQL Interview Preparation
             </h2>
-            <p className="text-gray-600 text-sm md:text-base lg:text-lg">
+            <p className="text-sm md:text-base lg:text-lg">
               Enhance your SQL skills with detailed knowledge of database design,
               query optimization, and advanced SQL concepts. Get ready to impress
               in your SQL interviews!
@@ -116,10 +116,10 @@ function Sql() {
         {/* SQL Interview Tips, Search Input, and Download Button */}
         <div className="mt-8 flex flex-col md:flex-row md:justify-between">
           <div className="md:flex-grow">
-            <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4">
               SQL Interview Preparation Tips
             </h3>
-            <p className="text-gray-600 text-sm md:text-base lg:text-lg mb-4">
+            <p className="text-sm md:text-base lg:text-lg mb-4">
               SQL interviews often focus on your ability to understand and write
               efficient queries. Be prepared to discuss database normalization,
               indexing, query optimization, and SQL joins. Practice writing queries
@@ -132,7 +132,7 @@ function Sql() {
               <input
                 type="text"
                 placeholder="Search SQL interview questions..."
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8] border-gray-300 pl-10"
+                className="w-full px-4 py-2 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8]  pl-10"
               />
               <Search
                 className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5"
@@ -151,13 +151,13 @@ function Sql() {
 
         {/* List of Interview Questions and Answers */}
         <div className="mt-8">
-          <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">
             Common SQL Interview Questions
           </h3>
           <div className="w-full space-y-4">
             {paginatedData.map((item, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg">
-                <h4 className="text-lg font-semibold text-gray-800 mb-2">
+              <div key={index} className="p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-2">
                   {item.question}
                 </h4>
                 <TextBlock text={item.answer} />

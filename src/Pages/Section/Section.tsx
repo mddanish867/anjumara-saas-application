@@ -20,7 +20,7 @@ function Section() {
               Find your career path
             </h2>
 
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4">
               Prepare effectively for your next interview with a structured and
               personalized approach. Our "Find Your Interview Path" guide helps
               you navigate through essential topics and skills tailored to your
@@ -42,7 +42,7 @@ function Section() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                className="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
+                className="block rounded-xl border  p-4 shadow-sm hover:border-[#38bdf8] hover:ring-1 hover:ring-[#38bdf8] focus:outline-none focus:ring"
                 to={item.link}
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
@@ -51,7 +51,7 @@ function Section() {
 
                 <h2 className="mt-2 font-bold text-center">{item.name}</h2>
 
-                <p className="hidden sm:mt-1 sm:block sm:text-sm sm:text-gray-600">
+                <p className="hidden sm:mt-1 sm:block sm:text-sm">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </Link>

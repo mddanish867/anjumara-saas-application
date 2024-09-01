@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import NavbarLink from "./NavbarLink";
 import { MoveRight, Search } from "lucide-react";
 import MobileMenu from "./MobileMenu";
-
+import { ModeToggle } from "@/components/ModeToggle";
 function Navbar() {
   return (
     <>
@@ -42,6 +42,10 @@ function Navbar() {
             <Button className="font-semibold text-1xl">
               Get all-access <MoveRight className="ml-2" />
             </Button>
+            <div className="bg-transparent hover:bg-transparent outline-none focus:outline-none border-none focus:border-none hover:border-none">
+            <ModeToggle/>
+            </div>
+            
           </div>
 
           {/* Mobile and Tablet View */}

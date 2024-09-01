@@ -41,7 +41,7 @@ export default function MobileMenu() {
           <NavbarLink />
           <Button
             variant="secondary"
-            className="font-semibold w-full bg-white hover:bg-white text-md"
+            className="font-semibold w-full bg-transparent hover:bg-transparent text-md"
           >
             Sign in
           </Button>

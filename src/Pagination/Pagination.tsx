@@ -11,7 +11,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
   
   return (
-    <div className="max-w-screen-xl mx-auto mt-24 px-4 text-gray-600 md:px-8">
+    <div className="max-w-screen-xl mx-auto mt-24 px-4 md:px-8">
       <div className="hidden items-center justify-between sm:flex" aria-label="Pagination">
         <button
           onClick={() => onPageChange(currentPage - 1)}
@@ -38,8 +38,8 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
               <button
                 onClick={() => onPageChange(page)}
                 aria-current={currentPage === page ? 'page' : undefined}
-                className={`px-3 py-2 rounded-lg duration-150 hover:text-[#38bdf8] hover:bg-indigo-50 ${
-                  currentPage === page ? 'bg-indigo-50 text-[#38bdf8] font-medium' : ''
+                className={`px-3 py-2 rounded-lg duration-150 hover:text-[#38bdf8] hover:bg-transparent ${
+                  currentPage === page ? 'bg-transparent text-[#38bdf8] font-medium' : ''
                 }`}
               >
                 {page}

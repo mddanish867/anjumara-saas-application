@@ -10,12 +10,15 @@ import Sql from "./Pages/Database/Sql";
 import Azure from "./Pages/Cloud/Azure";
 import Git from "./Pages/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
+import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   return (
     <Router>
+       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ScrollToTop/>
       <Routes>
+     
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/authorization" element={<Authorization />} />
@@ -33,6 +36,7 @@ function App() {
           <Route path="/section/git" element={<Git />} />
         </Route>
       </Routes>
+      </ThemeProvider>
     </Router>
   );
 }

@@ -10,14 +10,14 @@ function Banner() {
   };
   return (
     <>
-      <section className="overflow-hidden bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center">
+      <section className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center md:mt-14">
         <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div className="max-w-3xl text-left ltr:sm:text-left rtl:sm:text-right">
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Let's build your
-              <strong className="block font-extrabold text-gray-900">
+              <strong className="block font-extrabold">
                 components from scrach{" "}
               </strong>
             </h1>
@@ -30,7 +30,8 @@ function Banner() {
 
             <div className="mt-8 flex flex-wrap gap-4 text-center">
               <Button
-                className="flex w-full py-3 text-sm font-medium text-white shadow hover:bg-gray-700 focus:outline-none focus:ring active:bg-gray-700 sm:w-auto"
+              variant="default"
+                className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
                 onClick={handleClick}
               >
                 Browse components <MoveRight className="ml-2" />
@@ -38,7 +39,7 @@ function Banner() {
 
               <Button
                 variant="outline"
-                className="flex w-full py-3 text-sm font-medium text-gary-700 shadow sm:w-auto"
+                className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
               >
                 Access source code <MoveRight className="ml-2" />
               </Button>
@@ -48,12 +49,12 @@ function Banner() {
         <img
           alt=""
           src="/bannerimg.png"
-          className="h-84 w-84 object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
+          className="h-84 w-full -mt-24"
         />
       </section>
       <span className="relative flex justify-start mt-10">
         <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent opacity-75"></div>
-        <span className="relative z-10 bg-white text-[#38bdf8] px-6 font-semibold text-start">
+        <span className="relative z-10 text-[#38bdf8] px-6 font-semibold text-start">
           Components
         </span>
       </span>
