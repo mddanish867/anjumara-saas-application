@@ -31,7 +31,7 @@ function Navbar() {
             <Search size={20} />
           </Button>
 
-          <div className="lg:hidden bg-transparent hover:bg-transparent outline-none focus:outline-none border-none focus:border-none hover:border-none">
+          <div className="lg:hidden">
             <ModeToggle/>
             </div>
 
@@ -46,7 +46,7 @@ function Navbar() {
             <Button className="font-semibold text-1xl">
               Get all-access <MoveRight className="ml-2" />
             </Button>
-            <div className=" bg-transparent hover:bg-transparent outline-none focus:outline-none border-none focus:border-none hover:border-none">
+            <div className="">
             <ModeToggle/>
             </div>
             

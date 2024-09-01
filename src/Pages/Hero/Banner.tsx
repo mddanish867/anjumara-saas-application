@@ -11,7 +11,7 @@ function Banner() {
   return (
     <>
       <section className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center md:mt-14">
-        <div className="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
+        <div className="absolute inset-0 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
         <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
           <div className="max-w-3xl text-left ltr:sm:text-left rtl:sm:text-right">
