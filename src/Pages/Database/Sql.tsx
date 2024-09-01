@@ -4,6 +4,7 @@ import sql from "@/Data/sql.json";
 import Pagination from '../../Pagination/Pagination';
 import html2pdf from 'html2pdf.js';
 import { Search } from "lucide-react";
+import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
 // Define the types for SQL data
 interface SQLQuestionAnswer {
@@ -31,6 +32,11 @@ function TextBlock({ text }: TextBlockProps) {
 }
 
 function Sql() {
+
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [generatedContent, setGeneratedContent] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
   // Cast the imported json data to the SQLData type
   const sqlData = sql as SQLData;
 
@@ -87,6 +93,23 @@ function Sql() {
     ));
   };
 
+  // Function to handle the search and OpenAI API call
+  const handleSearch = async () => {
+    if (searchQuery.trim() === '') return;
+    
+    setLoading(true);
+    try {
+      const content = await generateSQLContent(searchQuery);
+      setGeneratedContent(content);
+    } catch (error) {
+      console.error('Error generating SQL content:', error);
+      setGeneratedContent(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
       {/* Breadcrumb */}
@@ -131,11 +154,14 @@ function Sql() {
             <div className="relative mt-4">
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search SQL interview questions..."
                 className="w-full px-4 py-2 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8]  pl-10"
               />
               <Search
-                className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5"
+                className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5 cursor-pointer"
+                onClick={handleSearch}
               />
             </div>
           </div>
@@ -148,6 +174,37 @@ function Sql() {
             </button>
           </div>
         </div>
+        
+        {/* Render Generated Content */}
+        {loading && <p>Loading...</p>}
+        {generatedContent && (
+          <div className="mt-8">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4">Generated SQL Content</h3>
+            <div className="space-y-4">
+              <div className="bg-white p-4 rounded-lg shadow">
+                <h4 className="text-lg font-semibold mb-2">SQL Query:</h4>
+                <TextBlock text={generatedContent.sqlQuery} />
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <h4 className="text-lg font-semibold mb-2">Optimized Query:</h4>
+                <TextBlock text={generatedContent.optimizedQuery} />
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <h4 className="text-lg font-semibold mb-2">Brute Force Query:</h4>
+                <TextBlock text={generatedContent.bruteForceQuery} />
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <h4 className="text-lg font-semibold mb-2">Explanation:</h4>
+                <TextBlock text={generatedContent.explanation} />
+              </div>
+              <div className="bg-white p-4 rounded-lg shadow">
+                <h4 className="text-lg font-semibold mb-2">Execution Order:</h4>
+                <TextBlock text={generatedContent.executionOrder} />
+              </div>
+            </div>
+          </div>
+        )}
+      
 
         {/* List of Interview Questions and Answers */}
         <div className="mt-8">
