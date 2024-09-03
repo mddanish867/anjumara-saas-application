@@ -64,7 +64,7 @@ function Recent() {
           className="text-start text-[#38bdf8] -ml-4 mt-4"
           onClick={handleClick}
         >
-          Browse all components <MoveRight className="ml-2" />
+          Browse all questions <MoveRight className="ml-2" />
         </Button>
       </div>
       <div className="mt-6">

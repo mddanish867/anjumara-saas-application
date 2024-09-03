@@ -11,12 +11,12 @@ function SignUp() {
   return (
     <div className="container bg-transparent lg:mt-2 mb-4">
       <h1
-        className="text-3xl font-semibold cursor-pointer"
+        className="text-3xl font-semibold cursor-pointer mt-2"
         onClick={handleClick}
       >
         Anjum<span className="text-[#38bdf8]">Ara</span>
       </h1>
-      <main className="w-full flex lg:mt-8 mb-10 sm:-mt-20">
+      <main className="w-full flex lg:mt-8 mb-10 sm:-mt-24">
         <div className="flex-1 flex items-center justify-center h-screen">
           <div className="w-full max-w-md space-y-8 px-4 bg-transparent  sm:px-0">
             <div className="pb-8 text-center">

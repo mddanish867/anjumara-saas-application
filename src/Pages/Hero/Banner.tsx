@@ -18,7 +18,7 @@ function Banner() {
             <h1 className="text-3xl font-extrabold sm:text-5xl">
               Let's build your
               <strong className="block font-extrabold">
-                components from scrach{" "}
+                components from scrach
               </strong>
             </h1>
 
@@ -34,14 +34,14 @@ function Banner() {
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
                 onClick={handleClick}
               >
-                Browse components <MoveRight className="ml-2" />
+                Browse all questions <MoveRight className="ml-2" />
               </Button>
 
               <Button
                 variant="outline"
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
               >
-                Access source code <MoveRight className="ml-2" />
+                Access all codes <MoveRight className="ml-2" />
               </Button>
             </div>
           </div>

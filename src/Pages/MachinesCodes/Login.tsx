@@ -9,12 +9,12 @@ function Login() {
   return (
     <div className="container bg-transparent lg:mt-2 mb-4">
       <h1
-        className="text-3xl font-semibold cursor-pointer"
+        className="text-3xl font-semibold cursor-pointer mt-2"
         onClick={handleClick}
       >
         Anjum<span className="text-start text-[#38bdf8]">Ara</span>
       </h1>
-      <main className="w-full h-screen flex flex-col items-center justify-center md:mt-6 mb-10 px-4 sm:-mt-20">
+      <main className="w-full h-screen flex flex-col items-center justify-center md:mt-6 mb-10 px-4 sm:-mt-44">
       <div className="max-w-sm w-full  space-y-4 ">
           <div className="pb-8 text-center">
             <h3 className=" text-xl font-semibold sm:text-3xl">

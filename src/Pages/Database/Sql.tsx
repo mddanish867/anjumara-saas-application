@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
 import Breadcrumb from "@/BreadCrum/Breadcrum";
 import sql from "@/Data/sql.json";
-import Pagination from '../../Pagination/Pagination';
-import html2pdf from 'html2pdf.js';
+import Pagination from "../../Pagination/Pagination";
+import html2pdf from "html2pdf.js";
 import { Search } from "lucide-react";
 // import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
@@ -32,8 +32,7 @@ function TextBlock({ text }: TextBlockProps) {
 }
 
 function Sql() {
-
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>("");
   // const [generatedContent, setGeneratedContent] = useState<any>(null);
   // const [loading, setLoading] = useState<boolean>(false);
 
@@ -51,25 +50,31 @@ function Sql() {
   // Get the current page data
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const paginatedData = Object.values(sqlData).flat().slice(startIndex, endIndex);
+  const paginatedData = Object.values(sqlData)
+    .flat()
+    .slice(startIndex, endIndex);
 
   // Function to handle PDF download
   const handleDownloadPDF = () => {
-    const hiddenElement = document.getElementById('all-content-to-download');
-    
+    const hiddenElement = document.getElementById("all-content-to-download");
+
     // Temporarily display the hidden content
-    if (hiddenElement) hiddenElement.style.display = 'block';
-    
-    const element = document.getElementById('all-content-to-download');
-    html2pdf().from(element).set({
-      margin: 1,
-      filename: 'sql-interview-preparation.pdf',
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
-    }).save().then(() => {
-      // Hide the content again after PDF generation
-      if (hiddenElement) hiddenElement.style.display = 'none';
-    });
+    if (hiddenElement) hiddenElement.style.display = "block";
+
+    const element = document.getElementById("all-content-to-download");
+    html2pdf()
+      .from(element)
+      .set({
+        margin: 1,
+        filename: "sql-interview-preparation.pdf",
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+      })
+      .save()
+      .then(() => {
+        // Hide the content again after PDF generation
+        if (hiddenElement) hiddenElement.style.display = "none";
+      });
   };
 
   // Function to render all questions
@@ -82,9 +87,7 @@ function Sql() {
         <div className="w-full space-y-4">
           {questions.map((item: SQLQuestionAnswer, index: number) => (
             <div key={index} className="bg-white p-6 rounded-lg">
-              <h4 className="text-lg font-semibold  mb-2">
-                {item.question}
-              </h4>
+              <h4 className="text-lg font-semibold  mb-2">{item.question}</h4>
               <TextBlock text={item.answer} />
             </div>
           ))}
@@ -96,7 +99,7 @@ function Sql() {
   // // Function to handle the search and OpenAI API call
   // const handleSearch = async () => {
   //   if (searchQuery.trim() === '') return;
-    
+
   //   setLoading(true);
   //   try {
   //     const content = await generateSQLContent(searchQuery);
@@ -109,7 +112,6 @@ function Sql() {
   //   }
   // };
 
-
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
       {/* Breadcrumb */}
@@ -118,20 +120,23 @@ function Sql() {
       {/* Content to be downloaded */}
       <div id="content-to-download">
         {/* Top Section: Title and Image */}
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="w-full">
+          {/* Header Image */}
           <img
             src="/sqlbaner.jpg"
             alt="SQL Banner"
-            className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 mb-4 md:mb-0 rounded-full shadow-md object-contain"
+            className="w-full h-64 object-cover rounded-md shadow-md"
           />
-          <div className="md:ml-4 text-center md:text-left">
+
+          {/* Content Below the Header Image */}
+          <div className="mt-4 md:mt-8 px-4 md:px-8 text-start md:text-left">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
               SQL Interview Preparation
             </h2>
             <p className="text-sm md:text-base lg:text-lg">
-              Enhance your SQL skills with detailed knowledge of database design,
-              query optimization, and advanced SQL concepts. Get ready to impress
-              in your SQL interviews!
+              Enhance your SQL skills with detailed knowledge of database
+              design, query optimization, and advanced SQL concepts. Get ready
+              to impress in your SQL interviews!
             </p>
           </div>
         </div>
@@ -145,8 +150,8 @@ function Sql() {
             <p className="text-sm md:text-base lg:text-lg mb-4">
               SQL interviews often focus on your ability to understand and write
               efficient queries. Be prepared to discuss database normalization,
-              indexing, query optimization, and SQL joins. Practice writing queries
-              that retrieve data from multiple tables and understand the
+              indexing, query optimization, and SQL joins. Practice writing
+              queries that retrieve data from multiple tables and understand the
               implications of different SQL operations on performance.
             </p>
 
@@ -174,7 +179,7 @@ function Sql() {
             </button>
           </div>
         </div>
-        
+
         {/* Render Generated Content */}
         {/* {loading && <p>Loading...</p>}
         {generatedContent && (
@@ -204,7 +209,6 @@ function Sql() {
             </div>
           </div>
         )} */}
-      
 
         {/* List of Interview Questions and Answers */}
         <div className="mt-8">
@@ -214,9 +218,7 @@ function Sql() {
           <div className="w-full space-y-4">
             {paginatedData.map((item, index) => (
               <div key={index} className="p-6 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">
-                  {item.question}
-                </h4>
+                <h4 className="text-lg font-semibold mb-2">{item.question}</h4>
                 <TextBlock text={item.answer} />
               </div>
             ))}
@@ -225,7 +227,7 @@ function Sql() {
       </div>
 
       {/* Hidden content for PDF download */}
-      <div id="all-content-to-download" style={{ display: 'none' }}>
+      <div id="all-content-to-download" style={{ display: "none" }}>
         {renderAllQuestions()}
       </div>
 
