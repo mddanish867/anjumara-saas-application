@@ -9,7 +9,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const  handleSignin = () => {
-    navigate("/signup");
+    navigate("/signin");
   }
   return (
     <>

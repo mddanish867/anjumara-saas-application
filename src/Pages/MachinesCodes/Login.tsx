@@ -1,24 +1,27 @@
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const handleClick = () =>{
+  const handleClick = () => {
     navigate("/");
-  }
-    return (
-      <main className="w-full h-screen flex flex-col items-center justify-center px-4 md:mt-15 mb-10 shadow cursor-pointer">
-        <div className="max-w-sm w-full  space-y-5 ">
-          <div className="text-center pb-8">
-            <h1 className="text-3xl font-semibold cursor-pointer" onClick={handleClick}>
-              Anjum<span className="text-[#38bdf8]">Ara</span>
-            </h1>
-            <div className="mt-5">
-              <h3 className=" text-xl font-semibold sm:text-3xl">
-                Log in to your account
-              </h3>
-            </div>
+  };
+  return (
+    <div className="container bg-transparent lg:mt-6 mb-4 mt-6">
+      <h1
+        className="text-3xl font-semibold cursor-pointer"
+        onClick={handleClick}
+      >
+        Anjum<span className="text-start text-[#38bdf8]">Ara</span>
+      </h1>
+      <main className="w-full h-screen flex flex-col items-center justify-center px-4 shadow cursor-pointer">
+        <div className="max-w-sm w-full  space-y-4 ">
+          <div className="pb-8 text-center">
+            <h3 className=" text-xl font-semibold sm:text-3xl">
+              Log in to your account
+            </h3>
           </div>
+
           <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
             <div>
               <label className="font-medium">Email</label>
@@ -106,17 +109,17 @@ function Login() {
           <p className="text-center">
             Don't have an account?{" "}
             <Link
-            to="/signup"
+              to="/signup"
               type="button"
-              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"              
+              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
             >
               Sign up
             </Link>
           </p>
         </div>
       </main>
-    );
-  }
-  
-  export default Login;
-  
+    </div>
+  );
+}
+
+export default Login;
