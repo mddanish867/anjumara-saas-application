@@ -68,9 +68,7 @@ function ForgotPassword() {
           Don't have an account?
           <Link
             to="/signup"
-            className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
-          >
-            Get access →
+            className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"> Get access →
           </Link>
         </p>
       </main>
