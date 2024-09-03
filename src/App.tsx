@@ -12,8 +12,8 @@ import Git from "./Pages/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
 import { ThemeProvider } from "./components/theme-provider";
 import SignUp from "./Pages/MachinesCodes/SignUp";
-import Login from "./Pages/MachinesCodes/Login";
 import ForgotPassword from "./Pages/MachinesCodes/Auth/ForgotPassword";
+import Signin from "./Pages/MachinesCodes/Signin";
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
           <Route path="/git" element={<Git />} />
           <Route path="/section/git" element={<Git />} />
         </Route>
-        <Route path="/signin" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
 
