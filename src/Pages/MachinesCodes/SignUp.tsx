@@ -15,7 +15,7 @@ function SignUp() {
       >
         Anjum<span className="text-[#38bdf8]">Ara</span>
       </h1>
-      <main className="container w-full flex md:mt-15 mb-10 ">
+      <main className="w-full flex md:mt-10 mb-10 ">
         <div className="flex-1 flex items-center justify-center h-screen">
           <div className="w-full max-w-md space-y-8 px-4 bg-transparent  sm:px-0">
             <div className="pb-8 text-center">

@@ -14,7 +14,7 @@ function Login() {
       >
         Anjum<span className="text-start text-[#38bdf8]">Ara</span>
       </h1>
-      <main className="w-full h-screen flex flex-col items-center justify-center px-4 shadow cursor-pointer">
+      <main className="w-full h-screen flex flex-col items-center justify-center md:mt-15 mb-10 px-4 shadow cursor-pointer">
         <div className="max-w-sm w-full  space-y-4 ">
           <div className="pb-8 text-center">
             <h3 className=" text-xl font-semibold sm:text-3xl">
