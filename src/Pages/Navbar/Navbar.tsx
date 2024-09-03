@@ -4,7 +4,13 @@ import NavbarLink from "./NavbarLink";
 import { MoveRight, Search } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import { ModeToggle } from "@/components/ModeToggle";
+import { useNavigate } from 'react-router-dom';
 function Navbar() {
+  const navigate = useNavigate();
+
+  const  handleSignin = () => {
+    navigate("/signup");
+  }
   return (
     <>
       <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-4 bg-transparent/0 backdrop-blur-xl">
@@ -40,6 +46,7 @@ function Navbar() {
             <Button
               variant="secondary"
               className="font-semibold bg-transparent hover:bg-transparent text-md"
+              onClick={handleSignin}
             >
               Sign in
             </Button>

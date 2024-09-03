@@ -11,6 +11,8 @@ import Azure from "./Pages/Cloud/Azure";
 import Git from "./Pages/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
 import { ThemeProvider } from "./components/theme-provider";
+import SignUp from "./Pages/MachinesCodes/SignUp";
+import Login from "./Pages/MachinesCodes/Login";
 
 function App() {
   return (
@@ -35,6 +37,9 @@ function App() {
           <Route path="/git" element={<Git />} />
           <Route path="/section/git" element={<Git />} />
         </Route>
+        <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+
       </Routes>
       </ThemeProvider>
     </Router>

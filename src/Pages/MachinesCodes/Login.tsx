@@ -1,20 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate();
-
   const handleClick = () =>{
-navigate("/authorization")
+    navigate("/");
   }
     return (
-      <main className="w-full h-screen flex flex-col items-center justify-center px-4 mt-14 shadow cursor-pointer" onClick={handleClick}>
-        <div className="max-w-sm w-full text-gray-600 space-y-5 ">
+      <main className="w-full h-screen flex flex-col items-center justify-center px-4 mt-5 shadow cursor-pointer">
+        <div className="max-w-sm w-full  space-y-5 ">
           <div className="text-center pb-8">
-            <h1 className="text-3xl font-semibold">
+            <h1 className="text-3xl font-semibold cursor-pointer" onClick={handleClick}>
               Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
             <div className="mt-5">
-              <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
+              <h3 className=" text-2xl font-bold sm:text-3xl">
                 Log in to your account
               </h3>
             </div>
@@ -51,7 +51,7 @@ navigate("/authorization")
               </div>
               <button
                 type="button"
-                className="text-[#38bdf8] hover:text-[#38bdf8]"
+                className="text-[#38bdf8] hover:text-[#38bdf8] mt-10"
                 onClick={() => {
                   // Handle forgot password action here
                 }}
@@ -59,12 +59,13 @@ navigate("/authorization")
                 Forgot password?
               </button>
             </div>
-            <button
+            <Link
+            to="/signup"
               type="submit"
               className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-blue-700 rounded-lg duration-150"
             >
               Sign in
-            </button>
+            </Link>
           </form>
           <button
             type="button"
@@ -108,15 +109,13 @@ navigate("/authorization")
           </button>
           <p className="text-center">
             Don't have an account?{" "}
-            <button
+            <Link
+            to="/signup"
               type="button"
-              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
-              onClick={() => {
-                // Handle sign-up action here
-              }}
+              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"              
             >
               Sign up
-            </button>
+            </Link>
           </p>
         </div>
       </main>

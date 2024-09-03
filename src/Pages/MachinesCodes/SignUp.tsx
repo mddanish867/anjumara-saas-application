@@ -1,23 +1,32 @@
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 function SignUp() {
+  const navigate = useNavigate();
+
+  const handleClick = () =>{
+    navigate("/");
+  }
   return (
-    <main className="w-full flex mt-24">
+    <main className="w-full flex mt-5">
       <div className="flex-1 flex items-center justify-center h-screen">
-        <div className="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0">
+        <div className="w-full max-w-md space-y-8 px-4 bg-transparent  sm:px-0">
           <div className="">
-            <h1 className="text-3xl font-semibold lg:hidden">
+            <h1 className="text-3xl font-semibold cursor-pointer text-center" onClick={handleClick}>
               Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
             <div className="mt-5 space-y-2">
-              <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
+              <h3 className="text-2xl font-bold sm:text-3xl">
                 Sign up
               </h3>
               <p className="">
                 Already have an account?{" "}
-                <button
+                <Link
+                to="/signin"
                   className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
                 >
                   Log in
-                </button>
+                </Link>
               </p>
             </div>
           </div>
@@ -119,8 +128,8 @@ function SignUp() {
             </button>
           </div>
           <div className="relative">
-            <span className="block w-full h-px bg-gray-300"></span>
-            <p className="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">
+            <span className="block w-full h-px bg-transparent"></span>
+            <p className="inline-block w-fit text-sm bg-transparent px-2 absolute -top-2 inset-x-0 mx-auto">
               Or continue with
             </p>
           </div>
@@ -130,7 +139,7 @@ function SignUp() {
               <input
                 type="text"
                 required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
+                className="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
               />
             </div>
             <div>
