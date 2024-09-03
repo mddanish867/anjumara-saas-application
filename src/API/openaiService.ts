@@ -1,6 +1,6 @@
 
-const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-const apiUrl = import.meta.env.VITE_OPEN_API_URL;
+const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
+const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
 
 
 
