@@ -1,6 +1,6 @@
 
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-const apiUrl = 'https://api.openai.com/v1/chat/completions';
+const apiUrl = import.meta.env.OPEN_API_URL;
 
 
 
