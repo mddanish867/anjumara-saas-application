@@ -1,6 +1,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
 const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
 =======
@@ -19,6 +20,10 @@ const apiUrl = import.meta.env.VITE_OPEN_API_URL;
 const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
 const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
 >>>>>>> 3eca610 (modified the openaiService)
+=======
+const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
+const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
+>>>>>>> 8c42220 (remodifid the openaiiservice and env file)
 
 
 
