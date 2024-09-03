@@ -17,7 +17,7 @@ export default function MobileMenu() {
   const navigate = useNavigate();
 
   const  handleSignin = () => {
-    navigate("/signup");
+    navigate("/signin");
   }
   return (
     <Sheet>
