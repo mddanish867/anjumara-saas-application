@@ -4,7 +4,7 @@ import sql from "@/Data/sql.json";
 import Pagination from '../../Pagination/Pagination';
 import html2pdf from 'html2pdf.js';
 import { Search } from "lucide-react";
-import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
+// import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
 // Define the types for SQL data
 interface SQLQuestionAnswer {
@@ -34,8 +34,8 @@ function TextBlock({ text }: TextBlockProps) {
 function Sql() {
 
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [generatedContent, setGeneratedContent] = useState<any>(null);
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [generatedContent, setGeneratedContent] = useState<any>(null);
+  // const [loading, setLoading] = useState<boolean>(false);
 
   // Cast the imported json data to the SQLData type
   const sqlData = sql as SQLData;
@@ -93,21 +93,21 @@ function Sql() {
     ));
   };
 
-  // Function to handle the search and OpenAI API call
-  const handleSearch = async () => {
-    if (searchQuery.trim() === '') return;
+  // // Function to handle the search and OpenAI API call
+  // const handleSearch = async () => {
+  //   if (searchQuery.trim() === '') return;
     
-    setLoading(true);
-    try {
-      const content = await generateSQLContent(searchQuery);
-      setGeneratedContent(content);
-    } catch (error) {
-      console.error('Error generating SQL content:', error);
-      setGeneratedContent(null);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //   setLoading(true);
+  //   try {
+  //     const content = await generateSQLContent(searchQuery);
+  //     setGeneratedContent(content);
+  //   } catch (error) {
+  //     console.error('Error generating SQL content:', error);
+  //     setGeneratedContent(null);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
 
   return (
@@ -161,7 +161,7 @@ function Sql() {
               />
               <Search
                 className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5 cursor-pointer"
-                onClick={handleSearch}
+                // onClick={handleSearch}
               />
             </div>
           </div>
@@ -176,7 +176,7 @@ function Sql() {
         </div>
         
         {/* Render Generated Content */}
-        {loading && <p>Loading...</p>}
+        {/* {loading && <p>Loading...</p>}
         {generatedContent && (
           <div className="mt-8">
             <h3 className="text-xl md:text-2xl font-semibold mb-4">Generated SQL Content</h3>
@@ -203,7 +203,7 @@ function Sql() {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       
 
         {/* List of Interview Questions and Answers */}

@@ -11,8 +11,14 @@ import {
 import { AlignRight } from "lucide-react";
 import NavbarLink from "./NavbarLink";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 export default function MobileMenu() {
+  const navigate = useNavigate();
+
+  const  handleSignin = () => {
+    navigate("/signup");
+  }
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -42,6 +48,7 @@ export default function MobileMenu() {
           <Button
             variant="secondary"
             className="font-semibold w-full bg-transparent hover:bg-transparent text-md"
+            onClick={handleSignin}
           >
             Sign in
           </Button>

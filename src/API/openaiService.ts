@@ -1,91 +1,67 @@
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
-const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
-=======
-const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-<<<<<<< HEAD
-<<<<<<< HEAD
-const apiUrl = 'https://api.openai.com/v1/chat/completions';
->>>>>>> aa01e13 (addeed chat gpt to yhe sql component)
-=======
-const apiUrl = import.meta.env.OPEN_API_URL;
->>>>>>> 460861a (added url in env)
-=======
-const apiUrl = import.meta.env.VITE_OPEN_API_URL;
->>>>>>> 915e046 (modified the env file)
-=======
-const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
-const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
->>>>>>> 3eca610 (modified the openaiService)
-=======
-const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
-const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
->>>>>>> 8c42220 (remodifid the openaiiservice and env file)
+
+// const apiKey: string = process.env.VITE_OPENAI_API_KEY ?? '';
+// const apiUrl: string = process.env.VITE_OPEN_API_URL ?? '';
+
+// export const generateSQLContent = async (description: string) => {
+//   try {
+//     const headers = {
+//       'Content-Type': 'application/json',
+//       'Authorization': `Bearer ${apiKey}`
+//     }
+
+//     const data = {
+//       model: 'gpt-4o-mini', // Correct model name
+//       messages: [
+//         {
+//           role: 'system',
+//           content: 'You are an expert SQL developer. You generate, optimize, and explain SQL queries.',
+//         },
+//         {
+//           role: 'user',
+//           content: `Write a SQL query for the following task: ${description}. 
+//                     Also, provide an optimized version of the query, a brute force version, 
+//                     an explanation of the query, and the order of execution of the query.`,
+//         },
+//       ]
+//     }
 
 
+//     const response = await fetch(apiUrl, {
+//       method: 'POST',
+//       headers,
+//       body: JSON.stringify(data)
+//     });
 
-export const generateSQLContent = async (description: string) => {
-  try {
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
-    }
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`);
+//     }
 
-    const data = {
-      model: 'gpt-4o-mini', // Correct model name
-      messages: [
-        {
-          role: 'system',
-          content: 'You are an expert SQL developer. You generate, optimize, and explain SQL queries.',
-        },
-        {
-          role: 'user',
-          content: `Write a SQL query for the following task: ${description}. 
-                    Also, provide an optimized version of the query, a brute force version, 
-                    an explanation of the query, and the order of execution of the query.`,
-        },
-      ]
-    }
+//     const result = await response.json();
 
+//     // Ensure result.choices exists and is not empty
+//     if (result.choices && result.choices.length > 0) {
+//       const summaryResult = result.choices[0].message.content;
+//       return parseSQLResponse(summaryResult);
+//     } else {
+//       throw new Error('Invalid response format: No choices found.');
+//     }
 
-    const response = await fetch(apiUrl, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(data)
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const result = await response.json();
-
-    // Ensure result.choices exists and is not empty
-    if (result.choices && result.choices.length > 0) {
-      const summaryResult = result.choices[0].message.content;
-      return parseSQLResponse(summaryResult);
-    } else {
-      throw new Error('Invalid response format: No choices found.');
-    }
-
-  } catch (error) {
-    console.error('Error generating SQL content:', error);
-    throw error;
-  }
-};
+//   } catch (error) {
+//     console.error('Error generating SQL content:', error);
+//     throw error;
+//   }
+// };
 
 
-const parseSQLResponse = (response: string) => {
-  const sections = response.split(/(?:\r?\n){2,}/); // Split by two or more newlines
-  return {
-    sqlQuery: sections[0] || '',
-    optimizedQuery: sections[1] || '',
-    bruteForceQuery: sections[2] || '',
-    explanation: sections[3] || '',
-    executionOrder: sections[4] || '',
-  };
-};
+// const parseSQLResponse = (response: string) => {
+//   const sections = response.split(/(?:\r?\n){2,}/); // Split by two or more newlines
+//   return {
+//     sqlQuery: sections[0] || '',
+//     optimizedQuery: sections[1] || '',
+//     bruteForceQuery: sections[2] || '',
+//     explanation: sections[3] || '',
+//     executionOrder: sections[4] || '',
+//   };
+// };
 
