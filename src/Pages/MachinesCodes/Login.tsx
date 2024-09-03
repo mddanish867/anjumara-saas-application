@@ -7,14 +7,14 @@ function Login() {
     navigate("/");
   }
     return (
-      <main className="w-full h-screen flex flex-col items-center justify-center px-4 mt-5 shadow cursor-pointer">
+      <main className="w-full h-screen flex flex-col items-center justify-center px-4 md:mt-15 mb-10 shadow cursor-pointer">
         <div className="max-w-sm w-full  space-y-5 ">
           <div className="text-center pb-8">
             <h1 className="text-3xl font-semibold cursor-pointer" onClick={handleClick}>
               Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
             <div className="mt-5">
-              <h3 className=" text-2xl font-bold sm:text-3xl">
+              <h3 className=" text-xl font-semibold sm:text-3xl">
                 Log in to your account
               </h3>
             </div>
@@ -59,13 +59,9 @@ function Login() {
                 Forgot password?
               </button>
             </div>
-            <Link
-            to="/signup"
-              type="submit"
-              className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-blue-700 rounded-lg duration-150"
-            >
+            <button className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-[#38bdf8] rounded-lg duration-150">
               Sign in
-            </Link>
+            </button>
           </form>
           <button
             type="button"

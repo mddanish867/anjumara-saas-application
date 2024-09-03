@@ -8,30 +8,21 @@ function SignUp() {
     navigate("/");
   }
   return (
-    <main className="w-full flex mt-5">
+    <main className="w-full flex md:mt-15 mb-10 ">
       <div className="flex-1 flex items-center justify-center h-screen">
         <div className="w-full max-w-md space-y-8 px-4 bg-transparent  sm:px-0">
           <div className="">
             <h1 className="text-3xl font-semibold cursor-pointer text-center" onClick={handleClick}>
               Anjum<span className="text-[#38bdf8]">Ara</span>
             </h1>
-            <div className="mt-5 space-y-2">
-              <h3 className="text-2xl font-bold sm:text-3xl">
-                Sign up
+            <div className="mt-5">
+              <h3 className=" text-xl font-semibold sm:text-3xl">
+                Create your account
               </h3>
-              <p className="">
-                Already have an account?{" "}
-                <Link
-                to="/signin"
-                  className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
-                >
-                  Log in
-                </Link>
-              </p>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-x-3">
-            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 48 48"
@@ -63,7 +54,7 @@ function SignUp() {
                 </defs>
               </svg>
             </button>
-            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 48 48"
@@ -76,7 +67,7 @@ function SignUp() {
                 />
               </svg>
             </button>
-            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-gray-50 duration-150 active:bg-gray-100">
+            <button className="flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <svg
                 className="w-5 h-5"
                 viewBox="0 0 48 48"
@@ -162,6 +153,17 @@ function SignUp() {
               Create account
             </button>
           </form>
+          <div className="mt-5 space-y-2">              
+              <p className="">
+                Already have an account?{" "}
+                <Link
+                to="/signin"
+                  className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
+                >
+                  Log in
+                </Link>
+              </p>
+            </div>
         </div>
       </div>
     </main>
