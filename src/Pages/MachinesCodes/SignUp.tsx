@@ -1,13 +1,71 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+
+// Define the interface for form data
+interface FormData {
+  name: string;
+  email: string;
+  password: string;
+}
+
+// Define the interface for errors
+interface Errors {
+  name?: string;
+  email?: string;
+  password?: string;
+}
 
 export default function SignUp() {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState<Errors>({});
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    let validationErrors: Errors = {};
+
+    // Validate name
+    if (!formData.name) {
+      validationErrors.name = "Name is required";
+    }
+
+    // Validate email
+    if (!formData.email) {
+      validationErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      validationErrors.email = "Email address is invalid";
+    }
+
+    // Validate password
+    if (!formData.password) {
+      validationErrors.password = "Password is required";
+    } else if (formData.password.length < 6) {
+      validationErrors.password = "Password must be at least 6 characters long";
+    }
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      // Proceed with form submission or further processing
+      console.log("Form submitted", formData);
+      // You can redirect or perform further actions here
+    }
   };
 
   return (
@@ -26,34 +84,50 @@ export default function SignUp() {
             </h3>
           </div>
 
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="font-medium">Name</label>
               <input
                 type="text"
-                required
-                className="w-full mt-2 px-3 py-2 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
-              />
+                name="name"
+                value={formData.name}
+                onChange={handleChange}                
+                className={`w-full mt-2 px-3 py-2 bg-transparent outline-none border ${
+                  errors.name ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
+              />              
             </div>
             <div>
               <label className="font-medium">Email</label>
               <input
                 type="email"
-                required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
-              />
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.email ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
+              />              
             </div>
             <div>
               <label className="font-medium">Password</label>
               <input
                 type="password"
-                required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
-              />
+                name="password"
+                value={formData.password}
+                onChange={handleChange}                
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.password ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
+              />              
             </div>
-            <button className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-[#38bdf8] rounded-lg duration-150">
+            <Button
+              type="submit"
+              variant="default"
+              className="w-full px-4 py-2 rounded-lg duration-150"
+            >
               Create account
-            </button>
+            </Button>
           </form>
 
           <p className="text-center mt-6">

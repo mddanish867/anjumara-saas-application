@@ -1,8 +1,32 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Link, useNavigate } from "react-router-dom";
+
+// Define the interface for form data
+interface FormData {
+  email: string;
+}
 
 function ForgotPassword() {
+  // Initialize the state with the FormData type
+  const [formData, setFormData] = useState<FormData>({ email: "" });
+  const [errors, setErrors] = useState<{ email?: string }>({});
   const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (formData.email) {
+      // Handle the password reset logic here
+      console.log("Password reset link sent to", formData.email);
+    } else {
+      setErrors({ email: "Email is required" });
+    }
+  };
 
   return (
     <div className="container bg-transparent px-4 py-6">
@@ -21,18 +45,23 @@ function ForgotPassword() {
             </p>
           </div>
 
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="font-medium">Email address</label>
               <input
                 type="email"
-                required
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}                
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${errors.email ? 'border-red-500' : ''} focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
+              {/* {errors.email && (
+                <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+              )} */}
             </div>
-            <button className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-[#38bdf8] rounded-lg duration-150">
+            <Button variant="default" className="w-full px-4 py-2 rounded-lg duration-150">
               Reset your password
-            </button>
+            </Button>
           </form>
         </div>
         <p className="text-center mt-24">
