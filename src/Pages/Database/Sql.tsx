@@ -129,8 +129,8 @@ function Sql() {
           />
 
           {/* Content Below the Header Image */}
-          <div className="mt-4 md:mt-8 px-4 md:px-8 text-start md:text-left">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
+       
+            <h2 className="mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
               SQL Interview Preparation
             </h2>
             <p className="text-sm md:text-base lg:text-lg">
@@ -138,7 +138,7 @@ function Sql() {
               design, query optimization, and advanced SQL concepts. Get ready
               to impress in your SQL interviews!
             </p>
-          </div>
+          
         </div>
 
         {/* SQL Interview Tips, Search Input, and Download Button */}
