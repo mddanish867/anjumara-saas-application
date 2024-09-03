@@ -6,18 +6,19 @@ function Login() {
   const handleClick = () => {
     navigate("/");
   };
+
   return (
-    <div className="container bg-transparent lg:mt-2 mb-4">
+    <div className="container bg-transparent lg:mt-2 mb-4 px-4">
       <h1
-        className="text-3xl font-semibold cursor-pointer mt-2"
+        className="text-3xl font-semibold cursor-pointer mt-2 mb-4"
         onClick={handleClick}
       >
         Anjum<span className="text-start text-[#38bdf8]">Ara</span>
       </h1>
-      <main className="w-full h-screen flex flex-col items-center justify-center md:mt-6 mb-10 px-4 sm:-mt-44">
-      <div className="max-w-sm w-full  space-y-4 ">
-          <div className="pb-8 text-center">
-            <h3 className=" text-xl font-semibold sm:text-3xl">
+      <main className="w-full h-screen flex flex-col items-center justify-center md:mt-4 mb-6 sm:mb-8 px-4">
+        <div className="max-w-sm w-full space-y-4">
+          <div className="pb-4 text-center">
+            <h3 className="text-xl font-semibold sm:text-3xl">
               Log in to your account
             </h3>
           </div>
@@ -52,15 +53,16 @@ function Login() {
                 ></label>
                 <span>Remember me</span>
               </div>
-              <button
+              <Link
                 type="button"
+                to="/forgotpassword"
                 className="text-[#38bdf8] hover:text-[#38bdf8] mt-10"
                 onClick={() => {
                   // Handle forgot password action here
                 }}
               >
                 Forgot password?
-              </button>
+              </Link>
             </div>
             <button className="w-full px-4 py-2 text-white font-medium bg-[#38bdf8] hover:bg-[#38bdf8] active:bg-[#38bdf8] rounded-lg duration-150">
               Sign in
@@ -106,7 +108,7 @@ function Login() {
             </svg>
             Continue with Google
           </button>
-          <p className="text-center">
+          <p className="text-center mt-4">
             Don't have an account?{" "}
             <Link
               to="/signup"

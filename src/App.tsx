@@ -13,6 +13,7 @@ import ScrollToTop from "./BreadCrum/ScrollTop";
 import { ThemeProvider } from "./components/theme-provider";
 import SignUp from "./Pages/MachinesCodes/SignUp";
 import Login from "./Pages/MachinesCodes/Login";
+import ForgotPassword from "./Pages/MachinesCodes/Auth/ForgotPassword";
 
 function App() {
   return (
@@ -39,7 +40,9 @@ function App() {
         </Route>
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
 
+        
       </Routes>
       </ThemeProvider>
     </Router>
