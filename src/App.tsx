@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
-import Authorization from "./Pages/MachinesCodes/Auth/Authorization";
+import Authorization from "./Pages/Auth/Authorization";
 import Home from "./Pages/Home";
 import Section from "./Pages/Section/Section";
 import Frontend from "./Pages/Frontend/Frontend";
@@ -11,11 +11,12 @@ import Azure from "./Pages/Cloud/Azure";
 import Git from "./Pages/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
 import { ThemeProvider } from "./components/theme-provider";
-import SignUp from "./Pages/MachinesCodes/SignUp";
-import ForgotPassword from "./Pages/MachinesCodes/Auth/ForgotPassword";
-import Signin from "./Pages/MachinesCodes/Signin";
+import SignUp from "./Pages/Auth/SignUp";
+import ForgotPassword from "./Pages/Auth/ForgotPassword";
+import Signin from "./Pages/Auth/Signin";
 import { Provider } from "react-redux";
 import { store } from "./Store/store";
+import VerifyEmail from "./Pages/Auth/verifyemail";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/verifyemail" element={<VerifyEmail/>} />
           </Routes>
         </ThemeProvider>
       </Router>

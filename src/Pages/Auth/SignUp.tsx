@@ -4,8 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRegisterMutation } from "@/API/AuthAPI/authApi"; // Adjust the path based on your setup
-import Success from "../Toast/Success"
-import Failed from "../Toast/Failed"
+import toast from "react-hot-toast";
 
 interface FormData {
   name: string;
@@ -27,8 +26,6 @@ export default function SignUp() {
     password: "",
   });
   const [errors, setErrors] = useState<Errors>({});
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -68,15 +65,12 @@ export default function SignUp() {
     } else {
       try {
         await register(formData).unwrap();
-        setSuccessMessage("Team member has been added successfully.");
-        setErrorMessage(null);
+        toast.success("User has been added successfully. Please check yoour email to verify your account.");
         navigate("/signin");
-        // Redirect or perform further actions here
-        navigate("/signin");
-      } catch (error) {
-        console.error("Registration failed", error);
-        // Handle errors, e.g., display error message to the user
-        // Optionally, set a global or form-specific error state if needed
+        
+      } catch (registerError) {
+        console.log(registerError)
+        toast.error("Registration failed.");
       }
     }
   };
@@ -95,9 +89,7 @@ export default function SignUp() {
             <h3 className="text-xl font-semibold sm:text-3xl">
               Create your account
             </h3>
-          </div>
-          {successMessage && <Success message={successMessage} />}
-          {errorMessage && <Failed message={errorMessage} />}
+          </div>         
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="font-medium">Name</label>
