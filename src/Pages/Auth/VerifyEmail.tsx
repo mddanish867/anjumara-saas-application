@@ -21,7 +21,7 @@ export default function VerifyEmail () {
 
     const verifyToken = async () => {
       try {
-        await verifyUser({ token }).unwrap();
+        await verifyUser({ token }).unwrap();        
         setIsVerified(true);
         toast.success('Account verified successfully!');
         setTimeout(() => {
