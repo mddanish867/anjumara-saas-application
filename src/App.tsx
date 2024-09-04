@@ -14,38 +14,39 @@ import { ThemeProvider } from "./components/theme-provider";
 import SignUp from "./Pages/MachinesCodes/SignUp";
 import ForgotPassword from "./Pages/MachinesCodes/Auth/ForgotPassword";
 import Signin from "./Pages/MachinesCodes/Signin";
+import { Provider } from "react-redux";
+import { store } from "./Store/store";
 
 function App() {
   return (
-    <Router>
-       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ScrollToTop/>
-      <Routes>
-     
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/authorization" element={<Authorization />} />
-          <Route path="/section" element={<Section />} />
-          <Route path="/frontend" element={<Frontend />} />
-          <Route path="/section/frontend" element={<Frontend />} />
-          <Route path="/react" element={<ReactPage />} />
-          <Route path="/backend" element={<Backend />} />
-          <Route path="/section/backend" element={<Backend />} />
-          <Route path="/section/sql" element={<Sql />} />
-          <Route path="/sql" element={<Sql />} />
-          <Route path="/azure" element={<Azure />} />
-          <Route path="/section/azure" element={<Azure />} />
-          <Route path="/git" element={<Git />} />
-          <Route path="/section/git" element={<Git />} />
-        </Route>
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-
-        
-      </Routes>
-      </ThemeProvider>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+          <ScrollToTop />
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/authorization" element={<Authorization />} />
+              <Route path="/section" element={<Section />} />
+              <Route path="/frontend" element={<Frontend />} />
+              <Route path="/section/frontend" element={<Frontend />} />
+              <Route path="/react" element={<ReactPage />} />
+              <Route path="/backend" element={<Backend />} />
+              <Route path="/section/backend" element={<Backend />} />
+              <Route path="/section/sql" element={<Sql />} />
+              <Route path="/sql" element={<Sql />} />
+              <Route path="/azure" element={<Azure />} />
+              <Route path="/section/azure" element={<Azure />} />
+              <Route path="/git" element={<Git />} />
+              <Route path="/section/git" element={<Git />} />
+            </Route>
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
+          </Routes>
+        </ThemeProvider>
+      </Router>
+    </Provider>
   );
 }
 

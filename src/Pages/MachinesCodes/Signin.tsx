@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 // Define the type for your form data
 interface FormData {
@@ -112,14 +114,21 @@ export default function Signin() {
               Sign in
             </Button>
           </form>
-          <button
-            type="button"
-            className="w-full flex items-center justify-center gap-x-3 py-2.5 border rounded-lg text-sm font-medium hover:bg-gray-50 duration-150 active:bg-gray-100"
-            aria-label="Continue with Google"
-          >
-            {/* Google SVG omitted for brevity */}
-            Continue with Google
-          </button>
+          <div className="relative mt-10 mb-10">
+            <span className="block w-full h-px bg-transparent"></span>
+            <p className="inline-block w-fit text-sm bg-transparent px-2 absolute -top-2 inset-x-0 mx-auto">
+              Or continue with
+            </p>
+          </div>
+          <div className="grid gap-y-4 sm:grid-cols-1 lg:grid-cols-2 px-1">
+            <button className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
+              <FcGoogle className="text-2xl" />
+            </button>
+
+            <button className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
+              <FaGithub className="text-2xl" />
+            </button>
+          </div>
           <p className="text-center mt-4">
             Don't have an account?{" "}
             <Link to="/signup" className="font-medium text-[#38bdf8] hover:text-[#38bdf8]">

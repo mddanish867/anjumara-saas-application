@@ -3,15 +3,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { useRegisterMutation } from "@/API/AuthAPI/authApi"; // Adjust the path based on your setup
+import Success from "@/Toast/success";
+import Failed from "@/Toast/Failed";
 
-// Define the interface for form data
 interface FormData {
   name: string;
   email: string;
   password: string;
 }
 
-// Define the interface for errors
 interface Errors {
   name?: string;
   email?: string;
@@ -19,12 +20,15 @@ interface Errors {
 }
 
 export default function SignUp() {
+  const [register, { isLoading, }] = useRegisterMutation();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     password: "",
   });
   const [errors, setErrors] = useState<Errors>({});
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -36,7 +40,7 @@ export default function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     let validationErrors: Errors = {};
 
@@ -62,9 +66,18 @@ export default function SignUp() {
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      // Proceed with form submission or further processing
-      console.log("Form submitted", formData);
-      // You can redirect or perform further actions here
+      try {
+        await register(formData).unwrap();
+        setSuccessMessage("Team member has been added successfully.");
+        setErrorMessage(null);
+        navigate("/signin");
+        // Redirect or perform further actions here
+        navigate("/signin");
+      } catch (error) {
+        console.error("Registration failed", error);
+        // Handle errors, e.g., display error message to the user
+        // Optionally, set a global or form-specific error state if needed
+      }
     }
   };
 
@@ -83,7 +96,8 @@ export default function SignUp() {
               Create your account
             </h3>
           </div>
-
+          {successMessage && <Success message={successMessage} />}
+          {errorMessage && <Failed message={errorMessage} />}
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="font-medium">Name</label>
@@ -91,11 +105,14 @@ export default function SignUp() {
                 type="text"
                 name="name"
                 value={formData.name}
-                onChange={handleChange}                
+                onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 bg-transparent outline-none border ${
                   errors.name ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
-              />              
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
             </div>
             <div>
               <label className="font-medium">Email</label>
@@ -107,7 +124,10 @@ export default function SignUp() {
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
                   errors.email ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
-              />              
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
             <div>
               <label className="font-medium">Password</label>
@@ -115,18 +135,22 @@ export default function SignUp() {
                 type="password"
                 name="password"
                 value={formData.password}
-                onChange={handleChange}                
+                onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
                   errors.password ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
-              />              
+              />
+              {errors.password && (
+                <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+              )}
             </div>
             <Button
               type="submit"
               variant="default"
               className="w-full px-4 py-2 rounded-lg duration-150"
+              disabled={isLoading}
             >
-              Create account
+              {isLoading ? "Creating account..." : "Create account"}
             </Button>
           </form>
 
