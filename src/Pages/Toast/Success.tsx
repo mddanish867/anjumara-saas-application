@@ -1,7 +1,7 @@
 interface SuccessProps {
     message: string;
   }
-function success({ message }: SuccessProps) {
+function Success({ message }: SuccessProps) {
   return (
     <div className="mt-12 mx-4 px-4 rounded-md border-l-4 border-green-500 bg-green-50 md:max-w-2xl md:mx-auto md:px-8">
             <div className="flex justify-between py-3">
@@ -30,4 +30,4 @@ function success({ message }: SuccessProps) {
   )
 }
 
-export default success
+export default Success
