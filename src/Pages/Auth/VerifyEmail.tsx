@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useVerifyUserMutation } from '@/API/AuthAPI/authApi';
 
-const VerifyEmail = () => {
+export default function VerifyEmail () {
   const navigate = useNavigate();
   const location = useLocation();
   const [verifyUser] = useVerifyUserMutation();
@@ -56,4 +56,4 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+ 

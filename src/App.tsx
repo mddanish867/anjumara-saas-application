@@ -16,7 +16,7 @@ import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import Signin from "./Pages/Auth/Signin";
 import { Provider } from "react-redux";
 import { store } from "./Store/store";
-import VerifyEmail from "./Pages/Auth/verifyemail";
+import VerifyEmail from "./Pages/Auth/VerifyEmail";
 
 function App() {
   return (
