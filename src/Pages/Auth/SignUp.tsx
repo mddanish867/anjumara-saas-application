@@ -66,7 +66,9 @@ export default function SignUp() {
       try {
         await register(formData).unwrap();
         toast.success("User has been added successfully. Please check yoour email to verify your account.");
-        navigate("/signin");
+        setTimeout(() => {
+          navigate("/signin");
+        }, 3000);        
         
       } catch (registerError) {
         console.log(registerError)

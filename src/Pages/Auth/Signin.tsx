@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mutation
+import toast from "react-hot-toast";
 
 // Define the type for your form data
 interface FormData {
@@ -18,6 +20,7 @@ export default function Signin() {
   });
 
   const navigate = useNavigate();
+  const [login, { isLoading,}] = useLoginMutation(); // Use the login mutation
 
   // Handle form change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,11 +47,26 @@ export default function Signin() {
   };
 
   // handle form submit
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formValidate()) {
-      // Handle registration logic here
-      console.log("Form data submitted", formData);
+      try {
+        const user = await login(formData).unwrap(); // Call the login mutation   
+        // Extract the token from the response
+        const { token } = user;
+        // Store the token in sessionStorage
+        sessionStorage.setItem('token', token);
+        // Optionally, store the token in localStorage if you want to persist it across sessions
+        localStorage.setItem('token', token);     
+        toast.success("Logged in successfully", user);
+        setTimeout(() => {
+          navigate("/"); // Redirect to a dashboard or home page after login
+        }, 3000);
+        
+      } catch (loginError) {
+        console.log(loginError)
+        toast.error("Failed to login.");
+      }
     }
   };
 
@@ -110,8 +128,8 @@ export default function Signin() {
                 Forgot password?
               </Link>
             </div>
-            <Button variant="default" className="w-full px-4 py-2 rounded-lg duration-150">
-              Sign in
+            <Button variant="default" className="w-full px-4 py-2 rounded-lg duration-150" disabled={isLoading}>
+              {isLoading ? 'Signing in...' : 'Sign in'}
             </Button>
           </form>
           <div className="relative mt-10 mb-10">
