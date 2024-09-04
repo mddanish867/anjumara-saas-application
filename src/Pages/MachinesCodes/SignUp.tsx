@@ -4,8 +4,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRegisterMutation } from "@/API/AuthAPI/authApi"; // Adjust the path based on your setup
-import Success from "@/Toast/success";
-import Failed from "@/Toast/Failed";
+import Success from "../Toast/Success"
+import Failed from "../Toast/Failed"
 
 interface FormData {
   name: string;
