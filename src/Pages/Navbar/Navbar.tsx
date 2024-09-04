@@ -4,13 +4,30 @@ import NavbarLink from "./NavbarLink";
 import { MoveRight, Search } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import { ModeToggle } from "@/components/ModeToggle";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import UserProfile from "../Auth/UserProfile";
+import { jwtDecode } from "jwt-decode";
+
+interface DecodedToken {
+  email: string;
+  exp: number; // Expiration timestamp
+  iat: number; // Issued at timestamp
+  name: string;
+  userId: string;
+}
 function Navbar() {
   const navigate = useNavigate();
-
-  const  handleSignin = () => {
+  const isLopggedIn = localStorage.getItem("token");
+  // Check if token exists in session or local storage
+  const token = localStorage.getItem("token") || "";
+  const decodedToken = jwtDecode<DecodedToken>(token);
+  //const name = decodedToken.name;
+  // Fetch user profile using the custom hook
+  const handleSignin = () => {
     navigate("/signin");
-  }
+  };
+  
+
   return (
     <>
       <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-4 bg-transparent/0 backdrop-blur-xl">
@@ -38,25 +55,29 @@ function Navbar() {
           </Button>
 
           <div className="lg:hidden">
-            <ModeToggle/>
-            </div>
+            <ModeToggle />
+          </div>
 
           {/* Desktop and Laptop View Buttons */}
           <div className="hidden lg:flex gap-x-2">
-            <Button
-              variant="secondary"
-              className="font-semibold bg-transparent hover:bg-transparent text-md"
-              onClick={handleSignin}
-            >
-              Sign in
-            </Button>
+            {isLopggedIn ? (
+              <UserProfile name={decodedToken.name}/>
+            ) : (
+              <Button
+                variant="secondary"
+                className="font-semibold bg-transparent hover:bg-transparent text-md"
+                onClick={handleSignin}
+              >
+                Sign in
+              </Button>
+            )}
+
             <Button className="font-semibold text-1xl">
               Get all-access <MoveRight className="ml-2" />
             </Button>
             <div className="">
-            <ModeToggle/>
+              <ModeToggle />
             </div>
-            
           </div>
 
           {/* Mobile and Tablet View */}

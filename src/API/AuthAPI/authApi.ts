@@ -1,5 +1,3 @@
-// src/services/authApi.js
-
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const authApi = createApi({
@@ -44,6 +42,12 @@ export const authApi = createApi({
     getUserProfile: builder.query({
       query: (userId) => `user-profile/${userId}`,
     }),
+    logout: builder.mutation({
+      query: () => ({
+        url: 'logout',
+        method: 'POST',
+      }),
+    }),
   }),
 });
 
@@ -54,4 +58,5 @@ export const {
   useResetPasswordMutation,
   useForgotPasswordMutation,
   useGetUserProfileQuery,
+  useLogoutMutation, 
 } = authApi;
