@@ -17,6 +17,7 @@ interface DecodedToken {
 }
 function Navbar() {
   const navigate = useNavigate();
+
   // Check if token exists in session or local storage
   const token = localStorage.getItem("token");
   let decodedToken: DecodedToken | null = null;
@@ -24,6 +25,7 @@ function Navbar() {
   if (token && token.split('.').length === 3) {
     try {
       decodedToken = jwtDecode<DecodedToken>(token);
+      isLoggedIn = true;
     } catch (error) {
       console.error("Invalid token:", error);
       // Clear invalid token if necessary

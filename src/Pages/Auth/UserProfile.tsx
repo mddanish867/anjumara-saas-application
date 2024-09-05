@@ -80,7 +80,7 @@ function UserProfile({ name }:any) {
         <Button variant="outline">{name}</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account </DropdownMenuLabel>
+        <DropdownMenuLabel>My Account (Welcome {name})</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={handleUserDetails}>
