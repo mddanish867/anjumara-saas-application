@@ -17,10 +17,11 @@ interface DecodedToken {
 }
 function Navbar() {
   const navigate = useNavigate();
+var isLoggedIn = false;
   // Check if token exists in session or local storage
   const token = localStorage.getItem("token");
   let decodedToken: DecodedToken | null = null;
-  let isLoggedIn = false;
+  
   //const name = decodedToken.name;
   if (token && token.split('.').length === 3) {
     try {
