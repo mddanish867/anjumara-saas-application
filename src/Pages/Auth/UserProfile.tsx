@@ -77,6 +77,10 @@ function UserProfile({ name }:any) {
   const handleSupport = () => {
     navigate('/landing-page1')
   }
+
+  const handleSettings = () => {
+    navigate('/settings')
+  }
   return (
     <div>
       <DropdownMenu>
@@ -97,7 +101,7 @@ function UserProfile({ name }:any) {
             <span>Billing</span>
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={handleSettings}>
             <Settings className="mr-2 h-4 w-4" />
             <span>Settings</span>
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
