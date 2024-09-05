@@ -32,6 +32,8 @@ import {
   } from "@/components/ui/dropdown-menu"
   import { useLogoutMutation } from '@/API/AuthAPI/authApi'; // Import the logout hook
   import toast from "react-hot-toast";
+  import { useNavigate } from "react-router-dom";
+
 
 export interface UserProfileProps {
   name: string;
@@ -46,6 +48,7 @@ export interface UserProfileProps {
     isVerified: boolean;
   }
 function UserProfile({ name }:any) {
+  const navigate = useNavigate();
   const [logout] = useLogoutMutation();
   const handleLogout = async () => {
     try {
@@ -66,6 +69,10 @@ function UserProfile({ name }:any) {
       toast.success("An error occured while logout.");
     }
   };
+
+  const handleUserDetails = () => {
+    navigate('/user-details')
+  }
   return (
     <div>
       <DropdownMenu>
@@ -76,7 +83,7 @@ function UserProfile({ name }:any) {
         <DropdownMenuLabel>My Account </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={handleUserDetails}>
             <User className="mr-2 h-4 w-4" />
             <span>Profile</span>
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>

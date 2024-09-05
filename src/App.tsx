@@ -17,6 +17,7 @@ import Signin from "./Pages/Auth/Signin";
 import { Provider } from "react-redux";
 import { store } from "./Store/store";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
+import UserDetails from "./Pages/Auth/UserDetails";
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
               <Route path="/section/azure" element={<Azure />} />
               <Route path="/git" element={<Git />} />
               <Route path="/section/git" element={<Git />} />
+              <Route path="/user-details" element={<UserDetails />} />
+
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
