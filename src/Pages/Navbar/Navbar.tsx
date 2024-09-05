@@ -25,7 +25,6 @@ function Navbar() {
   if (token && token.split('.').length === 3) {
     try {
       decodedToken = jwtDecode<DecodedToken>(token);
-      isLoggedIn = true;
     } catch (error) {
       console.error("Invalid token:", error);
       // Clear invalid token if necessary
