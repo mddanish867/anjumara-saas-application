@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRegisterMutation } from "@/API/AuthAPI/authApi"; // Adjust the path based on your setup
 import toast from "react-hot-toast";
+import { ColorRing } from 'react-loader-spinner'
 
 interface FormData {
   name: string;
@@ -145,7 +146,15 @@ export default function SignUp() {
               className="w-full px-4 py-2 rounded-lg duration-150"
               disabled={isLoading}
             >
-              {isLoading ? "Creating account..." : "Create account"}
+              {isLoading ? <ColorRing
+  visible={true}
+  height="64"
+  width="64"
+  ariaLabel="color-ring-loading"
+  wrapperStyle={{}}
+  wrapperClass="color-ring-wrapper"
+  colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+  /> : "Create account"}
             </Button>
           </form>
 

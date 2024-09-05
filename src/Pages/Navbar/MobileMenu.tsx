@@ -14,11 +14,10 @@ import { MoveRight } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
 interface LoggedInprop{
-  token: string
+  token: string | null;
 }
 
 export default function MobileMenu({token}:LoggedInprop) {
-  console.log(token)
   const navigate = useNavigate();  
   const  handleSignin = () => {
     navigate("/signin");

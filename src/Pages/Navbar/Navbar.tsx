@@ -17,11 +17,22 @@ interface DecodedToken {
 }
 function Navbar() {
   const navigate = useNavigate();
-  const isLoggedIn = localStorage.getItem("token");
   // Check if token exists in session or local storage
-  const token = localStorage.getItem("token") || "";
-  const decodedToken = jwtDecode<DecodedToken>(token);
+  const token = localStorage.getItem("token");
+  let decodedToken: DecodedToken | null = null;
+  let isLoggedIn = false;
   //const name = decodedToken.name;
+  if (token && token.split('.').length === 3) {
+    try {
+      decodedToken = jwtDecode<DecodedToken>(token);
+      isLoggedIn = true;
+    } catch (error) {
+      console.error("Invalid token:", error);
+      // Clear invalid token if necessary
+      localStorage.removeItem("token");
+    }
+  }
+  
   // Fetch user profile using the custom hook
   const handleSignin = () => {
     navigate("/signin");
@@ -58,13 +69,13 @@ function Navbar() {
           </div>
 
           <div className="block lg:hidden gap-x-2">
-            {isLoggedIn && <UserProfile name={decodedToken.name} />}
+            {token && <UserProfile name={decodedToken?.name} />}
           </div>
 
           {/* Desktop and Laptop View Buttons */}
           <div className="hidden lg:flex gap-x-1">
-            {isLoggedIn ? (
-              <UserProfile name={decodedToken.name} />
+            {token ? (
+              <UserProfile name={decodedToken?.name} />
             ) : (
               <Button
                 variant="secondary"
@@ -84,7 +95,7 @@ function Navbar() {
 
           {/* Mobile and Tablet View */}
           <div className="lg:hidden">
-            <MobileMenu token={token} />
+            <MobileMenu token={token || ''} />
           </div>
         </div>
       </nav>

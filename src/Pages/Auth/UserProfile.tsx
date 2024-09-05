@@ -50,6 +50,15 @@ function UserProfile({ name }:any) {
   const handleLogout = async () => {
     try {
       await logout(undefined).unwrap();
+      // Clear cookies
+    document.cookie.split(";").forEach((cookie) => {
+      document.cookie = cookie
+        .replace(/^ +/, "")
+        .replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`);
+    });
+      // Clear local storage
+    localStorage.clear();
+    // Clear session storage
       toast.success("Logged out successfully");      
       window.location.href = '/signin'; // Redirect to home or login page
     } catch (error) {

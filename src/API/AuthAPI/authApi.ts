@@ -18,6 +18,7 @@ export const authApi = createApi({
         url: "login",
         method: "POST",
         body: credentials,
+        credentials: 'include',
       }),
     }),
     verifyUser: builder.mutation({

@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mutation
 import toast from "react-hot-toast";
+import { ColorRing } from "react-loader-spinner";
 
 // Define the type for your form data
 interface FormData {
@@ -136,7 +137,25 @@ export default function Signin() {
               className="w-full px-4 py-2 rounded-lg duration-150"
               disabled={isLoading}
             >
-              {isLoading ? "Signing in..." : "Sign in"}
+              {isLoading ? (
+                <ColorRing
+                  visible={true}
+                  height="52"
+                  width="52"
+                  ariaLabel="color-ring-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="color-ring-wrapper"
+                  colors={[
+                    "#e15b64",
+                    "#f47e60",
+                    "#f8b26a",
+                    "#abbd81",
+                    "#849b87",
+                  ]}
+                />
+              ) : (
+                "Sign in"
+              )}
             </Button>
           </form>
           <div className="relative mt-10 mb-10">
