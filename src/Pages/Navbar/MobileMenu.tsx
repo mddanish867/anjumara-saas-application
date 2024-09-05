@@ -13,9 +13,13 @@ import NavbarLink from "./NavbarLink";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
-export default function MobileMenu() {
-  const navigate = useNavigate();
+interface LoggedInprop{
+  token: string
+}
 
+export default function MobileMenu({token}:LoggedInprop) {
+  console.log(token)
+  const navigate = useNavigate();  
   const  handleSignin = () => {
     navigate("/signin");
   }
@@ -45,13 +49,16 @@ export default function MobileMenu() {
         </SheetHeader>
         <div className="flex flex-col items-start gap-y-4 mt-4">
           <NavbarLink />
-          <Button
+          {!token && (
+            <Button
             variant="secondary"
             className="font-semibold w-full bg-transparent hover:bg-transparent text-md"
             onClick={handleSignin}
           >
             Sign in
           </Button>
+          )}
+          
           <Button className="font-semibold w-full text-xl flex items-center justify-between">
             Get all-access <ArrowRight className="text-md ml-2" />
           </Button>

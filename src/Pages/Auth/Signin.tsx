@@ -20,14 +20,14 @@ export default function Signin() {
   });
 
   const navigate = useNavigate();
-  const [login, { isLoading,}] = useLoginMutation(); // Use the login mutation
+  const [login, { isLoading }] = useLoginMutation(); // Use the login mutation
 
   // Handle form change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  
+
   // Validate form
   const formValidate = () => {
     const newErrors: { [key: string]: string } = {};
@@ -51,20 +51,19 @@ export default function Signin() {
     e.preventDefault();
     if (formValidate()) {
       try {
-        const user = await login(formData).unwrap(); // Call the login mutation   
+        const user = await login(formData).unwrap(); // Call the login mutation
         // Extract the token from the response
         const { token } = user;
         // Store the token in sessionStorage
-        sessionStorage.setItem('token', token);
+        sessionStorage.setItem("token", token);
         // Optionally, store the token in localStorage if you want to persist it across sessions
-        localStorage.setItem('token', token);     
+        localStorage.setItem("token", token);
         toast.success("Logged in successfully", user);
         setTimeout(() => {
           navigate("/"); // Redirect to a dashboard or home page after login
         }, 3000);
-        
       } catch (loginError) {
-        console.log(loginError)
+        console.log(loginError);
         toast.error("Failed to login.");
       }
     }
@@ -73,7 +72,7 @@ export default function Signin() {
   return (
     <div className="container bg-transparent px-4 py-6">
       <h1
-        className="text-3xl font-semibold cursor-pointer mb-6"
+        className="text-2xl font-semibold cursor-pointer mb-6"
         onClick={() => navigate("/")}
       >
         Anjum<span className="text-start text-[#38bdf8]">Ara</span>
@@ -95,8 +94,10 @@ export default function Signin() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${errors.email ? 'border-red-500' : ''} focus:border-[#38bdf8] shadow-sm rounded-lg`}
-              />              
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.email ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
+              />
             </div>
             <div>
               <label className="font-medium">Password</label>
@@ -105,8 +106,10 @@ export default function Signin() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${errors.password ? 'border-red-500' : ''} focus:border-[#38bdf8] shadow-sm rounded-lg`}
-              />             
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.password ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
+              />
             </div>
             <div className="flex items-center justify-between text-sm">
               <div className="flex items-center gap-x-3">
@@ -128,8 +131,12 @@ export default function Signin() {
                 Forgot password?
               </Link>
             </div>
-            <Button variant="default" className="w-full px-4 py-2 rounded-lg duration-150" disabled={isLoading}>
-              {isLoading ? 'Signing in...' : 'Sign in'}
+            <Button
+              variant="default"
+              className="w-full px-4 py-2 rounded-lg duration-150"
+              disabled={isLoading}
+            >
+              {isLoading ? "Signing in..." : "Sign in"}
             </Button>
           </form>
           <div className="relative mt-10 mb-10">
@@ -149,7 +156,10 @@ export default function Signin() {
           </div>
           <p className="text-center mt-4">
             Don't have an account?{" "}
-            <Link to="/signup" className="font-medium text-[#38bdf8] hover:text-[#38bdf8]">
+            <Link
+              to="/signup"
+              className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
+            >
               Sign up
             </Link>
           </p>

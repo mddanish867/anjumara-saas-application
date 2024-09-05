@@ -19,7 +19,7 @@ interface Errors {
 }
 
 export default function SignUp() {
-  const [register, { isLoading, }] = useRegisterMutation();
+  const [register, { isLoading }] = useRegisterMutation();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -65,13 +65,14 @@ export default function SignUp() {
     } else {
       try {
         await register(formData).unwrap();
-        toast.success("User has been added successfully. Please check yoour email to verify your account.");
+        toast.success(
+          "User has been added successfully. Please check yoour email to verify your account."
+        );
         setTimeout(() => {
           navigate("/signin");
-        }, 3000);        
-        
+        }, 3000);
       } catch (registerError) {
-        console.log(registerError)
+        console.log(registerError);
         toast.error("Registration failed.");
       }
     }
@@ -80,7 +81,7 @@ export default function SignUp() {
   return (
     <div className="container bg-transparent px-4 py-6">
       <h1
-        className="text-3xl font-semibold cursor-pointer mb-6"
+        className="text-2xl font-semibold cursor-pointer mb-6"
         onClick={handleClick}
       >
         Anjum<span className="text-[#38bdf8]">Ara</span>
@@ -91,7 +92,7 @@ export default function SignUp() {
             <h3 className="text-xl font-semibold sm:text-3xl">
               Create your account
             </h3>
-          </div>         
+          </div>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="font-medium">Name</label>

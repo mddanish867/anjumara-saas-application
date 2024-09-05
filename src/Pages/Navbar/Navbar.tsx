@@ -17,7 +17,7 @@ interface DecodedToken {
 }
 function Navbar() {
   const navigate = useNavigate();
-  const isLopggedIn = localStorage.getItem("token");
+  const isLoggedIn = localStorage.getItem("token");
   // Check if token exists in session or local storage
   const token = localStorage.getItem("token") || "";
   const decodedToken = jwtDecode<DecodedToken>(token);
@@ -26,7 +26,6 @@ function Navbar() {
   const handleSignin = () => {
     navigate("/signin");
   };
-  
 
   return (
     <>
@@ -58,10 +57,14 @@ function Navbar() {
             <ModeToggle />
           </div>
 
+          <div className="block lg:hidden gap-x-2">
+            {isLoggedIn && <UserProfile name={decodedToken.name} />}
+          </div>
+
           {/* Desktop and Laptop View Buttons */}
-          <div className="hidden lg:flex gap-x-2">
-            {isLopggedIn ? (
-              <UserProfile name={decodedToken.name}/>
+          <div className="hidden lg:flex gap-x-1">
+            {isLoggedIn ? (
+              <UserProfile name={decodedToken.name} />
             ) : (
               <Button
                 variant="secondary"
@@ -82,7 +85,7 @@ function Navbar() {
 
           {/* Mobile and Tablet View */}
           <div className="lg:hidden">
-            <MobileMenu />
+            <MobileMenu token={token} />
           </div>
         </div>
       </nav>

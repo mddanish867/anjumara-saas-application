@@ -31,7 +31,7 @@ function ForgotPassword() {
   return (
     <div className="container bg-transparent px-4 py-6">
       <h1
-        className="text-3xl font-semibold cursor-pointer mb-6"
+        className="text-2xl font-semibold cursor-pointer mb-6"
         onClick={() => navigate("/")}
       >
         Anjum<span className="text-start text-[#38bdf8]">Ara</span>
@@ -52,14 +52,19 @@ function ForgotPassword() {
                 type="email"
                 name="email"
                 value={formData.email}
-                onChange={handleChange}                
-                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${errors.email ? 'border-red-500' : ''} focus:border-[#38bdf8] shadow-sm rounded-lg`}
+                onChange={handleChange}
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.email ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
               {/* {errors.email && (
                 <p className="text-red-500 text-sm mt-2">{errors.email}</p>
               )} */}
             </div>
-            <Button variant="default" className="w-full px-4 py-2 rounded-lg duration-150">
+            <Button
+              variant="default"
+              className="w-full px-4 py-2 rounded-lg duration-150"
+            >
               Reset your password
             </Button>
           </form>
@@ -68,7 +73,10 @@ function ForgotPassword() {
           Don't have an account?
           <Link
             to="/signup"
-            className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"> Get access →
+            className="font-medium text-[#38bdf8] hover:text-[#38bdf8]"
+          >
+            {" "}
+            Get access →
           </Link>
         </p>
       </main>
