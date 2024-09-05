@@ -20,6 +20,7 @@ import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import UserDetails from "./Pages/Auth/UserDetails";
 import LandingPage1 from "./Pages/LandingPages/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
+import Pricing from "./Pages/Pricing/Pricing";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
               <Route path="/section/git" element={<Git />} />
               <Route path="/user-details" element={<UserDetails />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/all-access" element={<Pricing />} />
 
             </Route>
             <Route path="/signin" element={<Signin />} />

@@ -4,7 +4,7 @@ import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 export default function Settings() {
   return (
     <form>
-      <div className="space-y-12">
+      <div className="space-y-12 mt-20">
         <div className="border-b  pb-12">
           <h2 className="text-base font-semibold leading-7">Profile</h2>
           <p className="mt-1 text-sm leading-6 ">
@@ -17,16 +17,15 @@ export default function Settings() {
                 Username
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                  <span className="flex select-none items-center pl-3  sm:text-sm">workcation.com/</span>
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset  focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
                     id="username"
                     name="username"
                     type="text"
                     placeholder="janesmith"
                     autoComplete="username"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1   focus:ring-0 sm:text-sm sm:leading-6"
-                  />
+                    className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
+                    />
                 </div>
               </div>
             </div>
@@ -40,7 +39,7 @@ export default function Settings() {
                   id="about"
                   name="about"
                   rows={3}
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                   defaultValue={''}
                 />
               </div>
@@ -55,7 +54,7 @@ export default function Settings() {
                 <UserCircleIcon aria-hidden="true" className="h-12 w-12 " />
                 <button
                   type="button"
-                  className="rounded-md bg-transparent px-2.5 py-1.5 text-sm font-semibold  shadow-sm ring-1 ring-inset ring-gray-300 "
+                  className="rounded-md bg-transparent px-2.5 py-1.5 text-sm font-semibold  shadow-sm ring-1 ring-inset  "
                 >
                   Change
                 </button>
@@ -75,7 +74,7 @@ export default function Settings() {
                       className="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                     >
                       <span>Upload a file</span>
-                      <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                      <input id="file-upload" name="file-upload" type="file" className="sr-only bg-transparent" />
                     </label>
                     <p className="pl-1">or drag and drop</p>
                   </div>
@@ -101,7 +100,7 @@ export default function Settings() {
                   name="first-name"
                   type="text"
                   autoComplete="given-name"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -116,7 +115,7 @@ export default function Settings() {
                   name="last-name"
                   type="text"
                   autoComplete="family-name"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -131,7 +130,7 @@ export default function Settings() {
                   name="email"
                   type="email"
                   autoComplete="email"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -145,7 +144,7 @@ export default function Settings() {
                   id="country"
                   name="country"
                   autoComplete="country-name"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 >
                   <option>United States</option>
                   <option>Canada</option>
@@ -164,7 +163,7 @@ export default function Settings() {
                   name="street-address"
                   type="text"
                   autoComplete="street-address"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -179,7 +178,7 @@ export default function Settings() {
                   name="city"
                   type="text"
                   autoComplete="address-level2"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -194,7 +193,7 @@ export default function Settings() {
                   name="region"
                   type="text"
                   autoComplete="address-level1"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -209,7 +208,7 @@ export default function Settings() {
                   name="postal-code"
                   type="text"
                   autoComplete="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border py-1.5 bg-transparent shadow-sm  sm:text-sm sm:leading-6"
                 />
               </div>
             </div>

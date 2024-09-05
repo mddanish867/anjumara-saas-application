@@ -19,9 +19,15 @@ interface LoggedInprop{
 
 export default function MobileMenu({token}:LoggedInprop) {
   const navigate = useNavigate();  
+
   const  handleSignin = () => {
     navigate("/signin");
   }
+  const handleAllAccess = () => {
+    navigate("/all-access");
+  };
+ 
+  
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -58,7 +64,7 @@ export default function MobileMenu({token}:LoggedInprop) {
           </Button>
           )}
           
-          <Button className="font-semibold w-full text-xl flex items-center justify-between">
+          <Button className="font-semibold w-full text-xl flex items-center justify-between" onClick={handleAllAccess}>
             Get all-access <MoveRight className="ml-1" />
           </Button>
         </div>

@@ -36,6 +36,11 @@ function Navbar() {
   const handleSignin = () => {
     navigate("/signin");
   };
+ 
+ const handleAllAccess = () => {
+  navigate("/all-access");
+};
+ 
 
   return (
     <>
@@ -87,7 +92,7 @@ function Navbar() {
             <div className="">
               <ModeToggle />
             </div>
-            <Button className="font-semibold text-1xl">
+            <Button className="font-semibold text-1xl" onClick={handleAllAccess}>
               Get all-access <MoveRight className="ml-2" />
             </Button>
           </div>
