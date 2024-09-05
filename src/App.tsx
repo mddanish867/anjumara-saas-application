@@ -18,6 +18,7 @@ import { Provider } from "react-redux";
 import { store } from "./Store/store";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import UserDetails from "./Pages/Auth/UserDetails";
+import LandingPage1 from "./Pages/LandingPages/LandingPage1";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
             <Route path="/verifyemail" element={<VerifyEmail/>} />
+            <Route path="/landing-page1" element={<LandingPage1/>} />
+
           </Routes>
         </ThemeProvider>
       </Router>

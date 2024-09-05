@@ -73,6 +73,10 @@ function UserProfile({ name }:any) {
   const handleUserDetails = () => {
     navigate('/user-details')
   }
+
+  const handleSupport = () => {
+    navigate('/landing-page1')
+  }
   return (
     <div>
       <DropdownMenu>
@@ -144,7 +148,7 @@ function UserProfile({ name }:any) {
           <Github className="mr-2 h-4 w-4" />
           <span>GitHub</span>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={handleSupport}>
           <LifeBuoy className="mr-2 h-4 w-4" />
           <span>Support</span>
         </DropdownMenuItem>
