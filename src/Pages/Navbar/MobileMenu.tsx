@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { AlignRight } from "lucide-react";
 import NavbarLink from "./NavbarLink";
-import { ArrowRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
 interface LoggedInprop{
@@ -60,7 +60,7 @@ export default function MobileMenu({token}:LoggedInprop) {
           )}
           
           <Button className="font-semibold w-full text-xl flex items-center justify-between">
-            Get all-access <ArrowRight className="text-md ml-2" />
+            Get all-access <MoveRight className="ml-1" />
           </Button>
         </div>
       </SheetContent>

@@ -45,7 +45,7 @@ function Navbar() {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-x-4 ml-auto md:col-span-4 justify-end">
+        <div className="flex items-center ml-auto md:col-span-4 justify-end">
           <Button
             variant="secondary"
             className="font-semibold bg-transparent hover:bg-transparent text-md"
@@ -74,13 +74,12 @@ function Navbar() {
                 Sign in
               </Button>
             )}
-
-            <Button className="font-semibold text-1xl">
-              Get all-access <MoveRight className="ml-2" />
-            </Button>
             <div className="">
               <ModeToggle />
             </div>
+            <Button className="font-semibold text-1xl">
+              Get all-access <MoveRight className="ml-2" />
+            </Button>
           </div>
 
           {/* Mobile and Tablet View */}
