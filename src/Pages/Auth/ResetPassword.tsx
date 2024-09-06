@@ -7,19 +7,25 @@ import { ColorRing } from "react-loader-spinner";
 
 // Define the interface for form data
 interface FormData {
-  password: string;
+  newPassword: string;
   token: string; // Only password and token are part of formData
 }
 
+interface PasswordValidate {
+  confirmPassword: string;
+}
 function ResetPassword() {
   // Initialize the state with password and token (confirmPassword not included)
   const [formData, setFormData] = useState<FormData>({
-    password: "",
+    newPassword: "",
     token: "",
   });
 
-  const [confirmPassword, setConfirmPassword] = useState(""); // Separate state for confirmPassword
-  const [errors, setErrors] = useState<{ password?: string }>({});
+  const [passwordMatched, setPasswordMatched] = useState<PasswordValidate>({
+    confirmPassword: "",
+  });
+
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -40,22 +46,22 @@ function ResetPassword() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    if (name === "password") {
-      setFormData({ ...formData, password: value });
-    } else if (name === "confirmPassword") {
-      setConfirmPassword(value);
-    }
+    setFormData({ ...formData, [name]: value });
+    setPasswordMatched({ ...passwordMatched, [name]: value });
   };
 
   // Validate form
   const formValidate = () => {
     const newErrors: { [key: string]: string } = {};
 
-    if (!formData.password) {
-      newErrors.password = "Password is required";
+    if (!formData.newPassword) {
+      newErrors.newPassword = "Password is required";
     }
-    if (formData.password !== confirmPassword) {
-      newErrors.password = "Passwords do not match.";
+    if (!passwordMatched.confirmPassword) {
+      newErrors.confirmPassword = "Confirm password is required";
+    }
+    if (formData.newPassword !== passwordMatched.confirmPassword) {
+      newErrors.confirmPassword = "Confirm password do not match.";
     }
 
     setErrors(newErrors);
@@ -67,8 +73,8 @@ function ResetPassword() {
     if (formValidate()) {
       try {
         // Only send the token and password
-        const { password, token } = formData;
-        const user = await resetPassword({ password, token }).unwrap(); // Call the resetPassword mutation
+        const { newPassword, token } = formData;
+        const user = await resetPassword({ newPassword, token }).unwrap(); // Call the resetPassword mutation
         toast.success("Password has been reset successfully.", user);
         setTimeout(() => {
           navigate("/"); // Redirect to a dashboard or home page after success
@@ -98,18 +104,20 @@ function ResetPassword() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="font-medium">Password</label>
+              <label className="font-medium">New Password</label>
               <input
-                type="password"
-                name="password"
-                value={formData.password}
+                type="newPassword"
+                name="newPassword"
+                value={formData.newPassword}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.password ? "border-red-500" : ""
+                  errors.newPassword ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.password && (
-                <p className="text-red-500 text-sm mt-2">{errors.password}</p>
+              {errors.newPassword && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.newPassword}
+                </p>
               )}
             </div>
             <div>
@@ -117,10 +125,17 @@ function ResetPassword() {
               <input
                 type="password"
                 name="confirmPassword"
-                value={confirmPassword}
+                value={passwordMatched.confirmPassword}
                 onChange={handleChange}
-                className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-[#38bdf8] shadow-sm rounded-lg"
+                className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
+                  errors.confirmPassword ? "border-red-500" : ""
+                } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
+              {errors.confirmPassword && (
+                <p className="text-red-500 text-sm mt-2">
+                  {errors.confirmPassword}
+                </p>
+              )}
             </div>
             <Button
               variant="default"
