@@ -29,7 +29,7 @@ function ForgotPassword() {
       try{
       const user = await forgotPassword(formData).unwrap(); // Call the login mutation
       toast.success("Reset email has been sent to your email.", user);
-      navigate("https://mailtrap.io/inboxes/3113600/messages/4433720207")
+      navigate("/")
     }
       catch (loginError) {
         toast.error("Failed to sent the reset link..");
@@ -65,12 +65,12 @@ function ForgotPassword() {
                 value={formData.email}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.email ? "border-red-500" : ""
+                  errors.email && !formData.email ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {/* {errors.email && (
+              {errors.email && !formData.email && (
                 <p className="text-red-500 text-sm mt-2">{errors.email}</p>
-              )} */}
+              )}
             </div>
             <Button
               variant="default"

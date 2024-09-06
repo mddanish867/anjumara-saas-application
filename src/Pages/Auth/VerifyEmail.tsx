@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useVerifyUserMutation } from "@/API/AuthAPI/authApi";
+import { ColorRing } from "react-loader-spinner";
 
 export default function VerifyEmail() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function VerifyEmail() {
         toast.success("Account verified successfully!");
         setTimeout(() => {
           navigate("/signin"); // Redirect to login page after 3 seconds
-        }, 3000);
+        }, 2000);
       } catch (verificationError) {
         const errorMessage =
           (verificationError as { data?: { message: string } })?.data
@@ -52,6 +53,21 @@ export default function VerifyEmail() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen text-center">
+      <ColorRing
+                  visible={true}
+                  height="84"
+                  width="84"
+                  ariaLabel="color-ring-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="color-ring-wrapper"
+                  colors={[
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
+                  ]}
+                />
       <h1 className="text-3xl font-bold">Verifying your account...</h1>
       <p className="mt-4">Please wait while we verify your account.</p>
     </div>

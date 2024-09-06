@@ -71,7 +71,7 @@ export default function SignUp() {
         );
         setTimeout(() => {
           navigate("/signin");
-        }, 3000);
+        }, 2000);
       } catch (registerError) {
         toast.error("Registration failed.");
       }
@@ -102,10 +102,10 @@ export default function SignUp() {
                 value={formData.name}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 bg-transparent outline-none border ${
-                  errors.name ? "border-red-500" : ""
+                  errors.name && !formData.name ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.name && (
+              {errors.name && !formData.name && (
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
               )}
             </div>
@@ -117,10 +117,10 @@ export default function SignUp() {
                 value={formData.email}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.email ? "border-red-500" : ""
+                  errors.email && !formData.email ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.email && (
+              {errors.email && !formData.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
               )}
             </div>
@@ -132,10 +132,10 @@ export default function SignUp() {
                 value={formData.password}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.password ? "border-red-500" : ""
+                  errors.password && !formData.password ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.password && (
+              {errors.password && !formData.password && (
                 <p className="text-red-500 text-sm mt-1">{errors.password}</p>
               )}
             </div>

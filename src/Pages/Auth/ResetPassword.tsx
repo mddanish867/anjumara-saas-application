@@ -77,7 +77,7 @@ function ResetPassword() {
         const user = await resetPassword({ newPassword, token }).unwrap(); // Call the resetPassword mutation
         toast.success("Password has been reset successfully.", user);
         setTimeout(() => {
-          navigate("/"); // Redirect to a dashboard or home page after success
+          navigate("/signin"); // Redirect to a dashboard or home page after success
         }, 2000);
       } catch (resetError) {
         toast.error("Failed to reset the password.");
@@ -111,10 +111,10 @@ function ResetPassword() {
                 value={formData.newPassword}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.newPassword ? "border-red-500" : ""
+                  errors.newPassword && !formData.newPassword ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.newPassword && (
+              {errors.newPassword && !formData.newPassword && (
                 <p className="text-red-500 text-sm mt-2">
                   {errors.newPassword}
                 </p>
@@ -128,10 +128,10 @@ function ResetPassword() {
                 value={passwordMatched.confirmPassword}
                 onChange={handleChange}
                 className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border ${
-                  errors.confirmPassword ? "border-red-500" : ""
+                  errors.confirmPassword && !passwordMatched.confirmPassword ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.confirmPassword && (
+              {errors.confirmPassword && !passwordMatched.confirmPassword && (
                 <p className="text-red-500 text-sm mt-2">
                   {errors.confirmPassword}
                 </p>
