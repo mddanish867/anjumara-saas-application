@@ -64,7 +64,6 @@ export default function Signin() {
           navigate("/"); // Redirect to a dashboard or home page after login
         }, 3000);
       } catch (loginError) {
-        console.log(loginError);
         toast.error("Failed to login.");
       }
     }
@@ -126,7 +125,7 @@ export default function Signin() {
                 <span>Remember me</span>
               </div>
               <Link
-                to="/forgotpassword"
+                to="/forgot-password"
                 className="text-[#38bdf8] hover:text-[#38bdf8] mt-10"
               >
                 Forgot password?
@@ -146,11 +145,11 @@ export default function Signin() {
                   wrapperStyle={{}}
                   wrapperClass="color-ring-wrapper"
                   colors={[
-                    "#e15b64",
-                    "#f47e60",
-                    "#f8b26a",
-                    "#abbd81",
-                    "#849b87",
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
+                    "#38bdf8",
                   ]}
                 />
               ) : (

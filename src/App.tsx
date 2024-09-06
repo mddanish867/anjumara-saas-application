@@ -21,6 +21,7 @@ import UserDetails from "./Pages/Auth/UserDetails";
 import LandingPage1 from "./Pages/LandingPages/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
+import ResetPassword from "./Pages/Auth/ResetPassword";
 
 function App() {
   return (
@@ -51,9 +52,10 @@ function App() {
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/verifyemail" element={<VerifyEmail/>} />
             <Route path="/landing-page1" element={<LandingPage1/>} />
+            <Route path="/resetpassword" element={<ResetPassword />} />
 
           </Routes>
         </ThemeProvider>
