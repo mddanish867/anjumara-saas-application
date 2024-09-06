@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useResetPasswordMutation } from "@/API/AuthAPI/authApi";
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
+import { Eye, EyeOff } from "lucide-react";
 
 // Define the interface for form data
 interface FormData {
@@ -24,6 +25,8 @@ function ResetPassword() {
   const [passwordMatched, setPasswordMatched] = useState<PasswordValidate>({
     confirmPassword: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -103,10 +106,10 @@ function ResetPassword() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
+            <div className="relative">
               <label className="font-medium">New Password</label>
               <input
-                type="newPassword"
+                type={showPassword ? "text" : "password"}
                 name="newPassword"
                 value={formData.newPassword}
                 onChange={handleChange}
@@ -114,16 +117,22 @@ function ResetPassword() {
                   errors.newPassword && !formData.newPassword ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
+              <div
+                className="absolute inset-y-0 right-3 top-11 cursor-pointer"
+                onClick={() => setShowPassword((prev) => !prev)} // Toggle visibility
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </div>
               {errors.newPassword && !formData.newPassword && (
                 <p className="text-red-500 text-sm mt-2">
                   {errors.newPassword}
                 </p>
               )}
             </div>
-            <div>
+            <div className="relative">
               <label className="font-medium">Confirm Password</label>
               <input
-                type="password"
+                type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 value={passwordMatched.confirmPassword}
                 onChange={handleChange}
@@ -131,6 +140,12 @@ function ResetPassword() {
                   errors.confirmPassword && !passwordMatched.confirmPassword ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
+              <div
+                className="absolute inset-y-0 right-3 top-11 cursor-pointer"
+                onClick={() => setShowConfirmPassword((prev) => !prev)} // Toggle visibility
+              >
+                {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </div>
               {errors.confirmPassword && !passwordMatched.confirmPassword && (
                 <p className="text-red-500 text-sm mt-2">
                   {errors.confirmPassword}

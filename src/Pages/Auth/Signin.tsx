@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mutation
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
+import { Eye, EyeOff } from "lucide-react";
 
 // Define the type for your form data
 interface FormData {
@@ -19,7 +20,7 @@ export default function Signin() {
     email: "",
     password: "",
   });
-
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const [login, { isLoading }] = useLoginMutation(); // Use the login mutation
 
@@ -104,10 +105,10 @@ export default function Signin() {
                 </p>
               )}
             </div>
-            <div>
+            <div className="relative">
               <label className="font-medium">Password</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
@@ -115,6 +116,12 @@ export default function Signin() {
                   errors.password && !formData.password ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
+              <div
+                className="absolute inset-y-0 right-3 top-11 cursor-pointer"
+                onClick={() => setShowPassword((prev) => !prev)} // Toggle visibility
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </div>
               {errors.password && !formData.password && (
                 <p className="text-red-500 text-sm mt-2">
                   {errors.password}
