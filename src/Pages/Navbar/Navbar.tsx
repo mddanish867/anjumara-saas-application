@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import NavbarLink from "./NavbarLink";
-import { MoveRight, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import { ModeToggle } from "@/components/ModeToggle";
 import { useNavigate } from "react-router-dom";
@@ -37,14 +37,14 @@ function Navbar() {
     navigate("/signin");
   };
  
- const handleAllAccess = () => {
-  navigate("/all-access");
-};
+//  const handleAllAccess = () => {
+//   navigate("/all-access");
+// };
  
 
   return (
     <>
-      <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-center px-4 md:px-8 mx-auto py-4 bg-transparent/0 backdrop-blur-xl">
+      <nav className="sticky top-0 z-50 max-w-7xl w-full flex md:grid md:grid-cols-12 items-start px-4 md:px-8 mx-auto py-4 bg-transparent/0 backdrop-blur-xl">
         {/* Logo Section */}
         <div className="md:col-span-3">
           <Link to="/">
@@ -92,9 +92,9 @@ function Navbar() {
             <div className="">
               <ModeToggle />
             </div>
-            <Button className="font-semibold text-1xl" onClick={handleAllAccess}>
+            {/* <Button className="font-semibold text-1xl" onClick={handleAllAccess}>
               Get all-access <MoveRight className="ml-2" />
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile and Tablet View */}

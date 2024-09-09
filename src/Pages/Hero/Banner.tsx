@@ -8,6 +8,10 @@ function Banner() {
   const handleClick = () => {
     navigate("/section");
   };
+
+   const handleAllAccess = () => {
+  navigate("/all-access");
+};
   return (
     <>
       <section className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center md:mt-14">
@@ -34,14 +38,15 @@ function Banner() {
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
                 onClick={handleClick}
               >
-                Browse all questions <MoveRight className="ml-2" />
+                Browse all components <MoveRight className="ml-2" />
               </Button>
 
               <Button
                 variant="outline"
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
+                onClick={handleAllAccess}
               >
-                Access all codes <MoveRight className="ml-2" />
+                Get all access <MoveRight className="ml-2" />
               </Button>
             </div>
           </div>

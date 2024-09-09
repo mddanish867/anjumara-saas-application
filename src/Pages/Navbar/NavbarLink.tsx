@@ -55,27 +55,63 @@ export default function NavigationLink() {
     <div className="md:block flex-col md:flex-row gap-2 md:gap-4 col-span-5">
       <NavigationMenu>
         <NavigationMenuList className="flex flex-col md:flex-row gap-2 md:gap-4 text-left">
-          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent">
-            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent">
-              Getting started
+        <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent focus:bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+              Templates
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 sm:p-6 w-full sm:w-auto md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-left">
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
+              <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent focus:bg-transparent">
             <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
               Components
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent focus:bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+              Interview Prep
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
+                {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent focus:bg-transparent">
+            <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent">
+              Resume
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-full gap-3 p-4 md:w-[500px] lg:w-[600px] md:grid-cols-2 text-left">
