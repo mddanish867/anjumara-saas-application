@@ -1,5 +1,6 @@
 import Banner from "./Banner";
 import Client from "./Client";
+import CTASection from "./CTASection";
 import Recent from "./Recent";
 import Template from "./Template";
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
     <>
       <Banner />
       <Template/>
+      <CTASection/>
       <Client/>
       <Recent />
 
