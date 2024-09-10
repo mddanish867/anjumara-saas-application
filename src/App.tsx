@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Authorization from "./Pages/Auth/Authorization";
-import Home from "./Pages/Home";
+import Home from "./Pages/Hero/Home";
 import Section from "./Pages/Section/Section";
 import Frontend from "./Pages/Frontend/Frontend";
 import ReactPage from "./Pages/Frontend/React";

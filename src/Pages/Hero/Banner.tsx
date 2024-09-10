@@ -15,12 +15,12 @@ function Banner() {
 
   return (
     <>
-      <section className="flex items-center justify-center h-screen w-full">
+      <section className='flex items-center justify-center h-screen w-full' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}>
   <div className="relative mx-auto w-full px-4 py-32 sm:px-6 lg:flex lg:h-full lg:items-center lg:px-8">
     <div className="max-w-full text-center">
-      <h1 className="block font-bold pl-4 pr-4 text-3xl sm:text-5xl">
+      <h1 className="block font-bold pl-8 pr-8 text-3xl sm:text-5xl">
     
-        Building Better, Faster, and Smarter with Every <span className="text-[#38bdf8]">Components</span> for
+        Building Better, Faster,<br/> and <span className="text-[#38bdf8]">Smarter</span> with Every <span className="text-[#38bdf8]">Components</span> for
           Streamlined Success         
        
       </h1>
