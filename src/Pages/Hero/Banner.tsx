@@ -53,12 +53,12 @@ function Banner() {
 </section>
 
 
-      <span className="relative flex justify-start -mt-20">
+      {/* <span className="relative flex justify-start -mt-20">
         <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-[#38bdf8] to-transparent opacity-75"></div>
         <span className="relative z-10 text-[#38bdf8] px-6 font-semibold text-start">
           Components
         </span>
-      </span>
+      </span> */}
     </>
   );
 }
