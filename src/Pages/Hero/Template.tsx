@@ -38,17 +38,19 @@ function Template() {
         <span className="relative z-10 text-[#38bdf8] px-6 font-semibold text-start">
           Templates
         </span>
-        <span className="flex z-10 text-[#38bdf8] px-6 font-semibold text-start cursor-pointer" onClick={handleClick}>
+        <span
+          className="flex z-10 text-[#38bdf8] px-6 font-semibold text-start cursor-pointer"
+          onClick={handleClick}
+        >
           All templates <MoveRight className="ml-2" />
         </span>
       </span>
 
       <div className="w-full px-8 py-10 flex flex-wrap justify-center gap-4">
-      
         {products.map((product, index) => (
           <div
             key={index}
-            className="relative bg-white shadow-lg rounded-lg p-6 flex-1 min-w-[300px] max-w-[30%]"
+            className="relative bg-white border rounded-md p-6 flex-1 min-w-[300px] max-w-[30%]"
           >
             {/* Product Image */}
             <img
@@ -77,8 +79,7 @@ function Template() {
             </a>
           </div>
         ))}
-      
-    </div>
+      </div>
     </>
   );
 }
