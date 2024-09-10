@@ -33,6 +33,7 @@ import {
   import { useLogoutMutation } from '@/API/AuthAPI/authApi'; // Import the logout hook
   import toast from "react-hot-toast";
   import { useNavigate } from "react-router-dom";
+import UserAvatar from "./UserAvatar";
 
 
 export interface UserProfileProps {
@@ -85,10 +86,12 @@ function UserProfile({ name }:any) {
     <div>
       <DropdownMenu>
       <DropdownMenuTrigger asChild className="bg-transparent hover:bg-transparent focu outline-none border-none focus:ring-transparent">
-        <Button variant="outline">{name}</Button>
+        <Button variant="outline">
+          <UserAvatar name = {name}/>
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>My Account (Welcome {name})</DropdownMenuLabel>
+        <DropdownMenuLabel>Welcome {name}</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem onClick={handleUserDetails}>
