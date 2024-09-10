@@ -3,24 +3,24 @@ import { useNavigate } from "react-router-dom";
 
 const products = [
   {
-    image: "/bannerimg.png",
+    image: "/hero.png",
     title: "Product Title",
     price: 29.99,
-    description: "This is a great product with amazing features.",
+    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "#",
   },
   {
-    image: "/bannerimg.png",
+    image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
-    description: "This is a great product with amazing features.",
+    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "#",
   },
   {
-    image: "/bannerimg.png",
+    image: "/price.png",
     title: "Product Title",
     price: 29.99,
-    description: "This is a great product with amazing features.",
+    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "#",
   },
 ];
@@ -60,9 +60,9 @@ function Template() {
             />
 
             {/* Product Title and Price */}
-            <div className="flex justify-between items-center mt-4">
-              <h2 className="text-lg font-bold">{product.title}</h2>
-              <p className="text-gray-700">${product.price}</p>
+            <div className="flex justify-between items-center mt-4 text-gray-600">
+              <h2 className="text-md font-semibold">{product.title}</h2>
+              <p>${product.price}</p>
             </div>
 
             {/* Product Description */}
@@ -71,7 +71,7 @@ function Template() {
             {/* Learn More Link */}
             <a
               href={product.link}
-              className="flex items-center mt-4 text-blue-500 hover:underline"
+              className="flex items-center mt-4 text-[#38bdf8] hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
