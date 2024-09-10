@@ -18,12 +18,11 @@ function Banner() {
       <section className="flex items-center justify-center h-screen w-full">
   <div className="relative mx-auto w-full px-4 py-32 sm:px-6 lg:flex lg:h-full lg:items-center lg:px-8">
     <div className="max-w-full text-center">
-      <h1 className="text-2xl sm:text-5xl">
-        <strong className="block font-bold pl-4 pr-4">
+      <h1 className="block font-bold pl-4 pr-4 text-3xl sm:text-5xl">
+    
         Building Better, Faster, and Smarter with Every <span className="text-[#38bdf8]">Components</span> for
-          Streamlined Success
-          
-        </strong>
+          Streamlined Success         
+       
       </h1>
 
       <p className="mt-4 max-w-3xl mx-auto sm:text-xl/relaxed">
