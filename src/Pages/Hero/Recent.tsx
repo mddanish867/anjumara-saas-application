@@ -51,7 +51,7 @@ function Recent() {
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-4 md:px-8 mt-10">
       <div className="max-w-lg">
-        <h1 className="text-3xl font-extrabold sm:text-5xl">
+        <h1 className="text-3xl font-bold sm:text-5xl">
           Beautifully crafted UI components, ready for your next project.
         </h1>
         <p className="mt-2">

@@ -18,11 +18,11 @@ function Banner() {
       <section className="flex items-center justify-center h-screen w-full">
   <div className="relative mx-auto w-full px-4 py-32 sm:px-6 lg:flex lg:h-full lg:items-center lg:px-8">
     <div className="max-w-full text-center">
-      <h1 className="text-3xl font-extrabold sm:text-5xl">
-        <strong className="block font-extrabold">
-          Your All-in-One Toolkit for{" "}
-          <span className="text-[#38bdf8]">Streamlined</span> <span className="text-[#38bdf8]">Success.</span>
-          Building Better, Faster, and Smarter with Every Component
+      <h1 className="text-2xl sm:text-5xl">
+        <strong className="block font-bold pl-4 pr-4">
+        Building Better, Faster, and Smarter with Every <span className="text-[#38bdf8]">Components</span> for
+          Streamlined Success
+          
         </strong>
       </h1>
 
@@ -42,8 +42,8 @@ function Banner() {
         </Button>
 
         <Button
-          variant="outline"
-          className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
+          variant="link"
+          className="flex w-full py-3 text-sm font-medium sm:w-auto text-[#38bdf8]"
           onClick={handleAllAccess}
         >
           Get all access <MoveRight className="ml-2" />
