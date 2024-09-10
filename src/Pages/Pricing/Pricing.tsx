@@ -1,7 +1,6 @@
 
 export default function Pricing() {
   return (
-    <div className ='p-0' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}>
 <div className='mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 mt-20'>
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8">
       <div
@@ -205,7 +204,7 @@ export default function Pricing() {
       </div>
     </div>
   </div>
-    </div>
+ 
     
   )
 }
