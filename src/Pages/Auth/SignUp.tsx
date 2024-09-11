@@ -192,9 +192,9 @@ export default function SignUp() {
             </p>
           </div>
           <div className="grid gap-y-4 sm:grid-cols-1 lg:grid-cols-2 px-1">
-            <button className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
+            <Link to="/api/auth/google/login" className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <FcGoogle className="text-2xl" />
-            </button>
+            </Link>
 
             <button className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <FaGithub className="text-2xl" />
