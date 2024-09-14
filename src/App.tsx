@@ -22,6 +22,7 @@ import LandingPage1 from "./Pages/LandingPages/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
 import ResetPassword from "./Pages/Auth/ResetPassword";
+import ComponentDetails from "./Pages/Details/ComponentDetails";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
               <Route path="/user-details" element={<UserDetails />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
+              <Route path="/componentDetails" element={<ComponentDetails />} />
+
 
             </Route>
             <Route path="/signin" element={<Signin />} />

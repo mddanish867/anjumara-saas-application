@@ -7,21 +7,21 @@ const products = [
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "/componentDetails",
   },
   {
     image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "/componentDetails",
   },
   {
     image: "/price.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "/componentDetails",
   },
 ];
 
@@ -71,8 +71,7 @@ function Template() {
             {/* Learn More Link */}
             <a
               href={product.link}
-              className="flex items-center mt-4 text-[#38bdf8] hover:underline"
-              target="_blank"
+              className="flex items-center mt-4 text-[#38bdf8] hover:underline"              
               rel="noopener noreferrer"
             >
               Learn More <MoveRight className="ml-2" />
