@@ -7,20 +7,7 @@ import { jwtDecode } from "jwt-decode";
     name: string;
     userId: string;
   }
-  // Check if token exists in session or local storage
-  const token = localStorage.getItem("token");
-  let decodedToken: DecodedToken | null = null;
-  //const name = decodedToken.name;
-  if (token && token.split('.').length === 3) {
-    try {
-      decodedToken = jwtDecode<DecodedToken>(token);
-    } catch (error) {
-      console.error("Invalid token:", error);
-      // Clear invalid token if necessary
-      localStorage.removeItem("token");
-    }
-  }
-
+  
 
 
 // Function to decode JWT token
