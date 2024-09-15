@@ -1,3 +1,5 @@
+import 'highlight.js/styles/github.css'; 
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Authorization from "./Pages/Auth/Authorization";
@@ -23,6 +25,7 @@ import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 import ComponentDetails from "./Pages/Details/ComponentDetails";
+import TextToSql from "./Pages/Database/TextToSql";
 
 function App() {
   return (
@@ -50,6 +53,7 @@ function App() {
               <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
               <Route path="/componentDetails" element={<ComponentDetails />} />
+              <Route path="/texttosql" element={<TextToSql/>} />
 
 
             </Route>

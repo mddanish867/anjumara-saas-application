@@ -4,6 +4,7 @@ import sql from "@/Data/sql.json";
 import Pagination from "../../Pagination/Pagination";
 import html2pdf from "html2pdf.js";
 import { Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 // import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
 // Define the types for SQL data
@@ -32,6 +33,7 @@ function TextBlock({ text }: TextBlockProps) {
 }
 
 function Sql() {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState<string>("");
   // const [generatedContent, setGeneratedContent] = useState<any>(null);
   // const [loading, setLoading] = useState<boolean>(false);
@@ -97,7 +99,7 @@ function Sql() {
   };
 
   // // Function to handle the search and OpenAI API call
-  // const handleSearch = async () => {
+  const handleSearch = async () => {
   //   if (searchQuery.trim() === '') return;
 
   //   setLoading(true);
@@ -110,7 +112,9 @@ function Sql() {
   //   } finally {
   //     setLoading(false);
   //   }
-  // };
+
+  navigate('/texttosql')
+  };
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-20 md:px-8">
@@ -166,7 +170,7 @@ function Sql() {
               />
               <Search
                 className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5 cursor-pointer"
-                // onClick={handleSearch}
+                onClick={handleSearch}
               />
             </div>
           </div>

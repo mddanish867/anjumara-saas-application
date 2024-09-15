@@ -7,6 +7,7 @@ import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mu
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
 import { Eye, EyeOff } from "lucide-react";
+import axios from 'axios';
 
 // Define the type for your form data
 interface FormData {
@@ -70,6 +71,22 @@ export default function Signin() {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/auth/google', null, {
+        withCredentials: true,
+      });
+      console.log('Google login successful:', response.data);
+      // Handle successful login
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.error('Login error:', error.response?.data?.error || error.message);
+      } else {
+        console.error('Login error:', error);
+      }
+    }
+  };
+  
   return (
     <div className="container bg-transparent px-4 py-6">
       <h1
@@ -156,8 +173,8 @@ export default function Signin() {
               {isLoading ? (
                 <ColorRing
                   visible={true}
-                  height="52"
-                  width="52"
+                  height="48"
+                  width="48"
                   ariaLabel="color-ring-loading"
                   wrapperStyle={{}}
                   wrapperClass="color-ring-wrapper"
@@ -181,9 +198,9 @@ export default function Signin() {
             </p>
           </div>
           <div className="grid gap-y-4 sm:grid-cols-1 lg:grid-cols-2 px-1">
-            <Link to="/api/auth/google/login" className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
+            <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <FcGoogle className="text-2xl" />
-            </Link>
+            </button>
 
             <button className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
               <FaGithub className="text-2xl" />

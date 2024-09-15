@@ -24,7 +24,7 @@ const ComponentDetails = () => {
   ];
 
   return (
-    <div className="container p-6 mt-20">
+    <div className="p-6 mt-20">
       {/* Breadcrumb */}
       <nav className="text-gray-700 mb-4 flex items-center">
         <Home className="w-4 h-4 mr-1" />
