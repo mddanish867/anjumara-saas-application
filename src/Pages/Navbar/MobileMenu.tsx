@@ -13,9 +13,15 @@ import NavbarLink from "./NavbarLink";
 import { MoveRight } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 
-interface LoggedInprop{
-  token: string | null;
+interface DecodedToken {
+  email: string;
+  exp: number; // Expiration timestamp
+  iat: number; // Issued at timestamp
+  name: string;
+  userId: string;
 }
+interface LoggedInprop{
+  token: DecodedToken | string;}
 
 export default function MobileMenu({token}:LoggedInprop) {
   const navigate = useNavigate();  

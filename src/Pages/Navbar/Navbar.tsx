@@ -6,31 +6,13 @@ import MobileMenu from "./MobileMenu";
 import { ModeToggle } from "@/components/ModeToggle";
 import { useNavigate } from "react-router-dom";
 import UserProfile from "../Auth/UserProfile";
-import { jwtDecode } from "jwt-decode";
+import { decodeToken } from "../helper/decodedToke";
 
-interface DecodedToken {
-  email: string;
-  exp: number; // Expiration timestamp
-  iat: number; // Issued at timestamp
-  name: string;
-  userId: string;
-}
+
 function Navbar() {
   const navigate = useNavigate();
-
-  // Check if token exists in session or local storage
-  const token = localStorage.getItem("token");
-  let decodedToken: DecodedToken | null = null;
-  //const name = decodedToken.name;
-  if (token && token.split('.').length === 3) {
-    try {
-      decodedToken = jwtDecode<DecodedToken>(token);
-    } catch (error) {
-      console.error("Invalid token:", error);
-      // Clear invalid token if necessary
-      localStorage.removeItem("token");
-    }
-  }
+ const decodedToken = decodeToken();
+ 
   
   // Fetch user profile using the custom hook
   const handleSignin = () => {
@@ -73,12 +55,12 @@ function Navbar() {
           </div>
 
           <div className="block lg:hidden gap-x-2">
-            {token && <UserProfile name={decodedToken?.name} />}
+            {decodedToken && <UserProfile name={decodedToken?.name} />}
           </div>
 
           {/* Desktop and Laptop View Buttons */}
           <div className="hidden lg:flex gap-x-1">
-            {token ? (
+            {decodedToken ? (
               <UserProfile name={decodedToken?.name} />
             ) : (
               <Button
@@ -99,7 +81,7 @@ function Navbar() {
 
           {/* Mobile and Tablet View */}
           <div className="lg:hidden">
-            <MobileMenu token={token || ''} />
+            <MobileMenu token={decodedToken || ''} />
           </div>
         </div>
       </nav>
