@@ -4,6 +4,7 @@ import { marked } from 'marked'; // Markdown parser to convert response
 import hljs from 'highlight.js'; // For syntax highlighting
 import { Rings } from "react-loader-spinner";
 import toast from "react-hot-toast";
+import { Search } from 'lucide-react';
 
 function TextToSql() {
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
@@ -116,23 +117,40 @@ const renderCodeBlocks = (htmlContent: string) => {
 
     return (
         <div className="container p-6 w-full mx-auto mt-20">
-            <div className="flex mb-4">
-                <input
-                    placeholder="Enter SQL-related query..."
-                    className="border border-[#38bdf8] p-2 flex-1 rounded-md outline-none bg-transparent"
-                    name="search"
-                    type="text"
-                    disabled={loading}
-                    onChange={handleChangeSearch}
-                />
-                <button
-                    className="ml-4 bg-[#38bdf8] px-4 py-2 rounded-md"
-                    onClick={handleSearchClick}
-                    disabled={loading}
-                >
-                    Search
-                </button>
-            </div>
+              <div className="mx-auto max-w-md">
+      <strong className="block text-center text-xl font-bold  sm:text-3xl">
+        Search SQL practical interview questions.
+      </strong>
+
+      <form className="mt-6 ">
+        <div className="relative max-w-lg ">
+          <label className="sr-only" htmlFor="text"> Search </label>
+
+          <input
+            className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
+            name="search"
+            type="text"
+            placeholder="Search query..."
+            disabled={loading}
+            onChange={handleChangeSearch}
+          />
+
+          <button
+          onClick={handleSearchClick}
+          disabled={loading}
+            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#30b7f1]"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+
+    {!aiResponse && <div className='flex items-center justify-center min-h-screen -mt-32 text-[30px]'>
+        <Search fontSize={80} className='text-[30px] mx-2'/>
+                   <h1>Search for anything!</h1>
+                </div>}
+            
 
             {loading && !aiResponse ? (
                 <div className='flex items-center justify-center min-h-screen -mt-32'>
@@ -147,14 +165,12 @@ const renderCodeBlocks = (htmlContent: string) => {
                     />
                 </div>
             ) : (
-                <div className="bg-transparent p-4 rounded-md">
+                <div className="bg-transparent p-4 rounded-md mt-10">
                     <div className="prose max-w-full">
-                        <h2 className="text-xl font-bold">Glad to help you here is your response!</h2>
-
                         {/* Dynamically render API response */}
                         <div
                             dangerouslySetInnerHTML={{ __html: renderCodeBlocks(aiResponse) }}
-                            className="prose max-w-none"
+                            className="prose max-w-none mt-4 justify-items-start"
                         />
                     </div>
                 </div>
