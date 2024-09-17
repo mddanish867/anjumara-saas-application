@@ -236,10 +236,10 @@ function TextToSql() {
         </div>
       )}
 
-      {loading &&!aiResponse && (
+      {!loading && !aiResponse && (
         <div className="flex flex-col items-center justify-center min-h-screen -mt-32 text-gray-300">
           {/* Icon */}
-          <Search className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 mb-4" />
+          <Search className="w-16 h-16 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 mb-4" />
 
           {/* Text */}
           <h1 className="text-[24px] sm:text-[28px] md:text-[30px] lg:text-[36px] text-center">

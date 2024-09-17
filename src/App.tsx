@@ -58,6 +58,7 @@ function App() {
               <Route path="/template-details" element={<TemplateDetails />} />
               <Route path="/interview-section/sql/texttosql" element={<TextToSql/>} />
               <Route path="/texttosql" element={<TextToSql/>} />
+              <Route path="/sql/texttosql" element={<TextToSql/>} />
               <Route path="/all-components" element={<AllComponents/>} />
               <Route path="/all-templates" element={<AllTemplates/>} />
               <Route path="/component-details" element={<ComponentDetails/>} />
