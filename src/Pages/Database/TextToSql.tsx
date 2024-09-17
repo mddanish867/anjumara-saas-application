@@ -7,6 +7,7 @@ import { ColorRing } from "react-loader-spinner";
 import { useSqlResponseMutation } from "@/API/ResponseAPI/sqlResponseApi";
 import { decodeToken } from "../helper/decodedToke";
 import { Search } from "lucide-react";
+import Breadcrumb from "@/BreadCrum/Breadcrum";
 
 function TextToSql() {
   const [userId, setUserId] = useState("");
@@ -161,6 +162,7 @@ function TextToSql() {
 
   return (
     <div className="container p-6 w-full mx-auto mt-20">
+       <Breadcrumb />
       <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-4">
         <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
           Want to Prepare with AI?
@@ -233,7 +235,7 @@ function TextToSql() {
         </div>
       )}
 
-      {!aiResponse && (
+      {loading &&!aiResponse && (
         <div className="flex flex-col items-center justify-center min-h-screen -mt-32 text-gray-300">
           {/* Icon */}
           <Search className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 mb-4" />

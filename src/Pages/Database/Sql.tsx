@@ -5,6 +5,8 @@ import Pagination from "../../Pagination/Pagination";
 import html2pdf from "html2pdf.js";
 import { useNavigate } from "react-router-dom";
 import { decodeToken } from "../helper/decodedToke";
+import { useLocation } from "react-router-dom";
+
 // import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
 // Define the types for SQL data
@@ -34,6 +36,8 @@ function TextBlock({ text }: TextBlockProps) {
 
 function Sql() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const decodedToken = decodeToken();
 
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -106,7 +110,7 @@ function Sql() {
 
   const handleButtonClick = () => {
     if (decodedToken) {
-      navigate("/texttosql");
+      navigate(`${location.pathname}/texttosql`);
     } else {
       navigate("/signin");
     }

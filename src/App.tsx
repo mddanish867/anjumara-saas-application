@@ -41,21 +41,22 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/authorization" element={<Authorization />} />
               <Route path="/interview-section" element={<InterviewSection />} />
+              <Route path="/interview-section/frontend" element={<Frontend />} />
               <Route path="/frontend" element={<Frontend />} />
-              <Route path="/section/frontend" element={<Frontend />} />
               <Route path="/react" element={<ReactPage />} />
+              <Route path="/interview-section/backend" element={<Backend />} />
               <Route path="/backend" element={<Backend />} />
-              <Route path="/section/backend" element={<Backend />} />
               <Route path="/interview-section/sql" element={<Sql />} />
               <Route path="/sql" element={<Sql />} />
               <Route path="/azure" element={<Azure />} />
-              <Route path="/section/azure" element={<Azure />} />
+              <Route path="/interview-section/azure" element={<Azure />} />
               <Route path="/git" element={<Git />} />
-              <Route path="/section/git" element={<Git />} />
+              <Route path="/interview-section/git" element={<Git />} />
               <Route path="/user-details" element={<UserDetails />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
               <Route path="/template-details" element={<TemplateDetails />} />
+              <Route path="/interview-section/sql/texttosql" element={<TextToSql/>} />
               <Route path="/texttosql" element={<TextToSql/>} />
               <Route path="/all-components" element={<AllComponents/>} />
               <Route path="/all-templates" element={<AllTemplates/>} />
