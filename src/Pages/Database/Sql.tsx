@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { decodeToken } from "../helper/decodedToke";
 import { useLocation } from "react-router-dom";
 
-// import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
-
 // Define the types for SQL data
 interface SQLQuestionAnswer {
   question: string;
@@ -93,13 +91,15 @@ function Sql() {
   const renderAllQuestions = () => {
     return Object.entries(sqlData).map(([level, questions], levelIndex) => (
       <div key={levelIndex}>
-        <h3 className="text-xl md:text-2xl font-semibold mb-4">
+        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
           {level} SQL Interview Questions
         </h3>
         <div className="w-full space-y-4">
           {questions.map((item: SQLQuestionAnswer, index: number) => (
-            <div key={index} className="bg-white p-6 rounded-lg">
-              <h4 className="text-lg font-semibold  mb-2">{item.question}</h4>
+            <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+              <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                {item.question}
+              </h4>
               <TextBlock text={item.answer} />
             </div>
           ))}
@@ -131,7 +131,7 @@ function Sql() {
     //     setLoading(false);
     //   }
 
-    navigate("/texttosql");
+   
   };
 
   return (
@@ -142,7 +142,7 @@ function Sql() {
       {/* Content to be downloaded */}
       <div id="content-to-download">
         {/* Top Section: Title and Image */}
-        <div className="w-full">
+        <div className="w-full mt-8">
           {/* Header Image */}
           <img
             src="/sqlbaner.jpg"
@@ -154,10 +154,10 @@ function Sql() {
         {/* SQL Interview Tips, Search Input, and Download Button */}
         <div className="mt-8 flex flex-col md:flex-row md:justify-between">
           <div className="md:flex-grow">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4">
+            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
               SQL Interview Preparation Tips
             </h3>
-            <p className="text-sm md:text-base lg:text-lg mb-4">
+            <p className="text-sm md:text-base lg:text-lg mb-4 text-gray-600 dark:text-gray-300">
               SQL interviews often focus on your ability to understand and write
               efficient queries. Be prepared to discuss database normalization,
               indexing, query optimization, and SQL joins. Practice writing
@@ -165,7 +165,7 @@ function Sql() {
               implications of different SQL operations on performance.
             </p>
 
-            <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-4">
+            <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-8">
               <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                 Want to Prepare with AI?
               </h4>
@@ -185,16 +185,12 @@ function Sql() {
               </button>
             </div>
 
-            <div className="mx-auto max-w-md mt-10">
-              <form className="mt-6 ">
-                <div className="relative max-w-lg ">
-                  <label className="sr-only" htmlFor="email">
-                    {" "}
-                    Email{" "}
-                  </label>
-
+            <div className="mx-auto max-w-md mt-20">
+              <form className="mt-6">
+                <div className="relative max-w-lg">
                   <input
-                    className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
+                    required
+                    className="w-full rounded-full border bg-white dark:bg-gray-700 p-4 pe-32 text-sm font-medium text-gray-900 dark:text-gray-200 focus:outline-none focus:border-[#38bdf8]"
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
@@ -205,7 +201,7 @@ function Sql() {
                     onClick={handleSearch}
                     className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
                   >
-                    Subscribe
+                    Search
                   </button>
                 </div>
               </form>
@@ -214,7 +210,7 @@ function Sql() {
           <div className="mt-4 md:mt-0">
             <button
               onClick={handleDownloadPDF}
-              className="bg-[#38bdf8] text-white px-4 py-2 w-full md:w-40 rounded-lg hover:bg-[#38bdf8] transition duration-300 ease-in-out"
+              className="bg-[#38bdf8] text-white px-4 py-2 w-full md:w-40 rounded-lg hover:bg-[#32a7d8] transition duration-300 ease-in-out"
             >
               Download PDF
             </button>
@@ -252,14 +248,16 @@ function Sql() {
         )} */}
 
         {/* List of Interview Questions and Answers */}
-        <div className="mt-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-4">
+        <div className="mt-20">
+          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
             Common SQL Interview Questions
           </h3>
           <div className="w-full space-y-4">
             {paginatedData.map((item, index) => (
-              <div key={index} className="p-6 rounded-lg">
-                <h4 className="text-lg font-semibold mb-2">{item.question}</h4>
+              <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+                <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                  {item.question}
+                </h4>
                 <TextBlock text={item.answer} />
               </div>
             ))}
