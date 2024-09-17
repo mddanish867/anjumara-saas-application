@@ -7,7 +7,7 @@ import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mu
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
 import { Eye, EyeOff } from "lucide-react";
-import axios from 'axios';
+import axios from "axios";
 
 // Define the type for your form data
 interface FormData {
@@ -63,7 +63,11 @@ export default function Signin() {
         localStorage.setItem("token", token);
         toast.success("Logged in successfully", user);
         setTimeout(() => {
-          navigate("/"); // Redirect to a dashboard or home page after login
+          if (window.history.length > 1) {
+            navigate(-1); // Go back to the previous page
+          } else {
+            navigate("/dashboard"); // Fallback to dashboard or home page
+          }
         }, 2000);
       } catch (loginError) {
         toast.error("Failed to login.");
@@ -73,20 +77,27 @@ export default function Signin() {
 
   const handleGoogleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/google', null, {
-        withCredentials: true,
-      });
-      console.log('Google login successful:', response.data);
+      const response = await axios.post(
+        "http://localhost:3000/api/auth/google",
+        null,
+        {
+          withCredentials: true,
+        }
+      );
+      console.log("Google login successful:", response.data);
       // Handle successful login
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.error('Login error:', error.response?.data?.error || error.message);
+        console.error(
+          "Login error:",
+          error.response?.data?.error || error.message
+        );
       } else {
-        console.error('Login error:', error);
+        console.error("Login error:", error);
       }
     }
   };
-  
+
   return (
     <div className="container bg-transparent px-4 py-6">
       <h1
@@ -116,10 +127,8 @@ export default function Signin() {
                   errors.email && !formData.email ? "border-red-500" : ""
                 } focus:border-[#38bdf8] shadow-sm rounded-lg`}
               />
-              {errors.email && !formData.email &&(
-                <p className="text-red-500 text-sm mt-2">
-                  {errors.email}
-                </p>
+              {errors.email && !formData.email && (
+                <p className="text-red-500 text-sm mt-2">{errors.email}</p>
               )}
             </div>
             <div className="relative">
@@ -140,9 +149,7 @@ export default function Signin() {
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </div>
               {errors.password && !formData.password && (
-                <p className="text-red-500 text-sm mt-2">
-                  {errors.password}
-                </p>
+                <p className="text-red-500 text-sm mt-2">{errors.password}</p>
               )}
             </div>
             <div className="flex items-center justify-between text-sm">
@@ -198,7 +205,10 @@ export default function Signin() {
             </p>
           </div>
           <div className="grid gap-y-4 sm:grid-cols-1 lg:grid-cols-2 px-1">
-            <button onClick={handleGoogleLogin} className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]">
+            <button
+              onClick={handleGoogleLogin}
+              className="w-full flex items-center justify-center py-2.5 border rounded-lg hover:bg-transparent duration-150 active:bg-transparent hover:border-[#38bdf8]"
+            >
               <FcGoogle className="text-2xl" />
             </button>
 

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-function Section() {
+function AllTemplates() {
   const location = useLocation();
 
   const navigation = [
@@ -63,4 +63,4 @@ function Section() {
   );
 }
 
-export default Section;
+export default AllTemplates;

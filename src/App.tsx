@@ -1,10 +1,12 @@
 import 'highlight.js/styles/github.css'; 
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./Store/store";
+import { ThemeProvider } from "./components/theme-provider";
 import Layout from "./layout/Layout";
 import Authorization from "./Pages/Auth/Authorization";
 import Home from "./Pages/Hero/Home";
-import Section from "./Pages/Section/Section";
 import Frontend from "./Pages/Frontend/Frontend";
 import ReactPage from "./Pages/Frontend/React";
 import Backend from "./Pages/Backend/Backend";
@@ -12,20 +14,21 @@ import Sql from "./Pages/Database/Sql";
 import Azure from "./Pages/Cloud/Azure";
 import Git from "./Pages/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
-import { ThemeProvider } from "./components/theme-provider";
 import SignUp from "./Pages/Auth/SignUp";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import Signin from "./Pages/Auth/Signin";
-import { Provider } from "react-redux";
-import { store } from "./Store/store";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import UserDetails from "./Pages/Auth/UserDetails";
 import LandingPage1 from "./Pages/LandingPages/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
 import ResetPassword from "./Pages/Auth/ResetPassword";
-import ComponentDetails from "./Pages/Details/ComponentDetails";
+import TemplateDetails from "./Pages/Templates/TemplateDetails";
 import TextToSql from "./Pages/Database/TextToSql";
+import AllComponents from './Pages/Components/AllComponents';
+import AllTemplates from './Pages/Templates/AllTemplates';
+import ComponentDetails from './Pages/Components/ComponentDetails';
+import InterviewSection from './Pages/InterviewPrep/InterviewSection';
 
 function App() {
   return (
@@ -37,13 +40,13 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
               <Route path="/authorization" element={<Authorization />} />
-              <Route path="/section" element={<Section />} />
+              <Route path="/interview-section" element={<InterviewSection />} />
               <Route path="/frontend" element={<Frontend />} />
               <Route path="/section/frontend" element={<Frontend />} />
               <Route path="/react" element={<ReactPage />} />
               <Route path="/backend" element={<Backend />} />
               <Route path="/section/backend" element={<Backend />} />
-              <Route path="/section/sql" element={<Sql />} />
+              <Route path="/interview-section/sql" element={<Sql />} />
               <Route path="/sql" element={<Sql />} />
               <Route path="/azure" element={<Azure />} />
               <Route path="/section/azure" element={<Azure />} />
@@ -52,8 +55,11 @@ function App() {
               <Route path="/user-details" element={<UserDetails />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
-              <Route path="/componentDetails" element={<ComponentDetails />} />
+              <Route path="/template-details" element={<TemplateDetails />} />
               <Route path="/texttosql" element={<TextToSql/>} />
+              <Route path="/all-components" element={<AllComponents/>} />
+              <Route path="/all-templates" element={<AllTemplates/>} />
+              <Route path="/component-details" element={<ComponentDetails/>} />
 
 
             </Route>

@@ -1,16 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { decodeToken } from "../helper/decodedToke";
 
 function Banner() {
   const navigate = useNavigate();
+  const decodedToken = decodeToken();
 
   const handleClick = () => {
-    navigate("/section");
+    navigate("/all-components");
   };
 
   const handleAllAccess = () => {
-    navigate("/all-access");
+    if (!decodedToken) {
+      navigate("/signin");
+    } else {
+      navigate("/all-access");
+    }
   };
 
   return (

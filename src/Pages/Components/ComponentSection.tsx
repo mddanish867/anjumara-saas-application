@@ -7,38 +7,38 @@ const products = [
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "component-details",
   },
   {
     image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "component-details",
   },
   {
     image: "/price.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "#",
+    link: "component-details",
   },
 ];
-function CTASection() {
+function Components() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/section");
+    navigate("/all-components");
   };
   return (
     <>
       <section className="relative bg-gradient-to-r from-[#d6b7f5] via-[#94a5f7] to-[#e2caec] py-2 rounded-tl-full">
         <span className="relative flex justify-between">
-          <span className="relative z-10 text-[#38bdf8] px-6 font-semibold text-start">
+          <span className="relative z-10 px-6 font-semibold text-start">
             Components
           </span>
           <span
-            className="flex z-10 text-[#38bdf8] px-6 font-semibold text-start cursor-pointer"
+            className="flex z-10 text-[#38bdf8] px-6 font-normal text-start cursor-pointer"
             onClick={handleClick}
           >
             All components <MoveRight className="ml-2" />
@@ -73,7 +73,6 @@ function CTASection() {
               <a
                 href={product.link}
                 className="flex items-center mt-4 text-[#38bdf8] hover:underline"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 Learn More <MoveRight className="ml-2" />
@@ -86,4 +85,4 @@ function CTASection() {
   );
 }
 
-export default CTASection;
+export default Components;

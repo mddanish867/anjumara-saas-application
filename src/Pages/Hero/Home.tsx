@@ -1,15 +1,15 @@
 import Banner from "./Banner";
 import Client from "./Client";
-import CTASection from "./ComponentSection";
-import Recent from "./Recent";
-import Template from "./Template";
+import Components from "../Components/ComponentSection";
+import Interviews from "../InterviewPrep/Interviews";
+import Template from "../Templates/Template";
 function Home() {
   return (
     <>
       <Banner />
       <Template />
-      <CTASection />
-      <Recent />
+      <Components />
+      <Interviews />
       <Client />
     </>
   );

@@ -3,8 +3,8 @@ import Breadcrumb from "@/BreadCrum/Breadcrum";
 import sql from "@/Data/sql.json";
 import Pagination from "../../Pagination/Pagination";
 import html2pdf from "html2pdf.js";
-import { Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { decodeToken } from "../helper/decodedToke";
 // import { generateSQLContent } from "@/API/openaiService"; // Import the OpenAI service
 
 // Define the types for SQL data
@@ -34,6 +34,8 @@ function TextBlock({ text }: TextBlockProps) {
 
 function Sql() {
   const navigate = useNavigate();
+  const decodedToken = decodeToken();
+
   const [searchQuery, setSearchQuery] = useState<string>("");
   // const [generatedContent, setGeneratedContent] = useState<any>(null);
   // const [loading, setLoading] = useState<boolean>(false);
@@ -58,25 +60,29 @@ function Sql() {
 
   // Function to handle PDF download
   const handleDownloadPDF = () => {
-    const hiddenElement = document.getElementById("all-content-to-download");
+    if (!decodedToken) {
+      navigate("/signin");
+    } else {
+      const hiddenElement = document.getElementById("all-content-to-download");
 
-    // Temporarily display the hidden content
-    if (hiddenElement) hiddenElement.style.display = "block";
+      // Temporarily display the hidden content
+      if (hiddenElement) hiddenElement.style.display = "block";
 
-    const element = document.getElementById("all-content-to-download");
-    html2pdf()
-      .from(element)
-      .set({
-        margin: 1,
-        filename: "sql-interview-preparation.pdf",
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-      })
-      .save()
-      .then(() => {
-        // Hide the content again after PDF generation
-        if (hiddenElement) hiddenElement.style.display = "none";
-      });
+      const element = document.getElementById("all-content-to-download");
+      html2pdf()
+        .from(element)
+        .set({
+          margin: 1,
+          filename: "sql-interview-preparation.pdf",
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        })
+        .save()
+        .then(() => {
+          // Hide the content again after PDF generation
+          if (hiddenElement) hiddenElement.style.display = "none";
+        });
+    }
   };
 
   // Function to render all questions
@@ -98,22 +104,30 @@ function Sql() {
     ));
   };
 
+  const handleButtonClick = () => {
+    if (decodedToken) {
+      navigate("/texttosql");
+    } else {
+      navigate("/signin");
+    }
+  };
+
   // // Function to handle the search and OpenAI API call
   const handleSearch = async () => {
-  //   if (searchQuery.trim() === '') return;
+    //   if (searchQuery.trim() === '') return;
 
-  //   setLoading(true);
-  //   try {
-  //     const content = await generateSQLContent(searchQuery);
-  //     setGeneratedContent(content);
-  //   } catch (error) {
-  //     console.error('Error generating SQL content:', error);
-  //     setGeneratedContent(null);
-  //   } finally {
-  //     setLoading(false);
-  //   }
+    //   setLoading(true);
+    //   try {
+    //     const content = await generateSQLContent(searchQuery);
+    //     setGeneratedContent(content);
+    //   } catch (error) {
+    //     console.error('Error generating SQL content:', error);
+    //     setGeneratedContent(null);
+    //   } finally {
+    //     setLoading(false);
+    //   }
 
-  navigate('/texttosql')
+    navigate("/texttosql");
   };
 
   return (
@@ -131,18 +145,6 @@ function Sql() {
             alt="SQL Banner"
             className="w-full h-64 object-cover rounded-md shadow-md"
           />
-
-          {/* Content Below the Header Image */}
-       
-            <h2 className="mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-[#38bdf8] mb-2">
-              SQL Interview Preparation
-            </h2>
-            <p className="text-sm md:text-base lg:text-lg">
-              Enhance your SQL skills with detailed knowledge of database
-              design, query optimization, and advanced SQL concepts. Get ready
-              to impress in your SQL interviews!
-            </p>
-          
         </div>
 
         {/* SQL Interview Tips, Search Input, and Download Button */}
@@ -159,19 +161,50 @@ function Sql() {
               implications of different SQL operations on performance.
             </p>
 
-            {/* Search Input with Icon */}
-            <div className="relative mt-4">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search SQL interview questions..."
-                className="w-full px-4 py-2 bg-transparent border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#38bdf8]  pl-10"
-              />
-              <Search
-                className="absolute top-2 left-3 text-[#38bdf8] w-5 h-5 cursor-pointer"
-                onClick={handleSearch}
-              />
+            <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-4">
+              <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+                Want to Prepare with AI?
+              </h4>
+              <p className="text-sm md:text-base lg:text-lg mb-4 text-gray-700 dark:text-gray-300">
+                Leverage cutting-edge AI tools to help you prepare efficiently
+                for your SQL interviews. Generate practice questions, optimize
+                queries, and receive personalized feedback based on your input.
+                Whether you're looking for basic, intermediate, or advanced SQL
+                practice, our AI-powered preparation assistant has got you
+                covered.
+              </p>
+              <button
+                onClick={handleButtonClick}
+                className="bg-[#38bdf8] text-white px-4 py-2 rounded-lg hover:bg-[#32a7d8] transition duration-300 ease-in-out"
+              >
+                Start Preparing with AI
+              </button>
+            </div>
+
+            <div className="mx-auto max-w-md mt-10">
+              <form className="mt-6 ">
+                <div className="relative max-w-lg ">
+                  <label className="sr-only" htmlFor="email">
+                    {" "}
+                    Email{" "}
+                  </label>
+
+                  <input
+                    className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search Common SQL interview questions..."
+                  />
+
+                  <button
+                    onClick={handleSearch}
+                    className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
           <div className="mt-4 md:mt-0">

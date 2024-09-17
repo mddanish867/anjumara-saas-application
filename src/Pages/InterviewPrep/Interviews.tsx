@@ -42,12 +42,12 @@ const navigation = [
   },
 ];
 
-function Recent() {
+function Interviews() {
   const [activeTab, setActiveTab] = useState(0); // Initialize with the first tab active
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/section");
+    navigate("/interview-section");
   };
 
   const { name, link, img, description } = navigation[activeTab];
@@ -55,17 +55,17 @@ function Recent() {
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-4 md:px-8 mt-20">
       <div className="max-w-lg">
-        <h1 className="text-3xl font-bold sm:text-5xl">
+        <h1 className="text-3xl font-bold sm:text-5xl text-gray-900 dark:text-gray-100">
           Beautifully crafted UI components, ready for your next project.
         </h1>
-        <p className="mt-2">
+        <p className="mt-2 text-gray-700 dark:text-gray-300">
           Over 500+ professionally designed, fully responsive, expertly crafted
           component examples you can drop into your Tailwind projects and
           customize to your heart’s content.
         </p>
         <Button
           variant="link"
-          className="text-start text-[#38bdf8] -ml-4 mt-4"
+          className="text-start text-[#38bdf8] -ml-4 mt-4 dark:text-[#38bdf8] dark:hover:text-[#32a7d8]"
           onClick={handleClick}
         >
           Browse all questions <MoveRight className="ml-2" />
@@ -78,12 +78,12 @@ function Recent() {
               key={idx}
               className={`py-2 border-b-2 flex-shrink-0 cursor-pointer ${
                 idx === activeTab
-                  ? "border-[#38bdf8] text-[#38bdf8]"
-                  : "border-transparent text-gray-500"
+                  ? "border-[#38bdf8] text-[#38bdf8] dark:border-[#38bdf8] dark:text-[#38bdf8]"
+                  : "border-transparent text-gray-500 dark:text-gray-400"
               }`}
               onClick={() => setActiveTab(idx)}
             >
-              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-[#38bdf8]  active:bg-transparent font-medium">
+              <span className="py-2.5 px-4 rounded-lg duration-150 text-sm hover:text-[#38bdf8] dark:hover:text-[#38bdf8] active:bg-transparent font-medium">
                 {item.name}
               </span>
             </li>
@@ -98,15 +98,15 @@ function Recent() {
             alt={`${name} Banner`}
             className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 mb-4 rounded-full shadow-md object-contain"
           />
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#38bdf8] mb-2">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-[#38bdf8] dark:text-[#38bdf8] mb-2">
             {name}
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4">
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4">
             {description}
           </p>
           <Button
             variant="link"
-            className="text-[#38bdf8]"
+            className="text-[#38bdf8] dark:text-[#38bdf8]"
             onClick={() => navigate(link)}
           >
             Learn More <MoveRight className="ml-2" />
@@ -117,4 +117,4 @@ function Recent() {
   );
 }
 
-export default Recent;
+export default Interviews;

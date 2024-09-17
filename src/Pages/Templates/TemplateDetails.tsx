@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Home, ChevronRight, CodeXml, Eclipse } from 'lucide-react';
 
-const ComponentDetails = () => {
+const TemplateDetails = () => {
   // Set the first image as the default selected image
   const [selectedImage, setSelectedImage] = useState('hero.png');
 
@@ -126,4 +126,4 @@ const ComponentDetails = () => {
   );
 };
 
-export default ComponentDetails;
+export default TemplateDetails;

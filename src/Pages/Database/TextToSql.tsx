@@ -74,7 +74,6 @@ function TextToSql() {
         response: aiResponse,
         query: search,
       }).unwrap();
-      toast.success("Response saved successfully!");
     } catch (error) {
       toast.error("Failed to save the response.");
       console.error("Save Error:", error);
@@ -162,7 +161,19 @@ function TextToSql() {
 
   return (
     <div className="container p-6 w-full mx-auto mt-20">
-      <div className="mx-auto max-w-md">
+      <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-4">
+        <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+          Want to Prepare with AI?
+        </h4>
+        <p className="text-sm md:text-base lg:text-lg mb-4 text-gray-700 dark:text-gray-300">
+          Leverage cutting-edge AI tools to help you prepare efficiently for
+          your SQL interviews. Generate practice questions, optimize queries,
+          and receive personalized feedback based on your input. Whether you're
+          looking for basic, intermediate, or advanced SQL practice, our
+          AI-powered preparation assistant has got you covered.
+        </p>
+      </div>
+      <div className="mx-auto max-w-md mt-10">
         <form className="mt-6 ">
           <div className="relative max-w-lg ">
             <label className="sr-only" htmlFor="text">
@@ -173,7 +184,7 @@ function TextToSql() {
               className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
               name="search"
               type="text"
-              placeholder="Search query..."
+              placeholder="Search SQL practical interview questions..."
               disabled={loading}
               onChange={handleChangeSearch}
             />
@@ -181,7 +192,11 @@ function TextToSql() {
             <button
               onClick={handleSearchClick}
               disabled={loading}
-              className={`absolute end-1 top-1/2 -translate-y-1/2 rounded-full  ${loading ? 'bg-white border border-[#38bdf8] hover:bg-white' : 'bg-[#38bdf8] hover:bg-[#30b7f1]'} px-5 py-3 text-sm font-medium text-white transition `}
+              className={`absolute end-1 top-1/2 -translate-y-1/2 rounded-full  ${
+                loading
+                  ? "bg-white border border-[#38bdf8] hover:bg-white"
+                  : "bg-[#38bdf8] hover:bg-[#30b7f1]"
+              } px-5 py-3 text-sm font-medium text-white transition `}
             >
               {loading ? (
                 <ColorRing
@@ -207,21 +222,26 @@ function TextToSql() {
         </form>
       </div>
 
-      {!loading && aiResponse &&
-        (<div className="bg-transparent p-4 rounded-md mt-10">
+      {!loading && aiResponse && (
+        <div className="bg-transparent p-4 rounded-md mt-10">
           <div className="prose max-w-full">
             <div
               dangerouslySetInnerHTML={{ __html: renderCodeBlocks(aiResponse) }}
               className="prose max-w-none mt-4 justify-items-start"
             />
           </div>
-        </div>)
-      }
+        </div>
+      )}
 
       {!aiResponse && (
-        <div className="flex flex-col items-center justify-center min-h-screen -mt-32 text-[30px] text-gray-400">
-          <Search fontSize={80} className="text-[30px] mx-2 " />
-          <h1>Search for SQL interview questions!</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen -mt-32 text-gray-300">
+          {/* Icon */}
+          <Search className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 mb-4" />
+
+          {/* Text */}
+          <h1 className="text-[24px] sm:text-[28px] md:text-[30px] lg:text-[36px] text-center">
+            Search for SQL interview questions!
+          </h1>
         </div>
       )}
     </div>

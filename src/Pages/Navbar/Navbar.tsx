@@ -8,21 +8,18 @@ import { useNavigate } from "react-router-dom";
 import UserProfile from "../Auth/UserProfile";
 import { decodeToken } from "../helper/decodedToke";
 
-
 function Navbar() {
   const navigate = useNavigate();
- const decodedToken = decodeToken();
- 
-  
+  const decodedToken = decodeToken();
+
   // Fetch user profile using the custom hook
   const handleSignin = () => {
     navigate("/signin");
   };
- 
-//  const handleAllAccess = () => {
-//   navigate("/all-access");
-// };
- 
+
+  //  const handleAllAccess = () => {
+  //   navigate("/all-access");
+  // };
 
   return (
     <>
@@ -81,7 +78,7 @@ function Navbar() {
 
           {/* Mobile and Tablet View */}
           <div className="lg:hidden">
-            <MobileMenu token={decodedToken || ''} />
+            <MobileMenu token={decodedToken || ""} />
           </div>
         </div>
       </nav>

@@ -7,21 +7,21 @@ const products = [
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "/componentDetails",
+    link: "/template-details",
   },
   {
     image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "/componentDetails",
+    link: "/template-details",
   },
   {
     image: "/price.png",
     title: "Product Title",
     price: 29.99,
     description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
-    link: "/componentDetails",
+    link: "/template-details",
   },
 ];
 
@@ -29,17 +29,17 @@ function Template() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/section");
+    navigate("/all-templates");
   };
 
   return (
     <>
       <span className="relative flex justify-between -mt-20">
-        <span className="relative z-10 text-[#38bdf8] px-6 font-semibold text-start">
+        <span className="relative z-10 px-6 font-semibold text-start">
           Templates
         </span>
         <span
-          className="flex z-10 text-[#38bdf8] px-6 font-semibold text-start cursor-pointer"
+          className="flex z-10 text-[#38bdf8] px-6 font-normal text-start cursor-pointer"
           onClick={handleClick}
         >
           All templates <MoveRight className="ml-2" />
