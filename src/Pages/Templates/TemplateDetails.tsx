@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { CodeXml, Eclipse } from 'lucide-react';
+import { useState } from "react";
+import { CodeXml, Eclipse } from "lucide-react";
 
 const TemplateDetails = () => {
   // Set the first image as the default selected image
-  const [selectedImage, setSelectedImage] = useState('hero.png');
+  const [selectedImage, setSelectedImage] = useState("hero.png");
 
   const images = [
-    { src: 'hero.png', thumb: 'hero.png', alt: 'Image 1' },
-    { src: 'banner2.png', thumb: 'banner2.png', alt: 'Image 2' },
-    { src: 'price.png', thumb: 'price.png', alt: 'Image 3' },
-    { src: 'hero.png', thumb: 'hero.png', alt: 'Image 4' },
-    { src: 'banner2.png', thumb: 'banner2.png', alt: 'Image 5' },
-    { src: 'price.png', thumb: 'price.png', alt: 'Image 6' },
+    { src: "hero.png", thumb: "hero.png", alt: "Image 1" },
+    { src: "banner2.png", thumb: "banner2.png", alt: "Image 2" },
+    { src: "price.png", thumb: "price.png", alt: "Image 3" },
+    { src: "hero.png", thumb: "hero.png", alt: "Image 4" },
+    { src: "banner2.png", thumb: "banner2.png", alt: "Image 5" },
+    { src: "price.png", thumb: "price.png", alt: "Image 6" },
   ];
 
   const techStack = [
-    { name: 'HTML5', icon: CodeXml },
-    { name: 'CSS3', icon: Eclipse },
-    { name: 'JavaScript', icon: CodeXml },
-    { name: 'React.js', icon: CodeXml },
+    { name: "HTML5", icon: CodeXml },
+    { name: "CSS3", icon: Eclipse },
+    { name: "JavaScript", icon: CodeXml },
+    { name: "React.js", icon: CodeXml },
   ];
 
   return (
@@ -33,7 +33,9 @@ const TemplateDetails = () => {
               src={image.thumb}
               alt={image.alt}
               className={`w-24 h-24 object-cover cursor-pointer border border-gray-200 hover:border-[#38bdf8] dark:border-gray-600 dark:hover:border-[#38bdf8] ${
-                selectedImage === image.src ? 'border-[#38bdf8] dark:border-[#38bdf8]' : ''
+                selectedImage === image.src
+                  ? "border-[#38bdf8] dark:border-[#38bdf8]"
+                  : ""
               }`}
               onClick={() => setSelectedImage(image.src)}
             />
@@ -50,7 +52,9 @@ const TemplateDetails = () => {
       </div>
 
       {/* Heading and Description */}
-      <h1 className="text-3xl font-bold mb-4 dark:text-gray-200">Component Name</h1>
+      <h1 className="text-3xl font-bold mb-4 dark:text-gray-200">
+        Component Name
+      </h1>
       <p className="text-gray-700 dark:text-gray-300 mb-6">
         This component is designed to provide users with an intuitive interface
         for building UI moments. It offers a variety of customizable options to
@@ -58,12 +62,17 @@ const TemplateDetails = () => {
       </p>
 
       {/* Tech Stack */}
-      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Tech Stack</h2>
-      <ul className="flex space-x-6 mb-6">
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">
+        Tech Stack
+      </h2>
+      <ul className="flex space-x-6 mb-6 overflow-x-auto scrollbar-hide">
         {techStack.map((tech) => {
           const Icon = tech.icon;
           return (
-            <li key={tech.name} className="flex items-center space-x-2">
+            <li
+              key={tech.name}
+              className="flex items-center space-x-2 flex-shrink-0"
+            >
               <Icon className="w-6 h-6 text-[#38bdf8] dark:text-[#38bdf8]" />
               <span className="dark:text-gray-300">{tech.name}</span>
             </li>
@@ -72,7 +81,9 @@ const TemplateDetails = () => {
       </ul>
 
       {/* Enhancements */}
-      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Enhancements</h2>
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">
+        Enhancements
+      </h2>
       <ul className="list-disc list-inside mb-6 dark:text-gray-300">
         <li>Dark mode compatibility for improved accessibility.</li>
         <li>Responsive design optimized for all screen sizes.</li>
@@ -80,29 +91,41 @@ const TemplateDetails = () => {
       </ul>
 
       {/* Future Add-ons */}
-      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Future Add-ons</h2>
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">
+        Future Add-ons
+      </h2>
       <ul className="list-disc list-inside mb-6 dark:text-gray-300">
         <li>Integration with third-party APIs for extended functionality.</li>
         <li>Advanced user personalization and theme settings.</li>
       </ul>
 
       {/* Documentation */}
-      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Documentation</h2>
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">
+        Documentation
+      </h2>
       <p className="text-gray-700 dark:text-gray-300 mb-6">
-        Refer to our{' '}
-        <a href="/docs/component-name" className="text-[#38bdf8] underline dark:text-[#38bdf8]">
+        Refer to our{" "}
+        <a
+          href="/docs/component-name"
+          className="text-[#38bdf8] underline dark:text-[#38bdf8]"
+        >
           comprehensive documentation
-        </a>{' '}
+        </a>{" "}
         for setup instructions, customization guides, and troubleshooting tips.
       </p>
 
       {/* API Documentation */}
-      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">API Documentation</h2>
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">
+        API Documentation
+      </h2>
       <p className="text-gray-700 dark:text-gray-300">
-        Explore the{' '}
-        <a href="/api/component-name" className="text-[#38bdf8] underline dark:text-[#38bdf8]">
+        Explore the{" "}
+        <a
+          href="/api/component-name"
+          className="text-[#38bdf8] underline dark:text-[#38bdf8]"
+        >
           API documentation
-        </a>{' '}
+        </a>{" "}
         to learn about available endpoints, parameters, and example requests and
         responses.
       </p>
