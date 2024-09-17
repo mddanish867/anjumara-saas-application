@@ -32,8 +32,8 @@ const TemplateDetails = () => {
               key={image.src}
               src={image.thumb}
               alt={image.alt}
-              className={`w-24 h-24 object-cover cursor-pointer border border-gray-200 hover:border-[#38bdf8] ${
-                selectedImage === image.src ? 'border-[#38bdf8]' : ''
+              className={`w-24 h-24 object-cover cursor-pointer border border-gray-200 hover:border-[#38bdf8] dark:border-gray-600 dark:hover:border-[#38bdf8] ${
+                selectedImage === image.src ? 'border-[#38bdf8] dark:border-[#38bdf8]' : ''
               }`}
               onClick={() => setSelectedImage(image.src)}
             />
@@ -44,63 +44,63 @@ const TemplateDetails = () => {
           <img
             src={selectedImage}
             alt="Selected"
-            className="w-full h-auto border border-gray-200"
+            className="w-full h-auto border border-gray-200 dark:border-gray-600"
           />
         </div>
       </div>
 
       {/* Heading and Description */}
-      <h1 className="text-3xl font-bold mb-4">Component Name</h1>
-      <p className="text-gray-700 mb-6">
+      <h1 className="text-3xl font-bold mb-4 dark:text-gray-200">Component Name</h1>
+      <p className="text-gray-700 dark:text-gray-300 mb-6">
         This component is designed to provide users with an intuitive interface
         for building UI moments. It offers a variety of customizable options to
         enhance user experience and streamline the design process.
       </p>
 
       {/* Tech Stack */}
-      <h2 className="text-2xl font-semibold mb-2">Tech Stack</h2>
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Tech Stack</h2>
       <ul className="flex space-x-6 mb-6">
         {techStack.map((tech) => {
           const Icon = tech.icon;
           return (
             <li key={tech.name} className="flex items-center space-x-2">
-              <Icon className="w-6 h-6 text-[#38bdf8]" />
-              <span>{tech.name}</span>
+              <Icon className="w-6 h-6 text-[#38bdf8] dark:text-[#38bdf8]" />
+              <span className="dark:text-gray-300">{tech.name}</span>
             </li>
           );
         })}
       </ul>
 
       {/* Enhancements */}
-      <h2 className="text-2xl font-semibold mb-2">Enhancements</h2>
-      <ul className="list-disc list-inside mb-6">
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Enhancements</h2>
+      <ul className="list-disc list-inside mb-6 dark:text-gray-300">
         <li>Dark mode compatibility for improved accessibility.</li>
         <li>Responsive design optimized for all screen sizes.</li>
         <li>Performance optimizations for faster load times.</li>
       </ul>
 
       {/* Future Add-ons */}
-      <h2 className="text-2xl font-semibold mb-2">Future Add-ons</h2>
-      <ul className="list-disc list-inside mb-6">
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Future Add-ons</h2>
+      <ul className="list-disc list-inside mb-6 dark:text-gray-300">
         <li>Integration with third-party APIs for extended functionality.</li>
         <li>Advanced user personalization and theme settings.</li>
       </ul>
 
       {/* Documentation */}
-      <h2 className="text-2xl font-semibold mb-2">Documentation</h2>
-      <p className="text-gray-700 mb-6">
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">Documentation</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-6">
         Refer to our{' '}
-        <a href="/docs/component-name" className="text-[#38bdf8] underline">
+        <a href="/docs/component-name" className="text-[#38bdf8] underline dark:text-[#38bdf8]">
           comprehensive documentation
         </a>{' '}
         for setup instructions, customization guides, and troubleshooting tips.
       </p>
 
       {/* API Documentation */}
-      <h2 className="text-2xl font-semibold mb-2">API Documentation</h2>
-      <p className="text-gray-700">
+      <h2 className="text-2xl font-semibold mb-2 dark:text-gray-200">API Documentation</h2>
+      <p className="text-gray-700 dark:text-gray-300">
         Explore the{' '}
-        <a href="/api/component-name" className="text-[#38bdf8] underline">
+        <a href="/api/component-name" className="text-[#38bdf8] underline dark:text-[#38bdf8]">
           API documentation
         </a>{' '}
         to learn about available endpoints, parameters, and example requests and
