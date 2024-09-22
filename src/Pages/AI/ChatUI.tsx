@@ -18,19 +18,21 @@ const ChatUI = () => {
         } fixed top-0 left-0 h-full bg-white dark:bg-gray-900 z-20 p-4 md:relative md:translate-x-0 md:w-1/4 md:border-r border-gray-300 dark:border-gray-700`}
       >
         <div className="flex justify-between items-center">
-          {isSidebarOpen && (
+          {!isSidebarOpen ? (
             <Link to="/">
               <h1 className="text-2xl font-semibold">
                 Aether<span className="text-[#38bdf8]">AI</span>
               </h1>
             </Link>
-          )}
+          ) :
           <button
             onClick={toggleSidebar}
             className="md:hidden p-2 rounded-full bg-[#38bdf8] text-white"
           >
             {isSidebarOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
           </button>
+          }
+          
         </div>
         {isSidebarOpen && (
           <ul className="mt-4 space-y-2">
