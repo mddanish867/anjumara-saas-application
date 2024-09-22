@@ -63,7 +63,6 @@ function App() {
               <Route path="/all-components" element={<AllComponents/>} />
               <Route path="/all-templates" element={<AllTemplates/>} />
               <Route path="/component-details" element={<ComponentDetails/>} />
-              <Route path="/chatui" element={<ChatUI/>} />
 
 
             </Route>
@@ -73,6 +72,8 @@ function App() {
             <Route path="/verifyemail" element={<VerifyEmail/>} />
             <Route path="/landing-page1" element={<LandingPage1/>} />
             <Route path="/resetpassword" element={<ResetPassword />} />
+            <Route path="/chatui" element={<ChatUI/>} />
+
 
           </Routes>
         </ThemeProvider>
