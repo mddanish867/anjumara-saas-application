@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi'; // Importing menu and close icons
 
 const ChatUI = () => {
