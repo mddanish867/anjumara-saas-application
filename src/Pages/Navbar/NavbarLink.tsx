@@ -129,7 +129,7 @@ export default function NavigationLink() {
           </NavigationMenuItem>
           <NavigationMenuItem className="flex flex-col bg-transparent hover:bg-transparent">
             <NavigationMenuLink
-              href="/docs"
+              href="/chatui"
               className={cn(
                 navigationMenuTriggerStyle(),
                 "bg-transparent hover:bg-transparent"

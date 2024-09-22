@@ -29,6 +29,7 @@ import AllComponents from './Pages/Components/AllComponents';
 import AllTemplates from './Pages/Templates/AllTemplates';
 import ComponentDetails from './Pages/Components/ComponentDetails';
 import InterviewSection from './Pages/InterviewPrep/InterviewSection';
+import ChatUI from './Pages/AI/ChatUI';
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
               <Route path="/all-components" element={<AllComponents/>} />
               <Route path="/all-templates" element={<AllTemplates/>} />
               <Route path="/component-details" element={<ComponentDetails/>} />
+              <Route path="/chatui" element={<ChatUI/>} />
 
 
             </Route>
