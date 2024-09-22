@@ -10,29 +10,21 @@ const ChatUI = () => {
   };
 
   return (
-    <div className="flex h-screen mt-20 bg-white dark:bg-gray-900 transition-colors">
+    <div className="flex h-screen bg-white dark:bg-gray-900 transition-colors">
       {/* Sidebar */}
       <div
         className={`transition-transform transform ${
           isSidebarOpen ? 'translate-x-0 w-full' : '-translate-x-full'
-        } fixed top-0 left-0 h-full bg-white dark:bg-gray-900 z-20 p-4 md:relative md:translate-x-0 md:w-1/4 md:border-r border-gray-300 dark:border-gray-700`}
+        } fixed top-0 left-0 h-full bg-white dark:bg-gray-900 z-20 p-4 md:relative md:translate-x-0 md:w-1/4 md:border-r border-gray-300 dark:border-gray-700 md:block`}
       >
         <div className="flex justify-between items-center">
-          {isSidebarOpen ? (
-            <Link to="/">
-              <h1 className="text-2xl font-semibold">
-                Aether<span className="text-[#38bdf8]">AI</span>
-              </h1>
-            </Link>
-          ) : (
-            <button
-              onClick={toggleSidebar}
-              className="md:hidden p-2 rounded-full bg-[#38bdf8] text-white"
-            >
-              <FiMenu className="w-6 h-6" />
-            </button>
-          )}
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Aether<span className="text-[#38bdf8]">AI</span>
+            </h1>
+          </Link>
 
+          {/* Only show the close button in small devices */}
           {isSidebarOpen && (
             <button
               onClick={toggleSidebar}
@@ -42,21 +34,30 @@ const ChatUI = () => {
             </button>
           )}
         </div>
-        {isSidebarOpen && (
-          <ul className="mt-4 space-y-2">
-            {/* Example chat items */}
-            <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
-              Chat Item 1
-            </li>
-            <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
-              Chat Item 2
-            </li>
-            <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
-              Chat Item 3
-            </li>
-          </ul>
-        )}
+
+        {/* Sidebar items */}
+        <ul className="mt-4 space-y-2">
+          <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
+            Chat Item 1
+          </li>
+          <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
+            Chat Item 2
+          </li>
+          <li className="p-2 border rounded dark:bg-gray-800 dark:border-gray-700">
+            Chat Item 3
+          </li>
+        </ul>
       </div>
+
+      {/* Mobile Menu Icon */}
+      {!isSidebarOpen && (
+        <button
+          onClick={toggleSidebar}
+          className="fixed top-4 left-4 p-2 rounded-full bg-[#38bdf8] text-white md:hidden"
+        >
+          <FiMenu className="w-6 h-6" />
+        </button>
+      )}
 
       {/* Main Chat Interface */}
       <div
