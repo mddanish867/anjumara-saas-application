@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi'; // Importing menu and close icons
+import { FiX } from 'react-icons/fi'; 
+import { AlignLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ChatUI = () => {
@@ -53,17 +54,17 @@ const ChatUI = () => {
       {!isSidebarOpen && (
         <button
           onClick={toggleSidebar}
-          className="fixed top-4 left-4 p-2 rounded-full bg-[#38bdf8] text-white md:hidden"
+          className="fixed top-4 left-4 p-2 rounded-full text-[#38bdf8] bg-transparent md:hidden"
         >
-          <FiMenu className="w-6 h-6" />
+          <AlignLeft className="w-6 h-6" />
         </button>
       )}
 
       {/* Main Chat Interface */}
       <div
         className={`flex-1 flex flex-col p-4 transition-all duration-300 ${
-          isSidebarOpen ? 'hidden md:flex' : 'flex'
-        }`}
+          isSidebarOpen ? 'hidden md:flex ' : 'flex'
+        } ${isSidebarOpen ? 'mt-20' : ''} md:mt-0`}
       >
         <div className="flex-1 overflow-auto mb-4">
           <div className="space-y-4">
