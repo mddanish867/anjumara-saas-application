@@ -9,7 +9,7 @@ const ChatUI = () => {
   };
 
   return (
-    <div className="flex h-screen mt-20 bg-white dark:bg-gray-900 transition-colors">
+    <div className="flex h-screen mt-20 bg-white dark:bg-gray-900 transition-colors"> {/* Added mt-20 here */}
       {/* Left Side: Chat History */}
       <div className={`transition-transform ${isSidebarOpen ? 'w-9/10' : 'w-1/4'} border-r border-gray-300 dark:border-gray-700 p-4 fixed md:relative top-0 left-0 h-full bg-white dark:bg-gray-900 z-20`}>
         <div className="flex justify-between items-center">
