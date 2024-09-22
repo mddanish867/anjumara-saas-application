@@ -51,7 +51,7 @@ export default function MobileMenu({token}:LoggedInprop) {
             <div className="mr-7">
               <a href="/">
                 <h1 className="text-2xl font-semibold">
-                  Anjum<span className="text-[#38bdf8]">Ara</span>
+                Aether<span className="text-[#38bdf8]">AI</span>
                 </h1>
               </a>
             </div>

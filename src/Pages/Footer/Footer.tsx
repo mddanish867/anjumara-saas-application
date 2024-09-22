@@ -18,7 +18,7 @@ export default function Footer() {
             className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
             id="email"
             type="email"
-            placeholder="example@anjumara.com"
+            placeholder="example@AetherAI.com"
           />
 
           <button
@@ -196,7 +196,7 @@ export default function Footer() {
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500">
-        © AnjumAra 2024. All rights reserved.
+        © AetherAI 2024. All rights reserved.
 
         
       </p>

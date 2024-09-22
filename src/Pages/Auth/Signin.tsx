@@ -104,7 +104,7 @@ export default function Signin() {
         className="text-2xl font-semibold cursor-pointer mb-6"
         onClick={() => navigate("/")}
       >
-        Anjum<span className="text-start text-[#38bdf8]">Ara</span>
+        Aether<span className="text-start text-[#38bdf8]">AI</span>
       </h1>
       <main className="w-full flex flex-col items-center justify-center px-4 mt-14">
         <div className="max-w-sm w-full space-y-4">
