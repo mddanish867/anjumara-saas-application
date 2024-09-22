@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { FiX } from 'react-icons/fi'; 
-import { AlignLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { FiX } from "react-icons/fi";
+import { AlignLeft } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ChatUI = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -15,7 +15,7 @@ const ChatUI = () => {
       {/* Sidebar */}
       <div
         className={`transition-transform transform ${
-          isSidebarOpen ? 'translate-x-0 w-full' : '-translate-x-full'
+          isSidebarOpen ? "translate-x-0 w-full" : "-translate-x-full"
         } fixed top-0 left-0 h-full bg-white dark:bg-gray-900 z-20 p-4 md:relative md:translate-x-0 md:w-1/4 md:border-r border-gray-300 dark:border-gray-700 md:block`}
       >
         <div className="flex justify-between items-center">
@@ -62,9 +62,9 @@ const ChatUI = () => {
 
       {/* Main Chat Interface */}
       <div
-        className={`flex-1 flex flex-col p-4 transition-all duration-300 ${
-          isSidebarOpen ? 'hidden md:flex ' : 'flex'
-        } ${isSidebarOpen ? 'mt-20' : ''} md:mt-0`}
+        className={`flex-1 flex flex-col p-4 transition-all duration-300 mt-14 md:mt-0 ${
+          isSidebarOpen ? "hidden md:flex" : "flex"
+        }`}
       >
         <div className="flex-1 overflow-auto mb-4">
           <div className="space-y-4">
