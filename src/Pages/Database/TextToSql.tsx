@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { marked } from "marked"; // Markdown parser to convert response
-import hljs from "highlight.js"; // For syntax highlighting
+import { marked } from "marked"; 
+import hljs from "highlight.js"; 
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
 import { useSqlResponseMutation } from "@/API/ResponseAPI/sqlResponseApi";
@@ -46,7 +46,7 @@ function TextToSql() {
         7. Follow the above six steps for the related interview questions of SQL query.`;
 
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-002" });
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const text = await response.text();
@@ -163,18 +163,7 @@ function TextToSql() {
   return (
     <div className="container p-6 w-full mx-auto mt-20">
        <Breadcrumb />
-      <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-8">
-        <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-          Want to Prepare with AI?
-        </h4>
-        <p className="text-sm md:text-base lg:text-lg mb-4 text-gray-700 dark:text-gray-300">
-          Leverage cutting-edge AI tools to help you prepare efficiently for
-          your SQL interviews. Generate practice questions, optimize queries,
-          and receive personalized feedback based on your input. Whether you're
-          looking for basic, intermediate, or advanced SQL practice, our
-          AI-powered preparation assistant has got you covered.
-        </p>
-      </div>
+      
       <div className="mx-auto max-w-md mt-10">
         <form className="mt-6 ">
           <div className="relative max-w-lg ">
@@ -183,7 +172,7 @@ function TextToSql() {
             </label>
 
             <input
-              className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
+              className="w-full rounded-full border border-gray-300 dark:text-gray-500 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
               name="search"
               type="text"
               placeholder="Search SQL practical interview questions..."
@@ -236,7 +225,7 @@ function TextToSql() {
         </div>
       )}
 
-      {!loading && !aiResponse && (
+      {!aiResponse && (
         <div className="flex flex-col items-center justify-center min-h-screen -mt-32 text-gray-300">
           {/* Icon */}
           <Search className="w-16 h-16 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-16 lg:h-16 mb-4" />

@@ -36,6 +36,7 @@ import Jasper1 from './Pages/LandingPages/Jasper1';
 import Jasper2 from './Pages/LandingPages/jasper2';
 import Stack from './Pages/LandingPages/Stack';
 import Aethik from './Pages/LandingPages/Aethik';
+import React from './Pages/Frontend/React';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
               <Route path="/interview-section" element={<InterviewSection />} />
               <Route path="/interview-section/frontend" element={<Frontend />} />
               <Route path="/frontend" element={<Frontend />} />
+              <Route path="/frontend/react" element={<React/>} />
               <Route path="/react" element={<ReactPage />} />
               <Route path="/interview-section/backend" element={<Backend />} />
               <Route path="/backend" element={<Backend />} />

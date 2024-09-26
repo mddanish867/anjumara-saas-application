@@ -142,17 +142,17 @@ function Sql() {
       {/* Content to be downloaded */}
       <div id="content-to-download">
         {/* Top Section: Title and Image */}
-        <div className="w-full mt-8">
-          {/* Header Image */}
+        {/* <div className="w-full mt-8">
+          
           <img
             src="/sqlbaner.jpg"
             alt="SQL Banner"
             className="w-full h-64 object-cover rounded-md shadow-md"
           />
-        </div>
+        </div> */}
 
         {/* SQL Interview Tips, Search Input, and Download Button */}
-        <div className="mt-8 flex flex-col md:flex-row md:justify-between">
+        <div className="mt-12 flex flex-col md:flex-row md:justify-between">
           <div className="md:flex-grow">
             <h3 className="text-xl md:text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
               SQL Interview Preparation Tips
