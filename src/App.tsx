@@ -31,6 +31,11 @@ import ComponentDetails from './Pages/Components/ComponentDetails';
 import InterviewSection from './Pages/InterviewPrep/InterviewSection';
 import ChatUI from './Pages/AI/ChatUI';
 import B12Clone from './Pages/LandingPages/B12LandingPage';
+import ZIP from './Pages/LandingPages/ZIPLandingPage';
+import Jasper1 from './Pages/LandingPages/Jasper1';
+import Jasper2 from './Pages/LandingPages/jasper2';
+import Stack from './Pages/LandingPages/Stack';
+import Aethik from './Pages/LandingPages/Aethik';
 
 function App() {
   return (
@@ -74,7 +79,12 @@ function App() {
             <Route path="/landing-page1" element={<LandingPage1/>} />
             <Route path="/resetpassword" element={<ResetPassword />} />
             <Route path="/chatui" element={<ChatUI/>} />
-            <Route path="/b12clone" element={<B12Clone/>} />
+            <Route path="/all-templates/b12clone" element={<B12Clone/>} />
+            <Route path="/all-templates/zip" element={<ZIP/>} />
+            <Route path="/all-templates/jasper" element={<Jasper1/>} />
+            <Route path="/all-templates/jasper2" element={<Jasper2/>} />
+            <Route path="/all-templates/stack" element={<Stack/>} />
+            <Route path="/all-templates/aethik" element={<Aethik/>} />
 
 
           </Routes>

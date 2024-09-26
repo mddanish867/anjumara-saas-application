@@ -4,11 +4,13 @@ function AllTemplates() {
   const location = useLocation();
 
   const navigation = [
-    { name: "Frontend", link: `${location.pathname}/frontend`, img: "/frontendbanner.avif" },
-    { name: "Backend", link: `${location.pathname}/backend`, img: "/backendbanner.jpeg" },
-    { name: "Azure", link: `${location.pathname}/azure`, img: "/azurebanner.png" },
-    { name: "SQL", link: `${location.pathname}/sql`, img: "/sqlbaner.jpg" }, // Link corrected
-    { name: "Git", link: `${location.pathname}/git`, img: "/gitbanner.png" },
+    { name: "B12", link: `${location.pathname}/b12clone`, img: "/B12.png" },
+    { name: "ZIP", link: `${location.pathname}/zip`, img: "/zip.png" },
+    { name: "Jasper", link: `${location.pathname}/jasper`, img: "/jasper.png" },
+    { name: "Jasper 2", link: `${location.pathname}/jasper2`, img: "/jasper2.png" },
+
+    { name: "Stack", link: `${location.pathname}/stack`, img: "/stack.png" }, // Link corrected
+    { name: "Aethik", link: `${location.pathname}/aethik`, img: "/aethik.png" },
   ];
 
   return (
