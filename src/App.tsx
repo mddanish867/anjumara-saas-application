@@ -30,6 +30,7 @@ import AllTemplates from './Pages/Templates/AllTemplates';
 import ComponentDetails from './Pages/Components/ComponentDetails';
 import InterviewSection from './Pages/InterviewPrep/InterviewSection';
 import ChatUI from './Pages/AI/ChatUI';
+import B12Clone from './Pages/LandingPages/B12LandingPage';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
             <Route path="/landing-page1" element={<LandingPage1/>} />
             <Route path="/resetpassword" element={<ResetPassword />} />
             <Route path="/chatui" element={<ChatUI/>} />
+            <Route path="/b12clone" element={<B12Clone/>} />
 
 
           </Routes>
