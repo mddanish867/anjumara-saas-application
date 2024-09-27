@@ -8,9 +8,9 @@ function AllTemplates() {
     { name: "ZIP", link: `${location.pathname}/zip`, img: "/zip.png" },
     { name: "Jasper", link: `${location.pathname}/jasper`, img: "/jasper.png" },
     { name: "Jasper 2", link: `${location.pathname}/jasper2`, img: "/jasper2.png" },
-
     { name: "Stack", link: `${location.pathname}/stack`, img: "/stack.png" }, // Link corrected
     { name: "Aethik", link: `${location.pathname}/aethik`, img: "/aethik.png" },
+    { name: "Temp5", link: `${location.pathname}/temp5`, img: "/temp5.jpg" },
   ];
 
   return (

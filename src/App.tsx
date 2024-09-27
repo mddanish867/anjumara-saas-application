@@ -37,6 +37,7 @@ import Jasper2 from './Pages/LandingPages/jasper2';
 import Stack from './Pages/LandingPages/Stack';
 import Aethik from './Pages/LandingPages/Aethik';
 import React from './Pages/Frontend/React';
+import HubSpotClone from './Pages/LandingPages/HubSpotClone';
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
             <Route path="/all-templates/jasper2" element={<Jasper2/>} />
             <Route path="/all-templates/stack" element={<Stack/>} />
             <Route path="/all-templates/aethik" element={<Aethik/>} />
+            <Route path="/all-templates/temp5" element={<HubSpotClone/>} />
 
 
           </Routes>
