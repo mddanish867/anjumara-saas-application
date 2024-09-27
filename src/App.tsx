@@ -38,6 +38,13 @@ import Stack from './Pages/LandingPages/Stack';
 import Aethik from './Pages/LandingPages/Aethik';
 import React from './Pages/Frontend/React';
 import HubSpotClone from './Pages/LandingPages/HubSpotClone';
+import Temp7 from './Pages/LandingPages/Temp7';
+import HubSpotLanding from './Pages/LandingPages/temp6';
+import Temp8 from './Pages/LandingPages/temp8';
+import Temp9 from './Pages/LandingPages/temp9';
+import Temp10 from './Pages/LandingPages/Temp10';
+import Temp11 from './Pages/LandingPages/Temp11';
+import Temp12 from './Pages/LandingPages/Temp12';
 
 function App() {
   return (
@@ -89,7 +96,13 @@ function App() {
             <Route path="/all-templates/stack" element={<Stack/>} />
             <Route path="/all-templates/aethik" element={<Aethik/>} />
             <Route path="/all-templates/temp5" element={<HubSpotClone/>} />
-
+            <Route path="/all-templates/temp7" element={<Temp7/>} />
+            <Route path="/all-templates/temp6" element={<HubSpotLanding/>} />
+            <Route path="/all-templates/temp8" element={<Temp8/>} />
+            <Route path="/all-templates/temp9" element={<Temp9/>} />
+            <Route path="/all-templates/temp10" element={<Temp10/>} />
+            <Route path="/all-templates/temp11" element={<Temp11/>} />
+            <Route path="/all-templates/temp12" element={<Temp12/>} />
 
           </Routes>
         </ThemeProvider>

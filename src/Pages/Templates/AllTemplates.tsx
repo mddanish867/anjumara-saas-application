@@ -10,7 +10,15 @@ function AllTemplates() {
     { name: "Jasper 2", link: `${location.pathname}/jasper2`, img: "/jasper2.png" },
     { name: "Stack", link: `${location.pathname}/stack`, img: "/stack.png" }, // Link corrected
     { name: "Aethik", link: `${location.pathname}/aethik`, img: "/aethik.png" },
-    { name: "Temp5", link: `${location.pathname}/temp5`, img: "/temp5.jpg" },
+    { name: "Temp 5", link: `${location.pathname}/temp5`, img: "/Temp5.jpg" },
+    { name: "Temp 6", link: `${location.pathname}/temp6`, img: "/Temp6.jpg" },
+    { name: "Temp 7", link: `${location.pathname}/temp7`, img: "/Temp6.jpg" },
+    { name: "Temp 8", link: `${location.pathname}/temp8`, img: "/temp8.jpg" },
+    { name: "Temp 9", link: `${location.pathname}/temp9`, img: "/Temp9.jpg" },
+    { name: "Temp 10", link: `${location.pathname}/temp10`, img: "/Temp10.jpg" },
+    { name: "Temp 11", link: `${location.pathname}/temp11`, img: "/Temp11.jpg" },
+    { name: "Temp 12", link: `${location.pathname}/temp12`, img: "/Temp12.jpg" },
+
   ];
 
   return (
@@ -19,7 +27,7 @@ function AllTemplates() {
         <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16">
           <div className="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Find your career path
+              Explore our new Templates
             </h2>
 
             <p className="mt-4">
