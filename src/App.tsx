@@ -58,6 +58,7 @@ import Ecom10 from './Pages/LandingPages/Ecom10';
 import EmailMarketDashboard from './Pages/LandingPages/EmailmarketDashboard';
 import EmailMarketTemp from './Pages/LandingPages/EmailTemp';
 import ForumTemplate from './Pages/LandingPages/Forumtemp';
+import CodaCommunity from './Pages/LandingPages/CommunityForum';
 
 function App() {
   return (
@@ -129,6 +130,7 @@ function App() {
             <Route path="/all-templates/email-market-dashboard" element={<EmailMarketDashboard/>} />
             <Route path="/all-templates/email-market-temp" element={<EmailMarketTemp/>} />
             <Route path="/all-templates/forum-temp" element={<ForumTemplate/>} />
+            <Route path="/all-templates/community-temp" element={<CodaCommunity/>} />
 
           </Routes>
         </ThemeProvider>

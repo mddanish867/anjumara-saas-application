@@ -31,6 +31,7 @@ function AllTemplates() {
     { name: "Email Dashboard", link: `${location.pathname}/email-market-dashboard`, img: "/Email-market.png" },
     { name: "Email Temp", link: `${location.pathname}/email-market-temp`, img: "/Temp14.jpg" },
     { name: "Forum Temp", link: `${location.pathname}/forum-temp`, img: "/Temp15.jpg" },
+    { name: "Community Temp", link: `${location.pathname}/community-temp`, img: "/temp16.jpg" },
 
   ];
 
