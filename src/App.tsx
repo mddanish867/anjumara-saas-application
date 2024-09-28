@@ -55,6 +55,9 @@ import Ecom7 from './Pages/LandingPages/Ecom7';
 import Ecom8 from './Pages/LandingPages/Ecom8';
 import Ecom9 from './Pages/LandingPages/Ecom9';
 import Ecom10 from './Pages/LandingPages/Ecom10';
+import EmailMarketDashboard from './Pages/LandingPages/EmailmarketDashboard';
+import EmailMarketTemp from './Pages/LandingPages/EmailTemp';
+import ForumTemplate from './Pages/LandingPages/Forumtemp';
 
 function App() {
   return (
@@ -123,6 +126,9 @@ function App() {
             <Route path="/all-templates/ecom8" element={<Ecom8/>} />
             <Route path="/all-templates/ecom9" element={<Ecom9/>} />
             <Route path="/all-templates/ecom10" element={<Ecom10/>} />
+            <Route path="/all-templates/email-market-dashboard" element={<EmailMarketDashboard/>} />
+            <Route path="/all-templates/email-market-temp" element={<EmailMarketTemp/>} />
+            <Route path="/all-templates/forum-temp" element={<ForumTemplate/>} />
 
           </Routes>
         </ThemeProvider>

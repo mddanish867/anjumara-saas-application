@@ -28,6 +28,9 @@ function AllTemplates() {
     { name: "Ecom 8", link: `${location.pathname}/ecom8`, img: "/Ecom8.png" },
     { name: "Ecom 9", link: `${location.pathname}/ecom9`, img: "/Ecom9.png" },
     { name: "Ecom 10", link: `${location.pathname}/ecom10`, img: "/Ecom10.png" },
+    { name: "Email Dashboard", link: `${location.pathname}/email-market-dashboard`, img: "/Email-market.png" },
+    { name: "Email Temp", link: `${location.pathname}/email-market-temp`, img: "/Temp14.jpg" },
+    { name: "Forum Temp", link: `${location.pathname}/forum-temp`, img: "/Temp15.jpg" },
 
   ];
 
