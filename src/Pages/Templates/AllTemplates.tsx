@@ -32,6 +32,11 @@ function AllTemplates() {
     { name: "Email Temp", link: `${location.pathname}/email-market-temp`, img: "/Temp14.jpg" },
     { name: "Forum Temp", link: `${location.pathname}/forum-temp`, img: "/Temp15.jpg" },
     { name: "Community Temp", link: `${location.pathname}/community-temp`, img: "/temp16.jpg" },
+    { name: "Bank Temp", link: `${location.pathname}/bank-temp`, img: "/bak-temp1.png" },
+    { name: "Bank Temp2", link: `${location.pathname}/bank-temp2`, img: "/bank-temp2.png" },
+    { name: "AI Temp", link: `${location.pathname}/ai-temp`, img: "/ai-temp.png" },
+    { name: "Bank Temp3", link: `${location.pathname}/bank-temp3`, img: "/ai-temp3.png" },
+    { name: "Bank Temp4", link: `${location.pathname}/bank-temp4`, img: "/ai-temp4.png" },
 
   ];
 

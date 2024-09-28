@@ -59,6 +59,11 @@ import EmailMarketDashboard from './Pages/LandingPages/EmailmarketDashboard';
 import EmailMarketTemp from './Pages/LandingPages/EmailTemp';
 import ForumTemplate from './Pages/LandingPages/Forumtemp';
 import CodaCommunity from './Pages/LandingPages/CommunityForum';
+import BankTemp from './Pages/LandingPages/bankTemp';
+import Banktemp2 from './Pages/LandingPages/Banktemp2';
+import AITemp from './Pages/LandingPages/AIteemp';
+import BankTemp3 from './Pages/LandingPages/BankTemp3';
+import Banktemp4 from './Pages/LandingPages/BankTemp4';
 
 function App() {
   return (
@@ -131,6 +136,11 @@ function App() {
             <Route path="/all-templates/email-market-temp" element={<EmailMarketTemp/>} />
             <Route path="/all-templates/forum-temp" element={<ForumTemplate/>} />
             <Route path="/all-templates/community-temp" element={<CodaCommunity/>} />
+            <Route path="/all-templates/bank-temp" element={<BankTemp/>} />
+            <Route path="/all-templates/bank-temp2" element={<Banktemp2/>} />
+            <Route path="/all-templates/ai-temp" element={<AITemp/>} />
+            <Route path="/all-templates/bank-temp3" element={<BankTemp3/>} />
+            <Route path="/all-templates/bank-temp4" element={<Banktemp4/>} />
 
           </Routes>
         </ThemeProvider>
