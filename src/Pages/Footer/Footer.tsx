@@ -196,9 +196,7 @@ export default function Footer() {
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500 dark:text-white">
-        © AetherAI 2024. All rights reserved.
-
-        
+        © AetherAI 2024. All rights reserved.        
       </p>
     </div>
   </div>

@@ -45,6 +45,16 @@ import Temp9 from './Pages/LandingPages/temp9';
 import Temp10 from './Pages/LandingPages/Temp10';
 import Temp11 from './Pages/LandingPages/Temp11';
 import Temp12 from './Pages/LandingPages/Temp12';
+import Ecom1 from './Pages/LandingPages/Ecom1';
+import Ecom2 from './Pages/LandingPages/Ecom2';
+import Ecom3 from './Pages/LandingPages/Ecom3';
+import Ecom4 from './Pages/LandingPages/Ecom4';
+import Ecom5 from './Pages/LandingPages/Ecom5';
+import Ecom6 from './Pages/LandingPages/Ecom6';
+import Ecom7 from './Pages/LandingPages/Ecom7';
+import Ecom8 from './Pages/LandingPages/Ecom8';
+import Ecom9 from './Pages/LandingPages/Ecom9';
+import Ecom10 from './Pages/LandingPages/Ecom10';
 
 function App() {
   return (
@@ -103,6 +113,16 @@ function App() {
             <Route path="/all-templates/temp10" element={<Temp10/>} />
             <Route path="/all-templates/temp11" element={<Temp11/>} />
             <Route path="/all-templates/temp12" element={<Temp12/>} />
+            <Route path="/all-templates/ecom1" element={<Ecom1/>} />
+            <Route path="/all-templates/ecom2" element={<Ecom2/>} />
+            <Route path="/all-templates/ecom3" element={<Ecom3/>} />
+            <Route path="/all-templates/ecom4" element={<Ecom4/>} />
+            <Route path="/all-templates/ecom5" element={<Ecom5/>} />
+            <Route path="/all-templates/ecom6" element={<Ecom6/>} />
+            <Route path="/all-templates/ecom7" element={<Ecom7/>} />
+            <Route path="/all-templates/ecom8" element={<Ecom8/>} />
+            <Route path="/all-templates/ecom9" element={<Ecom9/>} />
+            <Route path="/all-templates/ecom10" element={<Ecom10/>} />
 
           </Routes>
         </ThemeProvider>

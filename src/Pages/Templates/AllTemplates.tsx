@@ -18,6 +18,16 @@ function AllTemplates() {
     { name: "Temp 10", link: `${location.pathname}/temp10`, img: "/Temp10.jpg" },
     { name: "Temp 11", link: `${location.pathname}/temp11`, img: "/Temp11.jpg" },
     { name: "Temp 12", link: `${location.pathname}/temp12`, img: "/Temp12.jpg" },
+    { name: "Ecom 1", link: `${location.pathname}/ecom1`, img: "/Ecom1.png" },
+    { name: "Ecom 2", link: `${location.pathname}/ecom2`, img: "/Ecom2.png" },
+    { name: "Ecom 3", link: `${location.pathname}/ecom3`, img: "/Ecom3.png" },
+    { name: "Ecom 4", link: `${location.pathname}/ecom4`, img: "/Ecom4.png" },
+    { name: "Ecom 5", link: `${location.pathname}/ecom5`, img: "/Ecom5.png" },
+    { name: "Ecom 6", link: `${location.pathname}/ecom6`, img: "/Ecom6.png" },
+    { name: "Ecom 7", link: `${location.pathname}/ecom7`, img: "/Ecom7.png" },
+    { name: "Ecom 8", link: `${location.pathname}/ecom8`, img: "/Ecom8.png" },
+    { name: "Ecom 9", link: `${location.pathname}/ecom9`, img: "/Ecom9.png" },
+    { name: "Ecom 10", link: `${location.pathname}/ecom10`, img: "/Ecom10.png" },
 
   ];
 
