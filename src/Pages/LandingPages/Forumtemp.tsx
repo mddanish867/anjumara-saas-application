@@ -9,17 +9,17 @@ export default function ForumTemplate() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   const posts = [
-    { id: 1, author: 'Joanna Dominik', avatar: '/placeholder.svg?height=40&width=40', title: 'Videoask Widget is overlaid with next Videoask Widget - how to dismiss first?', content: 'I added a Videoask widget to the bottom of my page - the little circular one that pops out from the corner of the page. Then I added one on the next page. And the next...', likes: 1, comments: 2, time: '3 hours ago' },
-    { id: 2, author: 'Bimmagedj', avatar: '/placeholder.svg?height=40&width=40', title: 'Decimals', content: 'I am unable to have decimal number input when I set it up as number input only. Any tips?', likes: 1, comments: 2, time: '5 hours ago' },
-    { id: 3, author: 'Marta Marta', avatar: '/placeholder.svg?height=40&width=40', title: 'How can I refund and cancel a subscription I got just now? It was a mistake and now my bank account is almost empty!', content: 'I tried to register for a pro account (for 1 month) because I would only use Typeform for 1 WEEK. I used Typeform before (2016) and the basic monthly subscription was also...', likes: 7, comments: 6, time: '9 hours ago' },
+    { id: 1, author: 'Joanna Dominik', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', title: 'Videoask Widget is overlaid with next Videoask Widget - how to dismiss first?', content: 'I added a Videoask widget to the bottom of my page - the little circular one that pops out from the corner of the page. Then I added one on the next page. And the next...', likes: 1, comments: 2, time: '3 hours ago' },
+    { id: 2, author: 'Bimmagedj', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', title: 'Decimals', content: 'I am unable to have decimal number input when I set it up as number input only. Any tips?', likes: 1, comments: 2, time: '5 hours ago' },
+    { id: 3, author: 'Marta Marta', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', title: 'How can I refund and cancel a subscription I got just now? It was a mistake and now my bank account is almost empty!', content: 'I tried to register for a pro account (for 1 month) because I would only use Typeform for 1 WEEK. I used Typeform before (2016) and the basic monthly subscription was also...', likes: 7, comments: 6, time: '9 hours ago' },
   ]
 
   const creators = [
-    { id: 1, name: 'john_donborough', avatar: '/placeholder.svg?height=32&width=32', points: 279 },
-    { id: 2, name: 'Ibrahim masafi', avatar: '/placeholder.svg?height=32&width=32', points: 217 },
-    { id: 3, name: 'mark.th', avatar: '/placeholder.svg?height=32&width=32', points: 98 },
-    { id: 4, name: 'marta.th', avatar: '/placeholder.svg?height=32&width=32', points: 93 },
-    { id: 5, name: 'christinadavis', avatar: '/placeholder.svg?height=32&width=32', points: 88 },
+    { id: 1, name: 'john_donborough', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', points: 279 },
+    { id: 2, name: 'Ibrahim masafi', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', points: 217 },
+    { id: 3, name: 'mark.th', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', points: 98 },
+    { id: 4, name: 'marta.th', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', points: 93 },
+    { id: 5, name: 'christinadavis', avatar: 'https://img.freepik.com/free-vector/realistic-gold-silver-jewelry-display-black-mannequins-stands-grey-surface_1284-9644.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid', points: 88 },
   ]
 
   return (
