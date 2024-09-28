@@ -8,76 +8,79 @@ export default function Banktemp4() {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-white">
-        <div className="bg-gray-100">
+        <div className="bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-10">
               <div className="flex space-x-4">
-                <Link to="#" className="text-sm text-gray-600 hover:text-gray-900">Union Building & Loan</Link>
-                <Link to="#" className="text-sm text-gray-600 hover:text-gray-900">Security</Link>
-                <Link to="#" className="text-sm text-gray-600 hover:text-gray-900">Rates</Link>
-                <Link to="#" className="text-sm text-gray-600 hover:text-gray-900">Branches</Link>
-                <Link to="#" className="text-sm text-gray-600 hover:text-gray-900">Locate ATM</Link>
+                <Link to="#" className="text-sm font-semibold text-teal-500 hover:text-teal-600">Union Building & Loan</Link>
+                <Link to="#" className="text-sm font-semibold text-teal-500 hover:text-teal-600">Security</Link>
+                <Link to="#" className="text-sm font-semibold text-teal-500 hover:text-teal-600">Rates</Link>
+                <Link to="#" className="text-sm font-semibold text-teal-500 hover:text-teal-600">Branches</Link>
+                <Link to="#" className="text-sm font-semibold text-teal-500 hover:text-teal-600">Locate ATM</Link>
               </div>
               <div className="flex items-center">
-                <Search className="h-4 w-4 text-gray-400" />
+                <Search className="h-4 w-4 text-teal-500" />
               </div>
             </div>
           </div>
         </div>
-        <div className="border-b border-gray-200">
+        <div className='bg-teal-500'>
+        <div className="border rounded-br-full border-gray-200 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
               <div className="flex justify-start lg:w-0 lg:flex-1 rounded-tr-full">
                 <Link to="/" className="flex items-center">
                   <span className="sr-only">Brentwood Bank</span>
-                  <div className="h-8 w-8 bg-teal-600 flex items-center justify-center text-white font-bold text-xl">B</div>
+                  <div className="h-8 w-8 bg-teal-500 flex items-center justify-center text-white font-bold text-xl">B</div>
                   <span className="ml-2 text-gray-900 font-semibold text-lg">BrentwoodBank</span>
                 </Link>
               </div>
-              <div className="-mr-2 -my-2 md:hidden">
+              <div className="-mr-2 -my-2 md:hidden ">
                 <button
                   type="button"
-                  className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
+                  className="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                   <span className="sr-only">Open menu</span>
-                  <Menu className="h-6 w-6" aria-hidden="true" />
+                  <Menu className="h-6 w-6 text-teal-600" aria-hidden="true" />
                 </button>
               </div>
               <nav className="hidden md:flex space-x-10">
                 <div className="relative">
-                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none ">
+                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-teal-600 focus:outline-none ">
                     <span>Personal</span>
-                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-teal-600" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="relative">
-                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none ">
+                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-teal-600 focus:outline-none ">
                     <span>Business</span>
-                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-teal-500" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="relative">
-                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none ">
+                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-teal-600 focus:outline-none ">
                     <span>Wealth</span>
-                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-teal-600" aria-hidden="true" />
                   </button>
                 </div>
                 <div className="relative">
-                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none ">
+                  <button className="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-teal-600 focus:outline-none ">
                     <span>About</span>
-                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500" aria-hidden="true" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-gray-400 group-hover:text-teal-600" aria-hidden="true" />
                   </button>
                 </div>
               </nav>
-              <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                <Link to="#" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-br-full shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700">
+              <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 ">
+                <Link to="#" className="md:mr-24 ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-br-full shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-600">
                   LOGIN TO ONLINE BANKING
                 </Link>
               </div>
             </div>
           </div>
         </div>
+        </div>
+        
 
         {isMenuOpen && (
           <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
@@ -98,7 +101,7 @@ export default function Banktemp4() {
                     </button>
                   </div>
                 </div>
-                <div className="mt-6">
+                <div className="mt-14">
                   <nav className="grid gap-y-8">
                     <Link to="#" className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50">
                       <span className="ml-3 text-base font-medium text-gray-900">Personal</span>
@@ -136,7 +139,7 @@ export default function Banktemp4() {
                 <div>
                   <Link
                     to="#"
-                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-600 hover:bg-teal-700"
+                    className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-teal-500 hover:bg-teal-700"
                   >
                     LOGIN TO ONLINE BANKING
                   </Link>
@@ -148,20 +151,12 @@ export default function Banktemp4() {
       </header>
 
       <main>
-        <div className="relative">
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+        <div className="relative bg-gradient-to-r from-teal-600 to-teal-500">
           <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div className="relative shadow-xl sm:rounded-2xl sm:overflow-hidden">
-              <div className="absolute inset-0">
-                <img
-                  className="h-full w-full object-cover"
-                  src="https://img.freepik.com/premium-vector/flat-illustration-online-banking-money-management_1332470-1587.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid"
-                  alt="People in kitchen"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-600 to-teal-500 mix-blend-multiply"></div>
-              </div>
-              <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                <h1 className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+            <div className="flex sm:rounded-2xl sm:overflow-hidden">
+              
+              <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8 ">
+                <h1 className="text-center text-xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                   <span className="block text-white">Expertise You Need.</span>
                   <span className="block text-teal-200">Service You Deserve</span>
                 </h1>
@@ -180,6 +175,7 @@ export default function Banktemp4() {
                   </div>
                 </div>
               </div>
+              <img className='mt-20 w-2/4 h-96 rounded-bl-full' src='https://img.freepik.com/premium-vector/flat-illustration-online-banking-money-management_1332470-1587.jpg?size=626&ext=jpg&ga=GA1.1.534237988.1704562734&semt=ais_hybrid' alt='here-img'></img>
             </div>
           </div>
         </div>
