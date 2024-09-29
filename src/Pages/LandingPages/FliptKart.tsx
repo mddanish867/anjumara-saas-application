@@ -1,4 +1,4 @@
-import { Search, ShoppingCart, User, Heart, Menu } from 'lucide-react'
+import { Search, ShoppingCart, User, Heart, } from 'lucide-react'
 
 const categories = [
   "Electronics", "TVs & Appliances", "Men", "Women", "Baby & Kids", "Home & Furniture", "Sports, Books & More"
