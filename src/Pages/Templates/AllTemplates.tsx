@@ -44,6 +44,9 @@ function AllTemplates() {
     { name: "Web Builder", link: `${location.pathname}/web-builder`, img: "/web-builder.png" },
     { name: "Web Builder2", link: `${location.pathname}/web-builder2`, img: "/web-builder2.png" },
     { name: "Host Web", link: `${location.pathname}/host-web`, img: "/host-web.png" },
+    { name: "Code Review", link: `${location.pathname}/code-review`, img: "/code-review.png" },
+    { name: "Flipkart Clone", link: `${location.pathname}/flipkart-clone`, img: "/flipkart-clone.png" },
+    { name: "Temp22", link: `${location.pathname}/temp22`, img: "/temp22.png" },
 
   ];
 

@@ -130,7 +130,7 @@ export default function WebBuilder2() {
             <h2 className="text-4xl font-bold text-[#2b31c7] mb-4">Sparkling</h2>
             <div className="flex justify-center">
               <img
-                src="https://media.istockphoto.com/id/1186848461/photo/abstract-red-and-gradient-light-background-with-studio-backdrops-blank-display-or-clean-room.jpg?s=612x612&w=0&k=20&c=xhDxSV8kxpT-YceSyTkDxTm3mJxzUINZBgc_5Xs-PQk="
+                src="https://framerusercontent.com/images/ie1yYbK7hjhZ9M8U4VNkgG0HSoQ.png?scale-down-to=1024"
                 alt="Sparkling drinks"
                 className="rounded-lg shadow-md"
               />

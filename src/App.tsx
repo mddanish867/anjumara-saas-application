@@ -71,6 +71,9 @@ import AITemp2 from './Pages/LandingPages/ATTemp';
 import WebBuilder from './Pages/LandingPages/WebBuilder';
 import WebBuilder2 from './Pages/LandingPages/WebBuilder2';
 import Hostweb from './Pages/LandingPages/Hostweb';
+import CodeReview from './Pages/LandingPages/CodeReview';
+import FlipkartHome from './Pages/LandingPages/FliptKart';
+import Temp22 from './Pages/LandingPages/temp22';
 
 function App() {
   return (
@@ -155,6 +158,9 @@ function App() {
             <Route path="/all-templates/web-builder" element={<WebBuilder/>} />
             <Route path="/all-templates/web-builder2" element={<WebBuilder2/>} />
             <Route path="/all-templates/host-web" element={<Hostweb/>} />
+            <Route path="/all-templates/code-review" element={<CodeReview/>} />
+            <Route path="/all-templates/flipkart-clone" element={<FlipkartHome/>} />
+            <Route path="/all-templates/temp22" element={<Temp22/>} />
 
           </Routes>
         </ThemeProvider>
