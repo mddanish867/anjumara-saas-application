@@ -11,7 +11,7 @@ function AllTemplates() {
     { name: "Stack", link: `${location.pathname}/stack`, img: "/stack.png" }, // Link corrected
     { name: "Aethik", link: `${location.pathname}/aethik`, img: "/aethik.png" },
     { name: "Temp 5", link: `${location.pathname}/temp5`, img: "/Temp5.jpg" },
-    { name: "Temp 6", link: `${location.pathname}/temp6`, img: "/Temp6.jpg" },
+    { name: "Temp 6", link: `${location.pathname}/temp6`, img: "/Temp61.png" },
     { name: "Temp 7", link: `${location.pathname}/temp7`, img: "/Temp6.jpg" },
     { name: "Temp 8", link: `${location.pathname}/temp8`, img: "/temp8.jpg" },
     { name: "Temp 9", link: `${location.pathname}/temp9`, img: "/Temp9.jpg" },
@@ -35,8 +35,12 @@ function AllTemplates() {
     { name: "Bank Temp", link: `${location.pathname}/bank-temp`, img: "/bak-temp1.png" },
     { name: "Bank Temp2", link: `${location.pathname}/bank-temp2`, img: "/bank-temp2.png" },
     { name: "AI Temp", link: `${location.pathname}/ai-temp`, img: "/ai-temp.png" },
-    { name: "Bank Temp3", link: `${location.pathname}/bank-temp3`, img: "/ai-temp3.png" },
-    { name: "Bank Temp4", link: `${location.pathname}/bank-temp4`, img: "/ai-temp4.png" },
+    { name: "Bank Temp3", link: `${location.pathname}/bank-temp3`, img: "/banktemp3.png" },
+    { name: "Bank Temp4", link: `${location.pathname}/bank-temp4`, img: "/banktemp4.png" },
+    { name: "Bank Temp5", link: `${location.pathname}/bank-temp5`, img: "/bank-temp5.png" },
+    { name: "Bank Temp6", link: `${location.pathname}/bank-temp6`, img: "/bank-temp6.png" },
+    { name: "Web Studio", link: `${location.pathname}/web-studio`, img: "/web-studio.png" },
+    { name: "Web Studio", link: `${location.pathname}/ai-temp2`, img: "/ai-temp.png" },
 
   ];
 

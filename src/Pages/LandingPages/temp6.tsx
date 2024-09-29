@@ -36,7 +36,7 @@ export default function HubSpotLanding() {
     <div className=" min-h-screen bg-[#FFF7F1]">
       <header className="bg-white py-4 px-6 flex items-center justify-between" ref={dropdownRef}>
         <div className="flex items-center space-x-8">
-          <img src="/placeholder.svg?height=30&width=100" alt="HubSpot Logo" width={100} height={30} className="w-24" />
+          <span className='text-teal-500 font-semibold'>Email Marketing</span>
           <nav className="hidden lg:flex space-x-6">
             {['Products', 'Solutions', 'Resources'].map((item) => (
               <div key={item} className="relative">
@@ -73,7 +73,7 @@ export default function HubSpotLanding() {
         </div>
       </header>
 
-      <main className="px-4 py-12 lg:py-24">
+      <main className="md:container px-4 py-12 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-[55%] xl:w-[60%]">
             <h2 className="text-sm font-semibold text-gray-600 mb-4 uppercase tracking-wider">HUBSPOT CUSTOMER PLATFORM</h2>
@@ -88,7 +88,7 @@ export default function HubSpotLanding() {
             <p className="mt-4 text-sm text-gray-500">Get a demo of our premium software, or get started with free tools.</p>
           </div>
           <div className="lg:w-[45%] xl:w-[40%] space-y-4 relative">
-            <img src="/placeholder.svg?height=50&width=50" alt="Decorative stars" width={50} height={50} className="absolute -top-8 -left-8" />
+            <img src="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?size=626&ext=jpg&ga=GA1.1.1752490079.1727444996&semt=ais_hybrid" alt="Decorative stars" width={50} height={50} className="absolute -top-8 -left-8" />
             <div className="bg-white rounded-lg shadow-lg p-4">
               <h3 className="text-lg font-semibold mb-3 text-[#2E475D]">Your Weekly Activity</h3>
               <div className="flex justify-between">
@@ -140,7 +140,7 @@ export default function HubSpotLanding() {
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <img src="/placeholder.svg?height=32&width=32" alt="Contact avatar" width={32} height={32} className="rounded-full mr-2" />
+                  <img src="https://img.freepik.com/free-photo/e-mail-global-communications-connection-social-networking-concept_53876-123795.jpg?size=626&ext=jpg&ga=GA1.1.1752490079.1727444996&semt=ais_hybrid" alt="Contact avatar" width={32} height={32} className="rounded-full mr-2" />
                   <div>
                     <p className="font-semibold text-sm text-[#2E475D]">Aisha Saah</p>
                     <p className="text-xs text-gray-500">aisha@company.com</p>
@@ -163,7 +163,7 @@ export default function HubSpotLanding() {
       <footer className="bg-white py-8 mt-12">
         <div className="container mx-auto px-4 text-center">
           <p className="text-gray-600 text-lg">
-            216,000+ customers in over 135 countries grow their businesses with HubSpot
+            216,000+ customers in over 135 countries grow their businesses with EmailMarketing
           </p>
         </div>
       </footer>

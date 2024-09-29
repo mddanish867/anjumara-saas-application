@@ -78,7 +78,7 @@ export default function temp7() {
             <input
               type="email"
               placeholder="Email Address"
-              className="px-3 py-2 rounded-l-full text-black w-full sm:w-auto"
+              className="px-3 py-2 rounded-l-full text-black w-full sm:w-auto focus:outline-none"
             />
             <button className="bg-gray-800 text-white px-4 py-2 rounded-r-full hover:bg-gray-900 transition duration-300 -ml-4">
               Try it free
@@ -103,7 +103,7 @@ export default function temp7() {
     <input
       type="email"
       placeholder="Email Address"
-      className="px-4 py-3 rounded-full border border-gray-300 w-full pr-20" // Added pr-20 for padding-right
+      className="px-4 py-3 rounded-full border border-gray-300 w-full pr-20 focus:outline-none" // Added pr-20 for padding-right
     />
     <button className="absolute right-0 top-0 h-full bg-blue-600 text-white px-4 rounded-full hover:bg-blue-700 transition duration-300">
       Get started
@@ -119,7 +119,7 @@ export default function temp7() {
 
 
       {/* Feature Cards */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="px-4 bg-gray-50">
         <div className="">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Automation Card */}

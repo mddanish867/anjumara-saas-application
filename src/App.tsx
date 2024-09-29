@@ -64,6 +64,10 @@ import Banktemp2 from './Pages/LandingPages/Banktemp2';
 import AITemp from './Pages/LandingPages/AIteemp';
 import BankTemp3 from './Pages/LandingPages/BankTemp3';
 import Banktemp4 from './Pages/LandingPages/BankTemp4';
+import BankTempp5 from './Pages/LandingPages/bankTemp5';
+import Banktemp6 from './Pages/LandingPages/BankTemp6';
+import WebStudio from './Pages/LandingPages/WebStudio';
+import AITemp2 from './Pages/LandingPages/ATTemp';
 
 function App() {
   return (
@@ -141,6 +145,10 @@ function App() {
             <Route path="/all-templates/ai-temp" element={<AITemp/>} />
             <Route path="/all-templates/bank-temp3" element={<BankTemp3/>} />
             <Route path="/all-templates/bank-temp4" element={<Banktemp4/>} />
+            <Route path="/all-templates/bank-temp5" element={<BankTempp5/>} />
+            <Route path="/all-templates/bank-temp6" element={<Banktemp6/>} />
+            <Route path="/all-templates/web-studio" element={<WebStudio/>} />
+            <Route path="/all-templates/ai-temp2" element={<AITemp2/>} />
 
           </Routes>
         </ThemeProvider>
