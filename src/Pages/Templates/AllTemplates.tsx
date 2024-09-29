@@ -47,6 +47,7 @@ function AllTemplates() {
     { name: "Code Review", link: `${location.pathname}/code-review`, img: "/code-review.png" },
     { name: "Flipkart Clone", link: `${location.pathname}/flipkart-clone`, img: "/flipkart-clone.png" },
     { name: "Temp22", link: `${location.pathname}/temp22`, img: "/temp22.png" },
+    { name: "Temp24", link: `${location.pathname}/temp24`, img: "/Temp24.png" },
 
   ];
 
