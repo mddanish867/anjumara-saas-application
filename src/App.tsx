@@ -68,6 +68,9 @@ import BankTempp5 from './Pages/LandingPages/bankTemp5';
 import Banktemp6 from './Pages/LandingPages/BankTemp6';
 import WebStudio from './Pages/LandingPages/WebStudio';
 import AITemp2 from './Pages/LandingPages/ATTemp';
+import WebBuilder from './Pages/LandingPages/WebBuilder';
+import WebBuilder2 from './Pages/LandingPages/WebBuilder2';
+import Hostweb from './Pages/LandingPages/Hostweb';
 
 function App() {
   return (
@@ -149,6 +152,9 @@ function App() {
             <Route path="/all-templates/bank-temp6" element={<Banktemp6/>} />
             <Route path="/all-templates/web-studio" element={<WebStudio/>} />
             <Route path="/all-templates/ai-temp2" element={<AITemp2/>} />
+            <Route path="/all-templates/web-builder" element={<WebBuilder/>} />
+            <Route path="/all-templates/web-builder2" element={<WebBuilder2/>} />
+            <Route path="/all-templates/host-web" element={<Hostweb/>} />
 
           </Routes>
         </ThemeProvider>

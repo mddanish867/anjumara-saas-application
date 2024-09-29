@@ -40,7 +40,10 @@ function AllTemplates() {
     { name: "Bank Temp5", link: `${location.pathname}/bank-temp5`, img: "/bank-temp5.png" },
     { name: "Bank Temp6", link: `${location.pathname}/bank-temp6`, img: "/bank-temp6.png" },
     { name: "Web Studio", link: `${location.pathname}/web-studio`, img: "/web-studio.png" },
-    { name: "Web Studio", link: `${location.pathname}/ai-temp2`, img: "/ai-temp.png" },
+    { name: "Web Studio", link: `${location.pathname}/ai-temp2`, img: "/ai-temp2.png" },
+    { name: "Web Builder", link: `${location.pathname}/web-builder`, img: "/web-builder.png" },
+    { name: "Web Builder2", link: `${location.pathname}/web-builder2`, img: "/web-builder2.png" },
+    { name: "Host Web", link: `${location.pathname}/host-web`, img: "/host-web.png" },
 
   ];
 
