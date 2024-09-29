@@ -75,6 +75,8 @@ import CodeReview from './Pages/LandingPages/CodeReview';
 import FlipkartHome from './Pages/LandingPages/FliptKart';
 import Temp22 from './Pages/LandingPages/temp22';
 import Temp24 from './Pages/LandingPages/Temp24';
+import Temp25 from './Pages/LandingPages/Temp25';
+import Temp26 from './Pages/LandingPages/Temp26';
 
 function App() {
   return (
@@ -163,6 +165,8 @@ function App() {
             <Route path="/all-templates/flipkart-clone" element={<FlipkartHome/>} />
             <Route path="/all-templates/temp22" element={<Temp22/>} />
             <Route path="/all-templates/temp24" element={<Temp24/>} />
+            <Route path="/all-templates/temp25" element={<Temp25/>} />
+            <Route path="/all-templates/temp26" element={<Temp26/>} />
 
           </Routes>
         </ThemeProvider>

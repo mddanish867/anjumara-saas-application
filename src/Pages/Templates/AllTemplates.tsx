@@ -48,6 +48,8 @@ function AllTemplates() {
     { name: "Flipkart Clone", link: `${location.pathname}/flipkart-clone`, img: "/flipkart-clone.png" },
     { name: "Temp22", link: `${location.pathname}/temp22`, img: "/temp22.png" },
     { name: "Temp24", link: `${location.pathname}/temp24`, img: "/Temp24.png" },
+    { name: "Temp25", link: `${location.pathname}/temp25`, img: "/Temp25.png" },
+    { name: "Temp26", link: `${location.pathname}/temp26`, img: "/Temp26.png" },
 
   ];
 
