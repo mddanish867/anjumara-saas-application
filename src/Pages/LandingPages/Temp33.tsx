@@ -41,7 +41,7 @@ export default function Temp33() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+    <div className="md:container min-h-screen bg-gradient-to-b from-purple-900 to-indigo-900 text-white relative overflow-hidden">
       {stars.map((style, index) => (
         <Star key={index} style={style} />
       ))}

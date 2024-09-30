@@ -224,7 +224,7 @@ const SignUpForm = () => (
 
 export default function Temp27() {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="md:container min-h-screen bg-gray-900">
       <Header />
       <Hero />
       <Features />

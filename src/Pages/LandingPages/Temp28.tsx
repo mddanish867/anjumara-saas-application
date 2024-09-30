@@ -155,7 +155,7 @@ const Hero = () => (
 
 export default function Temp28() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="md:container min-h-screen bg-black">
       <Header />
       <Hero />
     </div>

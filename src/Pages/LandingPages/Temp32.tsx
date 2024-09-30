@@ -25,8 +25,8 @@ export default function Temp32() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f55767] text-white">
-      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div className="md:container min-h-screen bg-[#f55767] text-white">
+      <nav className="mx-auto px-4 py-4 flex items-center justify-between">
         <div className="text-2xl font-bold">zyro</div>
         <div className="hidden md:flex space-x-4 items-center">
           <NavLink href="#">Websites</NavLink>
