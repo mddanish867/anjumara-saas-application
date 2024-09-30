@@ -85,6 +85,10 @@ import Temp31 from './Pages/LandingPages/Temp31';
 import Temp32 from './Pages/LandingPages/Temp32';
 import Temp33 from './Pages/LandingPages/Temp33';
 import Temp34 from './Pages/LandingPages/Temp34';
+import Temp35 from './Pages/LandingPages/Temp35';
+import Temp36 from './Pages/LandingPages/Temp36';
+import Temp37 from './Pages/LandingPages/Temp37';
+import Temp38 from './Pages/LandingPages/Temp38';
 
 function App() {
   return (
@@ -183,6 +187,10 @@ function App() {
             <Route path="/all-templates/temp32" element={<Temp32/>} />
             <Route path="/all-templates/temp33" element={<Temp33/>} />
             <Route path="/all-templates/temp34" element={<Temp34/>} />
+            <Route path="/all-templates/temp35" element={<Temp35/>} />
+            <Route path="/all-templates/temp36" element={<Temp36/>} />
+            <Route path="/all-templates/temp37" element={<Temp37/>} />
+            <Route path="/all-templates/temp38" element={<Temp38/>} />
 
           </Routes>
         </ThemeProvider>
