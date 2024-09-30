@@ -50,6 +50,14 @@ function AllTemplates() {
     { name: "Temp24", link: `${location.pathname}/temp24`, img: "/Temp24.png" },
     { name: "Temp25", link: `${location.pathname}/temp25`, img: "/Temp25.png" },
     { name: "Temp26", link: `${location.pathname}/temp26`, img: "/Temp26.png" },
+    { name: "Temp27", link: `${location.pathname}/temp27`, img: "/temp27.png" },
+    { name: "Temp28", link: `${location.pathname}/temp28`, img: "/temp28.png" },
+    { name: "Temp29", link: `${location.pathname}/temp29`, img: "/temp29.png" },
+    { name: "Temp30", link: `${location.pathname}/temp30`, img: "/temp30.png" },
+    { name: "Temp31", link: `${location.pathname}/temp31`, img: "/temp31.png" },
+    { name: "Temp32", link: `${location.pathname}/temp32`, img: "/temp32.png" },
+    { name: "Temp33", link: `${location.pathname}/temp33`, img: "/temp33.png" },
+    { name: "Temp34", link: `${location.pathname}/temp34`, img: "/temp34.png" },
 
   ];
 

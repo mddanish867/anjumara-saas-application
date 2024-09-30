@@ -77,6 +77,14 @@ import Temp22 from './Pages/LandingPages/temp22';
 import Temp24 from './Pages/LandingPages/Temp24';
 import Temp25 from './Pages/LandingPages/Temp25';
 import Temp26 from './Pages/LandingPages/Temp26';
+import Temp27 from './Pages/LandingPages/Temp27';
+import Temp28 from './Pages/LandingPages/Temp28';
+import Temp29 from './Pages/LandingPages/Temp29';
+import Temp30 from './Pages/LandingPages/Temp30';
+import Temp31 from './Pages/LandingPages/Temp31';
+import Temp32 from './Pages/LandingPages/Temp32';
+import Temp33 from './Pages/LandingPages/Temp33';
+import Temp34 from './Pages/LandingPages/Temp34';
 
 function App() {
   return (
@@ -167,6 +175,14 @@ function App() {
             <Route path="/all-templates/temp24" element={<Temp24/>} />
             <Route path="/all-templates/temp25" element={<Temp25/>} />
             <Route path="/all-templates/temp26" element={<Temp26/>} />
+            <Route path="/all-templates/temp27" element={<Temp27/>} />
+            <Route path="/all-templates/temp28" element={<Temp28/>} />
+            <Route path="/all-templates/temp29" element={<Temp29/>} />
+            <Route path="/all-templates/temp30" element={<Temp30/>} />
+            <Route path="/all-templates/temp31" element={<Temp31/>} />
+            <Route path="/all-templates/temp32" element={<Temp32/>} />
+            <Route path="/all-templates/temp33" element={<Temp33/>} />
+            <Route path="/all-templates/temp34" element={<Temp34/>} />
 
           </Routes>
         </ThemeProvider>
