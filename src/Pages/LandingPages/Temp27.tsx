@@ -38,7 +38,7 @@ const DropdownLink = ({ title, items }:{title:any,items:any}) => {
   )
 }
 
-const MobileMenu = ({ isOpen, setIsOpen }:{isOpen:any,setIsOpen:any}) => (
+const MobileMenu = ({ isOpen,}:{isOpen:any,setIsOpen:any}) => (
   <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <NavLink to="#features">Features</NavLink>

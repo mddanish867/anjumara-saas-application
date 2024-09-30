@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, ChevronDown, User } from 'lucide-react'
+import { Menu, ChevronDown,} from 'lucide-react'
 
 const NavLink = ({ href, children, className = "" }: { href: string; children: React.ReactNode; className?: string }) => (
   <a href={href} className={`text-white hover:text-gray-200 ${className}`}>
