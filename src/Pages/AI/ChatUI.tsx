@@ -216,7 +216,7 @@ const FrontendCodeGeneration = () => {
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
                 aria-label="Search"
               >
-                {loading ? (
+                {loading && !aiResponse? (
                    <Loader className="size-6 mr-2 animate-spin" />
                 ) : (
                   "Search"
