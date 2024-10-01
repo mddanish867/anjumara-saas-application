@@ -8,7 +8,7 @@ function Banner() {
   const decodedToken = decodeToken();
 
   const handleClick = () => {
-    navigate("/all-components");
+    navigate("/chatui");
   };
 
   const handleAllAccess = () => {
@@ -49,7 +49,7 @@ function Banner() {
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
                 onClick={handleClick}
               >
-                Browse all components <MoveRight className="ml-2" />
+                Start Building with AI <MoveRight className="ml-2" />
               </Button>
 
               <Button

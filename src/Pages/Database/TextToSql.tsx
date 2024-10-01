@@ -29,6 +29,7 @@ function TextToSql() {
       setUserId(decodedToken.userId);
     }
   }, []);
+  
   // Function to run AI model and get response
   async function aiRun() {
     setLoading(true);

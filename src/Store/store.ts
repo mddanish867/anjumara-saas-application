@@ -1,14 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authApi } from '../API/AuthAPI/authApi';
 import { sqlResponseApi } from '../API/ResponseAPI/sqlResponseApi';
+import { webResponseApi } from '../API/ResponseAPI/webResponseAPI';
 
 export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
     [sqlResponseApi.reducerPath]: sqlResponseApi.reducer,
+    [webResponseApi.reducerPath]: webResponseApi.reducer,
+
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(authApi.middleware).concat(sqlResponseApi.middleware),
+    getDefaultMiddleware().concat(authApi.middleware).concat(sqlResponseApi.middleware).concat(webResponseApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
