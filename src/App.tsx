@@ -91,6 +91,7 @@ import Temp37 from './Pages/LandingPages/Temp37';
 import Temp38 from './Pages/LandingPages/Temp38';
 import Temp39 from './Pages/LandingPages/Temp39';
 import Temp40 from './Pages/LandingPages/Temp40';
+import Temp44 from './Pages/LandingPages/Temp43';
 
 function App() {
   return (
@@ -195,6 +196,8 @@ function App() {
             <Route path="/all-templates/temp38" element={<Temp38/>} />
             <Route path="/all-templates/temp39" element={<Temp39/>} />
             <Route path="/all-templates/temp40" element={<Temp40/>} />
+<Route path="/all-templates/temp43" element={<Temp43/>} />
+
 
           </Routes>
         </ThemeProvider>
