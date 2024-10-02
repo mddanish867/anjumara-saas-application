@@ -10,8 +10,8 @@ const Temp43 = () => {
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/api/placeholder/40/40" alt="CodeRabbit Logo" className="h-10 w-10" />
-              <span className="ml-2 text-xl font-semibold">CodeRabbit</span>
+              
+              <span className="ml-2 text-xl font-semibold text-orange-500">CodeRabbit</span>
             </div>
             <div className="hidden md:flex space-x-4">
               <a href="#" className="text-gray-600 hover:text-gray-900">Features</a>
