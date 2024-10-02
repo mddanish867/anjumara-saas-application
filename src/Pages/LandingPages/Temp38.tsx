@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { EllipsisVerticalIcon, X } from 'lucide-react'
 
 export default function Temp38() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,7 +24,7 @@ export default function Temp38() {
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <EllipsisVerticalIcon className="w-6 h-6" />}
           </button>
         </div>
       </nav>

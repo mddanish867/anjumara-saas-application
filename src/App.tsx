@@ -89,6 +89,8 @@ import Temp35 from './Pages/LandingPages/Temp35';
 import Temp36 from './Pages/LandingPages/Temp36';
 import Temp37 from './Pages/LandingPages/Temp37';
 import Temp38 from './Pages/LandingPages/Temp38';
+import Temp39 from './Pages/LandingPages/Temp39';
+import Temp40 from './Pages/LandingPages/Temp40';
 
 function App() {
   return (
@@ -191,6 +193,8 @@ function App() {
             <Route path="/all-templates/temp36" element={<Temp36/>} />
             <Route path="/all-templates/temp37" element={<Temp37/>} />
             <Route path="/all-templates/temp38" element={<Temp38/>} />
+            <Route path="/all-templates/temp39" element={<Temp39/>} />
+            <Route path="/all-templates/temp40" element={<Temp40/>} />
 
           </Routes>
         </ThemeProvider>

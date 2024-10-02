@@ -217,7 +217,7 @@ const FrontendCodeGeneration = () => {
                 aria-label="Search"
               >
                 {loading && !aiResponse? (
-                   <Loader className="size-6 mr-2 animate-spin" />
+                   <Loader className="size-4 mr-2 animate-spin" />
                 ) : (
                   "Search"
                 )}
