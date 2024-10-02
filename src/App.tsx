@@ -91,7 +91,7 @@ import Temp37 from './Pages/LandingPages/Temp37';
 import Temp38 from './Pages/LandingPages/Temp38';
 import Temp39 from './Pages/LandingPages/Temp39';
 import Temp40 from './Pages/LandingPages/Temp40';
-import Temp44 from './Pages/LandingPages/Temp43';
+import Temp43 from './Pages/LandingPages/Temp43';
 
 function App() {
   return (
