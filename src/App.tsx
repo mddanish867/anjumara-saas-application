@@ -95,6 +95,7 @@ import Temp42 from "./Pages/LandingPages/Temp42";
 import Temp43 from "./Pages/LandingPages/Temp43";
 import Temp41 from "./Pages/LandingPages/Temp41";
 import Temp45 from "./Pages/LandingPages/Temp45";
+import Temp46 from "./Pages/LandingPages/Temp46";
 
 function App() {
   return (
@@ -225,6 +226,7 @@ function App() {
             <Route path="/all-templates/temp42" element={<Temp42 />} />
             <Route path="/all-templates/temp43" element={<Temp43 />} />
             <Route path="/all-templates/temp45" element={<Temp45 />} />
+            <Route path="/all-templates/temp46" element={<Temp46 />} />
 
           </Routes>
         </ThemeProvider>
