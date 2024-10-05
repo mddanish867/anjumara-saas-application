@@ -97,6 +97,11 @@ import Temp41 from "./Pages/LandingPages/Temp41";
 import Temp45 from "./Pages/LandingPages/Temp45";
 import Temp46 from "./Pages/LandingPages/Temp46";
 import OTPVerification from "./Pages/Components/AllComponents/OTPVerification";
+import Register from "./Pages/Components/AllComponents/Register";
+import Login from "./Pages/Components/AllComponents/Login";
+import EcommerceFilter from "./Pages/Components/AllComponents/ecommerce-filter";
+import EcommerceFilter2 from "./Pages/Components/AllComponents/ecommerce-filter2";
+import EcommerceFilter3 from "./Pages/Components/AllComponents/ecommerce-filter3";
 
 function App() {
   return (
@@ -229,6 +234,12 @@ function App() {
             <Route path="/all-templates/temp45" element={<Temp45 />} />
             <Route path="/all-templates/temp46" element={<Temp46 />} />
             <Route path="/all-components/otp-verification" element={<OTPVerification />} />
+            <Route path="/all-components/register" element={<Register />} />
+            <Route path="/all-components/login" element={<Login />} />
+            <Route path="/all-components/ecommerce-filter" element={<EcommerceFilter />} />
+            <Route path="/all-components/ecommerce-filter2" element={<EcommerceFilter2 />} />
+            <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
+
 
 
           </Routes>

@@ -5,10 +5,12 @@ export default function AllComponents() {
 
   const navigation = [
     { name: "OTP Verification", link: `${location.pathname}/otp-verification`, img: "/otp-verification.png" },
-    { name: "Backend", link: `${location.pathname}/backend`, img: "/backendbanner.jpeg" },
-    { name: "Azure", link: `${location.pathname}/azure`, img: "/azurebanner.png" },
-    { name: "SQL", link: `${location.pathname}/sql`, img: "/sqlbaner.jpg" },
-    { name: "Git", link: `${location.pathname}/git`, img: "/gitbanner.png" },
+    { name: "Register", link: `${location.pathname}/register`, img: "/register.png" },
+    { name: "Login", link: `${location.pathname}/login`, img: "/login.png" },
+    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter`, img: "/ecommerce-filter.png" },
+    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter2`, img: "/ecommerce-filter2.png" },
+    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter3`, img: "/ecommerce-filter3.png" },
+
   ]
 
   return (
