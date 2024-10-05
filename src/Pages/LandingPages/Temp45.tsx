@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export default function Temp41() {
+export default function Temp45() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -556,7 +556,7 @@ function ServicesShowcase() {
 
 function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-r from-primary to-secondary h-screen flex items-center">
+    <section className="relative bg-gradient-to-r from-teal-600 to-[#5ee448] h-screen flex items-center">
       <div className="md:container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.h1

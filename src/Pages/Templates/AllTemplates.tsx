@@ -159,6 +159,8 @@ function AllTemplates() {
     { name: "Temp41", link: `${location.pathname}/temp41`, img: "/temp41.png" },
     { name: "Temp42", link: `${location.pathname}/temp42`, img: "/temp42.png" },
     { name: "Temp43", link: `${location.pathname}/temp43`, img: "/temp43.png" },
+    { name: "Temp45", link: `${location.pathname}/temp45`, img: "/temp45.png" },
+
   ];
 
   return (
