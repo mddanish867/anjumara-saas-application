@@ -10,6 +10,7 @@ export default function AllComponents() {
     { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter`, img: "/ecommerce-filter.png" },
     { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter2`, img: "/ecommerce-filter2.png" },
     { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter3`, img: "/ecommerce-filter3.png" },
+    { name: "Login Form", link: `${location.pathname}/login-form`, img: "/ecommerce-filter3.png" },
 
   ]
 
