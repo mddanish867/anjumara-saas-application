@@ -102,6 +102,7 @@ import Login from "./Pages/Components/AllComponents/Login";
 import EcommerceFilter from "./Pages/Components/AllComponents/ecommerce-filter";
 import EcommerceFilter2 from "./Pages/Components/AllComponents/ecommerce-filter2";
 import EcommerceFilter3 from "./Pages/Components/AllComponents/ecommerce-filter3";
+import Temp47 from "./Pages/LandingPages/Temp47";
 
 function App() {
   return (
@@ -233,6 +234,7 @@ function App() {
             <Route path="/all-templates/temp43" element={<Temp43 />} />
             <Route path="/all-templates/temp45" element={<Temp45 />} />
             <Route path="/all-templates/temp46" element={<Temp46 />} />
+            <Route path="/all-templates/temp47" element={<Temp47 />} />
             <Route path="/all-components/otp-verification" element={<OTPVerification />} />
             <Route path="/all-components/register" element={<Register />} />
             <Route path="/all-components/login" element={<Login />} />
