@@ -38,13 +38,14 @@ function TextToSql() {
     const prompt = `
         The user query is: "${search}". 
         If the query is asking for a SQL query solution, follow these steps:
-        1. Generate a brute-force SQL query to solve the problem and mark them down.
-        2. Provide an explanation of the brute-force solution step by step, including steps how it works.
-        3. Explain the order of execution of the brute-force solution step by steps.
-        4. Generate all possible optimized SQL solutions and mark them down one by one.
-        5. Provide a detailed explanation of each possible optimized solution step by step and step by step order of execution of the each possible optimized solution.
-        6. Generate related interview questions of SQL query asked and mark them down one by one.
-        7. Follow the above six steps for the related interview questions of SQL query.`;
+1. First generate the database schema and mark them down.
+        2. Generate a brute-force SQL query to solve the problem and generate the schema and mark them down.
+        3. Provide an explanation of the brute-force solution step by step and mark them down .
+        4. Explain the order of execution of the brute-force solution step by steps and mark them down.
+        5. Generate all possible optimized SQL solutions and mark them down one by one.
+        6. Provide a detailed explanation of each possible optimized solution step by step and provide the order of execution of the each possible optimized solution and mark them down.
+        7. Generate related interview questions of SQL query asked and mark them down one by one.
+        `;
 
     try {
       const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-002" });
