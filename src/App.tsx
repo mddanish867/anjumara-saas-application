@@ -105,6 +105,7 @@ import EcommerceFilter3 from "./Pages/Components/AllComponents/ecommerce-filter3
 import Temp47 from "./Pages/LandingPages/Temp47";
 import LoginForm from "./Pages/Components/AllComponents/LoginForm";
 import Temp48 from "./Pages/LandingPages/Temp48";
+import OnboardingWizard from "./Pages/Components/AllComponents/MultiStepForm";
 
 function App() {
   return (
@@ -245,6 +246,7 @@ function App() {
             <Route path="/all-components/ecommerce-filter2" element={<EcommerceFilter2 />} />
             <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
             <Route path="/all-components/login-form" element={<LoginForm />} />
+            <Route path="/all-components/onboarding-wizard" element={<OnboardingWizard />} />
 
 
 
