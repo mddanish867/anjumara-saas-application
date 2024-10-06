@@ -11,7 +11,7 @@ export default function Temp37() {
             </ul>
           </nav>
           <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
-            Go to Gallery →
+           login →
           </a>
         </header>
   
