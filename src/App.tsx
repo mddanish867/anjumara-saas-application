@@ -107,6 +107,8 @@ import LoginForm from "./Pages/Components/AllComponents/LoginForm";
 import Temp48 from "./Pages/LandingPages/Temp48";
 import OnboardingWizard from "./Pages/Components/AllComponents/MultiStepForm";
 
+import CodeDisplayComponent from "./Pages/Components/AllComponents/CodeDisplayComponent";
+
 function App() {
   return (
     <Provider store={store}>
@@ -247,6 +249,7 @@ function App() {
             <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
             <Route path="/all-components/login-form" element={<LoginForm />} />
             <Route path="/all-components/onboarding-wizard" element={<OnboardingWizard />} />
+<Route path="/all-components/displaycomponents" element={<CodeDisplayComponent />} />
 
 
 
