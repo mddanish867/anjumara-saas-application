@@ -1,3 +1,4 @@
+
 export default function Temp37() {
     return (
       <div className="min-h-screen bg-gray-900 text-gray-200 font-mono">
@@ -5,13 +6,13 @@ export default function Temp37() {
         <header className="p-4 flex justify-between items-center border-b border-gray-700">
           <nav>
             <ul className="flex space-x-4">
-              <li className="hover:text-blue-400 cursor-pointer">#about</li>
-              <li className="hover:text-blue-400 cursor-pointer">#careers</li>
-              <li className="hover:text-blue-400 cursor-pointer">#contact</li>
+              <li className="hover:text-blue-400 cursor-pointer">Pricing</li>
+              <li className="hover:text-blue-400 cursor-pointer">Service</li>
+              <li className="hover:text-blue-400 cursor-pointer">About</li>
             </ul>
           </nav>
           <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
-           login →
+           Login →
           </a>
         </header>
   
@@ -21,7 +22,7 @@ export default function Temp37() {
           <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
             {Array.from({ length: 50 }).map((_, i) => (
               <div key={i} className="whitespace-nowrap overflow-hidden text-blue-300" style={{ fontSize: '10px' }}>
-                {`const ${['foo', 'bar', 'baz', 'qux'][i % 4]} = ${Math.random().toString(36).substring(7)};`.repeat(10)}
+                {`const ${['foo', 'bar', 'baz', 'qux'][i % 4]} = ${Math.random().toString(36).substring(7)};`.repeat(12)}
               </div>
             ))}
           </div>
@@ -37,11 +38,18 @@ export default function Temp37() {
             <button className="bg-transparent border border-blue-400 text-blue-400 px-6 py-2 rounded hover:bg-blue-400 hover:text-gray-900 transition-colors sm:col-span-2">
               Getting Started
             </button>
-            <button className="bg-transparent border border-blue-400 text-blue-400 px-6 py-2 rounded hover:bg-blue-400 hover:text-gray-900 transition-colors sm:col-span-2">
-              Community Showcase
-            </button>
+           
           </div>
-        </main>
+        </main>        
+        
       </div>
     )
   }
+
+  
+
+ 
+
+  
+
+  

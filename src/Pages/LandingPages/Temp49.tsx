@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Code2Icon, Menu, X } from 'lucide-react';
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <a href={href} className="text-white hover:text-pink-500 transition-colors">
+  <a href={href} className="text-white hover:text-orange-300 transition-colors">
     {children}
   </a>
 );
 
 const Star = ({ style }: { style: React.CSSProperties }) => (
   <div
-    className="absolute bg-white rounded-full opacity-70"
+    className="absolute bg-orange-100 rounded-full opacity-70"
     style={{
       width: '3px',
       height: '3px',
@@ -19,7 +19,7 @@ const Star = ({ style }: { style: React.CSSProperties }) => (
   />
 );
 
-export default function Temp33() {
+export default function Temp49() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [timer, setTimer] = useState(0);
   const [stars, setStars] = useState<React.CSSProperties[]>([]);
@@ -41,26 +41,32 @@ export default function Temp33() {
   }, []);
 
   return (
-    <div className="md:container min-h-screen bg-gradient-to-b from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+    <div className="md:container min-h-screen bg-black text-orange-300 relative overflow-hidden">
       {stars.map((style, index) => (
         <Star key={index} style={style} />
       ))}
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="bg-pink-500 w-8 h-8 rounded-md flex items-center justify-center mr-2">
-            <X className="text-white" size={20} />
+          <div className="bg-transparent w-8 h-8 rounded-md flex items-center justify-center mr-2">
+            <Code2Icon className="text-orange-300" size={40} />
           </div>
-          <span className="text-2xl font-bold">Mixo</span>
+          <span className="text-1xl font-bold">Mixo</span>
         </div>
         <nav className="hidden md:flex space-x-6">
           <NavLink href="#features">Features</NavLink>
           <NavLink href="#pricing">Pricing</NavLink>
         </nav>
-        <div className="hidden md:flex space-x-4">
-          <a href="#login">Log in</a>
+        <div className="hidden md:flex space-x-4">          
           <a
             href="#get-started"
-            className="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 transition-colors"
+            className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
+          >
+            Login
+          </a>
+       
+          <a
+            href="#get-started"
+            className="bg-orange-300 text-black px-4 py-2 rounded-none hover:bg-orange-400 transition-colors"
           >
             Get Started for Free
           </a>
@@ -78,10 +84,15 @@ export default function Temp33() {
           <nav className="flex flex-col space-y-4 mt-16">
             <NavLink href="#features">Features</NavLink>
             <NavLink href="#pricing">Pricing</NavLink>
-            <NavLink href="#login">Log in</NavLink>
+            <a
+            href="#get-started"
+            className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
+          >
+            Login
+          </a>
             <a
               href="#get-started"
-              className="bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-600 transition-colors text-center"
+              className="bg-orange-300 text-white px-4 py-2 rounded-md hover:bg-orange-400 transition-colors text-center"
             >
               Get Started for Free
             </a>
@@ -93,7 +104,7 @@ export default function Temp33() {
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           Launch a website
           <br />
-          in seconds with <span className="text-pink-500">AI.</span>
+          in seconds with <span className="text-orange-500">AI.</span>
         </h1>
         <p className="text-xl mb-8 text-gray-300">
           Have an idea for a startup, product or service? Bring it to life with AI
@@ -107,7 +118,7 @@ export default function Temp33() {
         </div>
         <a
           href="#get-started"
-          className="bg-pink-500 text-white px-8 py-4 rounded-md text-xl hover:bg-pink-600 transition-colors inline-flex items-center"
+          className="bg-orange-500 text-white px-8 py-4 rounded-md text-xl hover:border border-orange-300 hover:bg-transparent hover:text-white transition-colors inline-flex items-center"
         >
           Get Started for Free
           <span className="ml-2">✨</span>

@@ -106,6 +106,7 @@ import Temp47 from "./Pages/LandingPages/Temp47";
 import LoginForm from "./Pages/Components/AllComponents/LoginForm";
 import Temp48 from "./Pages/LandingPages/Temp48";
 import OnboardingWizard from "./Pages/Components/AllComponents/MultiStepForm";
+import Temp49 from "./Pages/LandingPages/Temp49";
 
 function App() {
   return (
@@ -239,6 +240,8 @@ function App() {
             <Route path="/all-templates/temp46" element={<Temp46 />} />
             <Route path="/all-templates/temp47" element={<Temp47 />} />
             <Route path="/all-templates/temp48" element={<Temp48 />} />
+            <Route path="/all-templates/temp49" element={<Temp49 />} />
+
             <Route path="/all-components/otp-verification" element={<OTPVerification />} />
             <Route path="/all-components/register" element={<Register />} />
             <Route path="/all-components/login" element={<Login />} />
