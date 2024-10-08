@@ -77,7 +77,7 @@ export default function Temp49() {
       </header>
 
       {isMenuOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-full bg-purple-900 z-50 p-6">
+        <div className="md:hidden absolute top-0 left-0 w-full h-full bg-black z-50 p-6">
           <button className="absolute top-6 right-6" onClick={() => setIsMenuOpen(false)}>
             <X className="text-white" size={24} />
           </button>

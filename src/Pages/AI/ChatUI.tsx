@@ -2,13 +2,19 @@
 
 import { useState, useEffect } from "react"
 import { FiX, FiPlus } from "react-icons/fi"
-import { AlignLeft, Loader, Send } from "lucide-react"
+import { AlignLeft, Loader, Send, Check, Copy } from "lucide-react"
 import { Link } from "react-router-dom"
 import { GoogleGenerativeAI } from "@google/generative-ai"
 import { marked } from "marked"
 import toast from "react-hot-toast"
 import { decodeToken } from "../helper/decodedToke"
 import { useWebResponseMutation } from "@/API/ResponseAPI/webResponseAPI"
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import he from "he"
+
+SyntaxHighlighter.registerLanguage('jsx', jsx)
 
 interface UserMessage {
   message: string
@@ -26,6 +32,7 @@ export default function FrontendCodeGeneration() {
   const [loading, setLoading] = useState(false)
   const [currentChatIndex, setCurrentChatIndex] = useState<number | null>(null)
   const [webResponseMutation] = useWebResponseMutation()
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
   useEffect(() => {
     const decodedToken = decodeToken()
@@ -105,6 +112,14 @@ export default function FrontendCodeGeneration() {
     setIsSidebarOpen(!isSidebarOpen)
   }
 
+  const handleCopy = (text: string, index: number) => {
+    const generatedCode = he.decode(text);
+    navigator.clipboard.writeText(generatedCode).then(() => {
+      setCopiedIndex(index)
+      setTimeout(() => setCopiedIndex(null), 2000)
+    })
+  }
+
   return (
     <div className="flex h-screen overflow-hidden bg-white dark:bg-gray-900 transition-colors">
       {/* Sidebar */}
@@ -176,10 +191,31 @@ export default function FrontendCodeGeneration() {
               <div className="text-gray-800 dark:text-green-100 p-6 mb-4 bg-gray-100 rounded-md dark:bg-gray-800 break-words">
                 {chat.message}
               </div>
-              <div 
-                className="p-6 mb-4 rounded-lg text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 break-words whitespace-pre-wrap"
-                dangerouslySetInnerHTML={{ __html: chat.response }} 
-              />
+              <div className="relative p-6 mb-4 rounded-lg text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 break-words">
+                <SyntaxHighlighter
+                  language="jsx"
+                  style={vscDarkPlus}
+                  customStyle={{
+                    margin: 0,
+                    padding: '1rem',
+                    fontSize: '0.875rem',
+                    lineHeight: '1.25rem',
+                  }}
+                >
+                  {he.decode(chat.response)}
+                </SyntaxHighlighter>
+                <button
+                  onClick={() => handleCopy(chat.response, index)}
+                  className="absolute top-2 right-2 p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                  aria-label="Copy to Clipboard"
+                >
+                  {copiedIndex === index ? (
+                    <Check className="w-4 h-4" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
+                </button>
+              </div>
             </div>
           ))}
         </div>
