@@ -1,5 +1,10 @@
-import { useState } from "react";
-import { Clipboard, CopyCheck } from "lucide-react";
+import { useState } from 'react';
+import { Clipboard, ClipboardCheck, } from 'lucide-react';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+SyntaxHighlighter.registerLanguage('javascript', js);
 
 const codeString = `import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -115,7 +120,7 @@ const CodeDisplayComponent = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
+    <div className="max-w-4xl mx-auto p-6 rounded-lg">
       <div className="mb-4 flex justify-between items-center">
         <h2 className="text-2xl font-bold text-gray-800">Code Sample</h2>
         <button
@@ -124,19 +129,30 @@ const CodeDisplayComponent = () => {
         >
           {copied ? (
             <>
-              <CopyCheck className="w-5 h-5 mr-2" />
+              <ClipboardCheck className="w-5 h-5 mr-2" />
               Copied!
             </>
           ) : (
             <>
-              <Clipboard className="w-5 h-5 mr-2" />              
+              <Clipboard className="w-5 h-5 mr-2" />
             </>
           )}
         </button>
       </div>
-      <pre className="bg-gray-800 text-white p-4 rounded-md overflow-x-auto">
-        <code className="text-sm">{codeString}</code>
-      </pre>
+      <div className="rounded-md overflow-hidden">
+        <SyntaxHighlighter 
+          language="javascript" 
+          style={vscDarkPlus}
+          customStyle={{
+            margin: 0,
+            padding: '1rem',
+            fontSize: '0.875rem',
+            lineHeight: '1.25rem',
+          }}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 };
