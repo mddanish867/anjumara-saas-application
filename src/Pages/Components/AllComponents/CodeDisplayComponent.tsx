@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Check, Copy } from 'lucide-react';
+import { useState } from "react";
+import { Clipboard, CopyCheck } from "lucide-react";
 
 const codeString = `import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -120,17 +120,16 @@ const CodeDisplayComponent = () => {
         <h2 className="text-2xl font-bold text-gray-800">Code Sample</h2>
         <button
           onClick={handleCopy}
-          className="flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          className="flex items-center px-4 py-2 text-black transition-colors"
         >
           {copied ? (
             <>
-              <Check className="w-5 h-5 mr-2" />
+              <CopyCheck className="w-5 h-5 mr-2" />
               Copied!
             </>
           ) : (
             <>
-              <Copy className="w-5 h-5 mr-2" />
-              Copy to Clipboard
+              <Clipboard className="w-5 h-5 mr-2" />              
             </>
           )}
         </button>

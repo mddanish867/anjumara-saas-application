@@ -252,7 +252,7 @@ function App() {
             <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
             <Route path="/all-components/login-form" element={<LoginForm />} />
             <Route path="/all-components/onboarding-wizard" element={<OnboardingWizard />} />
-<Route path="/all-components/displaycomponents" element={<CodeDisplayComponent/>} />
+<Route path="/all-components/display-components" element={<CodeDisplayComponent/>} />
 
 
 

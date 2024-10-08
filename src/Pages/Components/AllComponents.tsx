@@ -1,20 +1,51 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom";
 
 export default function AllComponents() {
-  const location = useLocation()
+  const location = useLocation();
 
   const navigation = [
-    { name: "OTP Verification", link: `${location.pathname}/otp-verification`, img: "/otp-verification.png" },
-    { name: "Register", link: `${location.pathname}/register`, img: "/register.png" },
+    {
+      name: "OTP Verification",
+      link: `${location.pathname}/otp-verification`,
+      img: "/otp-verification.png",
+    },
+    {
+      name: "Register",
+      link: `${location.pathname}/register`,
+      img: "/register.png",
+    },
     { name: "Login", link: `${location.pathname}/login`, img: "/login.png" },
-    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter`, img: "/ecommerce-filter.png" },
-    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter2`, img: "/ecommerce-filter2.png" },
-    { name: "Ecommerce filter", link: `${location.pathname}/ecommerce-filter3`, img: "/ecommerce-filter3.png" },
-    { name: "Login Form", link: `${location.pathname}/login-form`, img: "/login-form.png" },
-    { name: "Multi Steps Form", link: `${location.pathname}/onboarding-wizard`, img: "/onboarding-wizard.png" },
-{ name: "Code display", link: `${location.pathname}/displaycomponents`, img: "/onboarding-wizard.png" },
-
-  ]
+    {
+      name: "Ecommerce filter",
+      link: `${location.pathname}/ecommerce-filter`,
+      img: "/ecommerce-filter.png",
+    },
+    {
+      name: "Ecommerce filter",
+      link: `${location.pathname}/ecommerce-filter2`,
+      img: "/ecommerce-filter2.png",
+    },
+    {
+      name: "Ecommerce filter",
+      link: `${location.pathname}/ecommerce-filter3`,
+      img: "/ecommerce-filter3.png",
+    },
+    {
+      name: "Login Form",
+      link: `${location.pathname}/login-form`,
+      img: "/login-form.png",
+    },
+    {
+      name: "Multi Steps Form",
+      link: `${location.pathname}/onboarding-wizard`,
+      img: "/onboarding-wizard.png",
+    },
+    {
+      name: "Code display",
+      link: `${location.pathname}/display-components`,
+      img: "/display-components.png",
+    },
+  ];
 
   return (
     <section>
@@ -28,7 +59,11 @@ export default function AllComponents() {
                 to={item.link}
               >
                 <span className="inline-block rounded-lg bg-gray-50 p-3">
-                  <img src={item.img} alt={item.name} className="w-full h-auto" />
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-auto"
+                  />
                 </span>
 
                 <h2 className="mt-2 font-bold text-center">{item.name}</h2>
@@ -42,5 +77,5 @@ export default function AllComponents() {
         </div>
       </div>
     </section>
-  )
+  );
 }
