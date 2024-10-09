@@ -118,7 +118,7 @@ export default function Temp49() {
         </div>
         <a
           href="#get-started"
-          className="bg-orange-500 text-white px-8 py-4 rounded-md text-xl hover:border border-orange-300 hover:bg-transparent hover:text-white transition-colors inline-flex items-center"
+          className="bg-transparent text-white border border-orange-300 px-8 py-4 rounded-md text-xl hover:border border-orange-400 hover:bg-transparent hover:text-orange-300 transition-colors inline-flex items-center"
         >
           Get Started for Free
           <span className="ml-2">✨</span>
