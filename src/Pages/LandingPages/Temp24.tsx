@@ -53,7 +53,7 @@ export default function Temp24() {
         </div>
       </section>
 
-      <section className="md:p-36 md:rounded-tl-full md:rounded-br-full bg-gray-900 text-white py-16 md:py-24 relative overflow-hidden">
+      <section className="md:p-36 md:rounded-tl-full bg-gray-900 text-white py-16 md:py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet AiDA,</h2>

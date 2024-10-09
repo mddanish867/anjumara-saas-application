@@ -28,7 +28,7 @@ function Navbar() {
         <div className="md:col-span-3">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
-            Aether<span className="text-[#38bdf8]">AI</span>
+            Soora<span className="text-[#38bdf8]">.ai</span>
             </h1>
           </Link>
         </div>
