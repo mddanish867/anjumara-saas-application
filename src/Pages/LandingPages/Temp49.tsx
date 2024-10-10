@@ -201,90 +201,88 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <div className="w-full max-w-md">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
-            </h1>
-          </Link>
-        </div>
-        <form
-          onSubmit={handleSubmit}
-          className="pt-6 pb-8 mb-4"
-        >
-          <h2 className="text-2xl font-bold text-center text-white mb-6">
-            Login
-          </h2>
-          <div className="mb-4">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <input
-              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
-              id="email"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="relative">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Password
-            </label>
-            <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
-              type={showPassword ? "text" : "password"}
-              placeholder="****************"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? (
-                <EyeOff size={20} className="justify-center items-center" />
-              ) : (
-                <Eye size={20} />
-              )}
-            </button>
-          </div>
-          <div className="flex items-center justify-between mb-6">
-            <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Sign In
-            </button>
-            <button
-              className="inline-block align-baseline font-bold text-sm text-orange-300 hover:text-orange-500"
-              type="button"
-            >
-              Forgot Password?
-            </button>
-          </div>
-          <div className="text-center">
-            <button
-              className="font-bold text-sm text-orange-300 hover:text-orange-500"
-              type="button"
-            >
-              Don't have an account? Sign Up
-            </button>
-          </div>
-        </form>
-      </div>
+  <div className="w-full max-w-md">
+    <div className="text-orange-300 text-3xl font-bold mb-6">
+      <Link to="/">
+        <h1 className="text-2xl font-semibold">
+          Soora<span className="text-[#38bdf8]">.ai</span>
+        </h1>
+      </Link>
     </div>
+    <form onSubmit={handleSubmit} className="pt-6 pb-8 mb-4">
+      <h2 className="text-2xl font-bold text-center text-white mb-6">
+        Login
+      </h2>
+      <div className="mb-4">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          className="shadow appearance-none border border-orange-300 w-full sm:w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+          id="email"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="relative">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="shadow appearance-none border border-orange-300 w-full sm:w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+          type={showPassword ? "text" : "password"}
+          placeholder="****************"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button
+          type="button"
+          className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? (
+            <EyeOff size={20} className="justify-center items-center" />
+          ) : (
+            <Eye size={20} />
+          )}
+        </button>
+      </div>
+      <div className="flex items-center justify-between mb-6">
+        <button
+          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Sign In
+        </button>
+        <button
+          className="inline-block align-baseline font-bold text-sm text-orange-300 hover:text-orange-500"
+          type="button"
+        >
+          Forgot Password?
+        </button>
+      </div>
+      <div className="text-center">
+        <button
+          className="font-bold text-sm text-orange-300 hover:text-orange-500"
+          type="button"
+        >
+          Don't have an account? Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
   );
 }
 
