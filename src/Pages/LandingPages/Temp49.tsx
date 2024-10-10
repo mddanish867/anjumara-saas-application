@@ -823,7 +823,7 @@ function RealTimeCharts() {
         Real-Time Statistics
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
+        <div className="bg-black p-4 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Bar Chart</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={barData}>
