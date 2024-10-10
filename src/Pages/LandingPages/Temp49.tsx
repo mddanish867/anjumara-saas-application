@@ -103,7 +103,7 @@ export default function Temp49() {
               <NavLink href="#pricing">Pricing</NavLink>
               <a
                 href="#get-started"
-                className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
+                className="bg-transparent text-center text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
               >
                 Login
               </a>
@@ -211,7 +211,7 @@ function LoginPage() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="pt-6 pb-8 mb-4"
         >
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Login
