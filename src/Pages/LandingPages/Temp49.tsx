@@ -198,9 +198,9 @@ function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-lg">
         <div className="text-orange-200 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
+        <Link to="/">
+            <h1 className="text-2xl font-semibold text-orange-200">
+              Soora<span className="text-orange-400">.ai</span>
             </h1>
           </Link>
         </div>
@@ -297,8 +297,8 @@ function RegisterPage() {
       <div className="w-full max-w-lg">
         <div className="text-orange-00 text-3xl font-bold mb-6">
           <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
+            <h1 className="text-2xl font-semibold text-orange-200">
+              Soora<span className="text-orange-400">.ai</span>
             </h1>
           </Link>
         </div>
@@ -434,9 +434,9 @@ function ForgotPasswordPage() {
         {" "}
         {/* Adjusted max width to match login page */}
         <div className="text-orange-200 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
+        <Link to="/">
+            <h1 className="text-2xl font-semibold text-orange-200">
+              Soora<span className="text-orange-400">.ai</span>
             </h1>
           </Link>
         </div>
@@ -503,9 +503,9 @@ function ResetPasswordPage() {
         {" "}
         {/* Updated max-w-lg to match login page */}
         <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
+        <Link to="/">
+            <h1 className="text-2xl font-semibold text-orange-200">
+              Soora<span className="text-orange-400">.ai</span>
             </h1>
           </Link>
         </div>
@@ -634,10 +634,10 @@ function OtpVerificationPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-lg">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
+        <div className=" text-3xl font-bold mb-6">
+        <Link to="/">
+            <h1 className="text-2xl font-semibold text-orange-200">
+              Soora<span className="text-orange-400">.ai</span>
             </h1>
           </Link>
         </div>
