@@ -118,9 +118,7 @@ export default function Temp49() {
         )}
 
         <main className="container mx-auto px-4 py-20 text-center">
-          <h1
-            className="text-3xl md:text-7xl font-bold mb-6"
-          >
+          <h1 className="text-3xl md:text-7xl font-bold mb-6">
             Ready to Supercharge
             <br />
             Your Development? With{" "}
@@ -198,83 +196,84 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-  <div className="w-full max-w-lg">
-    <div className="text-orange-300 text-3xl font-bold mb-6">
-      <Link to="/">
-        <h1 className="text-2xl font-semibold">
-          Soora<span className="text-[#38bdf8]">.ai</span>
-        </h1>
-      </Link>
+      <div className="w-full max-w-lg">
+        <div className="text-orange-200 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="border border-orange-200 rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Login
+          </h2>
+          <div className="mb-4">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="relative mb-4">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
+              type={showPassword ? "text" : "password"}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-200"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff size={20} className="text-center" />
+              ) : (
+                <Eye size={20} className="text-center" />
+              )}
+            </button>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-300 hover:bg-orange-400 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
+              type="submit"
+            >
+              Sign In
+            </button>
+          </div>
+          <div className="text-center">
+            <button
+              className="font-bold text-sm text-orange-200 hover:text-orange-300"
+              type="button"
+            >
+              Don't have an account? Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <form
-      onSubmit={handleSubmit}
-      className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
-    >
-      <h2 className="text-2xl font-bold text-center text-white mb-6">Login</h2>
-      <div className="mb-4">
-        <label
-          className="block text-orange-300 text-sm font-bold mb-2"
-          htmlFor="email"
-        >
-          Email
-        </label>
-        <input
-          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
-          id="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div className="relative mb-4">
-        <label
-          className="block text-orange-300 text-sm font-bold mb-2"
-          htmlFor="password"
-        >
-          Password
-        </label>
-        <input
-          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
-          type={showPassword ? "text" : "password"}
-          placeholder="****************"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button
-          type="button"
-          className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-          onClick={() => setShowPassword(!showPassword)}
-        >
-          {showPassword ? (
-            <EyeOff size={20} className="text-center" />
-          ) : (
-            <Eye size={20} className="text-center" />
-          )}
-        </button>
-      </div>
-      <div className="flex items-center justify-between mb-6">
-        <button
-          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
-          type="submit"
-        >
-          Sign In
-        </button>
-      </div>
-      <div className="text-center">
-        <button
-          className="font-bold text-sm text-orange-300 hover:text-orange-500"
-          type="button"
-        >
-          Don't have an account? Sign Up
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
   );
 }
 
@@ -296,7 +295,7 @@ function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-lg">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
+        <div className="text-orange-00 text-3xl font-bold mb-6">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
               Soora<span className="text-[#38bdf8]">.ai</span>
@@ -305,20 +304,20 @@ function RegisterPage() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
+          className="border border-orange-200 rounded px-8 pt-6 pb-8 mb-4"
         >
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Create an account
           </h2>
           <div className="mb-4">
             <label
-              className="block text-orange-300 text-sm font-bold mb-2"
+              className="block text-orange-200 text-sm font-bold mb-2"
               htmlFor="name"
             >
               Name
             </label>
             <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
               id="name"
               type="text"
               placeholder="Your Name"
@@ -329,13 +328,13 @@ function RegisterPage() {
           </div>
           <div className="mb-4">
             <label
-              className="block text-orange-300 text-sm font-bold mb-2"
+              className="block text-orange-200 text-sm font-bold mb-2"
               htmlFor="email"
             >
               Email
             </label>
             <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
               id="email"
               type="email"
               placeholder="Email"
@@ -346,13 +345,13 @@ function RegisterPage() {
           </div>
           <div className="relative mb-4">
             <label
-              className="block text-orange-300 text-sm font-bold mb-2"
+              className="block text-orange-200 text-sm font-bold mb-2"
               htmlFor="password"
             >
               Password
             </label>
             <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
               type={showPassword ? "text" : "password"}
               placeholder="****************"
               value={password}
@@ -361,7 +360,7 @@ function RegisterPage() {
             />
             <button
               type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-200"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
@@ -373,13 +372,13 @@ function RegisterPage() {
           </div>
           <div className="relative mb-4">
             <label
-              className="block text-orange-300 text-sm font-bold mb-2"
+              className="block text-orange-200 text-sm font-bold mb-2"
               htmlFor="confirmPassword"
             >
               Confirm Password
             </label>
             <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
               type={showConfirmPassword ? "text" : "password"}
               placeholder="****************"
               value={confirmPassword}
@@ -388,7 +387,7 @@ function RegisterPage() {
             />
             <button
               type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-200"
               onClick={() => setConfirmShowPassword(!showConfirmPassword)}
             >
               {showConfirmPassword ? (
@@ -400,7 +399,7 @@ function RegisterPage() {
           </div>
           <div className="flex items-center justify-between mb-6">
             <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
+              className="bg-orange-300 hover:bg-orange-400 text-black hover:text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
               type="submit"
             >
               Sign Up
@@ -408,7 +407,7 @@ function RegisterPage() {
           </div>
           <div className="text-center">
             <button
-              className="font-bold text-sm text-orange-300 hover:text-orange-500"
+              className="font-bold text-sm text-orange-200 hover:text-orange-300"
               type="button"
             >
               Already have an account? Sign In
@@ -431,58 +430,58 @@ function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-  <div className="w-full max-w-lg"> {/* Adjusted max width to match login page */}
-    <div className="text-orange-300 text-3xl font-bold mb-6">
-      <Link to="/">
-        <h1 className="text-2xl font-semibold">
-          Soora<span className="text-[#38bdf8]">.ai</span>
-        </h1>
-      </Link>
+      <div className="w-full max-w-lg">
+        {" "}
+        {/* Adjusted max width to match login page */}
+        <div className="text-orange-200 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="border border-orange-200 rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <button
+            type="button"
+            className="mb-4 text-orange-200 hover:text-orange-200 transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            <ArrowLeft className="inline mr-2" size={20} />
+            Back to Login
+          </button>
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Forgot Password
+          </h2>
+          <div className="mb-4">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-300 hover:bg-orange-400 text-black hover:text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
+              type="submit"
+            >
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <form
-      onSubmit={handleSubmit}
-      className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
-    >
-      <button
-        type="button"
-        className="mb-4 text-orange-300 hover:text-orange-500 transition duration-300 ease-in-out transform hover:scale-105"
-      >
-        <ArrowLeft className="inline mr-2" size={20} />
-        Back to Login
-      </button>
-      <h2 className="text-2xl font-bold text-center text-white mb-6">
-        Forgot Password
-      </h2>
-      <div className="mb-4">
-        <label
-          className="block text-orange-300 text-sm font-bold mb-2"
-          htmlFor="email"
-        >
-          Email
-        </label>
-        <input
-          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
-          id="email"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </div>
-      <div className="flex items-center justify-between mb-6">
-        <button
-          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
-          type="submit"
-        >
-          Reset Password
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-  
   );
 }
 
@@ -500,99 +499,100 @@ function ResetPasswordPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-    <div className="w-full max-w-lg"> {/* Updated max-w-lg to match login page */}
-      <div className="text-orange-300 text-3xl font-bold mb-6">
-        <Link to="/">
-          <h1 className="text-2xl font-semibold">
-            Soora<span className="text-[#38bdf8]">.ai</span>
-          </h1>
-        </Link>
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4" 
-      >
-        <button
-          type="button"
-          className="mb-4 text-orange-300 hover:text-orange-500 transition duration-300 ease-in-out transform hover:scale-105"
+      <div className="w-full max-w-lg">
+        {" "}
+        {/* Updated max-w-lg to match login page */}
+        <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="border border-orange-200 rounded px-8 pt-6 pb-8 mb-4"
         >
-          <ArrowLeft className="inline mr-2" size={20} />
-          Back to Login
-        </button>
-        <h2 className="text-2xl font-bold text-center text-white mb-6">
-          Reset Password
-        </h2>
-  
-        {/* New Password Field */}
-        <div className="relative mb-4">
-          <label
-            className="block text-orange-300 text-sm font-bold mb-2"
-            htmlFor="password"
-          >
-            New Password
-          </label>
-          <input
-            className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
-            type={showConfirmPassword ? "text" : "password"}
-            placeholder="****************"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-            onClick={() => setConfirmShowPassword(!showConfirmPassword)}
+            className="mb-4 text-orange-200 hover:text-orange-200 transition duration-300 ease-in-out transform hover:scale-105"
           >
-            {showConfirmPassword ? (
-              <EyeOff size={20} className="justify-center items-center" />
-            ) : (
-              <Eye size={20} />
-            )}
+            <ArrowLeft className="inline mr-2" size={20} />
+            Back to Login
           </button>
-        </div>
-  
-        {/* Confirm Password Field */}
-        <div className="relative mb-4">
-          <label
-            className="block text-orange-300 text-sm font-bold mb-2"
-            htmlFor="confirmPassword"
-          >
-            Confirm Password
-          </label>
-          <input
-            className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
-            type={showPassword ? "text" : "password"}
-            placeholder="****************"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-          <button
-            type="button"
-            className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? (
-              <EyeOff size={20} className="justify-center items-center" />
-            ) : (
-              <Eye size={20} />
-            )}
-          </button>
-        </div>
-  
-        <div className="flex items-center justify-between mb-6">
-          <button
-            className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-            type="submit"
-          >
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
             Reset Password
-          </button>
-        </div>
-      </form>
+          </h2>
+
+          {/* New Password Field */}
+          <div className="relative mb-4">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              New Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-200"
+              onClick={() => setConfirmShowPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+
+          {/* Confirm Password Field */}
+          <div className="relative mb-4">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="confirmPassword"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-200 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
+              type={showPassword ? "text" : "password"}
+              placeholder="****************"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-200"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-300 hover:bg-orange-400 text-black hover:text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+              type="submit"
+            >
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  
   );
 }
 function OtpVerificationPage() {
@@ -633,62 +633,66 @@ function OtpVerificationPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-  <div className="w-full max-w-lg">
-    <div className="text-orange-300 text-3xl font-bold mb-6">
-      <Link to="/">
-        <h1 className="text-2xl font-semibold">
-          Soora<span className="text-[#38bdf8]">.ai</span>
-        </h1>
-      </Link>
-    </div>
-    <form onSubmit={handleSubmit} className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"> {/* Added border and rounded for consistency */}
-      <button
-        type="button"
-        className="mb-4 text-orange-300 hover:text-orange-400 transition duration-300 ease-in-out transform hover:scale-105"
-      >
-        <ArrowLeft className="inline mr-2" size={20} />
-        Back to Login
-      </button>
-      <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">
-        Verify OTP
-      </h2>
-      <p className="text-white text-sm mb-6">
-        Enter the OTP we just sent to your mobile ******4563
-      </p>
-      <div className="mb-6">
-        <label
-          className="block text-orange-300 text-sm font-bold mb-2"
-          htmlFor="otp"
-        >
-          Enter 6-digit OTP
-        </label>
-        <div className="flex justify-between">
-          {otp.map((digit, index) => (
-            <input
-              key={index}
-              ref={(el) => (otpRefs.current[index] = el)}
-              className="appearance-none border border-orange-300 w-12 h-12 text-center text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
-              type="text"
-              maxLength={1}
-              value={digit}
-              onChange={(e) => handleOtpChange(index, e.target.value)}
-              onKeyDown={(e) => handleOtpKeyDown(index, e)}
-              required
-            />
-          ))}
+      <div className="w-full max-w-lg">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
         </div>
-      </div>
-      <div className="flex items-center justify-between mb-6">
-        <button
-          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
-          type="submit"
+        <form
+          onSubmit={handleSubmit}
+          className="border border-orange-200 rounded px-8 pt-6 pb-8 mb-4"
         >
-          Verify OTP
-        </button>
+          {" "}
+          {/* Added border and rounded for consistency */}
+          <button
+            type="button"
+            className="mb-4 text-orange-200 hover:text-orange-200 transition duration-300 ease-in-out transform hover:scale-105"
+          >
+            <ArrowLeft className="inline mr-2" size={20} />
+            Back to Login
+          </button>
+          <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">
+            Verify OTP
+          </h2>
+          <p className="text-white text-sm mb-6">
+            Enter the OTP we just sent to your mobile ******4563
+          </p>
+          <div className="mb-6">
+            <label
+              className="block text-orange-200 text-sm font-bold mb-2"
+              htmlFor="otp"
+            >
+              Enter 6-digit OTP
+            </label>
+            <div className="flex justify-between">
+              {otp.map((digit, index) => (
+                <input
+                  key={index}
+                  ref={(el) => (otpRefs.current[index] = el)}
+                  className="appearance-none border border-orange-200 w-12 h-12 text-center text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+                  type="text"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleOtpChange(index, e.target.value)}
+                  onKeyDown={(e) => handleOtpKeyDown(index, e)}
+                  required
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-300 hover:bg-orange-400 text-black hover:text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+              type="submit"
+            >
+              Verify OTP
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div>
-</div>
-
+    </div>
   );
 }
