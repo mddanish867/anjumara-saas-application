@@ -1,8 +1,8 @@
-import { useState, useEffect ,useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import { Code2Icon, Menu, X } from "lucide-react";
 import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 
 const NavLink = ({
@@ -117,55 +117,55 @@ export default function Temp49() {
           </div>
         )}
 
+        <main className="container mx-auto px-4 py-20 text-center">
+          <motion.h1
+            className="text-3xl md:text-7xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Ready to Supercharge
+            <br />
+            Your Development? With{" "}
+            <span className="text-orange-500">MIXO.</span>
+          </motion.h1>
 
-<main className="container mx-auto px-4 py-20 text-center">
-  <motion.h1
-    className="text-3xl md:text-7xl font-bold mb-6"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    Ready to Supercharge
-    <br />
-    Your Development? With{" "}
-    <span className="text-orange-500">MIXO.</span>
-  </motion.h1>
-  
-  <motion.p
-    className="text-xl mb-8 text-gray-300"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1, delay: 0.5 }}
-  >
-    Have an idea for a startup, product or service? Bring it to life
-    with MIXO
-    <br />
-    effortlessly and watch it grow.
-  </motion.p>
-  
-  <motion.div
-    className="flex justify-center space-x-4 mb-12"
-    initial={{ opacity: 0, scale: 0.9 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 1.2, delay: 0.7 }}
-  >
-    <span className="text-yellow-400">Free Trial Available</span>
-    <span className="text-gray-300">•</span>
-    <span className="text-gray-300">Over Thousands of Sites Created</span>
-  </motion.div>
-  
-  <motion.a
-    href="#get-started"
-    className="bg-transparent text-white border border-orange-300 px-8 py-4 rounded-md text-xl hover:border-orange-400 hover:bg-transparent hover:text-orange-300 transition-colors inline-flex items-center"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1.5, delay: 1 }}
-  >
-    Get Started for Free
-    <span className="ml-2">✨</span>
-  </motion.a>
-</main>
+          <motion.p
+            className="text-xl mb-8 text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Have an idea for a startup, product or service? Bring it to life
+            with MIXO
+            <br />
+            effortlessly and watch it grow.
+          </motion.p>
 
+          <motion.div
+            className="flex justify-center space-x-4 mb-12"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.7 }}
+          >
+            <span className="text-yellow-400">Free Trial Available</span>
+            <span className="text-gray-300">•</span>
+            <span className="text-gray-300">
+              Over Thousands of Sites Created
+            </span>
+          </motion.div>
+
+          <motion.a
+            href="#get-started"
+            className="bg-transparent text-white border border-orange-300 px-8 py-4 rounded-md text-xl hover:border-orange-400 hover:bg-transparent hover:text-orange-300 transition-colors inline-flex items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 1 }}
+          >
+            Get Started for Free
+            <span className="ml-2">✨</span>
+          </motion.a>
+        </main>
 
         <div className="absolute bottom-4 right-4 text-white opacity-50">
           Time elapsed: {timer} seconds
@@ -181,9 +181,9 @@ export default function Temp49() {
       </div>
       <LoginPage />
       <RegisterPage />
-      <ForgotPasswordPage/>
-      <ResetPasswordPage/>
-      <OtpVerificationPage/>
+      <ForgotPasswordPage />
+      <ResetPasswordPage />
+      <OtpVerificationPage />
     </>
   );
 }
@@ -319,8 +319,6 @@ function LoginPage() {
         </motion.form>
       </motion.div>
     </div>
-  
-
   );
 }
 
@@ -341,41 +339,21 @@ function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <motion.div
-        className="w-full max-w-md sm:w-full"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      >
-        <motion.div
-          className="text-orange-300 text-3xl font-bold mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
+      <div className="w-full max-w-lg">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
               Soora<span className="text-[#38bdf8]">.ai</span>
             </h1>
           </Link>
-        </motion.div>
-        <motion.form
+        </div>
+        <form
           onSubmit={handleSubmit}
-          className="shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-gray-800"
         >
-          <motion.h2
-            className="text-2xl font-bold text-center text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
             Create an account
-          </motion.h2>
-
-          {/* Name Field */}
+          </h2>
           <div className="mb-4">
             <label
               className="block text-orange-300 text-sm font-bold mb-2"
@@ -383,21 +361,16 @@ function RegisterPage() {
             >
               Name
             </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
               id="name"
               type="text"
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
             />
           </div>
-
-          {/* Email Field */}
           <div className="mb-4">
             <label
               className="block text-orange-300 text-sm font-bold mb-2"
@@ -405,21 +378,16 @@ function RegisterPage() {
             >
               Email
             </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
               id="email"
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.4 }}
             />
           </div>
-
-          {/* Password Field */}
           <div className="relative mb-4">
             <label
               className="block text-orange-300 text-sm font-bold mb-2"
@@ -427,31 +395,26 @@ function RegisterPage() {
             >
               Password
             </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
               type={showPassword ? "text" : "password"}
               placeholder="****************"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.4 }}
             />
             <button
               type="button"
-              className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-orange-300"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? (
-                <EyeOff size={20} />
+                <EyeOff size={20} className="text-center" />
               ) : (
-                <Eye size={20} />
+                <Eye size={20} className="text-center" />
               )}
             </button>
           </div>
-
-          {/* Confirm Password Field */}
           <div className="relative mb-4">
             <label
               className="block text-orange-300 text-sm font-bold mb-2"
@@ -459,79 +422,61 @@ function RegisterPage() {
             >
               Confirm Password
             </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
               type={showConfirmPassword ? "text" : "password"}
               placeholder="****************"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.4 }}
             />
             <button
               type="button"
-              className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-orange-300"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
               onClick={() => setConfirmShowPassword(!showConfirmPassword)}
             >
               {showConfirmPassword ? (
-                <EyeOff size={20} />
+                <EyeOff size={20} className="text-center" />
               ) : (
-                <Eye size={20} />
+                <Eye size={20} className="text-center" />
               )}
             </button>
           </div>
-
-          {/* Sign Up Button */}
-          <motion.div
-            className="flex items-center justify-between mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4, duration: 0.4 }}
-          >
+          <div className="flex items-center justify-between mb-6">
             <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full"
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
               type="submit"
             >
               Sign Up
             </button>
-          </motion.div>
-
-          {/* Sign In Link */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.6, duration: 0.4 }}
-          >
+          </div>
+          <div className="text-center">
             <button
               className="font-bold text-sm text-orange-300 hover:text-orange-500"
               type="button"
             >
               Already have an account? Sign In
             </button>
-          </motion.div>
-        </motion.form>
-      </motion.div>
+          </div>
+        </form>
+      </div>
     </div>
   );
-
 }
 
 function ForgotPasswordPage() {
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle forgot password logic here
-    console.log('Forgot password submitted', { email })
-  }
+    console.log("Forgot password submitted", { email });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-md">
-      <div className="text-orange-300 text-3xl font-bold mb-6">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
               Soora<span className="text-[#38bdf8]">.ai</span>
@@ -542,14 +487,18 @@ function ForgotPasswordPage() {
           <button
             type="button"
             className="mb-4 text-orange-300 hover:text-orange-500"
-            
           >
             <ArrowLeft className="inline mr-2" size={20} />
             Back to Login
           </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6">Forgot Password</h2>
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Forgot Password
+          </h2>
           <div className="mb-4">
-            <label className="block text-orange-300 text-sm font-bold mb-2" htmlFor="email">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -573,26 +522,25 @@ function ForgotPasswordPage() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
 function ResetPasswordPage() {
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setConfirmShowPassword] = useState(false);
 
-
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle reset password logic here
-    console.log('Reset password submitted', { password, confirmPassword })
-  }
+    console.log("Reset password submitted", { password, confirmPassword });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-md">
-      <div className="text-orange-300 text-3xl font-bold mb-6">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
               Soora<span className="text-[#38bdf8]">.ai</span>
@@ -603,12 +551,13 @@ function ResetPasswordPage() {
           <button
             type="button"
             className="mb-4 text-orange-300 hover:text-orange-500"
-           
           >
             <ArrowLeft className="inline mr-2" size={20} />
             Back to Login
           </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6">Reset Password</h2>
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Reset Password
+          </h2>
           <div className="relative">
             <label
               className="block text-orange-300 text-sm font-bold mb-2"
@@ -674,45 +623,48 @@ function ResetPasswordPage() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 function OtpVerificationPage() {
-  const [otp, setOtp] = useState(['', '', '', '', '', ''])
-  const otpRefs = useRef<(HTMLInputElement | null)[]>([])
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
-    otpRefs.current = otpRefs.current.slice(0, 6)
-  }, [])
+    otpRefs.current = otpRefs.current.slice(0, 6);
+  }, []);
 
   const handleOtpChange = (index: number, value: string) => {
     if (value.length <= 1) {
-      const newOtp = [...otp]
-      newOtp[index] = value
-      setOtp(newOtp)
+      const newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
 
       // Move to next input if value is entered
-      if (value !== '' && index < 5) {
-        otpRefs.current[index + 1]?.focus()
+      if (value !== "" && index < 5) {
+        otpRefs.current[index + 1]?.focus();
       }
     }
-  }
+  };
 
-  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Backspace' && index > 0 && otp[index] === '') {
-      otpRefs.current[index - 1]?.focus()
+  const handleOtpKeyDown = (
+    index: number,
+    e: React.KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (e.key === "Backspace" && index > 0 && otp[index] === "") {
+      otpRefs.current[index - 1]?.focus();
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle OTP verification logic here
-    console.log('OTP verification submitted', { otp: otp.join('') })
-  }
+    console.log("OTP verification submitted", { otp: otp.join("") });
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-md">
-      <div className="text-orange-300 text-3xl font-bold mb-6">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
           <Link to="/">
             <h1 className="text-2xl font-semibold">
               Soora<span className="text-[#38bdf8]">.ai</span>
@@ -723,15 +675,21 @@ function OtpVerificationPage() {
           <button
             type="button"
             className="mb-4 text-orange-300 hover:text-orange-400"
-           
           >
             <ArrowLeft className="inline mr-2" size={20} />
             Back to Login
           </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">Verify OTP</h2>
-          <p className="text-white text-sm mb-6">Enter otp we just sent you on your mobile ******4563</p>
+          <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">
+            Verify OTP
+          </h2>
+          <p className="text-white text-sm mb-6">
+            Enter otp we just sent you on your mobile ******4563
+          </p>
           <div className="mb-6">
-            <label className="block text-orange-300 text-sm font-bold mb-2" htmlFor="otp">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="otp"
+            >
               Enter 6-digit OTP
             </label>
             <div className="flex justify-between">
@@ -761,5 +719,5 @@ function OtpVerificationPage() {
         </form>
       </div>
     </div>
-  )
+  );
 }
