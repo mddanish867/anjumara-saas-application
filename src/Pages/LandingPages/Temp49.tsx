@@ -1,7 +1,17 @@
-import { useState, useEffect } from 'react';
-import { Code2Icon, Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Code2Icon, Menu, X } from "lucide-react";
+import { Eye, EyeOff } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from 'lucide-react';
+import { motion } from "framer-motion";
 
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
+const NavLink = ({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) => (
   <a href={href} className="text-white hover:text-orange-300 transition-colors">
     {children}
   </a>
@@ -11,8 +21,8 @@ const Star = ({ style }: { style: React.CSSProperties }) => (
   <div
     className="absolute bg-orange-100 rounded-full opacity-70"
     style={{
-      width: '3px',
-      height: '3px',
+      width: "3px",
+      height: "3px",
       ...style,
       animation: `twinkle ${Math.random() * 5 + 3}s linear infinite`,
     }}
@@ -41,101 +51,539 @@ export default function Temp49() {
   }, []);
 
   return (
-    <div className="md:container min-h-screen bg-black text-orange-300 relative overflow-hidden">
-      {stars.map((style, index) => (
-        <Star key={index} style={style} />
-      ))}
-      <header className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <div className="flex items-center">
-          <div className="bg-transparent w-8 h-8 rounded-md flex items-center justify-center mr-2">
-            <Code2Icon className="text-orange-300" size={40} />
+    <>
+      <div className="md:container min-h-screen bg-black text-orange-300 relative overflow-hidden">
+        {stars.map((style, index) => (
+          <Star key={index} style={style} />
+        ))}
+        <header className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <div className="flex items-center">
+            <div className="bg-transparent w-8 h-8 rounded-md flex items-center justify-center mr-2">
+              <Code2Icon className="text-orange-300" size={40} />
+            </div>
+            <span className="text-1xl font-bold">Mixo</span>
           </div>
-          <span className="text-1xl font-bold">Mixo</span>
-        </div>
-        <nav className="hidden md:flex space-x-6">
-          <NavLink href="#features">Features</NavLink>
-          <NavLink href="#pricing">Pricing</NavLink>
-        </nav>
-        <div className="hidden md:flex space-x-4">          
-          <a
-            href="#get-started"
-            className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
-          >
-            Login
-          </a>
-       
-          <a
-            href="#get-started"
-            className="bg-orange-300 text-black px-4 py-2 rounded-none hover:bg-orange-400 transition-colors"
-          >
-            Get Started for Free
-          </a>
-        </div>
-        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <Menu className="text-white" size={24} />
-        </button>
-      </header>
-
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-full bg-black z-50 p-6">
-          <button className="absolute top-6 right-6" onClick={() => setIsMenuOpen(false)}>
-            <X className="text-white" size={24} />
-          </button>
-          <nav className="flex flex-col space-y-4 mt-16">
+          <nav className="hidden md:flex space-x-6">
             <NavLink href="#features">Features</NavLink>
             <NavLink href="#pricing">Pricing</NavLink>
-            <a
-            href="#get-started"
-            className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
-          >
-            Login
-          </a>
+          </nav>
+          <div className="hidden md:flex space-x-4">
             <a
               href="#get-started"
-              className="bg-orange-300 text-white px-4 py-2 rounded-md hover:bg-orange-400 transition-colors text-center"
+              className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
+            >
+              Login
+            </a>
+
+            <a
+              href="#get-started"
+              className="bg-orange-300 text-black px-4 py-2 rounded-none hover:bg-orange-400 transition-colors"
             >
               Get Started for Free
             </a>
-          </nav>
+          </div>
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <Menu className="text-white" size={24} />
+          </button>
+        </header>
+
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-0 left-0 w-full h-full bg-black z-50 p-6">
+            <button
+              className="absolute top-6 right-6"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X className="text-white" size={24} />
+            </button>
+            <nav className="flex flex-col space-y-4 mt-16">
+              <NavLink href="#features">Features</NavLink>
+              <NavLink href="#pricing">Pricing</NavLink>
+              <a
+                href="#get-started"
+                className="bg-transparent text-white px-4 py-2 rounded-none border border-orange-300 hover:border-orange-400 transition-colors"
+              >
+                Login
+              </a>
+              <a
+                href="#get-started"
+                className="bg-orange-300 text-white px-4 py-2 rounded-md hover:bg-orange-400 transition-colors text-center"
+              >
+                Get Started for Free
+              </a>
+            </nav>
+          </div>
+        )}
+
+
+<main className="container mx-auto px-4 py-20 text-center">
+  <motion.h1
+    className="text-3xl md:text-7xl font-bold mb-6"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    Ready to Supercharge
+    <br />
+    Your Development? With{" "}
+    <span className="text-orange-500">MIXO.</span>
+  </motion.h1>
+  
+  <motion.p
+    className="text-xl mb-8 text-gray-300"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, delay: 0.5 }}
+  >
+    Have an idea for a startup, product or service? Bring it to life
+    with MIXO
+    <br />
+    effortlessly and watch it grow.
+  </motion.p>
+  
+  <motion.div
+    className="flex justify-center space-x-4 mb-12"
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 1.2, delay: 0.7 }}
+  >
+    <span className="text-yellow-400">Free Trial Available</span>
+    <span className="text-gray-300">•</span>
+    <span className="text-gray-300">Over Thousands of Sites Created</span>
+  </motion.div>
+  
+  <motion.a
+    href="#get-started"
+    className="bg-transparent text-white border border-orange-300 px-8 py-4 rounded-md text-xl hover:border-orange-400 hover:bg-transparent hover:text-orange-300 transition-colors inline-flex items-center"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.5, delay: 1 }}
+  >
+    Get Started for Free
+    <span className="ml-2">✨</span>
+  </motion.a>
+</main>
+
+
+        <div className="absolute bottom-4 right-4 text-white opacity-50">
+          Time elapsed: {timer} seconds
         </div>
-      )}
 
-      <main className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          Launch a website
-          <br />
-          in seconds with <span className="text-orange-500">AI.</span>
-        </h1>
-        <p className="text-xl mb-8 text-gray-300">
-          Have an idea for a startup, product or service? Bring it to life with AI
-          <br />
-          effortlessly and watch it grow.
-        </p>
-        <div className="flex justify-center space-x-4 mb-12">
-          <span className="text-yellow-400">Free Trial Available</span>
-          <span className="text-gray-300">•</span>
-          <span className="text-gray-300">Over 2 Million Sites Created</span>
-        </div>
-        <a
-          href="#get-started"
-          className="bg-transparent text-white border border-orange-300 px-8 py-4 rounded-md text-xl hover:border border-orange-400 hover:bg-transparent hover:text-orange-300 transition-colors inline-flex items-center"
-        >
-          Get Started for Free
-          <span className="ml-2">✨</span>
-        </a>
-      </main>
-
-      <div className="absolute bottom-4 right-4 text-white opacity-50">
-        Time elapsed: {timer} seconds
-      </div>
-
-      <style>{`
+        <style>{`
         @keyframes twinkle {
           0% { opacity: 0.7; }
           50% { opacity: 0.3; }
           100% { opacity: 0.7; }
         }
       `}</style>
+      </div>
+      <LoginPage />
+      <RegisterPage />
+      <ForgotPasswordPage/>
+      <ResetPasswordPage/>
+    </>
+  );
+}
+
+function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log("Login submitted", { email, password });
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <div className="w-full max-w-md">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Login
+          </h2>
+          <div className="mb-4">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="relative">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+              type={showPassword ? "text" : "password"}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Sign In
+            </button>
+            <button
+              className="inline-block align-baseline font-bold text-sm text-orange-300 hover:text-orange-500"
+              type="button"
+            >
+              Forgot Password?
+            </button>
+          </div>
+          <div className="text-center">
+            <button
+              className="font-bold text-sm text-orange-300 hover:text-orange-500"
+              type="button"
+            >
+              Don't have an account? Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
+}
+
+function RegisterPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle login logic here
+    console.log("Login submitted", { email, password });
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <div className="w-full max-w-md">
+        <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
+          <h2 className="text-2xl font-bold text-center text-white mb-6">
+            Create an account
+          </h2>
+          <div className="mb-4">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Name
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+              id="name"
+              type="name"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="relative">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+              type={showPassword ? "text" : "password"}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+          <div className="relative">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="****************"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              onClick={() => setConfirmShowPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Sign Up
+            </button>
+            
+          </div>
+          <div className="text-center">
+            <button
+              className="font-bold text-sm text-orange-300 hover:text-orange-500"
+              type="button"
+            >
+              Already have an account? Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+function ForgotPasswordPage() {
+  const [email, setEmail] = useState('')
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle forgot password logic here
+    console.log('Forgot password submitted', { email })
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <div className="w-full max-w-md">
+      <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form onSubmit={handleSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
+          <button
+            type="button"
+            className="mb-4 text-orange-300 hover:text-orange-500"
+            
+          >
+            <ArrowLeft className="inline mr-2" size={20} />
+            Back to Login
+          </button>
+          <h2 className="text-2xl font-bold text-center text-white mb-6">Forgot Password</h2>
+          <div className="mb-4">
+            <label className="block text-orange-300 text-sm font-bold mb-2" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+function ResetPasswordPage() {
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setConfirmShowPassword] = useState(false);
+
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle reset password logic here
+    console.log('Reset password submitted', { password, confirmPassword })
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
+      <div className="w-full max-w-md">
+      <div className="text-orange-300 text-3xl font-bold mb-6">
+          <Link to="/">
+            <h1 className="text-2xl font-semibold">
+              Soora<span className="text-[#38bdf8]">.ai</span>
+            </h1>
+          </Link>
+        </div>
+        <form onSubmit={handleSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
+          <button
+            type="button"
+            className="mb-4 text-orange-300 hover:text-orange-500"
+           
+          >
+            <ArrowLeft className="inline mr-2" size={20} />
+            Back to Login
+          </button>
+          <h2 className="text-2xl font-bold text-center text-white mb-6">Reset Password</h2>
+          <div className="relative">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="****************"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              onClick={() => setConfirmShowPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+          <div className="relative">
+            <label
+              className="block text-orange-300 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Confirm Password
+            </label>
+            <input
+              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
+              type={showPassword ? "text" : "password"}
+              placeholder="****************"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? (
+                <EyeOff size={20} className="justify-center items-center" />
+              ) : (
+                <Eye size={20} />
+              )}
+            </button>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <button
+              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Reset Password
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
 }
