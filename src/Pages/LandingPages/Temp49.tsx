@@ -221,7 +221,7 @@ function LoginPage() {
         </motion.div>
         <motion.form
           onSubmit={handleSubmit}
-          className="pt-6 pb-8 mb-4"
+          className="border border-orange-300 px-8 pt-6 pb-8 mb-4"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -349,7 +349,7 @@ function RegisterPage() {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-gray-800"
+          className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
         >
           <h2 className="text-2xl font-bold text-center text-white mb-6">
             Create an account
