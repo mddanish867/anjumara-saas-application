@@ -118,17 +118,14 @@ export default function Temp49() {
         )}
 
         <main className="container mx-auto px-4 py-20 text-center">
-          <motion.h1
+          <h1
             className="text-3xl md:text-7xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
           >
             Ready to Supercharge
             <br />
             Your Development? With{" "}
             <span className="text-orange-500">MIXO.</span>
-          </motion.h1>
+          </h1>
 
           <motion.p
             className="text-xl mb-8 text-gray-300"
@@ -201,124 +198,83 @@ function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <motion.div
-        className="w-full max-w-md"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-      >
-        <motion.div
-          className="text-orange-300 text-3xl font-bold mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
-            </h1>
-          </Link>
-        </motion.div>
-        <motion.form
-          onSubmit={handleSubmit}
-          className="border border-orange-300 px-8 pt-6 pb-8 mb-4"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <motion.h2
-            className="text-2xl font-bold text-center text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            Login
-          </motion.h2>
-          <div className="mb-4">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full sm:w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
-              id="email"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
-            />
-          </div>
-          <div className="relative">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="password"
-            >
-              Password
-            </label>
-            <motion.input
-              className="shadow appearance-none border border-orange-300 w-full sm:w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
-              type={showPassword ? "text" : "password"}
-              placeholder="****************"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.4 }}
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? (
-                <EyeOff size={20} className="justify-center items-center" />
-              ) : (
-                <Eye size={20} />
-              )}
-            </button>
-          </div>
-          <motion.div
-            className="flex items-center justify-between mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.4 }}
-          >
-            <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Sign In
-            </button>
-            <button
-              className="inline-block align-baseline font-bold text-sm text-orange-300 hover:text-orange-500"
-              type="button"
-            >
-              Forgot Password?
-            </button>
-          </motion.div>
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.4 }}
-          >
-            <button
-              className="font-bold text-sm text-orange-300 hover:text-orange-500"
-              type="button"
-            >
-              Don't have an account? Sign Up
-            </button>
-          </motion.div>
-        </motion.form>
-      </motion.div>
+  <div className="w-full max-w-lg">
+    <div className="text-orange-300 text-3xl font-bold mb-6">
+      <Link to="/">
+        <h1 className="text-2xl font-semibold">
+          Soora<span className="text-[#38bdf8]">.ai</span>
+        </h1>
+      </Link>
     </div>
+    <form
+      onSubmit={handleSubmit}
+      className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <h2 className="text-2xl font-bold text-center text-white mb-6">Login</h2>
+      <div className="mb-4">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+          id="email"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="relative mb-4">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="password"
+        >
+          Password
+        </label>
+        <input
+          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10 transition duration-300 ease-in-out transform hover:scale-105"
+          type={showPassword ? "text" : "password"}
+          placeholder="****************"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button
+          type="button"
+          className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+          onClick={() => setShowPassword(!showPassword)}
+        >
+          {showPassword ? (
+            <EyeOff size={20} className="text-center" />
+          ) : (
+            <Eye size={20} className="text-center" />
+          )}
+        </button>
+      </div>
+      <div className="flex items-center justify-between mb-6">
+        <button
+          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
+          type="submit"
+        >
+          Sign In
+        </button>
+      </div>
+      <div className="text-center">
+        <button
+          className="font-bold text-sm text-orange-300 hover:text-orange-500"
+          type="button"
+        >
+          Don't have an account? Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
   );
 }
 
@@ -475,53 +431,58 @@ function ForgotPasswordPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <div className="w-full max-w-md">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
-            </h1>
-          </Link>
-        </div>
-        <form onSubmit={handleSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
-          <button
-            type="button"
-            className="mb-4 text-orange-300 hover:text-orange-500"
-          >
-            <ArrowLeft className="inline mr-2" size={20} />
-            Back to Login
-          </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6">
-            Forgot Password
-          </h2>
-          <div className="mb-4">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email
-            </label>
-            <input
-              className="shadow appearance-none border border-orange-300  w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black"
-              id="email"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="flex items-center justify-between mb-6">
-            <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Reset Password
-            </button>
-          </div>
-        </form>
-      </div>
+  <div className="w-full max-w-lg"> {/* Adjusted max width to match login page */}
+    <div className="text-orange-300 text-3xl font-bold mb-6">
+      <Link to="/">
+        <h1 className="text-2xl font-semibold">
+          Soora<span className="text-[#38bdf8]">.ai</span>
+        </h1>
+      </Link>
     </div>
+    <form
+      onSubmit={handleSubmit}
+      className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <button
+        type="button"
+        className="mb-4 text-orange-300 hover:text-orange-500 transition duration-300 ease-in-out transform hover:scale-105"
+      >
+        <ArrowLeft className="inline mr-2" size={20} />
+        Back to Login
+      </button>
+      <h2 className="text-2xl font-bold text-center text-white mb-6">
+        Forgot Password
+      </h2>
+      <div className="mb-4">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="email"
+        >
+          Email
+        </label>
+        <input
+          className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+          id="email"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div className="flex items-center justify-between mb-6">
+        <button
+          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out transform hover:scale-105"
+          type="submit"
+        >
+          Reset Password
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  
   );
 }
 
@@ -539,90 +500,99 @@ function ResetPasswordPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <div className="w-full max-w-md">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
-            </h1>
-          </Link>
-        </div>
-        <form onSubmit={handleSubmit} className=" rounded px-8 pt-6 pb-8 mb-4">
+    <div className="w-full max-w-lg"> {/* Updated max-w-lg to match login page */}
+      <div className="text-orange-300 text-3xl font-bold mb-6">
+        <Link to="/">
+          <h1 className="text-2xl font-semibold">
+            Soora<span className="text-[#38bdf8]">.ai</span>
+          </h1>
+        </Link>
+      </div>
+      <form
+        onSubmit={handleSubmit}
+        className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4" 
+      >
+        <button
+          type="button"
+          className="mb-4 text-orange-300 hover:text-orange-500 transition duration-300 ease-in-out transform hover:scale-105"
+        >
+          <ArrowLeft className="inline mr-2" size={20} />
+          Back to Login
+        </button>
+        <h2 className="text-2xl font-bold text-center text-white mb-6">
+          Reset Password
+        </h2>
+  
+        {/* New Password Field */}
+        <div className="relative mb-4">
+          <label
+            className="block text-orange-300 text-sm font-bold mb-2"
+            htmlFor="password"
+          >
+            New Password
+          </label>
+          <input
+            className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
+            type={showConfirmPassword ? "text" : "password"}
+            placeholder="****************"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <button
             type="button"
-            className="mb-4 text-orange-300 hover:text-orange-500"
+            className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+            onClick={() => setConfirmShowPassword(!showConfirmPassword)}
           >
-            <ArrowLeft className="inline mr-2" size={20} />
-            Back to Login
+            {showConfirmPassword ? (
+              <EyeOff size={20} className="justify-center items-center" />
+            ) : (
+              <Eye size={20} />
+            )}
           </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6">
+        </div>
+  
+        {/* Confirm Password Field */}
+        <div className="relative mb-4">
+          <label
+            className="block text-orange-300 text-sm font-bold mb-2"
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105 pr-10"
+            type={showPassword ? "text" : "password"}
+            placeholder="****************"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+          <button
+            type="button"
+            className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? (
+              <EyeOff size={20} className="justify-center items-center" />
+            ) : (
+              <Eye size={20} />
+            )}
+          </button>
+        </div>
+  
+        <div className="flex items-center justify-between mb-6">
+          <button
+            className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+            type="submit"
+          >
             Reset Password
-          </h2>
-          <div className="relative">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Confirm Password
-            </label>
-            <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
-              type={showConfirmPassword ? "text" : "password"}
-              placeholder="****************"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-              onClick={() => setConfirmShowPassword(!showConfirmPassword)}
-            >
-              {showConfirmPassword ? (
-                <EyeOff size={20} className="justify-center items-center" />
-              ) : (
-                <Eye size={20} />
-              )}
-            </button>
-          </div>
-          <div className="relative">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Confirm Password
-            </label>
-            <input
-              className="shadow appearance-none border border-orange-300 w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black pr-10"
-              type={showPassword ? "text" : "password"}
-              placeholder="****************"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-3 text-orange-300"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-              {showPassword ? (
-                <EyeOff size={20} className="justify-center items-center" />
-              ) : (
-                <Eye size={20} />
-              )}
-            </button>
-          </div>
-          <div className="flex items-center justify-between mb-6">
-            <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4  focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Reset Password
-            </button>
-          </div>
-        </form>
-      </div>
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
+  
   );
 }
 function OtpVerificationPage() {
@@ -663,61 +633,62 @@ function OtpVerificationPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <div className="w-full max-w-md">
-        <div className="text-orange-300 text-3xl font-bold mb-6">
-          <Link to="/">
-            <h1 className="text-2xl font-semibold">
-              Soora<span className="text-[#38bdf8]">.ai</span>
-            </h1>
-          </Link>
-        </div>
-        <form onSubmit={handleSubmit} className=" px-8 pt-6 pb-8 mb-4">
-          <button
-            type="button"
-            className="mb-4 text-orange-300 hover:text-orange-400"
-          >
-            <ArrowLeft className="inline mr-2" size={20} />
-            Back to Login
-          </button>
-          <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">
-            Verify OTP
-          </h2>
-          <p className="text-white text-sm mb-6">
-            Enter otp we just sent you on your mobile ******4563
-          </p>
-          <div className="mb-6">
-            <label
-              className="block text-orange-300 text-sm font-bold mb-2"
-              htmlFor="otp"
-            >
-              Enter 6-digit OTP
-            </label>
-            <div className="flex justify-between">
-              {otp.map((digit, index) => (
-                <input
-                  key={index}
-                  ref={(el) => (otpRefs.current[index] = el)}
-                  className=" appearance-none border border-orange-300  w-12 h-12 text-center text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black"
-                  type="text"
-                  maxLength={1}
-                  value={digit}
-                  onChange={(e) => handleOtpChange(index, e.target.value)}
-                  onKeyDown={(e) => handleOtpKeyDown(index, e)}
-                  required
-                />
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center justify-between mb-6">
-            <button
-              className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Verify OTP
-            </button>
-          </div>
-        </form>
-      </div>
+  <div className="w-full max-w-lg">
+    <div className="text-orange-300 text-3xl font-bold mb-6">
+      <Link to="/">
+        <h1 className="text-2xl font-semibold">
+          Soora<span className="text-[#38bdf8]">.ai</span>
+        </h1>
+      </Link>
     </div>
+    <form onSubmit={handleSubmit} className="border border-orange-300 rounded px-8 pt-6 pb-8 mb-4"> {/* Added border and rounded for consistency */}
+      <button
+        type="button"
+        className="mb-4 text-orange-300 hover:text-orange-400 transition duration-300 ease-in-out transform hover:scale-105"
+      >
+        <ArrowLeft className="inline mr-2" size={20} />
+        Back to Login
+      </button>
+      <h2 className="text-2xl font-bold text-center text-white mb-6 mt-6">
+        Verify OTP
+      </h2>
+      <p className="text-white text-sm mb-6">
+        Enter the OTP we just sent to your mobile ******4563
+      </p>
+      <div className="mb-6">
+        <label
+          className="block text-orange-300 text-sm font-bold mb-2"
+          htmlFor="otp"
+        >
+          Enter 6-digit OTP
+        </label>
+        <div className="flex justify-between">
+          {otp.map((digit, index) => (
+            <input
+              key={index}
+              ref={(el) => (otpRefs.current[index] = el)}
+              className="appearance-none border border-orange-300 w-12 h-12 text-center text-white mb-3 leading-tight focus:outline-none focus:shadow-outline bg-black transition duration-300 ease-in-out transform hover:scale-105"
+              type="text"
+              maxLength={1}
+              value={digit}
+              onChange={(e) => handleOtpChange(index, e.target.value)}
+              onKeyDown={(e) => handleOtpKeyDown(index, e)}
+              required
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex items-center justify-between mb-6">
+        <button
+          className="bg-orange-400 hover:bg-orange-500 text-white font-bold py-2 px-4 w-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105"
+          type="submit"
+        >
+          Verify OTP
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
   );
 }
