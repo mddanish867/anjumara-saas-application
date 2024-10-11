@@ -165,7 +165,7 @@ function Sql() {
               implications of different SQL operations on performance.
             </p>
 
-            <div className="bg-blue-50 dark:bg-gray-800 p-4 rounded-lg mt-8">
+            <div className="bg-transparent dark:bg-gray-800 p-4 rounded-lg mt-8">
               <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                 Want to Prepare with AI?
               </h4>
