@@ -39,8 +39,12 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="md:container bg-black text-orange-200 relative overflow-hidden">
+    <div className="md:container bg-black text-orange-200 relative">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div className="flex items-center">
           <div className="bg-transparent w-8 h-8 rounded-md flex items-center justify-center mr-2">
@@ -80,23 +84,23 @@ const Navbar = () => {
         </div>
         <button
           className="md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={toggleMenu}
         >
           <Menu className="text-white" size={24} />
         </button>
       </header>
       {isMenuOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full h-full bg-black z-50 p-6">
+        <div className="md:hidden fixed inset-0 bg-black z-50 p-6">
           <button
             className="absolute top-6 right-6"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={toggleMenu}
           >
             <X className="text-white" size={24} />
           </button>
           <nav className="flex flex-col space-y-4 mt-16">
-            <NavLink href="#features" onClick={() => console.log("Services clicked")}>Services</NavLink>
-            <NavLink href="#features" onClick={() => console.log("Features clicked")}>Features</NavLink>
-            <NavLink href="#features" onClick={() => console.log("APIs clicked")}>APIs</NavLink>
+            <NavLink href="#features" onClick={() => { console.log("Services clicked"); toggleMenu(); }}>Services</NavLink>
+            <NavLink href="#features" onClick={() => { console.log("Features clicked"); toggleMenu(); }}>Features</NavLink>
+            <NavLink href="#features" onClick={() => { console.log("APIs clicked"); toggleMenu(); }}>APIs</NavLink>
             <NavLink href="/soora-api/pricing" onClick={handleNavigation("/soora-api/pricing")}>Pricing</NavLink>
             <a
               href="/soora-api/login"
@@ -111,6 +115,7 @@ const Navbar = () => {
               onClick={(e) => {
                 e.preventDefault();
                 console.log("Get Started clicked");
+                toggleMenu();
               }}
             >
               Get Started for Free
