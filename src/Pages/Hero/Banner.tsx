@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { decodeToken } from "../helper/decodedToke";
+import { motion } from "framer-motion";
 
 function Banner() {
   const navigate = useNavigate();
@@ -30,18 +31,28 @@ function Banner() {
       >
         <div className="relative mx-auto w-full px-4 py-32 sm:px-6 lg:flex lg:h-full lg:items-center lg:px-8">
           <div className="max-w-full text-center">
-            <h1 className="block font-bold pl-8 pr-8 text-3xl sm:text-5xl">
+            <motion.h1
+              className="block font-bold pl-8 pr-8 text-3xl sm:text-5xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
               Building Better, Faster,
               <br /> and <span className="text-[#38bdf8]">Smarter</span> with
               Every <span className="text-[#38bdf8]">Components</span> for
               Streamlined Success
-            </h1>
+            </motion.h1>
 
-            <p className="mt-4 max-w-3xl mx-auto sm:text-xl/relaxed">
+            <motion.p
+              className="mt-4 max-w-3xl mx-auto sm:text-xl/relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
               Beautifully designed, expertly crafted components. The perfect
               starting point for your next project/interview. This will help you
               to prepare for the machine code interview preparations!
-            </p>
+            </motion.p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-4 text-center">
               <Button

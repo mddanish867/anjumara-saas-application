@@ -5,7 +5,7 @@ import hljs from "highlight.js";
 import toast from "react-hot-toast";
 import { ColorRing } from "react-loader-spinner";
 import { useSqlResponseMutation } from "@/API/ResponseAPI/sqlResponseApi";
-import { decodeToken } from "../helper/decodedToke";
+import { decodeToken } from "../../helper/decodedToke";
 import { Search } from "lucide-react";
 import Breadcrumb from "@/BreadCrum/Breadcrum";
 

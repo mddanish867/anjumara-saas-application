@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Breadcrumb from "@/BreadCrum/Breadcrum";
 import sql from "@/Data/sql.json";
-import Pagination from "../../Pagination/Pagination";
+import Pagination from "../Pagination/Pagination";
 import html2pdf from "html2pdf.js";
 import { useNavigate } from "react-router-dom";
-import { decodeToken } from "../helper/decodedToke";
+import { decodeToken } from "../../helper/decodedToke";
 import { useLocation } from "react-router-dom";
 
 // Define the types for SQL data

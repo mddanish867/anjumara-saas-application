@@ -7,108 +7,109 @@ import { ThemeProvider } from "./components/theme-provider";
 import Layout from "./layout/Layout";
 import Authorization from "./Pages/Auth/Authorization";
 import Home from "./Pages/Hero/Home";
-import Frontend from "./Pages/Frontend/Frontend";
-import ReactPage from "./Pages/Frontend/React";
-import Backend from "./Pages/Backend/Backend";
-import Sql from "./Pages/Database/Sql";
-import Azure from "./Pages/Cloud/Azure";
-import Git from "./Pages/VersionControl/Git";
+import Frontend from "./Pages/Services/Frontend/Frontend";
+import ReactPage from "./Pages/Services/Frontend/React";
+import Backend from "./Pages/Services/Backend/Backend";
+import Sql from "./Pages/Services/Database/Sql";
+import Azure from "./Pages/Services/Cloud/Azure";
+import Git from "./Pages/Services/VersionControl/Git";
 import ScrollToTop from "./BreadCrum/ScrollTop";
 import SignUp from "./Pages/Auth/SignUp";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import Signin from "./Pages/Auth/Signin";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import UserDetails from "./Pages/Auth/UserDetails";
-import LandingPage1 from "./Pages/LandingPages/LandingPage1";
+import LandingPage1 from "./Pages/Templates/AllTemplates/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 import TemplateDetails from "./Pages/Templates/TemplateDetails";
-import TextToSql from "./Pages/Database/TextToSql";
+import TextToSql from "./Pages/Services/Database/TextToSql";
 import AllComponents from "./Pages/Components/AllComponents";
 import AllTemplates from "./Pages/Templates/AllTemplates";
 import ComponentDetails from "./Pages/Components/ComponentDetails";
-import InterviewSection from "./Pages/InterviewPrep/InterviewSection";
+import InterviewSection from "./Pages/Services/InterviewPrep/InterviewSection";
 import ChatUI from "./Pages/AI/ChatUI";
-import B12Clone from "./Pages/LandingPages/B12LandingPage";
-import ZIP from "./Pages/LandingPages/ZIPLandingPage";
-import Jasper1 from "./Pages/LandingPages/Jasper1";
-import Jasper2 from "./Pages/LandingPages/jasper2";
-import Stack from "./Pages/LandingPages/Stack";
-import Aethik from "./Pages/LandingPages/Aethik";
-import React from "./Pages/Frontend/React";
-import HubSpotClone from "./Pages/LandingPages/HubSpotClone";
-import Temp7 from "./Pages/LandingPages/Temp7";
-import HubSpotLanding from "./Pages/LandingPages/temp6";
-import Temp8 from "./Pages/LandingPages/temp8";
-import Temp9 from "./Pages/LandingPages/temp9";
-import Temp10 from "./Pages/LandingPages/Temp10";
-import Temp11 from "./Pages/LandingPages/Temp11";
-import Temp12 from "./Pages/LandingPages/Temp12";
-import Ecom1 from "./Pages/LandingPages/Ecom1";
-import Ecom2 from "./Pages/LandingPages/Ecom2";
-import Ecom3 from "./Pages/LandingPages/Ecom3";
-import Ecom4 from "./Pages/LandingPages/Ecom4";
-import Ecom5 from "./Pages/LandingPages/Ecom5";
-import Ecom6 from "./Pages/LandingPages/Ecom6";
-import Ecom7 from "./Pages/LandingPages/Ecom7";
-import Ecom8 from "./Pages/LandingPages/Ecom8";
-import Ecom9 from "./Pages/LandingPages/Ecom9";
-import Ecom10 from "./Pages/LandingPages/Ecom10";
-import EmailMarketDashboard from "./Pages/LandingPages/EmailmarketDashboard";
-import EmailMarketTemp from "./Pages/LandingPages/EmailTemp";
-import ForumTemplate from "./Pages/LandingPages/Forumtemp";
-import CodaCommunity from "./Pages/LandingPages/CommunityForum";
-import BankTemp from "./Pages/LandingPages/bankTemp";
-import Banktemp2 from "./Pages/LandingPages/Banktemp2";
-import AITemp from "./Pages/LandingPages/AIteemp";
-import BankTemp3 from "./Pages/LandingPages/BankTemp3";
-import Banktemp4 from "./Pages/LandingPages/BankTemp4";
-import BankTempp5 from "./Pages/LandingPages/bankTemp5";
-import Banktemp6 from "./Pages/LandingPages/BankTemp6";
-import WebStudio from "./Pages/LandingPages/WebStudio";
-import AITemp2 from "./Pages/LandingPages/ATTemp";
-import WebBuilder from "./Pages/LandingPages/WebBuilder";
-import WebBuilder2 from "./Pages/LandingPages/WebBuilder2";
-import Hostweb from "./Pages/LandingPages/Hostweb";
-import CodeReview from "./Pages/LandingPages/CodeReview";
-import FlipkartHome from "./Pages/LandingPages/FliptKart";
-import Temp22 from "./Pages/LandingPages/temp22";
-import Temp24 from "./Pages/LandingPages/Temp24";
-import Temp25 from "./Pages/LandingPages/Temp25";
-import Temp26 from "./Pages/LandingPages/Temp26";
-import Temp27 from "./Pages/LandingPages/Temp27";
-import Temp28 from "./Pages/LandingPages/Temp28";
-import Temp29 from "./Pages/LandingPages/Temp29";
-import Temp30 from "./Pages/LandingPages/Temp30";
-import Temp31 from "./Pages/LandingPages/Temp31";
-import Temp32 from "./Pages/LandingPages/Temp32";
-import Temp33 from "./Pages/LandingPages/Temp33";
-import Temp34 from "./Pages/LandingPages/Temp34";
-import Temp35 from "./Pages/LandingPages/Temp35";
-import Temp36 from "./Pages/LandingPages/Temp36";
-import Temp37 from "./Pages/LandingPages/Temp37";
-import Temp38 from "./Pages/LandingPages/Temp38";
-import Temp39 from "./Pages/LandingPages/Temp39";
-import Temp40 from "./Pages/LandingPages/Temp40";
-import Temp42 from "./Pages/LandingPages/Temp42";
-import Temp43 from "./Pages/LandingPages/Temp43";
-import Temp41 from "./Pages/LandingPages/Temp41";
-import Temp45 from "./Pages/LandingPages/Temp45";
-import Temp46 from "./Pages/LandingPages/Temp46";
+import B12Clone from "./Pages/Templates/AllTemplates/B12LandingPage";
+import ZIP from "./Pages/Templates/AllTemplates/ZIPLandingPage";
+import Jasper1 from "./Pages/Templates/AllTemplates/Jasper1";
+import Jasper2 from "./Pages/Templates/AllTemplates/jasper2";
+import Stack from "./Pages/Templates/AllTemplates/Stack";
+import Aethik from "./Pages/Templates/AllTemplates/Aethik";
+import React from "./Pages/Services/Frontend/React";
+import HubSpotClone from "./Pages/Templates/AllTemplates/HubSpotClone";
+import Temp7 from "./Pages/Templates/AllTemplates/Temp7";
+import HubSpotLanding from "./Pages/Templates/AllTemplates/temp6";
+import Temp8 from "./Pages/Templates/AllTemplates/temp8";
+import Temp9 from "./Pages/Templates/AllTemplates/temp9";
+import Temp10 from "./Pages/Templates/AllTemplates/Temp10";
+import Temp11 from "./Pages/Templates/AllTemplates/Temp11";
+import Temp12 from "./Pages/Templates/AllTemplates/Temp12";
+import Ecom1 from "./Pages/Templates/AllTemplates/Ecom1";
+import Ecom2 from "./Pages/Templates/AllTemplates/Ecom2";
+import Ecom3 from "./Pages/Templates/AllTemplates/Ecom3";
+import Ecom4 from "./Pages/Templates/AllTemplates/Ecom4";
+import Ecom5 from "./Pages/Templates/AllTemplates/Ecom5";
+import Ecom6 from "./Pages/Templates/AllTemplates/Ecom6";
+import Ecom7 from "./Pages/Templates/AllTemplates/Ecom7";
+import Ecom8 from "./Pages/Templates/AllTemplates/Ecom8";
+import Ecom9 from "./Pages/Templates/AllTemplates/Ecom9";
+import Ecom10 from "./Pages/Templates/AllTemplates/Ecom10";
+import EmailMarketDashboard from "./Pages/Templates/AllTemplates/EmailmarketDashboard";
+import EmailMarketTemp from "./Pages/Templates/AllTemplates/EmailTemp";
+import ForumTemplate from "./Pages/Templates/AllTemplates/Forumtemp";
+import CodaCommunity from "./Pages/Templates/AllTemplates/CommunityForum";
+import BankTemp from "./Pages/Templates/AllTemplates/bankTemp";
+import Banktemp2 from "./Pages/Templates/AllTemplates/Banktemp2";
+import AITemp from "./Pages/Templates/AllTemplates/AIteemp";
+import BankTemp3 from "./Pages/Templates/AllTemplates/BankTemp3";
+import Banktemp4 from "./Pages/Templates/AllTemplates/BankTemp4";
+import BankTempp5 from "./Pages/Templates/AllTemplates/bankTemp5";
+import Banktemp6 from "./Pages/Templates/AllTemplates/BankTemp6";
+import WebStudio from "./Pages/Templates/AllTemplates/WebStudio";
+import AITemp2 from "./Pages/Templates/AllTemplates/ATTemp";
+import WebBuilder from "./Pages/Templates/AllTemplates/WebBuilder";
+import WebBuilder2 from "./Pages/Templates/AllTemplates/WebBuilder2";
+import Hostweb from "./Pages/Templates/AllTemplates/Hostweb";
+import CodeReview from "./Pages/Templates/AllTemplates/CodeReview";
+import FlipkartHome from "./Pages/Templates/AllTemplates/FliptKart";
+import Temp22 from "./Pages/Templates/AllTemplates/temp22";
+import Temp24 from "./Pages/Templates/AllTemplates/Temp24";
+import Temp25 from "./Pages/Templates/AllTemplates/Temp25";
+import Temp26 from "./Pages/Templates/AllTemplates/Temp26";
+import Temp27 from "./Pages/Templates/AllTemplates/Temp27";
+import Temp28 from "./Pages/Templates/AllTemplates/Temp28";
+import Temp29 from "./Pages/Templates/AllTemplates/Temp29";
+import Temp30 from "./Pages/Templates/AllTemplates/Temp30";
+import Temp31 from "./Pages/Templates/AllTemplates/Temp31";
+import Temp32 from "./Pages/Templates/AllTemplates/Temp32";
+import Temp33 from "./Pages/Templates/AllTemplates/Temp33";
+import Temp34 from "./Pages/Templates/AllTemplates/Temp34";
+import Temp35 from "./Pages/Templates/AllTemplates/Temp35";
+import Temp36 from "./Pages/Templates/AllTemplates/Temp36";
+import Temp37 from "./Pages/Templates/AllTemplates/Temp37";
+import Temp38 from "./Pages/Templates/AllTemplates/Temp38";
+import Temp39 from "./Pages/Templates/AllTemplates/Temp39";
+import Temp40 from "./Pages/Templates/AllTemplates/Temp40";
+import Temp42 from "./Pages/Templates/AllTemplates/Temp42";
+import Temp43 from "./Pages/Templates/AllTemplates/Temp43";
+import Temp41 from "./Pages/Templates/AllTemplates/Temp41";
+import Temp45 from "./Pages/Templates/AllTemplates/Temp45";
+import Temp46 from "./Pages/Templates/AllTemplates/Temp46";
 import OTPVerification from "./Pages/Components/AllComponents/OTPVerification";
 import Register from "./Pages/Components/AllComponents/Register";
 import Login from "./Pages/Components/AllComponents/Login";
 import EcommerceFilter from "./Pages/Components/AllComponents/ecommerce-filter";
 import EcommerceFilter2 from "./Pages/Components/AllComponents/ecommerce-filter2";
 import EcommerceFilter3 from "./Pages/Components/AllComponents/ecommerce-filter3";
-import Temp47 from "./Pages/LandingPages/Temp47";
+import Temp47 from "./Pages/Templates/AllTemplates/Temp47";
 import LoginForm from "./Pages/Components/AllComponents/LoginForm";
-import Temp48 from "./Pages/LandingPages/Temp48";
+import Temp48 from "./Pages/Templates/AllTemplates/Temp48";
 import OnboardingWizard from "./Pages/Components/AllComponents/MultiStepForm";
-import Temp49 from "./Pages/LandingPages/Temp49";
+import Temp49 from "./Pages/Templates/AllTemplates/Temp49";
 
 import CodeDisplayComponent from "./Pages/Components/AllComponents/CodeDisplayComponent";
+import SooraAPI from "./APIMarketPlace/Main/SooraAPI";
 
 function App() {
   return (
@@ -244,18 +245,35 @@ function App() {
             <Route path="/all-templates/temp48" element={<Temp48 />} />
             <Route path="/all-templates/temp49" element={<Temp49 />} />
 
-            <Route path="/all-components/otp-verification" element={<OTPVerification />} />
+            <Route
+              path="/all-components/otp-verification"
+              element={<OTPVerification />}
+            />
             <Route path="/all-components/register" element={<Register />} />
             <Route path="/all-components/login" element={<Login />} />
-            <Route path="/all-components/ecommerce-filter" element={<EcommerceFilter />} />
-            <Route path="/all-components/ecommerce-filter2" element={<EcommerceFilter2 />} />
-            <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
+            <Route
+              path="/all-components/ecommerce-filter"
+              element={<EcommerceFilter />}
+            />
+            <Route
+              path="/all-components/ecommerce-filter2"
+              element={<EcommerceFilter2 />}
+            />
+            <Route
+              path="/all-components/ecommerce-filter3"
+              element={<EcommerceFilter3 />}
+            />
             <Route path="/all-components/login-form" element={<LoginForm />} />
-            <Route path="/all-components/onboarding-wizard" element={<OnboardingWizard />} />
-<Route path="/all-components/display-components" element={<CodeDisplayComponent/>} />
+            <Route
+              path="/all-components/onboarding-wizard"
+              element={<OnboardingWizard />}
+            />
+            <Route
+              path="/all-components/display-components"
+              element={<CodeDisplayComponent />}
+            />
 
-
-
+            <Route path="/soora-api/*" element={<SooraAPI/>}/>
           </Routes>
         </ThemeProvider>
       </Router>
