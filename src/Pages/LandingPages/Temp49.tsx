@@ -4,6 +4,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { Search } from 'lucide-react';
+import { BarChart as Chart, Users, DollarSign, LineChart, PieChart as PieCharts } from 'lucide-react';
+
 import {
   BarChart,
   Bar,
@@ -194,6 +197,12 @@ export default function Temp49() {
       <AnimatedStatistics />
       <RealTimeCharts />
       <APIMarketplace/>
+      <APIListings/>
+      <APIPurchase/>
+      <APIProviderDashboard/>
+      <Analytics/>
+      <Support/>
+      <AdminDashboard/>
     </>
   );
 }
@@ -954,7 +963,7 @@ function APIMarketplace() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-6">Ready to Supercharge Your Development?</h2>
           <p className="text-xl text-orange-200 mb-8">Join thousands of developers using our API marketplace to build amazing applications.</p>
-          <Button size="lg" className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-none text-white">
+          <Button size="lg" className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-n text-white">
             Sign Up Now
           </Button>
         </div>
@@ -977,5 +986,427 @@ function APIMarketplace() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function APIListings() {
+  const apis = [
+    { id: 1, name: 'Weather API', category: 'Weather', price: 'Free' },
+    { id: 2, name: 'Payment Gateway API', category: 'Finance', price: '$50/month' },
+    { id: 3, name: 'Image Recognition API', category: 'AI', price: '$0.01/call' },
+    // Add more API listings as needed
+  ]
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">API Catalog</h1>
+      <div className="mb-6">
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search APIs..."
+            className="w-full p-2 pl-10 border rounded"
+          />
+          <Search className="absolute left-3 top-2.5 text-muted-foreground" />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {apis.map((api) => (
+          <APICard key={api.id} api={api} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function APICard({ api }: { api: { name: string; category: string; price: string } }) {
+  return (
+    <div className="border rounded-lg p-4 shadow-md">
+      <h2 className="text-xl font-semibold mb-2">{api.name}</h2>
+      <p className="text-muted-foreground mb-2">Category: {api.category}</p>
+      <p className="text-muted-foreground mb-4">Price: {api.price}</p>
+      <button className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90 transition-colors">
+        View Details
+      </button>
+    </div>
+  )
+}
+
+function APIPurchase() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Purchase API: Weather API</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">API Details</h2>
+          <p className="mb-2"><strong>Name:</strong> Weather API</p>
+          <p className="mb-2"><strong>Category:</strong> Weather</p>
+          <p className="mb-2"><strong>Description:</strong> Get real-time weather data for any location worldwide.</p>
+          <p className="mb-4"><strong>Provider:</strong> WeatherCo Inc.</p>
+          <h3 className="text-xl font-semibold mb-2">Pricing Plans</h3>
+          <ul className="list-disc list-inside mb-4">
+            <li>Free: Up to 1,000 calls/month</li>
+            <li>Basic: $29/month for up to 10,000 calls</li>
+            <li>Pro: $99/month for up to 100,000 calls</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Select Plan</h2>
+          <form className="space-y-4">
+            <div>
+              <label className="block mb-2">Choose a plan:</label>
+              <select className="w-full p-2 border rounded">
+                <option>Free</option>
+                <option>Basic ($29/month)</option>
+                <option>Pro ($99/month)</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="paymentMethod" className="block mb-2">Payment Method:</label>
+              <select id="paymentMethod" className="w-full p-2 border rounded">
+                <option>Credit Card</option>
+                <option>PayPal</option>
+              </select>
+            </div>
+            <button  type="submit" className="w-full bg-primary text-primary-foreground p-2 rounded">
+              Purchase API Access
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function APIProviderDashboard() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">API Provider Dashboard</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <DashboardCard title="Total API Calls" value="1,234,567" icon={<Chart />} />
+        <DashboardCard title="Active Users" value="5,678" icon={<Users />} />
+        <DashboardCard title="Revenue" value="$12,345" icon={<DollarSign />} />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <APIManagement />
+        <APIAnalytics />
+      </div>
+    </div>
+  )
+}
+
+function DashboardCard({ title, value, icon }: { title: string; value: string; icon: React.ReactNode }) {
+  return (
+    <div className="bg-muted p-6 rounded-lg shadow-md">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        {icon}
+      </div>
+      <p className="text-3xl font-bold">{value}</p>
+    </div>
+  )
+}
+
+function APIManagement() {
+  return (
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">API Management</h2>
+      <ul className="space-y-4">
+        <li className="bg-muted p-4 rounded-lg">
+          <h3 className="font-semibold mb-2">Weather API</h3>
+          <p className="text-sm text-muted-foreground mb-2">Status: Active</p>
+          <button className="bg-primary text-primary-foreground px-3 py-1 rounded text-sm">Edit</button>
+        </li>
+        <li className="bg-muted p-4 rounded-lg">
+          <h3 className="font-semibold mb-2">Payment Gateway API</h3>
+          <p className="text-sm text-muted-foreground mb-2">Status: Under Review</p>
+          <button className="bg-primary text-primary-foreground px-3 py-1 rounded text-sm">Edit</button>
+        </li>
+      </ul>
+      <button className="mt-4 bg-primary text-primary-foreground px-4 py-2 rounded">Add New API</button>
+    </div>
+  )
+}
+
+function APIAnalytics() {
+  return (
+    <div>
+      <h2 className="text-2xl font-semibold mb-4">API Analytics</h2>
+      <div className="bg-muted p-4 rounded-lg">
+        <h3 className="font-semibold mb-2">API Usage (Last 30 days)</h3>
+        <div className="h-64 flex items-end justify-between">
+          {[40, 60, 45, 70, 55, 65, 50].map((height, index) => (
+            <div key={index} className="w-8 bg-primary" style={{ height: `${height}%` }}></div>
+          ))}
+        </div>
+        <div className="flex justify-between mt-2 text-sm text-muted-foreground">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Analytics() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Analytics & Monitoring</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <AnalyticsCard title="API Calls" value="1,234,567" change="+5.3%" icon={<BarChart className="w-6 h-6" />} />
+        <AnalyticsCard title="Error Rate" value="0.5%" change="-0.2%" icon={<PieCharts className="w-6 h-6" />} />
+        <AnalyticsCard title="Avg. Latency" value="120ms" change="-10ms" icon={<LineChart className="w-6 h-6" />} />
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <APIUsageChart />
+        <ErrorRateChart />
+      </div>
+    </div>
+  )
+}
+
+function AnalyticsCard({ title, value, change, icon }: { title: string; value: string; change: string; icon: React.ReactNode }) {
+  const isPositive = change.startsWith('+')
+  return (
+    <div className="bg-muted p-6 rounded-lg shadow-md">
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-lg font-semibold">{title}</h3>
+        {icon}
+      </div>
+      <p className="text-3xl font-bold mb-2">{value}</p>
+      <p className={`text-sm ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
+        {change} from last period
+      </p>
+    </div>
+  )
+}
+
+function APIUsageChart() {
+  return (
+    <div className="bg-muted p-6 rounded-lg shadow-md">
+      <h3 className="text-xl font-semibold mb-4">API Usage Over Time</h3>
+      <div className="h-64 flex items-end justify-between">
+        {[40, 60, 45, 70, 55, 65, 50, 75, 60, 80, 70, 90].map((height, index) => (
+          <div key={index} className="w-6 bg-blue-500" style={{ height: `${height}%` }}></div>
+        ))}
+      </div>
+      <div className="flex justify-between mt-2 text-sm text-muted-foreground">
+        <span>Jan</span>
+        <span>Feb</span>
+        <span>Mar</span>
+        <span>Apr</span>
+        <span>May</span>
+        <span>Jun</span>
+        <span>Jul</span>
+        <span>Aug</span>
+        <span>Sep</span>
+        <span>Oct</span>
+        <span>Nov</span>
+        <span>Dec</span>
+      </div>
+    </div>
+  )
+}
+
+function ErrorRateChart() {
+  return (
+    <div className="bg-muted p-6 rounded-lg shadow-md">
+      <h3 className="text-xl font-semibold mb-4">Error Rate by API</h3>
+      <div className="space-y-4">
+        {[
+          { name: 'Weather API', rate: 0.3 },
+          { name: 'Payment Gateway API', rate: 0.5 },
+          { name: 'Image Recognition API', rate: 0.8 },
+          { name: 'Geocoding API', rate: 0.2 },
+        ].map((api) => (
+          <div key={api.name}>
+            <div className="flex justify-between mb-1">
+              <span>{api.name}</span>
+              <span>{api.rate}%</span>
+            </div>
+            <div className="w-full bg-muted-foreground/20 rounded-full h-2.5">
+              <div
+                className="bg-red-300 h-2.5 rounded-full"
+                style={{ width: `${api.rate * 100}%` }}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+function Support() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Support & Documentation</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Help Center</h2>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-primary hover:underline">Getting Started Guide</a></li>
+            <li><a href="#" className="text-primary hover:underline">API Integration Best Practices</a></li>
+            <li><a href="#" className="text-primary hover:underline">Troubleshooting Common Issues</a></li>
+            <li><a href="#" className="text-primary hover:underline">Billing and Subscription FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Contact Support</h2>
+          <form className="space-y-4">
+            <div>
+              <label htmlFor="name" className="block mb-1">Name</label>
+              <input type="text" id="name" className="w-full p-2 border rounded" required />
+            </div>
+            <div>
+              <label htmlFor="email" className="block mb-1">Email</label>
+              <input type="email" id="email" className="w-full p-2 border rounded" required />
+            </div>
+            <div>
+              <label htmlFor="subject" className="block mb-1">Subject</label>
+              <input type="text" id="subject" className="w-full p-2 border rounded" required />
+            </div>
+            <div>
+              <label htmlFor="message" className="block mb-1">Message</label>
+              <textarea id="message" rows={4} className="w-full p-2 border rounded" required></textarea>
+            </div>
+            <button type="submit" className="bg-primary text-primary-foreground px-4 py-2 rounded">
+              Submit Ticket
+            </button>
+          </form>
+        </div>
+      </div>
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">API Documentation</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <APIDocCard name="Weather API" />
+          <APIDocCard name="Payment Gateway API" />
+          <APIDocCard name="Image Recognition API" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function APIDocCard({ name }: { name: string }) {
+  return (
+    <div className="border rounded-lg p-4 shadow-md">
+      <h3 className="text-xl font-semibold mb-2">{name}</h3>
+      <p className="text-muted-foreground mb-4">Comprehensive documentation for integrating and using the {name}.</p>
+      <div className="space-y-2">
+        <a href="#" className="block text-primary hover:underline">API Reference</a>
+        <a href="#" className="block text-primary hover:underline">Code Samples</a>
+        <a href="#" className="block text-primary hover:underline">Changelog</a>
+      </div>
+    </div>
+  )
+}
+
+function AdminDashboard() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">User Management</h2>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-muted">
+                <th className="p-2 text-left">User</th>
+                <th className="p-2 text-left">Role</th>
+                <th className="p-2 text-left">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <UserRow name="John Doe" email="john@example.com" role="User" />
+              <UserRow name="Jane Smith" email="jane@example.com" role="API Provider" />
+              <UserRow name="Bob Johnson" email="bob@example.com" role="Admin" />
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">API Moderation</h2>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="bg-muted">
+                <th className="p-2 text-left">API</th>
+                <th className="p-2 text-left">Status</th>
+                <th className="p-2 text-left">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <APIRow name="Weather API" status="Active" />
+              <APIRow name="Payment Gateway API" status="Pending Review" />
+              <APIRow name="Image Recognition API" status="Rejected" />
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">Revenue Overview</h2>
+        <div className="bg-muted p-4 rounded-lg">
+          <h3 className="text-xl font-semibold mb-2">Monthly Revenue</h3>
+          <div className="h-64 flex items-end justify-between">
+            {[40, 60, 45, 70, 55, 65, 50, 75, 60, 80, 70, 90].map((height, index) => (
+              <div key={index} className="w-8 bg-blue-500" style={{ height: `${height}%` }}></div>
+            ))}
+          </div>
+          <div className="flex justify-between mt-2 text-sm text-muted-foreground">
+            <span>Jan</span>
+            <span>Feb</span>
+            <span>Mar</span>
+            <span>Apr</span>
+            <span>May</span>
+            <span>Jun</span>
+            <span>Jul</span>
+            <span>Aug</span>
+            <span>Sep</span>
+            <span>Oct</span>
+            <span>Nov</span>
+            <span>Dec</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function UserRow({ name, email, role }: { name: string; email: string; role: string }) {
+  return (
+    <tr className="border-b">
+      <td className="p-2">
+        <div>{name}</div>
+        <div className="text-sm text-muted-foreground">{email}</div>
+      </td>
+      <td className="p-2">{role}</td>
+      <td className="p-2">
+        <button className="text-primary hover:underline">Edit</button>
+      </td>
+    </tr>
+  )
+}
+
+function APIRow({ name, status }: { name: string; status: string }) {
+  return (
+    <tr className="border-b">
+      <td className="p-2">{name}</td>
+      <td className="p-2">
+        <span className={`px-2 py-1 rounded-full text-xs ${
+          status === 'Active' ? 'bg-green-200 text-green-800' :
+          status === 'Pending Review' ? 'bg-yellow-200 text-yellow-800' :
+          'bg-red-200 text-red-800'
+        }`}>
+          {status}
+        </span>
+      </td>
+      <td className="p-2">
+        <button className="text-primary hover:underline mr-2">Review</button>
+        <button className="text-primary hover:underline">Edit</button>
+      </td>
+    </tr>
   )
 }
