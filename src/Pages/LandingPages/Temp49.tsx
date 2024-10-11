@@ -76,7 +76,7 @@ export default function Temp49() {
             <div className="bg-transparent w-8 h-8 rounded-md flex items-center justify-center mr-2">
               <Code2Icon className="text-orange-200" size={40} />
             </div>
-            <span className="text-1xl font-bold">Mixo</span>
+            <span className="text-1xl font-bold text-orange-400">SOORA</span>
           </div>
           <nav className="hidden md:flex space-x-6">
             <NavLink href="#features">Features</NavLink>
@@ -137,7 +137,7 @@ export default function Temp49() {
             Ready to Supercharge
             <br />
             Your Development? With{" "}
-            <span className="text-violet-500">MIXO.</span>
+            <span className="text-violet-500">SOORA.</span>
           </h1>
 
           <motion.p
@@ -1477,7 +1477,7 @@ function FeaturesAndPricing() {
                   <ul className="mt-8 space-y-4">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start">
-                        <Check className="flex-shrink-0 w-5 h-5 text-orange-300" />
+                        <Check className="flex-shrink-0 w-5 h-5 text-green-300" />
                         <span className="ml-3">{feature}</span>
                       </li>
                     ))}
