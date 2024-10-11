@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import { Search } from 'lucide-react';
 import { BarChart as Chart, Users, DollarSign, LineChart, PieChart as PieCharts } from 'lucide-react';
-
+import { Check } from 'lucide-react';
 import {
   BarChart,
   Bar,
@@ -194,6 +194,7 @@ export default function Temp49() {
       <ForgotPasswordPage />
       <ResetPasswordPage />
       <OtpVerificationPage />
+      <FeaturesAndPricing/>
       <AnimatedStatistics />
       <RealTimeCharts />
       <APIMarketplace/>
@@ -1408,5 +1409,132 @@ function APIRow({ name, status }: { name: string; status: string }) {
         <button className="text-primary hover:underline">Edit</button>
       </td>
     </tr>
+  )
+}
+
+function FeaturesAndPricing() {
+  const plans = [
+    {
+      name: 'Basic',
+      price: '$29',
+      features: [
+        'Access to 100 API calls/day',
+        'Basic analytics',
+        'Email support',
+        '1 API key',
+      ],
+    },
+    {
+      name: 'Pro',
+      price: '$99',
+      features: [
+        'Access to 1000 API calls/day',
+        'Advanced analytics',
+        'Priority email support',
+        '5 API keys',
+        'Custom integrations',
+      ],
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      features: [
+        'Unlimited API calls',
+        'Real-time analytics',
+        '24/7 phone support',
+        'Unlimited API keys',
+        'Custom integrations',
+        'Dedicated account manager',
+      ],
+    },
+  ]
+
+  return (
+    <div className="bg-black text-orange-200 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center">
+          <h2 className="text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+            Features and Pricing
+          </h2>
+          <p className="mt-4 text-xl">
+            Choose the perfect plan for your API needs
+          </p>
+        </div>
+
+        <div className="mt-12">
+          <div className="grid gap-8 lg:grid-cols-3">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className="bg-gray-900 rounded-lg shadow-lg overflow-hidden"
+              >
+                <div className="px-6 py-8">
+                  <h3 className="text-2xl font-semibold text-center">{plan.name}</h3>
+                  <p className="mt-4 text-4xl text-center font-bold">{plan.price}</p>
+                  {plan.name !== 'Enterprise' && (
+                    <p className="mt-1 text-center text-sm">per month</p>
+                  )}
+                  <ul className="mt-8 space-y-4">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start">
+                        <Check className="flex-shrink-0 w-5 h-5 text-orange-300" />
+                        <span className="ml-3">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="px-6 py-8 bg-gray-800">
+                  <button
+                    type="button"
+                    className="w-full bg-orange-300 text-black rounded-md py-2 px-4 hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300 focus:ring-offset-gray-900 transition-colors duration-200"
+                  >
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-24">
+          <h3 className="text-2xl font-bold text-center mb-8">Key Features</h3>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              title="Extensive API Catalog"
+              description="Access a wide range of APIs for various purposes, from weather data to payment gateways."
+            />
+            <FeatureCard
+              title="Seamless Integration"
+              description="Easy-to-use SDKs and comprehensive documentation for quick implementation."
+            />
+            <FeatureCard
+              title="Robust Analytics"
+              description="Monitor your API usage, performance, and costs with our advanced analytics dashboard."
+            />
+            <FeatureCard
+              title="Flexible Pricing"
+              description="Choose from various pricing tiers or customize a plan that fits your specific needs."
+            />
+            <FeatureCard
+              title="Reliable Support"
+              description="Get assistance from our expert support team to resolve any issues quickly."
+            />
+            <FeatureCard
+              title="Security & Compliance"
+              description="Rest easy knowing that all our APIs adhere to industry-standard security protocols."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function FeatureCard({ title, description }: { title: string; description: string }) {
+  return (
+    <div className="bg-gray-900 rounded-lg p-6">
+      <h4 className="text-xl font-semibold mb-2">{title}</h4>
+      <p className="text-orange-200">{description}</p>
+    </div>
   )
 }
