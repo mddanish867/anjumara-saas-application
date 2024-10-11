@@ -1,7 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function APIMarketplace() {
+  const navigate = useNavigate();
+
+  const handleRegister = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate("/soora-api/register");
+  };
+
+  const handleAllAPIs = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate("/soora-api/all-apis");
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-black overflow-hidden">
       {/* Features Grid */}
@@ -93,6 +106,7 @@ export default function APIMarketplace() {
             amazing applications.
           </p>
           <Button
+            onClick={handleRegister}
             size="lg"
             className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-n text-white"
           >
@@ -116,6 +130,7 @@ export default function APIMarketplace() {
             Discover, Connect, and Innovate with APIs
           </p>
           <Button
+            onClick={handleAllAPIs}
             size="lg"
             className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-none text-white"
           >

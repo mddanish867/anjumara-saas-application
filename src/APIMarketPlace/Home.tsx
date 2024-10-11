@@ -4,8 +4,6 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import APIMarketplace from "./APIMarketplace";
 
-
-
 // Render Starts
 const Star = ({ style }: { style: React.CSSProperties }) => (
   <div
@@ -44,9 +42,8 @@ const Home = () => {
         {stars.map((style, index) => (
           <Star key={index} style={style} />
         ))}
-        <Navbar/>
+        <Navbar />
 
-        
         <main className="container mx-auto px-4 py-20 text-center">
           <motion.h1
             className="text-3xl md:text-7xl font-bold mb-6"
@@ -100,7 +97,6 @@ const Home = () => {
         <div className="absolute bottom-4 right-4 text-white opacity-50">
           Time elapsed: {timer} seconds
         </div>
-             
 
         <style>{`
         @keyframes twinkle {
@@ -110,7 +106,7 @@ const Home = () => {
         }
       `}</style>
       </div>
-<APIMarketplace/>
+      <APIMarketplace />
       <Footer />
     </>
   );

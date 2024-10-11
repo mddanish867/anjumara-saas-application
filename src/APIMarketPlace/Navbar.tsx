@@ -58,10 +58,30 @@ const Navbar = () => {
           </span>
         </div>
         <nav className="hidden md:flex space-x-6">
-          <NavLink href="#features" onClick={() => console.log("Services clicked")}>Services</NavLink>
-          <NavLink href="#features" onClick={handleNavigation("/soora-api/features")}>Features</NavLink>
-          <NavLink href="#features" onClick={handleNavigation("/soora-api/all-apis")}>APIs</NavLink>
-          <NavLink href="/soora-api/pricing" onClick={handleNavigation("/soora-api/pricing")}>Pricing</NavLink>
+          <NavLink
+            href="#features"
+            onClick={() => console.log("Services clicked")}
+          >
+            Services
+          </NavLink>
+          <NavLink
+            href="#features"
+            onClick={handleNavigation("/soora-api/features")}
+          >
+            Features
+          </NavLink>
+          <NavLink
+            href="#features"
+            onClick={handleNavigation("/soora-api/all-apis")}
+          >
+            APIs
+          </NavLink>
+          <NavLink
+            href="/soora-api/pricing"
+            onClick={handleNavigation("/soora-api/pricing")}
+          >
+            Pricing
+          </NavLink>
         </nav>
         <div className="hidden md:flex space-x-4">
           <a
@@ -82,26 +102,43 @@ const Navbar = () => {
             Get Started for Free
           </a>
         </div>
-        <button
-          className="md:hidden"
-          onClick={toggleMenu}
-        >
+        <button className="md:hidden" onClick={toggleMenu}>
           <Menu className="text-white" size={24} />
         </button>
       </header>
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-black z-50 p-6">
-          <button
-            className="absolute top-6 right-6"
-            onClick={toggleMenu}
-          >
+          <button className="absolute top-6 right-6" onClick={toggleMenu}>
             <X className="text-white" size={24} />
           </button>
           <nav className="flex flex-col space-y-4 mt-16">
-            <NavLink href="#features" onClick={() => { console.log("Services clicked"); toggleMenu(); }}>Services</NavLink>
-            <NavLink href="#features" onClick={() => { console.log("Features clicked"); toggleMenu(); }}>Features</NavLink>
-            <NavLink href="#features" onClick={() => { console.log("APIs clicked"); toggleMenu(); }}>APIs</NavLink>
-            <NavLink href="/soora-api/pricing" onClick={handleNavigation("/soora-api/pricing")}>Pricing</NavLink>
+            <NavLink
+              href="#features"
+              onClick={() => {
+                console.log("Services clicked");
+                toggleMenu();
+              }}
+            >
+              Services
+            </NavLink>
+            <NavLink
+              href="#features"
+              onClick={handleNavigation("/soora-api/features")}
+            >
+              Features
+            </NavLink>
+            <NavLink
+              href="#features"
+              onClick={handleNavigation("/soora-api/all-apis")}
+            >
+              APIs
+            </NavLink>
+            <NavLink
+              href="/soora-api/pricing"
+              onClick={handleNavigation("/soora-api/pricing")}
+            >
+              Pricing
+            </NavLink>
             <a
               href="/soora-api/login"
               className="bg-transparent text-center text-white px-4 py-2 rounded-none border border-orange-200 hover:border-orange-400 transition-colors"

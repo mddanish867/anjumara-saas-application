@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export default function APIListings() {
-  const navigate = useNavigate();
 
   const apis = [
     { id: 1, name: "Weather API", category: "Weather", price: "Free" },
@@ -23,23 +22,21 @@ export default function APIListings() {
     // Add more API listings as needed
   ];
 
-  const handlePurchase = () => {
-    navigate("/soora-api/all-checkout");
-  };
+  
 
-  const handleAPIDetails = () => {
-    navigate("/soora-api/api-details");
-  };
+  
 
   return (
     <>
       <Navbar />
       <div
         className="container min-h-screen mx-auto px-4 py-8 bg-black cursor-pointer"
-        onClick={handlePurchase}
+        
       >
         <h1 className="text-3xl font-bold mb-6 text-orange-200">API Catalog</h1>
-        <div className="mb-6">
+        <div className="mb-6"
+        
+        >
           <div className="relative">
             <input
               type="text"
@@ -49,7 +46,7 @@ export default function APIListings() {
             <Search className="absolute left-3 top-2.5 text-muted-foreground" />
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {apis.map((api) => (
             <APICard key={api.id} api={api} />
           ))}
@@ -58,16 +55,21 @@ export default function APIListings() {
     </>
   );
 }
-function APICard({
-  api,
-}: {
-  api: { name: string; category: string; price: string };
-}) {
+function APICard({ api,}: { api: { name: string; category: string; price: string };}) {
+  const navigate = useNavigate();
+  const handlePurchase = () => {
+    navigate("/soora-api/all-checkout");
+  };
+  const handleAPIDetails = () => {
+    navigate("/soora-api/api-details");
+  };
   return (
     <div className="border rounded-lg p-4 shadow-md">
+      <div onClick={handlePurchase}>
       <h2 className="text-xl font-semibold mb-2 text-orange-200">{api.name}</h2>
       <p className="text-white mb-2">Category: {api.category}</p>
       <p className="text-white mb-4">Price: {api.price}</p>
+      </div>
       <Button
         size="lg"
         className="bg-transparent py-2 border border-orange-200 hover:bg-orange-400 hover:border-n text-white"

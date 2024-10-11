@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Navbar from "../Navbar";
 
 export default function APIDetails() {
   const [copiedCode, setCopiedCode] = useState("");
@@ -65,13 +66,15 @@ print(data)`,
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+    <>
+    <Navbar/>
+    <div className="w-full min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto bg-black rounded-xl shadow-md overflow-hidden">
         <div className="p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-orange-200 mb-4">
             {apiDetails.name}
           </h1>
-          <p className="text-gray-600 mb-4">{apiDetails.description}</p>
+          <p className="text-white mb-4">{apiDetails.description}</p>
           <div className="flex flex-wrap gap-4 mb-6">
             <span className="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
               {apiDetails.category}
@@ -81,8 +84,8 @@ print(data)`,
             </span>
           </div>
 
-          <Tabs defaultValue="curl" className="w-full">
-            <TabsList className="mb-4">
+          <Tabs defaultValue="curl" className="w-full bg-black">
+            <TabsList className="mb-4 bg-black text-white">
               <TabsTrigger value="curl">cURL</TabsTrigger>
               <TabsTrigger value="javascript">JavaScript</TabsTrigger>
               <TabsTrigger value="python">Python</TabsTrigger>
@@ -90,12 +93,12 @@ print(data)`,
             {Object.entries(apiDetails.codeExamples).map(([language, code]) => (
               <TabsContent key={language} value={language}>
                 <div className="relative">
-                  <pre className="bg-gray-900 rounded-md p-4 overflow-x-auto">
+                  <pre className="bg-black border border-orange-200 rounded-md p-4 overflow-x-auto">
                     <code className="text-sm text-white">{code}</code>
                   </pre>
                   <button
                     onClick={() => copyToClipboard(code, language)}
-                    className="absolute top-2 right-2 p-2 bg-gray-800 rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                    className="absolute top-2 right-2 p-2 bg-black rounded-md text-orange-200  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-300"
                   >
                     {copiedCode === language ? (
                       <Check size={16} />
@@ -109,24 +112,24 @@ print(data)`,
           </Tabs>
 
           <div className="mt-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-orange-200 mb-4">
               Documentation
             </h2>
             <a
               href={apiDetails.documentation}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-blue-400 hover:underline"
             >
               View full documentation
             </a>
           </div>
 
           <div className="mt-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl font-bold text-orange-200 mb-4">
               Frequently Asked Questions
             </h2>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full text-white border-none">
               {apiDetails.faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
                   <AccordionTrigger>{faq.question}</AccordionTrigger>
@@ -138,5 +141,6 @@ print(data)`,
         </div>
       </div>
     </div>
+    </>
   );
 }

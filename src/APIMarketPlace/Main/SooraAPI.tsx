@@ -21,7 +21,6 @@ const SooraAPI = () => {
         <Route path="/features" element={<Features />} />
         <Route path="/all-apis" element={<APIListings />} />
         <Route path="/api-details" element={<APIDetails />} />
-
         <Route path="/all-checkout" element={<APICheckout />} />
       </Routes>
     </>
