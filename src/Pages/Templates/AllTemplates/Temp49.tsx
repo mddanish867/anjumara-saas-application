@@ -1,7 +1,6 @@
 import { useState, useEffect, } from "react";
 import { Code2Icon, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { Search } from 'lucide-react';
 import { BarChart as Chart, Users, DollarSign, LineChart, PieChart as PieCharts } from 'lucide-react';
 import {
   BarChart,
@@ -15,7 +14,6 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Button } from "@/components/ui/button";
 const NavLink = ({
   href,
   children,
@@ -187,9 +185,6 @@ export default function Temp49() {
       </div>      
       <AnimatedStatistics />
       <RealTimeCharts />
-      <APIMarketplace/>
-      <APIListings/>
-      <APIPurchase/>
       <APIProviderDashboard/>
       <Analytics/>
       <Support/>
@@ -374,176 +369,11 @@ function RealTimeCharts() {
   );
 }
 
-function APIMarketplace() {
-  return (
-    <div className="flex flex-col min-h-screen bg-black overflow-hidden">
-      {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center bg-black bg-grid-white/[0.2] relative">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center z-10"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-orange-200 mb-6">API Marketplace</h1>
-          <p className="text-sm md:text-2xl text-orange-200 mb-8">Discover, Connect, and Innovate with APIs</p>
-          <Button size="lg" className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-none text-white">
-            Explore APIs
-          </Button>
-        </motion.div>
-      </section>
 
-      {/* Features Grid */}
-      <section className="py-20 px-4 md:px-8 relative bg-black bg-grid-white/[0.2]">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black "></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-200 mb-12">Why Choose Our Marketplace?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {['Wide Selection', 'Easy Integration', 'Secure & Reliable'].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-transparent bg-opacity-50 p-6 rounded-lg backdrop-blur-sm"
-              >
-                <h3 className="text-xl font-semibold text-orange-200 mb-4">{feature}</h3>
-                <p className="text-orange-200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Popular APIs */}
-      <section className="py-20 px-4 md:px-8 bg-black bg-grid-white/[0.2] relative">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-orange-400 mb-12">Popular APIs</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {['Payment API', 'Weather API', 'Social Media API', 'E-commerce API', 'Machine Learning API', 'Geolocation API'].map((api, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-transparent bg-opacity-50 p-6 rounded-lg backdrop-blur-sm"
-              >
-                <h3 className="text-xl font-semibold text-orange-300 mb-4">{api}</h3>
-                <p className="text-orange-200 mb-4">Integrate powerful {api.toLowerCase()} functionality into your applications.</p>
-                <Button variant="outline" className="bg-transparent text-white border-orange-200 hover:bg-orange-400 hover:border-none hover:text-white">
-                  Learn More
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 md:px-8 relative bg-black bg-grid-white/[0.2]">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-orange-300 mb-6">Ready to Supercharge Your Development?</h2>
-          <p className="text-xl text-orange-200 mb-8">Join thousands of developers using our API marketplace to build amazing applications.</p>
-          <Button size="lg" className="bg-transparent border border-orange-200 hover:bg-orange-400 hover:border-n text-white">
-            Sign Up Now
-          </Button>
-        </div>
-      </section>      
-    </div>
-  )
-}
 
-function APIListings() {
-  const apis = [
-    { id: 1, name: 'Weather API', category: 'Weather', price: 'Free' },
-    { id: 2, name: 'Payment Gateway API', category: 'Finance', price: '$50/month' },
-    { id: 3, name: 'Image Recognition API', category: 'AI', price: '$0.01/call' },
-    // Add more API listings as needed
-  ]
 
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">API Catalog</h1>
-      <div className="mb-6">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search APIs..."
-            className="w-full p-2 pl-10 border rounded"
-          />
-          <Search className="absolute left-3 top-2.5 text-muted-foreground" />
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {apis.map((api) => (
-          <APICard key={api.id} api={api} />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function APICard({ api }: { api: { name: string; category: string; price: string } }) {
-  return (
-    <div className="border rounded-lg p-4 shadow-md">
-      <h2 className="text-xl font-semibold mb-2">{api.name}</h2>
-      <p className="text-muted-foreground mb-2">Category: {api.category}</p>
-      <p className="text-muted-foreground mb-4">Price: {api.price}</p>
-      <button className="bg-primary text-primary-foreground px-4 py-2 rounded hover:bg-primary/90 transition-colors">
-        View Details
-      </button>
-    </div>
-  )
-}
-
-function APIPurchase() {
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Purchase API: Weather API</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">API Details</h2>
-          <p className="mb-2"><strong>Name:</strong> Weather API</p>
-          <p className="mb-2"><strong>Category:</strong> Weather</p>
-          <p className="mb-2"><strong>Description:</strong> Get real-time weather data for any location worldwide.</p>
-          <p className="mb-4"><strong>Provider:</strong> WeatherCo Inc.</p>
-          <h3 className="text-xl font-semibold mb-2">Pricing Plans</h3>
-          <ul className="list-disc list-inside mb-4">
-            <li>Free: Up to 1,000 calls/month</li>
-            <li>Basic: $29/month for up to 10,000 calls</li>
-            <li>Pro: $99/month for up to 100,000 calls</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Select Plan</h2>
-          <form className="space-y-4">
-            <div>
-              <label className="block mb-2">Choose a plan:</label>
-              <select className="w-full p-2 border rounded">
-                <option>Free</option>
-                <option>Basic ($29/month)</option>
-                <option>Pro ($99/month)</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="paymentMethod" className="block mb-2">Payment Method:</label>
-              <select id="paymentMethod" className="w-full p-2 border rounded">
-                <option>Credit Card</option>
-                <option>PayPal</option>
-              </select>
-            </div>
-            <button  type="submit" className="w-full bg-primary text-primary-foreground p-2 rounded">
-              Purchase API Access
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function APIProviderDashboard() {
   return (

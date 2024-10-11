@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import APIMarketplace from "./APIMarketplace";
 
 
 
@@ -109,7 +110,7 @@ const Home = () => {
         }
       `}</style>
       </div>
-
+<APIMarketplace/>
       <Footer />
     </>
   );

@@ -60,7 +60,7 @@ const Navbar = () => {
         <nav className="hidden md:flex space-x-6">
           <NavLink href="#features" onClick={() => console.log("Services clicked")}>Services</NavLink>
           <NavLink href="#features" onClick={handleNavigation("/soora-api/features")}>Features</NavLink>
-          <NavLink href="#features" onClick={() => console.log("APIs clicked")}>APIs</NavLink>
+          <NavLink href="#features" onClick={handleNavigation("/soora-api/all-apis")}>APIs</NavLink>
           <NavLink href="/soora-api/pricing" onClick={handleNavigation("/soora-api/pricing")}>Pricing</NavLink>
         </nav>
         <div className="hidden md:flex space-x-4">
