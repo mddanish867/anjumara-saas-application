@@ -273,7 +273,7 @@ function App() {
               element={<CodeDisplayComponent />}
             />
 
-            <Route path="/soora-api/*" element={<SooraAPI/>}/>
+            <Route path="/soora-api/*" element={<SooraAPI />} />
           </Routes>
         </ThemeProvider>
       </Router>
