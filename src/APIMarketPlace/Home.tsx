@@ -54,7 +54,7 @@ const Home = () => {
             Ready to Supercharge
             <br />
             Your Development? With{" "}
-            <span className="text-violet-500">SOORA.</span>
+            <span className="text-blue-600">SOORA.</span>
           </motion.h1>
 
           <motion.p
