@@ -64,8 +64,8 @@ const Home = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             Have an idea for a startup, product or service? Bring it to life
-            with SOORA
-            <br />
+            with <br /> SOORA
+           
             effortlessly and watch it grow.
           </motion.p>
 
