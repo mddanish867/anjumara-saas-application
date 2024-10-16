@@ -67,7 +67,7 @@ function UserProfile({ name }: any) {
   };
 
   const handleSettings = () => {
-    navigate("/settings");
+    navigate("/dashboard/security");
   };
 
   const handleAPIs = () => {

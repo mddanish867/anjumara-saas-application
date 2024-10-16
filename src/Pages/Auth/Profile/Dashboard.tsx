@@ -118,6 +118,9 @@ const Dashboard = () => {
     if (location.pathname === '/dashboard' || location.pathname === '/dashboard/') {
       navigate('/dashboard/profile');
     }
+    else if (location.pathname === '/dashboard/security' || location.pathname === '/dashboard/security') {
+        navigate('/dashboard/security');
+      }
   }, [location.pathname, navigate]);
 
   return (
