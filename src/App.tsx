@@ -18,7 +18,6 @@ import SignUp from "./Pages/Auth/SignUp";
 import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import Signin from "./Pages/Auth/Signin";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
-import UserDetails from "./Pages/Auth/UserDetails";
 import LandingPage1 from "./Pages/Templates/AllTemplates/LandingPage1";
 import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
@@ -110,6 +109,12 @@ import Temp49 from "./Pages/Templates/AllTemplates/Temp49";
 
 import CodeDisplayComponent from "./Pages/Components/AllComponents/CodeDisplayComponent";
 import SooraAPI from "./APIMarketPlace/Main/SooraAPI";
+import Dashboard from "./Pages/Auth/Profile/Dashboard";
+import UserHistoryPage from "./Pages/Auth/Profile/UserHistoryPage";
+import SecuritySettingsPage from "./Pages/Auth/Profile/SecuritySettingsPage";
+import ProfileSettingsPage from "./Pages/Auth/Profile/ProfileSettingsPage";
+import NotificationSettingsPage from "./Pages/Auth/Profile/NotificationSettingsPage";
+import DeleteAccountPage from "./Pages/Auth/Profile/DeleteAccountPage";
 
 function App() {
   return (
@@ -137,7 +142,6 @@ function App() {
               <Route path="/interview-section/azure" element={<Azure />} />
               <Route path="/git" element={<Git />} />
               <Route path="/interview-section/git" element={<Git />} />
-              <Route path="/user-details" element={<UserDetails />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
               <Route path="/template-details" element={<TemplateDetails />} />
@@ -150,6 +154,14 @@ function App() {
               <Route path="/all-components" element={<AllComponents />} />
               <Route path="/all-templates" element={<AllTemplates />} />
               <Route path="/component-details" element={<ComponentDetails />} />
+              <Route path="/dashboard" element={<Dashboard />}>
+              <Route path="/dashboard/history" element={<UserHistoryPage />} />        
+          <Route path="/dashboard/security" element={<SecuritySettingsPage />} />        
+          <Route path="/dashboard/profile" element={<ProfileSettingsPage />} /> 
+          <Route path="/dashboard/notifications" element={<NotificationSettingsPage />} />        
+          <Route path="/dashboard/delete-account" element={<DeleteAccountPage />} /> 
+              </Route>
+
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
