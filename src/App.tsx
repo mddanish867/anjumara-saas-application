@@ -19,7 +19,6 @@ import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import Signin from "./Pages/Auth/Signin";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import LandingPage1 from "./Pages/Templates/AllTemplates/LandingPage1";
-import Settings from "./Pages/Settings/Settings";
 import Pricing from "./Pages/Pricing/Pricing";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 import TemplateDetails from "./Pages/Templates/TemplateDetails";
@@ -142,7 +141,6 @@ function App() {
               <Route path="/interview-section/azure" element={<Azure />} />
               <Route path="/git" element={<Git />} />
               <Route path="/interview-section/git" element={<Git />} />
-              <Route path="/settings" element={<Settings />} />
               <Route path="/all-access" element={<Pricing />} />
               <Route path="/template-details" element={<TemplateDetails />} />
               <Route
