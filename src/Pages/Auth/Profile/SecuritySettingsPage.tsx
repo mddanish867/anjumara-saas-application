@@ -6,9 +6,9 @@ import { Switch } from '@/components/ui/switch'
 
 const SecuritySettingsPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 mb-10 dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
+    <div className="min-h-screen border bg-white mb-10 dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
       <motion.div
-        className="bg-white dark:bg-transparent dark:text-gray-50 p-4 sm:p-6 md:p-8 rounded-lg shadow-sm w-full max-w-2xl"
+        className="bg-white border-none dark:bg-transparent dark:text-gray-50 p-4 sm:p-6 md:p-8 rounded-lg  w-full max-w-2xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

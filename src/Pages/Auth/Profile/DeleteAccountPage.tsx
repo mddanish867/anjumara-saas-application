@@ -5,9 +5,9 @@ import { Label } from '@/components/ui/label'
 
 const DeleteAccountPage = () => {
   return (
-    <div className="min-h-screen bg-white dark:text-gray-50 dark:bg-transparent flex items-center justify-center p-4 mt-20">
+    <div className="min-h-screen border bg-white dark:text-gray-50 dark:bg-transparent flex items-center justify-center p-4 mt-20">
       <motion.div
-        className="bg-white dark:bg-transparent dark:text-gray-50 p-8 rounded-lg shadow-sm w-full"
+        className="bg-white dark:bg-transparent dark:text-gray-50 p-8 rounded-lg  w-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}

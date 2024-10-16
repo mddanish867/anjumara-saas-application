@@ -10,7 +10,7 @@ const UserHistoryPage = () => {
   ];
 
   return (
-    <div className="w-full h-full mt-20">
+    <div className="w-full h-full mt-20 border">
       <motion.div
         className="bg-white dark:bg-transparent dark:text-gray-50 p-8 rounded-lg shadow-sm w-full h-full"
         initial={{ opacity: 0, y: -50 }}

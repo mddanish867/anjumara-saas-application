@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: any) => {
 
   return (
     <motion.div
-      className={`left-0 mt-20 bottom-0 z-50 w-64 bg-white dark:bg-transparent dark:text-gray-50 shadow-md overflow-y-auto transition-transform duration-300 ease-in-out ${
+      className={`left-0 mt-24 bottom-0 z-50 w-64 bg-white dark:bg-transparent dark:text-gray-50 border border-b-0 overflow-y-auto transition-transform duration-300 ease-in-out ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } lg:translate-x-0`}
       initial={false}
