@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: any) => {
 
   return (
     <motion.div
-      className={`left-0 mt-24 bottom-0 z-50 w-64 bg-white dark:bg-transparent dark:text-gray-50 border border-b-0 overflow-y-auto transition-transform duration-300 ease-in-out ${
+      className={`left-0 mt-24 bottom-0 z-50 w-64 bg-white dark:bg-transparent dark:text-gray-50 border border-b-0 border-l-0 overflow-y-auto transition-transform duration-300 ease-in-out ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } lg:translate-x-0`}
       initial={false}
@@ -49,7 +49,7 @@ const Sidebar = ({ isOpen, toggleSidebar }: any) => {
             key={item.name}
             variant="ghost"
             className={`w-52 justify-start px-4 py-2 text-gray-950 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-transparent ${
-              location.pathname === item.path ? "bg-gray-100 dark:bg-transparent dark:text-gray-50" : ""
+              location.pathname === item.path ? "bg-gray-100 dark:bg-gray-800 dark:text-gray-50" : ""
             }`}
             onClick={() => {
               navigate(item.path);

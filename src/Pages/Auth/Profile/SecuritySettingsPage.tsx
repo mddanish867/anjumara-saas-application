@@ -6,7 +6,7 @@ import { Switch } from '@/components/ui/switch'
 
 const SecuritySettingsPage = () => {
   return (
-    <div className="min-h-screen border bg-white mb-10 dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
+    <div className="min-h-screen border bg-white  dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
       <motion.div
         className="bg-white border-none dark:bg-transparent dark:text-gray-50 p-4 sm:p-6 md:p-8 rounded-lg  w-full max-w-2xl"
         initial={{ opacity: 0, y: -50 }}
@@ -35,13 +35,13 @@ const SecuritySettingsPage = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">Two-Factor Authentication</h3>
-            <span className='text-gray-950 dark:text-gray-50 text-sm text-muted-foreground'>Protect your account by adding an extra layer of security.</span>
+            <span className='text-gray-950 dark:text-gray-50 text-sm text-muted-foreground dark:text-muted-foreground'>Protect your account by adding an extra layer of security.</span>
             <div className="flex items-center justify-between">
               <Label htmlFor="two-factor" className="text-base sm:text-md text-gray-700 dark:text-gray-300">Enable Two-Factor Authentication</Label>
               <Switch id="two-factor" className="bg-gray-200  dark:bg-gray-600 data-[state=checked]:bg-blue-400 dark:data-[state=checked]:bg-blue-400" />
             </div>
           </div>
-          <div className="space-y-4 mb-10">
+          <div className="space-y-4">
             <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">Session Management</h3>
             <Button variant="outline" className="w-full text-gray-900 dark:text-gray-50 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-50 dark:hover:text-gray-950">
               Log Out of All Devices
