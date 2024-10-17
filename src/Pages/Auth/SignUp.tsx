@@ -86,8 +86,8 @@ export default function SignUp() {
         className="text-2xl font-semibold cursor-pointer mb-6"
         onClick={handleClick}
       >
-        Aether<span className="text-[#38bdf8]">AI</span>
-      </h1>
+        Soora<span className="text-start text-[#38bdf8]">.ai</span>
+        </h1>
       <main className="w-full flex flex-col items-center justify-center px-4 mt-14">
         <div className="max-w-sm w-full space-y-4">
           <div className="pb-4 text-center">
