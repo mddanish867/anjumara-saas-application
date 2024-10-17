@@ -35,8 +35,9 @@ const SecuritySettingsPage = () => {
           </div>
           <div className="space-y-4">
             <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">Two-Factor Authentication</h3>
+            <span className='text-gray-950 dark:text-gray-50 text-sm text-muted-foreground'>Protect your account by adding an extra layer of security.</span>
             <div className="flex items-center justify-between">
-              <Label htmlFor="two-factor" className="text-base sm:text-lg text-gray-700 dark:text-gray-300">Enable Two-Factor Authentication</Label>
+              <Label htmlFor="two-factor" className="text-base sm:text-md text-gray-700 dark:text-gray-300">Enable Two-Factor Authentication</Label>
               <Switch id="two-factor" className="bg-gray-200  dark:bg-gray-600 data-[state=checked]:bg-blue-400 dark:data-[state=checked]:bg-blue-400" />
             </div>
           </div>
