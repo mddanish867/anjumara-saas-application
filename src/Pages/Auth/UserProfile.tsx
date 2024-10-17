@@ -69,7 +69,11 @@ function UserProfile({ name }: any) {
   const handleSettings = () => {
     navigate("/dashboard/security");
   };
-
+  const handleSubscriptionBillings = () => {
+    navigate("/subscription-billings");
+  };
+  
+  
   const handleAPIs = () => {
     navigate("/soora-api");
   };
@@ -92,7 +96,7 @@ function UserProfile({ name }: any) {
               <User className="mr-2 h-4 w-4" />
               <span>Profile</span>
             </DropdownMenuItem>
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleSubscriptionBillings}>
               <CreditCard className="mr-2 h-4 w-4" />
               <span>Billing</span>
             </DropdownMenuItem>

@@ -114,6 +114,7 @@ import SecuritySettingsPage from "./Pages/Auth/Profile/SecuritySettingsPage";
 import ProfileSettingsPage from "./Pages/Auth/Profile/ProfileSettingsPage";
 import NotificationSettingsPage from "./Pages/Auth/Profile/NotificationSettingsPage";
 import DeleteAccountPage from "./Pages/Auth/Profile/DeleteAccountPage";
+import SubscriptionBilling from "./Pages/Billings/SubscriptionBilling";
 
 function App() {
   return (
@@ -152,6 +153,8 @@ function App() {
               <Route path="/all-components" element={<AllComponents />} />
               <Route path="/all-templates" element={<AllTemplates />} />
               <Route path="/component-details" element={<ComponentDetails />} />
+              <Route path="/subscription-billings" element={<SubscriptionBilling />} />
+
               <Route path="/dashboard" element={<Dashboard />}>
               <Route path="/dashboard/history" element={<UserHistoryPage />} />        
           <Route path="/dashboard/security" element={<SecuritySettingsPage />} />        
