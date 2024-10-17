@@ -127,10 +127,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/authorization" element={<Authorization />} />
               <Route path="/interview-section" element={<InterviewSection />} />
-              <Route
-                path="/interview-section/frontend"
-                element={<Frontend />}
-              />
+              <Route path="/interview-section/frontend" element={<Frontend />} />
               <Route path="/frontend" element={<Frontend />} />
               <Route path="/frontend/react" element={<React />} />
               <Route path="/react" element={<ReactPage />} />
@@ -144,25 +141,20 @@ function App() {
               <Route path="/interview-section/git" element={<Git />} />
               <Route path="/all-access" element={<Pricing />} />
               <Route path="/template-details" element={<TemplateDetails />} />
-              <Route
-                path="/interview-section/sql/texttosql"
-                element={<TextToSql />}
-              />
+              <Route path="/interview-section/sql/texttosql" element={<TextToSql />} />
               <Route path="/texttosql" element={<TextToSql />} />
               <Route path="/sql/texttosql" element={<TextToSql />} />
               <Route path="/all-components" element={<AllComponents />} />
               <Route path="/all-templates" element={<AllTemplates />} />
               <Route path="/component-details" element={<ComponentDetails />} />
               <Route path="/subscription-billings" element={<SubscriptionBilling />} />
-
               <Route path="/dashboard" element={<Dashboard />}>
-              <Route path="/dashboard/history" element={<UserHistoryPage />} />        
-          <Route path="/dashboard/security" element={<SecuritySettingsPage />} />        
-          <Route path="/dashboard/profile" element={<ProfileSettingsPage />} /> 
-          <Route path="/dashboard/notifications" element={<NotificationSettingsPage />} />        
-          <Route path="/dashboard/delete-account" element={<DeleteAccountPage />} /> 
+                <Route path="/dashboard/history" element={<UserHistoryPage />} />
+                <Route path="/dashboard/security" element={<SecuritySettingsPage />} />
+                <Route path="/dashboard/profile" element={<ProfileSettingsPage />} />
+                <Route path="/dashboard/notifications" element={<NotificationSettingsPage />} />
+                <Route path="/dashboard/delete-account" element={<DeleteAccountPage />} />
               </Route>
-
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<SignUp />} />
@@ -195,22 +187,10 @@ function App() {
             <Route path="/all-templates/ecom8" element={<Ecom8 />} />
             <Route path="/all-templates/ecom9" element={<Ecom9 />} />
             <Route path="/all-templates/ecom10" element={<Ecom10 />} />
-            <Route
-              path="/all-templates/email-market-dashboard"
-              element={<EmailMarketDashboard />}
-            />
-            <Route
-              path="/all-templates/email-market-temp"
-              element={<EmailMarketTemp />}
-            />
-            <Route
-              path="/all-templates/forum-temp"
-              element={<ForumTemplate />}
-            />
-            <Route
-              path="/all-templates/community-temp"
-              element={<CodaCommunity />}
-            />
+            <Route path="/all-templates/email-market-dashboard" element={<EmailMarketDashboard />} />
+            <Route path="/all-templates/email-market-temp" element={<EmailMarketTemp />} />
+            <Route path="/all-templates/forum-temp" element={<ForumTemplate />} />
+            <Route path="/all-templates/community-temp" element={<CodaCommunity />}/>
             <Route path="/all-templates/bank-temp" element={<BankTemp />} />
             <Route path="/all-templates/bank-temp2" element={<Banktemp2 />} />
             <Route path="/all-templates/ai-temp" element={<AITemp />} />
@@ -221,16 +201,10 @@ function App() {
             <Route path="/all-templates/web-studio" element={<WebStudio />} />
             <Route path="/all-templates/ai-temp2" element={<AITemp2 />} />
             <Route path="/all-templates/web-builder" element={<WebBuilder />} />
-            <Route
-              path="/all-templates/web-builder2"
-              element={<WebBuilder2 />}
-            />
+            <Route path="/all-templates/web-builder2" element={<WebBuilder2 />} />
             <Route path="/all-templates/host-web" element={<Hostweb />} />
             <Route path="/all-templates/code-review" element={<CodeReview />} />
-            <Route
-              path="/all-templates/flipkart-clone"
-              element={<FlipkartHome />}
-            />
+            <Route path="/all-templates/flipkart-clone" element={<FlipkartHome />} />
             <Route path="/all-templates/temp22" element={<Temp22 />} />
             <Route path="/all-templates/temp24" element={<Temp24 />} />
             <Route path="/all-templates/temp25" element={<Temp25 />} />
@@ -257,35 +231,15 @@ function App() {
             <Route path="/all-templates/temp47" element={<Temp47 />} />
             <Route path="/all-templates/temp48" element={<Temp48 />} />
             <Route path="/all-templates/temp49" element={<Temp49 />} />
-
-            <Route
-              path="/all-components/otp-verification"
-              element={<OTPVerification />}
-            />
+            <Route path="/all-components/otp-verification" element={<OTPVerification />} />
             <Route path="/all-components/register" element={<Register />} />
             <Route path="/all-components/login" element={<Login />} />
-            <Route
-              path="/all-components/ecommerce-filter"
-              element={<EcommerceFilter />}
-            />
-            <Route
-              path="/all-components/ecommerce-filter2"
-              element={<EcommerceFilter2 />}
-            />
-            <Route
-              path="/all-components/ecommerce-filter3"
-              element={<EcommerceFilter3 />}
-            />
+            <Route path="/all-components/ecommerce-filter" element={<EcommerceFilter />} />
+            <Route path="/all-components/ecommerce-filter2" element={<EcommerceFilter2 />} />
+            <Route path="/all-components/ecommerce-filter3" element={<EcommerceFilter3 />} />
             <Route path="/all-components/login-form" element={<LoginForm />} />
-            <Route
-              path="/all-components/onboarding-wizard"
-              element={<OnboardingWizard />}
-            />
-            <Route
-              path="/all-components/display-components"
-              element={<CodeDisplayComponent />}
-            />
-
+            <Route path="/all-components/onboarding-wizard" element={<OnboardingWizard />} />
+            <Route path="/all-components/display-components" element={<CodeDisplayComponent />}/>
             <Route path="/soora-api/*" element={<SooraAPI />} />
           </Routes>
         </ThemeProvider>

@@ -1,13 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { 
-  Command, 
-  CommandEmpty, 
-  CommandGroup, 
-  CommandInput, 
-  CommandItem, 
-  CommandList 
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList
 } from "@/components/ui/command";
 
 const suggestions = [
@@ -56,31 +56,36 @@ export default function SearchBox() {
       </Button>
       
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 sm:w-96 bg-background rounded-md shadow-lg z-50">
-          <Command>
-            <CommandInput
-              placeholder="Type to search..."
-              value={query}
-              onValueChange={setQuery}
-              className="border-none focus:ring-0"
-            />
-            <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
-              <CommandGroup heading="Suggestions">
-                {filteredSuggestions.map((item) => (
-                  <CommandItem
-                    key={item}
-                    onSelect={() => {
-                      setQuery(item);
-                      setIsOpen(false);
-                    }}
-                  >
-                    {item}
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            </CommandList>
-          </Command>
+        <div className="fixed inset-x-0 top-16 z-[999] px-4 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <Command className="rounded-lg border shadow-lg bg-background">
+              <div className="flex items-center border-b px-3">
+                <CommandInput
+                  placeholder="Type to search..."
+                  value={query}
+                  onValueChange={setQuery}
+                  className="h-14 text-lg flex-1 border-0 focus:ring-0 focus:outline-none bg-transparent placeholder:text-muted-foreground"
+                />
+              </div>
+              <CommandList className="max-h-[300px] overflow-y-auto py-2">
+                <CommandEmpty>No results found.</CommandEmpty>
+                <CommandGroup heading="Suggestions">
+                  {filteredSuggestions.map((item) => (
+                    <CommandItem
+                      key={item}
+                      onSelect={() => {
+                        setQuery(item);
+                        setIsOpen(false);
+                      }}
+                      className="px-4 py-2 text-sm cursor-pointer hover:bg-accent"
+                    >
+                      {item}
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </div>
         </div>
       )}
     </div>
