@@ -3,6 +3,7 @@ import Client from "./Client";
 import Components from "../Components/ComponentSection";
 import Interviews from "../Services/InterviewPrep/Interviews";
 import Template from "../Templates/Template";
+import TechNetworkDiagram from "../Footer/TechNetworkDiagram";
 function Home() {
   return (
     <>
@@ -11,6 +12,7 @@ function Home() {
       <Components />
       <Interviews />
       <Client />
+      <TechNetworkDiagram/>
     </>
   );
 }
