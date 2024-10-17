@@ -4,9 +4,9 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 
 const UserHistoryPage = () => {
   const conversionHistory = [
-    { id: 1, fileName: 'Credential login', convertedTo: '234.56.56.5', date: '2023-05-15', agent:'Chrome' },
-    { id: 2, fileName: 'spreadsheet.xlsx', convertedTo: '234.56.56.5', date: '2023-05-14', agent:'Safari'},
-    { id: 3, fileName: 'presentation.pptx', convertedTo: '234.56.56.5', date: '2023-05-13', agent:'Edge' },
+    { id: 1, fileName: 'Credential login', ip: '234.56.56.5', date: '2023-05-15', agent:'Chrome' },
+    { id: 2, fileName: 'spreadsheet.xlsx', ip: '234.56.56.5', date: '2023-05-14', agent:'Safari'},
+    { id: 3, fileName: 'presentation.pptx', ip: '234.56.56.5', date: '2023-05-13', agent:'Edge' },
   ];
 
   return (
@@ -30,13 +30,13 @@ const UserHistoryPage = () => {
           <TableBody>
             {conversionHistory.map((item) => (
               <TableRow key={item.id} className="border-b border-gray-200 dark:border-gray-600">
-                <TableCell className="text-gray-900 dark:text-gray-100 flex-col flex">{item.fileName}
+                <TableCell className="text-muted-foreground  flex-col flex">{item.fileName}
                   <span>{item.date}</span>
                 </TableCell>
-                <TableCell className="text-gray-900 dark:text-gray-100">{item.convertedTo}</TableCell>
-                <TableCell className="text-gray-900 dark:text-gray-100">{item.agent}</TableCell>
+                <TableCell className="text-muted-foreground">{item.ip}</TableCell>
+                <TableCell className="text-muted-foreground">{item.agent}</TableCell>
                 <TableCell>
-                  <Button variant="outline" size="sm" className="text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <Button variant="outline" size="sm" className="text-gray-900 dark:text-muted-foreground border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
                     Download
                   </Button>
                 </TableCell>
