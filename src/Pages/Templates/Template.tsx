@@ -1,26 +1,30 @@
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const products = [
   {
     image: "/hero.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "/template-details",
   },
   {
     image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "/template-details",
   },
   {
     image: "/price.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "/template-details",
   },
 ];
@@ -33,7 +37,11 @@ function Template() {
   };
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+    >
       <span className="relative flex justify-between -mt-20">
         <span className="relative z-10 px-6 font-semibold text-start">
           Templates
@@ -71,7 +79,7 @@ function Template() {
             {/* Learn More Link */}
             <a
               href={product.link}
-              className="flex items-center mt-4 text-[#38bdf8] hover:underline"              
+              className="flex items-center mt-4 text-[#38bdf8] hover:underline"
               rel="noopener noreferrer"
             >
               Learn More <MoveRight className="ml-2" />
@@ -79,7 +87,7 @@ function Template() {
           </div>
         ))}
       </div>
-    </>
+    </motion.div>
   );
 }
 

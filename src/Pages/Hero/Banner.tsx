@@ -8,8 +8,12 @@ function Banner() {
   const navigate = useNavigate();
   const decodedToken = decodeToken();
 
-  const handleClick = () => {
-    navigate("/chatui");
+  const handleWithAIClick = () => {
+    if (!decodedToken) {
+      navigate("/signin");
+    } else {
+      navigate("/chatui");
+    }
   };
 
   const handleAllAccess = () => {
@@ -54,11 +58,16 @@ function Banner() {
               to prepare for the machine code interview preparations!
             </motion.p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="mt-8 flex flex-wrap justify-center gap-4 text-center"
+            >
               <Button
                 variant="default"
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
-                onClick={handleClick}
+                onClick={handleWithAIClick}
               >
                 Start Building with AI <MoveRight className="ml-2" />
               </Button>
@@ -70,7 +79,7 @@ function Banner() {
               >
                 Get all access <MoveRight className="ml-2" />
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

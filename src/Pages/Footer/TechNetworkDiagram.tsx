@@ -1,4 +1,5 @@
 import { Atom, Cloud, Cog } from "lucide-react";
+import { motion } from "framer-motion";
 
 const logos = [
   { name: "stripe", content: "stripe", x: "10%", y: "30%" },
@@ -50,7 +51,12 @@ const connections = [
 
 export default function TechNetworkDiagram() {
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="w-full max-w-4xl mx-auto p-4"
+    >
       <div className="relative aspect-[4/3] bg-white">
         {/* Grid lines */}
         <div className="absolute inset-0 grid grid-cols-12 grid-rows-12">
@@ -98,6 +104,6 @@ export default function TechNetworkDiagram() {
         <h2 className="text-3xl font-bold text-gray-800">All the data.</h2>
         <p className="text-2xl text-gray-600">Connect with content,</p>
       </div>
-    </div>
+    </motion.div>
   );
 }

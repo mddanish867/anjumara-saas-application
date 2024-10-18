@@ -1,26 +1,30 @@
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const products = [
   {
     image: "/hero.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "component-details",
   },
   {
     image: "/banner2.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "component-details",
   },
   {
     image: "/price.png",
     title: "Product Title",
     price: 29.99,
-    description: "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
+    description:
+      "Beautifully designed, expertly crafted components. The perfect starting point for your next project/interview. This will help you to prepare for the machine code interview preparations!",
     link: "component-details",
   },
 ];
@@ -31,7 +35,11 @@ function Components() {
     navigate("/all-components");
   };
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.5 }}
+    >
       <section className="relative bg-gradient-to-r from-[#d6b7f5] via-[#94a5f7] to-[#e2caec] py-2 rounded-tl-full">
         <span className="relative flex justify-between">
           <span className="relative z-10 px-6 font-semibold text-start">
@@ -81,7 +89,7 @@ function Components() {
           ))}
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }
 

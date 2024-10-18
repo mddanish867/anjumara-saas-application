@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import SVGs from "@/Pages/SVGs/SVGs";
+import { motion } from "framer-motion";
 
-// Define navigation with associated components
 const navigation = [
   {
     name: "Frontend",
@@ -55,15 +55,16 @@ function Interviews() {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 pt-4 md:px-8 mt-20">
-      <div className="max-w-lg">
-        <h1 className="text-3xl font-bold sm:text-5xl text-gray-900 dark:text-gray-100">
-          Beautifully crafted UI components, ready for your next project.
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="w-full"
+      >
+        <h1 className="text-4xl font-bold sm:text-5xl text-gray-900 dark:text-gray-100">
+          Prepare for your interview with AI.
         </h1>
-        <p className="mt-2 text-gray-700 dark:text-gray-300">
-          Over 500+ professionally designed, fully responsive, expertly crafted
-          component examples you can drop into your Tailwind projects and
-          customize to your heart’s content.
-        </p>
+
         <Button
           variant="link"
           className="text-start text-[#38bdf8] -ml-4 mt-4 dark:text-[#38bdf8] dark:hover:text-[#32a7d8]"
@@ -71,8 +72,13 @@ function Interviews() {
         >
           Browse all questions <MoveRight className="ml-2" />
         </Button>
-      </div>
-      <div className="mt-6">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-6"
+      >
         <ul className="w-full border-b flex items-center gap-x-3 overflow-x-auto whitespace-nowrap">
           {navigation.map((item, idx) => (
             <li
@@ -90,8 +96,13 @@ function Interviews() {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="mt-6">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-6"
+      >
         {/* Render the details of the active tab */}
         <div className="flex flex-col items-center text-center">
           <img
@@ -113,8 +124,8 @@ function Interviews() {
             Learn More <MoveRight className="ml-2" />
           </Button>
         </div>
-      </div>
-      <SVGs/>
+      </motion.div>
+      <SVGs />
     </div>
   );
 }

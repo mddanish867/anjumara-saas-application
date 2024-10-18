@@ -1,7 +1,12 @@
+import { motion } from "framer-motion";
 
 const SVGs = () => {
   return (
-    <div className="relative items-center w-full py-12 mx-auto mt-12">
+    <motion.div
+    initial={{ opacity: 0, y: 20 }}
+       animate={{ opacity: 1, y: 0 }}
+       transition={{ duration: 1, delay: 0.5 }}
+    className="relative items-center w-full py-12 mx-auto mt-12">
       <svg
         className="absolute inset-0 -mt-24 blur-3xl"
         style={{ zIndex: -1 }}
@@ -63,7 +68,7 @@ const SVGs = () => {
         alt="Hero image"
         className="relative object-cover w-full border rounded-lg shadow-2xl lg:rounded-2xl"
       />
-    </div>
+    </motion.div>
   )
 }
 
