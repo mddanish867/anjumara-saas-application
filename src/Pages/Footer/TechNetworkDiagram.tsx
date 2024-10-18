@@ -46,11 +46,11 @@ export default function TechNetworkDiagram() {
       transition={{ duration: 1, delay: 0.5 }}
       className="w-full max-w-4xl mx-auto p-4"
     >
-      <div className="relative aspect-[4/3] bg-white">
+      <div className="relative aspect-[4/3] bg-white dark:bg-transparent dark:rounded-full">
         {/* Grid lines */}
         <div className="absolute inset-0 grid grid-cols-12 grid-rows-12">
           {[...Array(144)].map((_, i) => (
-            <div key={i} className="border-[0.5px] border-gray-100" />
+            <div key={i} className="border-[0.5px] border-gray-100 dark:border-gray-900" />
           ))}
         </div>
 
@@ -75,7 +75,7 @@ export default function TechNetworkDiagram() {
         {logos.map(({ name, content, x, y }) => (
           <div
             key={name}
-            className="absolute w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
+            className="absolute w-12 h-12 bg-white dark:bg-transparent rounded-full shadow-md flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2"
             style={{ left: x, top: y }}
           >
             {typeof content === "string" ? content : content}
@@ -83,7 +83,7 @@ export default function TechNetworkDiagram() {
         ))}
 
         {/* Center logo */}
-        <div className="absolute left-1/2 top-1/2 w-16 h-16 bg-white rounded-full shadow-md flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-1/2 w-16 h-16 bg-white dark:bg-transparent rounded-full shadow-md flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2">
           <Cog className="w-8 h-8 text-gray-400" />
         </div>
       </div>

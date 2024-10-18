@@ -9,10 +9,10 @@ const Client = () => {
       className="py-14"
     >
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <h3 className="font-semibold text-sm text-gray-600 text-center">
+        <h3 className="font-semibold text-sm text-gray-600 dark:text-gray-50 text-center">
           TRUSTED BY TEAMS FROM AROUND THE WORLD
         </h3>
-        <div className="mt-6">
+        <div className="mt-6 ">
           <ul className="flex gap-x-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
             <li>
               <svg
@@ -36,7 +36,7 @@ const Client = () => {
             {/* LOGO 1 */}
             <li>
               <svg
-                className="w-28"
+                className="w-28 text-gray-50"
                 viewBox="0 0 163 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
