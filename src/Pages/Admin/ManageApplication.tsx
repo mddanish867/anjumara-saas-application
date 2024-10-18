@@ -2,6 +2,9 @@
 
 import { useState } from 'react'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
+import AddTemplateForm from './AddTemplateForm'
+import EditTemplateForm from './EditTemplateFormProps '
+import DeleteTemplate from './DeleteTemplate'
 
 const docSections = [
   {
@@ -24,7 +27,7 @@ const docSections = [
 
 export default function ManageApplication() {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('Introduction')
+  const [activeSection, setActiveSection] = useState('Add New Templates')
   const [expandedSections, setExpandedSections] = useState<string[]>([])
 
   const toggleSection = (section: string) => {
@@ -103,25 +106,9 @@ export default function ManageApplication() {
             </button>
           </div>
           <div className="prose max-w-none">
-            <p className="mb-4">
-              This is the documentation for the {activeSection} section. Replace this content with your actual documentation.
-            </p>
-            <h2 className="text-2xl font-semibold mt-6 mb-4">Subsection 1</h2>
-            <p className="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <h2 className="text-2xl font-semibold mt-6 mb-4">Subsection 2</h2>
-            <p className="mb-4">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <ul className="list-disc pl-6 mb-4">
-              <li>Point 1</li>
-              <li>Point 2</li>
-              <li>Point 3</li>
-            </ul>
-            <p className="mb-4">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+            {activeSection === "Add New Templates" && <AddTemplateForm/>}
+            {activeSection === "Edit Templates" && <EditTemplateForm/>}
+            {activeSection === "Remove Templates" && <DeleteTemplate/>}
           </div>
         </div>
       </main>

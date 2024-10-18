@@ -37,8 +37,8 @@ export default function ReviewsCard() {
   }
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
-      <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-gray-800 rounded-xl shadow-2xl overflow-hidden">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
+      <div className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl bg-transparent border rounded-xl shadow-2xl overflow-hidden">
         <div className="p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">Customer Reviews</h2>
           <div className="relative h-[400px] sm:h-[350px] md:h-[300px]">
@@ -75,14 +75,14 @@ export default function ReviewsCard() {
           <div className="flex justify-between mt-4 sm:mt-6">
             <button
               onClick={prevReview}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-3 sm:px-4 rounded-full transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+              className="bg-[#38bdf8] hover:bg-[#30b9f4] text-white font-bold py-2 px-3 sm:px-4 rounded-full transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
               aria-label="Previous review"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextReview}
-              className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-3 sm:px-4 rounded-full transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+              className="bg-[#38bdf8] hover:bg-[#30b9f4] text-white font-bold py-2 px-3 sm:px-4 rounded-full transition duration-200 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
               aria-label="Next review"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />

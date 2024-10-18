@@ -55,7 +55,7 @@ export default function RealTimeCharts() {
       <h1 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
         Real-Time Statistics
       </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 border lg:grid-cols-2 gap-8">
         <div className="bg-white dark:bg-transparent p-6 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Bar Chart
@@ -91,7 +91,7 @@ export default function RealTimeCharts() {
           </ResponsiveContainer>
         </div>
 
-        <div className="bg-white dark:bg-transparent p-6 rounded-lg shadow-lg">
+        <div className="bg-white dark:bg-transparent border p-6 rounded-lg shadow-lg">
           <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Pie Chart
           </h2>
