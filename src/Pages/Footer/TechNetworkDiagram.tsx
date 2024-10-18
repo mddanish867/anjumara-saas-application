@@ -90,8 +90,8 @@ export default function TechNetworkDiagram() {
 
       {/* Text */}
       <div className="mt-8 text-center">
-        <h2 className="text-3xl font-bold text-gray-800">All the data.</h2>
-        <p className="text-2xl text-gray-600">Connect with content,</p>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-50">All the data.</h2>
+        <p className="text-2xl text-gray-600 dark:text-gray-50">Connect with content,</p>
       </div>
     </motion.div>
   );

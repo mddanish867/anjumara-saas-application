@@ -72,7 +72,9 @@ function UserProfile({ name }: any) {
   const handleSubscriptionBillings = () => {
     navigate("/subscription-billings");
   };
-  
+  const handleManageApplication = () => {
+    navigate("/manage-application");
+  };
   
   const handleAPIs = () => {
     navigate("/soora-api");
@@ -99,6 +101,10 @@ function UserProfile({ name }: any) {
             <DropdownMenuItem onClick={handleSubscriptionBillings}>
               <CreditCard className="mr-2 h-4 w-4" />
               <span>Billing</span>
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={handleManageApplication}>
+              <CreditCard className="mr-2 h-4 w-4" />
+              <span>Manage Application</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={handleSettings}>
               <Settings className="mr-2 h-4 w-4" />
