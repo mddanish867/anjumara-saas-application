@@ -1,4 +1,4 @@
-import { Atom, Cloud, Cog } from "lucide-react";
+import { Atom, Cloud, Code2, Cog, Database } from "lucide-react";
 import { motion } from "framer-motion";
 
 const logos = [
@@ -11,31 +11,20 @@ const logos = [
   },
   {
     name: "mongodb",
-    content: (
-      <img
-        src="/placeholder.svg?height=24&width=24"
-        alt="MongoDB logo"
-        className="w-6 h-6"
-      />
-    ),
+    content: <Code2 className="w-6 h-6 text-violet-400" />
+    ,
     x: "50%",
     y: "10%",
   },
   {
     name: "salesforce",
-    content: <Cloud className="w-6 h-6 text-gray-400" />,
+    content: <Cloud className="w-6 h-6 text-[#38bdf8]" />,
     x: "80%",
     y: "30%",
   },
   {
     name: "segment",
-    content: (
-      <img
-        src="/placeholder.svg?height=24&width=24"
-        alt="Segment logo"
-        className="w-6 h-6"
-      />
-    ),
+    content: <Database className="w-6 h-6 text-orange-400" />,
     x: "90%",
     y: "70%",
   },
