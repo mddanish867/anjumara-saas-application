@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from "react"
 import { FiX, FiPlus } from "react-icons/fi"
 import { AlignLeft, Loader, Send, Check, Copy } from "lucide-react"
