@@ -5,13 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useCreateTemplateMutation } from "@/API/Templates/templateApi";
+import { useCreateTemplateMutation } from "@/API/Templates/templateApi"; // API hook import
 import { decodeToken } from "../helper/decodedToke";
 import toast from "react-hot-toast";
 
 export default function AddTemplateForm() {
-  const decodedToken = decodeToken(); // Assuming this decodes and provides the userId
-  const [addTemplate, { isLoading }] = useCreateTemplateMutation(); // Mutation hook
+  const decodedToken = decodeToken(); // Decoding the userId
+  const [addTemplate, { isLoading }] = useCreateTemplateMutation(); // Using the mutation hook
 
   // Form state variables
   const [templateName, setTemplateName] = useState<string>("");
@@ -45,7 +45,7 @@ export default function AddTemplateForm() {
   const handleScreenshotsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files) {
-      setScreenshots(Array.from(files)); // Handle FileList correctly
+      setScreenshots(Array.from(files)); // Convert FileList to Array
     }
   };
 
@@ -98,7 +98,7 @@ export default function AddTemplateForm() {
     try {
       await addTemplate(formData).unwrap(); // Trigger the mutation
       toast.success('Template added successfully');
-      resetForm();
+      resetForm(); // Reset the form after successful submission
     } catch (error) {
       toast.error('Error adding template: ' + error);
       console.error('Error adding template:', error);

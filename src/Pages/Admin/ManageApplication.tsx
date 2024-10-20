@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
 import AddTemplateForm from './AddTemplateForm'
 import EditTemplateForm from './EditTemplateFormProps '
 import DeleteTemplate from './DeleteTemplate'
+import AddComponents from './AddComponents/AddComponents'
 
 const docSections = [
   {
@@ -109,6 +110,8 @@ export default function ManageApplication() {
             {activeSection === "Add New Templates" && <AddTemplateForm/>}
             {activeSection === "Edit Templates" && <EditTemplateForm/>}
             {activeSection === "Remove Templates" && <DeleteTemplate/>}
+            {activeSection === "Add New Components" && <AddComponents/>}
+            
           </div>
         </div>
       </main>
