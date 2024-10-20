@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCreateTemplateMutation } from "@/API/Templates/templateApi"; // API hook import
-import { decodeToken } from "../helper/decodedToke";
+import { decodeToken } from "../../helper/decodedToke";
 import toast from "react-hot-toast";
 
 export default function AddTemplateForm() {

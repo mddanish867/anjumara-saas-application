@@ -31,7 +31,7 @@ interface Template {
   apiList: string[];
 }
 
-export default function DeleteTemplate() {
+export default function DeleteTemplate({setActiveSection}:any) {
   const [templates, setTemplates] = useState<Template[]>([
     {
       id: "1",
@@ -63,13 +63,18 @@ export default function DeleteTemplate() {
   const handleDelete = (id: string) => {
     setTemplates(templates.filter((template) => template.id !== id));
   };
-
+  const handleAddComponent = () => {
+    setActiveSection("Add New Templates");
+  };
+  
+  
   return (
     <div className=" min-h-screen w-full py-10">
       <div className="flex justify-between items-center mb-6">
-        <Button className="ml-auto">
+        <Button className="ml-auto" onClick={handleAddComponent}>
           <PlusCircle className="mr-2 h-4 w-4" /> Add New Template
         </Button>
+        
       </div>
 
       <div className="w-full border rounded-lg overflow-hidden">

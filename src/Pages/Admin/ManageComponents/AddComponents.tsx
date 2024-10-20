@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import toast from "react-hot-toast";
 
+
 const AddComponents = () => {
   const decodedToken = decodeToken();
   const [name, setName] = useState("");
@@ -104,7 +105,7 @@ const AddComponents = () => {
   };
 
   return (
-    <div className="w-full min-h-screen  p-6 space-y-8">
+    <div className="w-full min-h-screen border p-6 space-y-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <Label htmlFor="name">Component Name</Label>

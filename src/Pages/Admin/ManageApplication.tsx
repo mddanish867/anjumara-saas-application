@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react'
-import AddTemplateForm from './AddTemplateForm'
-import EditTemplateForm from './EditTemplateFormProps '
-import DeleteTemplate from './DeleteTemplate'
-import AddComponents from './AddComponents/AddComponents'
+import AddTemplateForm from './Managetemplates/AddTemplateForm'
+import EditTemplateForm from './Managetemplates/EditTemplateFormProps '
+import DeleteTemplate from './Managetemplates/DeleteTemplate'
+import AddComponents from './ManageComponents/AddComponents'
+import DeleteComponent from './ManageComponents/DeleteComponent'
 
 const docSections = [
   {
@@ -100,21 +101,22 @@ export default function ManageApplication() {
       <main className="flex-grow p-6 overflow-y-auto border">
         <div className="w-full">
           <div className="flex  mb-6">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">{activeSection}</h1>
+            <h1 className="md:text-xl font-bold text-lg text-gray-900 dark:text-gray-50">{activeSection}</h1>
             <button
               onClick={toggleSidebar}
               className="lg:hidden bg-white dark:bg-transparent p-2 rounded-md shadow-md"
             >
-              {!isOpen &&  <Menu className="h-6 w-6 text-gray-600 dark:text-gray-50" />}
+              {!isOpen &&  <Menu className="h-6 w-6 text-[#38bdf8]" />}
              
             </button>
           </div>
           <div className="prose max-w-none">
             {activeSection === "Add New Templates" && <AddTemplateForm/>}
             {activeSection === "Edit Templates" && <EditTemplateForm/>}
-            {activeSection === "Remove Templates" && <DeleteTemplate/>}
+            {activeSection === "Remove Templates" && <DeleteTemplate setActiveSection={setActiveSection}/>}
             {activeSection === "Add New Components" && <AddComponents/>}
-            
+            {activeSection === "Remove Components" && <DeleteComponent setActiveSection={setActiveSection}/>}
+
           </div>
         </div>
       </main>
