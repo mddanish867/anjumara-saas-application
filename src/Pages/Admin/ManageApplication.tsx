@@ -10,15 +10,15 @@ import AddComponents from './AddComponents/AddComponents'
 const docSections = [
   {
     title: 'Manage Templates',
-    items: ['Add New Templates', 'Edit Templates', 'Remove Templates'],
+    items: ['Add New Templates', 'Remove Templates'],
   },
   {
     title: 'Manage Components',
-    items: ['Add New Components', 'Edit Component', 'Remove Components'],
+    items: ['Add New Components', 'Remove Components'],
   },
   {
     title: 'Manage Apis',
-    items: ['Add New Apis', 'Edit Api', 'Remove Apis'],
+    items: ['Add New Apis', 'Remove Apis'],
   },
   {
     title: 'Manage Users',
@@ -47,9 +47,11 @@ export default function ManageApplication() {
     <div className="flex h-screen dark:bg-transparent mt-20">
       {/* Sidebar */}
       <aside
-        className={`bg-white dark:bg-transparent w-64 min-h-screen flex flex-col transition-all duration-300 ease-in-out ${
+        className={`bg-white dark:bg-gray-950 min-h-screen flex flex-col transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } fixed lg:relative lg:translate-x-0 z-10`}
+        } ${activeSection === 'Remove Templates' ? 'w-[440px]' : 'w-64'} 
+        fixed lg:relative lg:translate-x-0 z-10`}
+        
       >
         <div className="p-4 border-b flex justify-between items-center">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">Admin Panel</h2>
@@ -95,15 +97,16 @@ export default function ManageApplication() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-grow p-6 overflow-y-auto">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
+      <main className="flex-grow p-6 overflow-y-auto border">
+        <div className="w-full">
+          <div className="flex  mb-6">
             <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50">{activeSection}</h1>
             <button
               onClick={toggleSidebar}
               className="lg:hidden bg-white dark:bg-transparent p-2 rounded-md shadow-md"
             >
-              <Menu className="h-6 w-6 text-gray-600 dark:text-gray-50" />
+              {!isOpen &&  <Menu className="h-6 w-6 text-gray-600 dark:text-gray-50" />}
+             
             </button>
           </div>
           <div className="prose max-w-none">

@@ -38,9 +38,9 @@ export default function EditTemplateForm() {
   }
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full  mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Edit Template</CardTitle>
+        <CardTitle className="text-2xl font-bold"></CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">

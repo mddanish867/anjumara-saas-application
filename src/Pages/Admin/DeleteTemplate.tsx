@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { PlusCircle, Pencil, Trash2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { PlusCircle, Pencil, Trash2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -8,7 +8,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 import {
   Dialog,
   DialogContent,
@@ -16,19 +16,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Badge } from "@/components/ui/badge"
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 
 interface Template {
-  id: string
-  name: string
-  description: string
-  techStack: string[]
-  screenshots: string[]
-  documentUrl: string
-  codeUrl: string
-  apiList: string[]
+  id: string;
+  name: string;
+  description: string;
+  techStack: string[];
+  screenshots: string[];
+  documentUrl: string;
+  codeUrl: string;
+  apiList: string[];
 }
 
 export default function DeleteTemplate() {
@@ -36,9 +36,13 @@ export default function DeleteTemplate() {
     {
       id: "1",
       name: "E-commerce Platform",
-      description: "A full-featured e-commerce solution with product management, cart, and checkout.",
+      description:
+        "A full-featured e-commerce solution with product management, cart, and checkout.",
       techStack: ["React", "Node.js", "MongoDB"],
-      screenshots: ["/placeholder.svg?height=100&width=100", "/placeholder.svg?height=100&width=100"],
+      screenshots: [
+        "/placeholder.svg?height=100&width=100",
+        "/placeholder.svg?height=100&width=100",
+      ],
       documentUrl: "https://example.com/docs/ecommerce.pdf",
       codeUrl: "https://example.com/code/ecommerce.zip",
       apiList: ["/api/products", "/api/cart", "/api/orders"],
@@ -46,27 +50,28 @@ export default function DeleteTemplate() {
     {
       id: "2",
       name: "Blog CMS",
-      description: "A content management system for creating and managing blog posts.",
+      description:
+        "A content management system for creating and managing blog posts.",
       techStack: ["Vue.js", "Express", "PostgreSQL"],
       screenshots: ["/placeholder.svg?height=100&width=100"],
       documentUrl: "https://example.com/docs/blog-cms.pdf",
       codeUrl: "https://example.com/code/blog-cms.zip",
       apiList: ["/api/posts", "/api/users", "/api/comments"],
     },
-  ])
+  ]);
 
   const handleDelete = (id: string) => {
-    setTemplates(templates.filter(template => template.id !== id))
-  }
+    setTemplates(templates.filter((template) => template.id !== id));
+  };
 
   return (
-    <div className="min-h-screen w-full py-10">
+    <div className=" min-h-screen w-full py-10">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Templates</h1>
-        <Button>
+        <Button className="ml-auto">
           <PlusCircle className="mr-2 h-4 w-4" /> Add New Template
         </Button>
       </div>
+
       <div className="w-full border rounded-lg overflow-hidden">
         <Table>
           <TableHeader>
@@ -186,5 +191,5 @@ export default function DeleteTemplate() {
         </Table>
       </div>
     </div>
-  )
+  );
 }

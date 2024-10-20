@@ -117,9 +117,9 @@ export default function AddTemplateForm() {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="w-full  mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Add New Template</CardTitle>
+        <CardTitle className="text-2xl font-bold"></CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
