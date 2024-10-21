@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import toast from "react-hot-toast";
 
-const AddComponents = ({
+const EditTemplateForm = ({
   setActiveSection,
 }: {
   setActiveSection: (section: string) => void;
@@ -287,4 +287,4 @@ const AddComponents = ({
   );
 };
 
-export default AddComponents;
+export default EditTemplateForm;

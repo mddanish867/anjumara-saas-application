@@ -23,6 +23,21 @@ export const componentApi = createApi({
       query: () => "components/select", // Matches the Next.js API route: /api/components
       providesTags: ["Component"], // Optional: Use tags to invalidate cache on add/update/delete
     }),
+      // Query to get a specific component by ID
+    getComponentById: builder.query({
+      query: (id) => `components?id=${id}`, // Fetch component by ID (modify the endpoint to match your API)
+      providesTags: ["Component"],
+    }),
+    // Mutation to update a component
+    updateComponent: builder.mutation({
+      query: ({ id, formData }) => ({
+        url: `components/update`, // Matches the Next.js API route: /api/components/update
+        method: "PUT",
+        body: { id, ...formData }, // Send ID and updated data in the body
+        credentials: "include",
+      }),
+      invalidatesTags: ["Component"], // Invalidate cache after updating
+    }),
     // Mutation to delete a component
     deleteComponent: builder.mutation({
       query: (id) => ({
@@ -39,6 +54,8 @@ export const componentApi = createApi({
 // Export the mutation hook for use in components
 export const {
   useAddComponentMutation,
+  useGetComponentByIdQuery,
   useGetComponentsQuery,
+  useUpdateComponentMutation,
   useDeleteComponentMutation,
 } = componentApi;

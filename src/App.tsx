@@ -149,7 +149,9 @@ function App() {
               <Route path="/all-templates" element={<AllTemplates />} />
               <Route path="/component-details" element={<ComponentDetails />} />
               <Route path="/subscription-billings" element={<SubscriptionBilling />} />
-              <Route path="/manage-application" element={<ManageApplication />} />
+              <Route path="/manage-application" element={<ManageApplication />}>
+          <Route path=":section" element={<ManageApplication />} />
+        </Route>
 
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="/dashboard/history" element={<UserHistoryPage />} />

@@ -40,6 +40,7 @@ import {
 import { LoadingSkeleton } from "@/Pages/Common/LoadingSkelton";
 import CodeCard from "@/Pages/Common/CodeCard";
 import ComponentNotFound from "@/Pages/Common/ComponentNotFound";
+import { useNavigate, useLocation } from "react-router-dom";
 
 interface Template {
   id: string;
@@ -65,6 +66,8 @@ export default function DeleteComponent({
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
+  const navigate = useNavigate();
+  const location = useLocation();
   const [selectedImage, setSelectedImage] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [componentToDelete, setComponentToDelete] = useState<string | null>(
@@ -116,10 +119,10 @@ export default function DeleteComponent({
     setActiveSection("Add New Components");
   };
 
-  const handleEdit = (id: string) => {
-    console.log("Edit template", id);
-  };
-
+  const handleEdit = (id: string) => {   
+    setActiveSection("Add New Components");
+    navigate(`${location.pathname}?componentId=${id}`);
+  }
   const handleDelete = (id: string) => {
     setComponentToDelete(id); // Set the component to be deleted
     setShowDeleteConfirm(true); // Show the delete confirmation alert

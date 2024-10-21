@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import AddTemplateForm from "./Managetemplates/AddTemplateForm";
-import EditTemplateForm from "./Managetemplates/EditTemplateFormProps ";
 import DeleteTemplate from "./Managetemplates/DeleteTemplate";
 import AddComponents from "./ManageComponents/AddComponents";
 import DeleteComponent from "./ManageComponents/DeleteComponent";
+import EditComponent from "./ManageComponents/EditComponent";
 
 const docSections = [
   {
@@ -13,7 +14,7 @@ const docSections = [
   },
   {
     title: "Manage Components",
-    items: ["Add New Components", "Remove Components"],
+    items: ["Add New Components","Edit Component", "Remove Components"],
   },
   {
     title: "Manage Apis",
@@ -27,8 +28,16 @@ const docSections = [
 
 export default function ManageApplication() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("Add New Templates");
+  const [activeSection, setActiveSection] = useState("add-new-templates");
   const [expandedSections, setExpandedSections] = useState<string[]>([]);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname.split("/").pop() || "add-new-templates";
+    setActiveSection(path);
+  }, [location]);
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) =>
@@ -42,13 +51,19 @@ export default function ManageApplication() {
     setIsOpen(!isOpen);
   };
 
+  const handleNavigation = (item: string) => {
+    const path = item.toLowerCase().replace(/\s+/g, "-");
+    navigate(`/manage-application/${path}`);
+    setActiveSection(path);
+  };
+
   return (
     <div className="flex h-screen dark:bg-transparent mt-20">
       {/* Sidebar */}
       <aside
         className={`bg-white dark:bg-gray-950 min-h-screen flex flex-col transition-all duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } ${activeSection === "Remove Templates" ? "w-[440px]" : "w-64"} 
+        } ${activeSection === "remove-templates" ? "w-[440px]" : "w-64"} 
         fixed lg:relative lg:translate-x-0 z-10`}
       >
         <div className="p-4 border-b flex justify-between items-center">
@@ -64,7 +79,7 @@ export default function ManageApplication() {
             <div key={section.title} className="py-2">
               <button
                 onClick={() => toggleSection(section.title)}
-                className="flex items-center justify-between w-full px-4 py-2 text-left text-gray-600dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800"
+                className="flex items-center justify-between w-full px-4 py-2 text-left text-gray-600 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <span>{section.title}</span>
                 {expandedSections.includes(section.title) ? (
@@ -77,16 +92,17 @@ export default function ManageApplication() {
                 <ul className="ml-4">
                   {section.items.map((item) => (
                     <li key={item}>
-                      <button
-                        onClick={() => setActiveSection(item)}
+                      <Link
+                        to={`/manage-application/${item.toLowerCase().replace(/\s+/g, "-")}`}
                         className={`block w-full px-4 py-2 text-sm ${
-                          activeSection === item
+                          activeSection === item.toLowerCase().replace(/\s+/g, "-")
                             ? "text-blue-600 bg-blue-50 dark:bg-gray-800"
                             : "text-gray-600 hover:bg-transparent dark:bg-transparent"
                         }`}
+                        onClick={() => handleNavigation(item)}
                       >
                         {item}
-                      </button>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -99,9 +115,9 @@ export default function ManageApplication() {
       {/* Main content */}
       <main className="flex-grow p-6 overflow-y-auto border">
         <div className="w-full">
-          <div className="flex  mb-6">
+          <div className="flex mb-6">
             <h1 className="md:text-xl font-bold text-lg text-gray-900 dark:text-gray-50">
-              {activeSection}
+              {activeSection.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
             </h1>
             <button
               onClick={toggleSidebar}
@@ -111,14 +127,16 @@ export default function ManageApplication() {
             </button>
           </div>
           <div className="prose max-w-none">
-            {activeSection === "Add New Templates" && <AddTemplateForm />}
-            {activeSection === "Edit Templates" && <EditTemplateForm />}
-            {activeSection === "Remove Templates" && (
-              <DeleteTemplate setActiveSection={setActiveSection} />
+            {activeSection === "add-new-templates" && <AddTemplateForm />}
+            {activeSection === "edit-components" && <EditComponent setActiveSection={handleNavigation}/>}
+            {activeSection === "remove-templates" && (
+              <DeleteTemplate setActiveSection={handleNavigation} />
             )}
-            {activeSection === "Add New Components" && <AddComponents />}
-            {activeSection === "Remove Components" && (
-              <DeleteComponent setActiveSection={setActiveSection} />
+            {activeSection === "add-new-components" && (
+              <AddComponents setActiveSection={handleNavigation} />
+            )}
+            {activeSection === "remove-components" && (
+              <DeleteComponent setActiveSection={handleNavigation} />
             )}
           </div>
         </div>
