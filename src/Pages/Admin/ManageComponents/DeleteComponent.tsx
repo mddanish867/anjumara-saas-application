@@ -1,5 +1,11 @@
-import { useState } from 'react';
-import { PlusCircle, Pencil, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from "react";
+import {
+  PlusCircle,
+  Pencil,
+  Trash2,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -26,8 +32,9 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useGetComponentsQuery } from '@/API/Components/componentApi';
-import { LoadingSkeleton } from '@/Pages/Common/LoadingSkelton';
+import { useGetComponentsQuery } from "@/API/Components/componentApi";
+import { LoadingSkeleton } from "@/Pages/Common/LoadingSkelton";
+import CodeCard from "@/Pages/Common/CodeCard";
 
 interface Template {
   id: string;
@@ -45,15 +52,24 @@ interface Template {
 
 const ITEMS_PER_PAGE = 5;
 
-export default function DeleteComponent({ setActiveSection }: { setActiveSection: (section: string) => void }) {
+export default function DeleteComponent({
+  setActiveSection,
+}: {
+  setActiveSection: (section: string) => void;
+}) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filterCategory, setFilterCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filterCategory, setFilterCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState(null);
   const { data, isLoading, error } = useGetComponentsQuery(undefined);
 
   // Handle loading and error states
   if (isLoading) {
-    return <div><LoadingSkeleton/></div>;
+    return (
+      <div>
+        <LoadingSkeleton />
+      </div>
+    );
   }
 
   if (error) {
@@ -61,30 +77,44 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
   }
 
   // Extract components from the API response
-  const templates: Template[] = Array.isArray(data?.components) ? data.components : [];
+  const templates: Template[] = Array.isArray(data?.components)
+    ? data.components
+    : [];
 
   // Filter templates based on search term and category
-  const filteredTemplates = templates.filter(template =>
-    template?.name?.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filterCategory === 'all' || template?.category === filterCategory)
+  const filteredTemplates = templates.filter(
+    (template) =>
+      template?.name?.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (filterCategory === "all" || template?.category === filterCategory)
   );
 
-  const totalPages = Math.max(1, Math.ceil(filteredTemplates.length / ITEMS_PER_PAGE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredTemplates.length / ITEMS_PER_PAGE)
+  );
   const paginatedTemplates = filteredTemplates.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
   );
 
   const handleAdd = () => {
-    setActiveSection('Add New Components');
+    setActiveSection("Add New Components");
   };
 
   const handleEdit = (id: string) => {
-    console.log('Edit template', id);
+    console.log("Edit template", id);
   };
 
   const handleDelete = (id: string) => {
-    console.log('Delete template', id);
+    console.log("Delete template", id);
+  };
+
+  const handleImageClick = (url:any) => {
+    setSelectedImage(url); // Set the clicked image URL
+  };
+
+  const handleCloseDialog = () => {
+    setSelectedImage(null); // Clear the selected image on dialog close
   };
 
   return (
@@ -142,15 +172,18 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
                       <DialogTrigger asChild>
                         <Button variant="link">View Code</Button>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
+                      <DialogContent className="w-full max-w-none">
                         <DialogHeader>
                           <DialogTitle>Code</DialogTitle>
                           <DialogDescription>
                             Code for {template.name}
                           </DialogDescription>
                         </DialogHeader>
-                        <ScrollArea className="h-[300px] w-full p-4">
-                          <pre>{template.code}</pre>
+                        <ScrollArea className="h-[80vh] w-full p-4">
+                          <CodeCard
+                            backendCode={template.code}
+                            name={template.name}
+                          />
                         </ScrollArea>
                       </DialogContent>
                     </Dialog>
@@ -160,7 +193,7 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
                       <DialogTrigger asChild>
                         <Button variant="link">View Steps</Button>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
+                      <DialogContent className="w-full max-w-none">
                         <DialogHeader>
                           <DialogTitle>Implementation Steps</DialogTitle>
                           <DialogDescription>
@@ -178,7 +211,7 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
                       <DialogTrigger asChild>
                         <Button variant="link">View API</Button>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
+                      <DialogContent className="w-full max-w-none">
                         <DialogHeader>
                           <DialogTitle>API Required</DialogTitle>
                           <DialogDescription>
@@ -196,7 +229,7 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
                       <DialogTrigger asChild>
                         <Button variant="link">View Docs</Button>
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
+                      <DialogContent className="w-full max-w-none">
                         <DialogHeader>
                           <DialogTitle>Documentation</DialogTitle>
                           <DialogDescription>
@@ -210,29 +243,62 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
                     </Dialog>
                   </TableCell>
                   <TableCell>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="link">View Image</Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
-                        <DialogHeader>
-                          <DialogTitle>Image</DialogTitle>
-                          <DialogDescription>
-                            Image for {template.name}
-                          </DialogDescription>
-                        </DialogHeader>
-                        <ScrollArea className="h-[300px] w-full p-4">
-                          <img src={template.imageUrl} alt={template.name} className="w-full h-auto" />
-                        </ScrollArea>
-                      </DialogContent>
-                    </Dialog>
-                  </TableCell>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button variant="link">View Image</Button>
+    </DialogTrigger>
+    <DialogContent className="w-full max-w-none">
+      <DialogHeader>
+        <DialogTitle>Image</DialogTitle>
+        <DialogDescription>
+          Image for {template.name}
+        </DialogDescription>
+      </DialogHeader>
+       <>
+      <ScrollArea className="h-[80vh] w-full p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {template.imageUrl.split(',').map((url, index) => (
+          <img
+            key={index}
+            src={url.trim()} // Trim any whitespace
+            alt={`Image for ${template.name} ${index + 1}`} // Unique alt text for accessibility
+            className="w-full h-auto cursor-pointer mb-2 rounded" // Add margin for spacing and styling
+            onClick={() => handleImageClick(url.trim())} // Open image on click
+          />
+        ))}
+      </ScrollArea>
+
+      {/* Dialog to show the selected image in full width */}
+      {selectedImage && (
+        <Dialog open={!!selectedImage} onOpenChange={handleCloseDialog}>
+          <DialogContent className="container w-full max-w-full">
+            <img
+              src={selectedImage}
+              alt="Selected"
+              className="w-full h-full" // Full width for selected image
+            />
+            <button onClick={handleCloseDialog} className="mt-4">Close</button>
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
+    </DialogContent>
+  </Dialog>
+</TableCell>
+
                   <TableCell>
                     <div className="flex space-x-2">
-                      <Button variant="ghost" size="sm" onClick={() => handleEdit(template.id)}>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleEdit(template.id)}
+                      >
                         <Pencil className="h-4 w-4 text-green-500" />
                       </Button>
-                      <Button variant="ghost" size="sm" onClick={() => handleDelete(template.id)}>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => handleDelete(template.id)}
+                      >
                         <Trash2 className="h-4 w-4 text-red-500" />
                       </Button>
                     </div>
@@ -252,7 +318,8 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
 
       <div className="mt-4 flex items-center justify-between">
         <div className="text-sm text-gray-500">
-          Showing {Math.min(filteredTemplates.length, ITEMS_PER_PAGE)} of {filteredTemplates.length} results
+          Showing {Math.min(filteredTemplates.length, ITEMS_PER_PAGE)} of{" "}
+          {filteredTemplates.length} results
         </div>
         <div className="flex space-x-2">
           <Button
@@ -262,10 +329,14 @@ export default function DeleteComponent({ setActiveSection }: { setActiveSection
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
-          <span>{currentPage} / {totalPages}</span>
+          <span>
+            {currentPage} / {totalPages}
+          </span>
           <Button
             variant="outline"
-            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
             disabled={currentPage === totalPages}
           >
             <ChevronRight className="h-4 w-4" />
