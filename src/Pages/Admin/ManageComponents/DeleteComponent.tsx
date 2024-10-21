@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { PlusCircle, Pencil, Trash2, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { useState } from 'react';
+import { PlusCircle, Pencil, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -9,67 +9,88 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { useGetComponentsQuery } from '@/API/Components/componentApi';
+import { LoadingSkeleton } from '@/Pages/Common/LoadingSkelton';
 
 interface Template {
-  id: string
-  name: string
-  description: string
-  category: string
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  code: string;
+  implementationSteps: string;
+  apiRequired: string;
+  documentation: string;
+  imageUrl: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
-const ITEMS_PER_PAGE = 5
+const ITEMS_PER_PAGE = 5;
 
-export default function DeleteComponent({ setActiveSection }: any) {
-  const [templates, setTemplates] = useState<Template[]>([
-    { id: '1', name: 'Template 1', description: 'Description 1', category: 'Web' },
-    { id: '2', name: 'Template 2', description: 'Description 2', category: 'Mobile' },
-    { id: '3', name: 'Template 3', description: 'Description 3', category: 'Desktop' },
-    { id: '4', name: 'Template 4', description: 'Description 4', category: 'Web' },
-    { id: '5', name: 'Template 5', description: 'Description 5', category: 'Mobile' },
-    { id: '6', name: 'Template 6', description: 'Description 6', category: 'Desktop' },
-    { id: '7', name: 'Template 7', description: 'Description 7', category: 'Web' },
-  ])
+export default function DeleteComponent({ setActiveSection }: { setActiveSection: (section: string) => void }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterCategory, setFilterCategory] = useState('all');
+  const { data, isLoading, error } = useGetComponentsQuery(undefined);
 
-  const [currentPage, setCurrentPage] = useState(1)
-  const [searchTerm, setSearchTerm] = useState('')
-  const [filterCategory, setFilterCategory] = useState('all') // Set initial value to "all"
+  // Handle loading and error states
+  if (isLoading) {
+    return <div><LoadingSkeleton/></div>;
+  }
 
+  if (error) {
+    return <div>Error loading components</div>;
+  }
+
+  // Extract components from the API response
+  const templates: Template[] = Array.isArray(data?.components) ? data.components : [];
+
+  // Filter templates based on search term and category
   const filteredTemplates = templates.filter(template =>
-    template.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-    (filterCategory === 'all' || template.category === filterCategory)
-  )
+    template?.name?.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (filterCategory === 'all' || template?.category === filterCategory)
+  );
 
-  const totalPages = Math.ceil(filteredTemplates.length / ITEMS_PER_PAGE)
+  const totalPages = Math.max(1, Math.ceil(filteredTemplates.length / ITEMS_PER_PAGE));
   const paginatedTemplates = filteredTemplates.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,
     currentPage * ITEMS_PER_PAGE
-  )
+  );
 
   const handleAdd = () => {
-    setActiveSection('Add New Components')
-  }
+    setActiveSection('Add New Components');
+  };
 
   const handleEdit = (id: string) => {
-    console.log('Edit template', id)
-  }
+    console.log('Edit template', id);
+  };
 
   const handleDelete = (id: string) => {
-    setTemplates(templates.filter(template => template.id !== id))
-  }
+    console.log('Delete template', id);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold mb-4 md:mb-0">Remove Component</h1>
-        <Button onClick={handleAdd} className="w-full md:w-auto">
+      <div className="flex justify-between items-center mb-6">
+        <Button className="ml-auto" onClick={handleAdd}>
           <PlusCircle className="mr-2 h-4 w-4" /> Add New Component
         </Button>
       </div>
@@ -101,6 +122,11 @@ export default function DeleteComponent({ setActiveSection }: any) {
               <TableHead>Name</TableHead>
               <TableHead>Description</TableHead>
               <TableHead>Category</TableHead>
+              <TableHead>Code</TableHead>
+              <TableHead>Implementation Steps</TableHead>
+              <TableHead>API Required</TableHead>
+              <TableHead>Documentation</TableHead>
+              <TableHead>Image URL</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -111,6 +137,96 @@ export default function DeleteComponent({ setActiveSection }: any) {
                   <TableCell className="font-medium">{template.name}</TableCell>
                   <TableCell>{template.description}</TableCell>
                   <TableCell>{template.category}</TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View Code</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Code</DialogTitle>
+                          <DialogDescription>
+                            Code for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <ScrollArea className="h-[300px] w-full p-4">
+                          <pre>{template.code}</pre>
+                        </ScrollArea>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View Steps</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Implementation Steps</DialogTitle>
+                          <DialogDescription>
+                            Steps for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <ScrollArea className="h-[300px] w-full p-4">
+                          <pre>{template.implementationSteps}</pre>
+                        </ScrollArea>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View API</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>API Required</DialogTitle>
+                          <DialogDescription>
+                            APIs for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <ScrollArea className="h-[300px] w-full p-4">
+                          <pre>{template.apiRequired}</pre>
+                        </ScrollArea>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View Docs</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Documentation</DialogTitle>
+                          <DialogDescription>
+                            Documentation for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <ScrollArea className="h-[300px] w-full p-4">
+                          <pre>{template.documentation}</pre>
+                        </ScrollArea>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
+                  <TableCell>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View Image</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Image</DialogTitle>
+                          <DialogDescription>
+                            Image for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <ScrollArea className="h-[300px] w-full p-4">
+                          <img src={template.imageUrl} alt={template.name} className="w-full h-auto" />
+                        </ScrollArea>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
                   <TableCell>
                     <div className="flex space-x-2">
                       <Button variant="ghost" size="sm" onClick={() => handleEdit(template.id)}>
@@ -125,7 +241,7 @@ export default function DeleteComponent({ setActiveSection }: any) {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={4} className="text-center">
+                <TableCell colSpan={9} className="text-center">
                   No templates found
                 </TableCell>
               </TableRow>
@@ -141,16 +257,15 @@ export default function DeleteComponent({ setActiveSection }: any) {
         <div className="flex space-x-2">
           <Button
             variant="outline"
-            size="sm"
-            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
+          <span>{currentPage} / {totalPages}</span>
           <Button
             variant="outline"
-            size="sm"
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
           >
             <ChevronRight className="h-4 w-4" />
@@ -158,5 +273,5 @@ export default function DeleteComponent({ setActiveSection }: any) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -2,6 +2,7 @@ import {
   Cloud,
   CreditCard,
   Github,
+  LayoutDashboard,
   LifeBuoy,
   LogOut,
   Settings,
@@ -103,7 +104,7 @@ function UserProfile({ name }: any) {
               <span>Billing</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={handleManageApplication}>
-              <CreditCard className="mr-2 h-4 w-4" />
+              <LayoutDashboard className="mr-2 h-4 w-4" />
               <span>Manage Application</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={handleSettings}>

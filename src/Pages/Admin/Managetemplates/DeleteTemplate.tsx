@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PlusCircle, Pencil, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import {
   Table,
   TableBody,
@@ -17,6 +18,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 
@@ -31,7 +39,7 @@ interface Template {
   apiList: string[];
 }
 
-export default function DeleteTemplate({setActiveSection}:any) {
+export default function DeleteTemplate({setActiveSection}: {setActiveSection: (section: string) => void}) {
   const [templates, setTemplates] = useState<Template[]>([
     {
       id: "1",
@@ -60,21 +68,51 @@ export default function DeleteTemplate({setActiveSection}:any) {
     },
   ]);
 
+  const [searchTerm, setSearchTerm] = useState('')
+  const [filterCategory, setFilterCategory] = useState('all')
+
+  const filteredTemplates = templates.filter(template =>
+    template.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+    (filterCategory === 'all' || template.techStack.includes(filterCategory))
+  )
+
   const handleDelete = (id: string) => {
     setTemplates(templates.filter((template) => template.id !== id));
   };
-  const handleAddComponent = () => {
+
+  const handleAddTemplate = () => {
     setActiveSection("Add New Templates");
   };
   
-  
   return (
-    <div className=" min-h-screen w-full py-10">
+    <div className="min-h-screen w-full py-10">
       <div className="flex justify-between items-center mb-6">
-        <Button className="ml-auto" onClick={handleAddComponent}>
+        <Button className="ml-auto" onClick={handleAddTemplate}>
           <PlusCircle className="mr-2 h-4 w-4" /> Add New Template
         </Button>
-        
+      </div>
+
+      <div className="mb-4 flex flex-col md:flex-row gap-4">
+        <Input
+          placeholder="Search templates..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="w-full md:w-1/2"
+        />
+        <Select value={filterCategory} onValueChange={setFilterCategory}>
+          <SelectTrigger className="w-full md:w-1/4">
+            <SelectValue placeholder="Filter by category" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Categories</SelectItem>
+            <SelectItem value="React">React</SelectItem>
+            <SelectItem value="Node.js">Node.js</SelectItem>
+            <SelectItem value="Vue.js">Vue.js</SelectItem>
+            <SelectItem value="Express">Express</SelectItem>
+            <SelectItem value="MongoDB">MongoDB</SelectItem>
+            <SelectItem value="PostgreSQL">PostgreSQL</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="w-full border rounded-lg overflow-hidden">
@@ -92,7 +130,7 @@ export default function DeleteTemplate({setActiveSection}:any) {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {templates.map((template) => (
+            {filteredTemplates.map((template) => (
               <TableRow key={template.id}>
                 <TableCell className="font-medium">{template.name}</TableCell>
                 <TableCell>{template.description}</TableCell>
