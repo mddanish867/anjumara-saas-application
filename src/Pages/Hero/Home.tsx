@@ -5,7 +5,6 @@ import Interviews from "../Services/InterviewPrep/Interviews";
 import Template from "../Templates/Template";
 import TechNetworkDiagram from "../Footer/TechNetworkDiagram";
 import TestimonialSlider from "../Common/TestimonialSlider";
-import CodeCard from "../Common/CodeCard";
 import GlowingCard3D from "../Common/GlowingCard3D";
 import AutoCompleteTextCard from "../Common/AutoCompleteTextCard";
 import ApiCategoryCard from "../Common/ApiCategoryCard";
@@ -22,7 +21,6 @@ function Home() {
       <Interviews />
       <Client />
       <TechNetworkDiagram/>
-      <CodeCard/>
       <GlowingCard3D/>
       <AutoCompleteTextCard/>
       <AnimatedStatistics/>
