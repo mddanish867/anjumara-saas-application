@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 import {
   PlusCircle,
   Pencil,
@@ -32,9 +33,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useGetComponentsQuery } from "@/API/Components/componentApi";
+import { useGetComponentsQuery,useDeleteComponentMutation  } from "@/API/Components/componentApi";
 import { LoadingSkeleton } from "@/Pages/Common/LoadingSkelton";
 import CodeCard from "@/Pages/Common/CodeCard";
+import ComponentNotFound from "@/Pages/Common/ComponentNotFound";
 
 interface Template {
   id: string;
@@ -61,8 +63,12 @@ export default function DeleteComponent({
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [componentToDelete, setComponentToDelete] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false); 
   const { data, isLoading, error } = useGetComponentsQuery(undefined);
-
+  const [deleteComponent] = useDeleteComponentMutation();
+  
   // Handle loading and error states
   if (isLoading) {
     return (
@@ -73,7 +79,7 @@ export default function DeleteComponent({
   }
 
   if (error) {
-    return <div>Error loading components</div>;
+    return <div><ComponentNotFound/></div>;
   }
 
   // Extract components from the API response
@@ -106,7 +112,22 @@ export default function DeleteComponent({
   };
 
   const handleDelete = (id: string) => {
-    console.log("Delete template", id);
+    setComponentToDelete(id); // Set the component to be deleted
+    setShowDeleteConfirm(true); // Show the delete confirmation alert
+  };
+
+  const confirmDelete = async () => {
+    setLoading(true); // Start loading
+    try {
+      if (componentToDelete) {
+        await deleteComponent(componentToDelete); // Perform the delete mutation
+        setShowDeleteConfirm(false); // Close the dialog after deletion
+      }
+    } catch (error) {
+      console.error("Error deleting component:", error);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
   const handleImageClick = (url:any) => {
@@ -343,6 +364,30 @@ export default function DeleteComponent({
           </Button>
         </div>
       </div>
+      {/* Delete Confirmation Dialog */}
+      {/* Delete Confirmation Dialog */}
+      <Dialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Confirm Delete</DialogTitle>
+            <DialogDescription>
+              Are you sure you want to delete this component?
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end space-x-2 mt-4">
+            <Button variant="ghost" onClick={() => setShowDeleteConfirm(false)} disabled={loading}>
+              Cancel
+            </Button>
+            <Button variant="destructive" onClick={confirmDelete} disabled={loading}>
+              {loading ? (
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Loading spinner
+              ) : (
+                "Delete"
+              )}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
