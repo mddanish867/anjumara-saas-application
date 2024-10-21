@@ -33,7 +33,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useGetComponentsQuery,useDeleteComponentMutation  } from "@/API/Components/componentApi";
+import {
+  useGetComponentsQuery,
+  useDeleteComponentMutation,
+} from "@/API/Components/componentApi";
 import { LoadingSkeleton } from "@/Pages/Common/LoadingSkelton";
 import CodeCard from "@/Pages/Common/CodeCard";
 import ComponentNotFound from "@/Pages/Common/ComponentNotFound";
@@ -64,11 +67,13 @@ export default function DeleteComponent({
   const [filterCategory, setFilterCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const [componentToDelete, setComponentToDelete] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false); 
+  const [componentToDelete, setComponentToDelete] = useState<string | null>(
+    null
+  );
+  const [loading, setLoading] = useState(false);
   const { data, isLoading, error } = useGetComponentsQuery(undefined);
   const [deleteComponent] = useDeleteComponentMutation();
-  
+
   // Handle loading and error states
   if (isLoading) {
     return (
@@ -79,7 +84,11 @@ export default function DeleteComponent({
   }
 
   if (error) {
-    return <div><ComponentNotFound/></div>;
+    return (
+      <div>
+        <ComponentNotFound />
+      </div>
+    );
   }
 
   // Extract components from the API response
@@ -130,7 +139,7 @@ export default function DeleteComponent({
     }
   };
 
-  const handleImageClick = (url:any) => {
+  const handleImageClick = (url: any) => {
     setSelectedImage(url); // Set the clicked image URL
   };
 
@@ -264,47 +273,55 @@ export default function DeleteComponent({
                     </Dialog>
                   </TableCell>
                   <TableCell>
-  <Dialog>
-    <DialogTrigger asChild>
-      <Button variant="link">View Image</Button>
-    </DialogTrigger>
-    <DialogContent className="w-full max-w-none">
-      <DialogHeader>
-        <DialogTitle>Image</DialogTitle>
-        <DialogDescription>
-          Image for {template.name}
-        </DialogDescription>
-      </DialogHeader>
-       <>
-      <ScrollArea className="h-[80vh] w-full p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {template.imageUrl.split(',').map((url, index) => (
-          <img
-            key={index}
-            src={url.trim()} // Trim any whitespace
-            alt={`Image for ${template.name} ${index + 1}`} // Unique alt text for accessibility
-            className="w-full h-auto cursor-pointer mb-2 rounded" // Add margin for spacing and styling
-            onClick={() => handleImageClick(url.trim())} // Open image on click
-          />
-        ))}
-      </ScrollArea>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="link">View Image</Button>
+                      </DialogTrigger>
+                      <DialogContent className="w-full max-w-none">
+                        <DialogHeader>
+                          <DialogTitle>Image</DialogTitle>
+                          <DialogDescription>
+                            Image for {template.name}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <>
+                          <ScrollArea className="h-[80vh] w-full p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            {template.imageUrl.split(",").map((url, index) => (
+                              <img
+                                key={index}
+                                src={url.trim()} // Trim any whitespace
+                                alt={`Image for ${template.name} ${index + 1}`} // Unique alt text for accessibility
+                                className="w-full h-auto cursor-pointer mb-2 rounded" // Add margin for spacing and styling
+                                onClick={() => handleImageClick(url.trim())} // Open image on click
+                              />
+                            ))}
+                          </ScrollArea>
 
-      {/* Dialog to show the selected image in full width */}
-      {selectedImage && (
-        <Dialog open={!!selectedImage} onOpenChange={handleCloseDialog}>
-          <DialogContent className="container w-full max-w-full">
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="w-full h-full" // Full width for selected image
-            />
-            <button onClick={handleCloseDialog} className="mt-4">Close</button>
-          </DialogContent>
-        </Dialog>
-      )}
-    </>
-    </DialogContent>
-  </Dialog>
-</TableCell>
+                          {/* Dialog to show the selected image in full width */}
+                          {selectedImage && (
+                            <Dialog
+                              open={!!selectedImage}
+                              onOpenChange={handleCloseDialog}
+                            >
+                              <DialogContent className="container w-full max-w-full">
+                                <img
+                                  src={selectedImage}
+                                  alt="Selected"
+                                  className="w-full h-full" // Full width for selected image
+                                />
+                                <button
+                                  onClick={handleCloseDialog}
+                                  className="mt-4"
+                                >
+                                  Close
+                                </button>
+                              </DialogContent>
+                            </Dialog>
+                          )}
+                        </>
+                      </DialogContent>
+                    </Dialog>
+                  </TableCell>
 
                   <TableCell>
                     <div className="flex space-x-2">
@@ -375,10 +392,18 @@ export default function DeleteComponent({
             </DialogDescription>
           </DialogHeader>
           <div className="flex justify-end space-x-2 mt-4">
-            <Button variant="ghost" onClick={() => setShowDeleteConfirm(false)} disabled={loading}>
+            <Button
+              variant="ghost"
+              onClick={() => setShowDeleteConfirm(false)}
+              disabled={loading}
+            >
               Cancel
             </Button>
-            <Button variant="destructive" onClick={confirmDelete} disabled={loading}>
+            <Button
+              variant="destructive"
+              onClick={confirmDelete}
+              disabled={loading}
+            >
               {loading ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" /> // Loading spinner
               ) : (

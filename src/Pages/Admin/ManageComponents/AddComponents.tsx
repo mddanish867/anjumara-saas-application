@@ -8,7 +8,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import toast from "react-hot-toast";
 
-
 const AddComponents = () => {
   const decodedToken = decodeToken();
   const [name, setName] = useState("");
@@ -19,8 +18,7 @@ const AddComponents = () => {
   const [apiRequired, setApiRequired] = useState([""]);
   const [documentation, setDocumentation] = useState("");
   const [category, setCategory] = useState("");
-  const [uploadImages, { isLoading }] =
-    useAddComponentMutation();
+  const [uploadImages, { isLoading }] = useAddComponentMutation();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFiles(e.target.files);
@@ -277,7 +275,7 @@ const AddComponents = () => {
           )}
           {isLoading ? "Adding Component..." : "Add Component"}
         </Button>
-      </form>      
+      </form>
     </div>
   );
 };

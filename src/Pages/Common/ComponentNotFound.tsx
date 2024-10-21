@@ -14,8 +14,8 @@ export default function ComponentNotFound() {
             Not Found
           </h2>
           <p className="mt-2 text-gray-600 dark:text-gray-400">
-            We couldn't find the details you're looking for. It might have
-            been removed or doesn't exist.
+            We couldn't find the details you're looking for. It might have been
+            removed or doesn't exist.
           </p>
         </div>
         <div className="mt-6 flex flex-col space-y-2">
