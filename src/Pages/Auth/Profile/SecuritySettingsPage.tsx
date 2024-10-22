@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -8,12 +8,12 @@ import { Switch } from "@/components/ui/switch";
 const SecuritySettingsPage = () => {
   return (
     <motion.div
-      className="mt-20"
+      className="mt-20 pb-20"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="w-full max-w-2xl mx-auto">
+      <Card className="w-full max-w-2xl mx-auto min-h-adjusted">
         <CardHeader>
           <CardTitle>Security Settings</CardTitle>
           <CardDescription>Manage your account security preferences</CardDescription>
