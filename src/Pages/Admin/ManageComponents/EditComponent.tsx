@@ -1,12 +1,15 @@
-import { useAddComponentMutation } from "@/API/Components/componentApi";
+import { useUpdateComponentMutation } from "@/API/Components/componentApi";
+import { useGetComponentByIdQuery } from "@/API/Components/componentApi";
+import { useSearchParams } from 'react-router-dom';
 import { decodeToken } from "@/Pages/helper/decodedToke";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // Added useEffect
 import { Loader, PlusCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import toast from "react-hot-toast";
+import { ComponentLoader } from "@/Pages/Common/ComponentLoader"; // Import ComponentLoader
 
 const EditTemplateForm = ({
   setActiveSection,
@@ -22,7 +25,37 @@ const EditTemplateForm = ({
   const [apiRequired, setApiRequired] = useState([""]);
   const [documentation, setDocumentation] = useState("");
   const [category, setCategory] = useState("");
-  const [uploadImages, { isLoading }] = useAddComponentMutation();
+  const [updateComponent, { isLoading }] = useUpdateComponentMutation();
+
+  // Extract componentId from URL
+  const [searchParams] = useSearchParams();
+  const componentId = searchParams.get('componentId');
+  const { data, isFetching } = useGetComponentByIdQuery( // Check if data is being fetched
+    componentId ?? ''
+  );
+
+  // Added useEffect to bind form data
+  useEffect(() => {
+    if (data?.component) {
+      setName(data.component.name || "");
+      setDescription(data.component.description || "");
+      setCode(data.component.code || "");
+      // Convert implementation steps string to array
+      setImplementationSteps(
+        data.component.implementationSteps ? 
+        data.component.implementationSteps.split(',') : 
+        [""]
+      );
+      // Convert API required string to array
+      setApiRequired(
+        data.component.apiRequired ? 
+        data.component.apiRequired.split(',') : 
+        [""]
+      );
+      setDocumentation(data.component.documentation || "");
+      setCategory(data.component.category || "");
+    }
+  }, [data]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFiles(e.target.files);
@@ -56,30 +89,20 @@ const EditTemplateForm = ({
     });
 
     try {
-      const response = await uploadImages(formData);
-      if (response.error) {
-        toast.error(("Component not added! " + response.error) as string);
+      const response = await updateComponent({ id: componentId, formData });
+      if ('error' in response) {
+        toast.error(("Component not updated! " + response.error) as string);
       } else {
-        toast.success("Component added successfully");
+        toast.success("Component updated successfully");
         setTimeout(() => {
           if (window.history.length > 1) {
             setActiveSection("Remove Components");
           }
         }, 2000);
       }
-
-      // Clear state after successful upload
-      setName("");
-      setDescription("");
-      setCode("");
-      setFiles(null);
-      setImplementationSteps([""]);
-      setApiRequired([""]);
-      setDocumentation("");
-      setCategory("");
     } catch (error) {
       console.error("Upload failed:", error);
-      toast.error("Error adding component: " + "Unknown error");
+      toast.error("Error updating component: " + "Unknown error");
     }
   };
 
@@ -108,6 +131,11 @@ const EditTemplateForm = ({
     newArray[index] = value;
     setter(newArray);
   };
+
+  // Conditionally render loader if fetching data
+  if (isFetching) {
+    return <ComponentLoader />; // Show loader while data is fetching
+  }
 
   return (
     <div className="w-full min-h-screen border p-6 space-y-8">
@@ -264,23 +292,20 @@ const EditTemplateForm = ({
         </div>
 
         <div>
-          <Label htmlFor="files">Upload Images</Label>
+          <Label htmlFor="images">Component Files</Label>
           <Input
-            id="files"
+            id="images"
             type="file"
-            multiple
             onChange={handleFileChange}
+            multiple
             disabled={isLoading}
+            accept=".png,.jpg,.jpeg,.gif"
           />
         </div>
 
         <Button type="submit" disabled={isLoading || !files}>
-          {isLoading ? (
-            <Loader className="animate-spin h-5 w-5 mr-2" />
-          ) : (
-            <PlusCircle className="h-5 w-5 mr-2" />
-          )}
-          {isLoading ? "Adding Component..." : "Add Component"}
+          {isLoading ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : null}
+          {isLoading ? "Updating Component..." : "Save Component"} 
         </Button>
       </form>
     </div>

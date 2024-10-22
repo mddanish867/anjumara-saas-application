@@ -6,6 +6,7 @@ import DeleteTemplate from "./Managetemplates/DeleteTemplate";
 import AddComponents from "./ManageComponents/AddComponents";
 import DeleteComponent from "./ManageComponents/DeleteComponent";
 import EditComponent from "./ManageComponents/EditComponent";
+import EditTemplateForm from "./Managetemplates/EditTemplateForm";
 
 const docSections = [
   {
@@ -128,7 +129,7 @@ export default function ManageApplication() {
           </div>
           <div className="prose max-w-none">
             {activeSection === "add-new-templates" && <AddTemplateForm />}
-            {activeSection === "edit-components" && <EditComponent setActiveSection={handleNavigation}/>}
+            {activeSection === "edit-templates" && <EditTemplateForm />}
             {activeSection === "remove-templates" && (
               <DeleteTemplate setActiveSection={handleNavigation} />
             )}
@@ -138,6 +139,7 @@ export default function ManageApplication() {
             {activeSection === "remove-components" && (
               <DeleteComponent setActiveSection={handleNavigation} />
             )}
+            {activeSection === "edit-component" && <EditComponent setActiveSection={handleNavigation} />}
           </div>
         </div>
       </main>

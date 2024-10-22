@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ClipboardIcon, CheckIcon } from 'lucide-react'
 
-export default function CodeCard({ backendCode, name }: { backendCode: string, name: string }) {
+export default function CodeCard({ backendCode, name, className = '' }: { backendCode: string, name: string, className?: string }) {
   const [copied, setCopied] = useState(false)
 
   const copyToClipboard = () => {
@@ -11,8 +11,8 @@ export default function CodeCard({ backendCode, name }: { backendCode: string, n
   }
 
   return (
-    <div className="w-full p-4">
-      <div className="bg-white dark:bg-transparent rounded-lg shadow-lg overflow-hidden">
+    <div className={`w-full ${className} p-0 sm:p-4`}>
+      <div className="bg-white dark:bg-transparent rounded-none sm:rounded-lg shadow-lg overflow-hidden w-full">
         <div className="bg-gray-800 px-4 py-2 flex justify-between items-center">
           <span className="text-gray-200 font-mono text-sm">{name}.tsx</span>
           <button
