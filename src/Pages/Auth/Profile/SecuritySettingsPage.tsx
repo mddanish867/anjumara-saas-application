@@ -1,56 +1,83 @@
-import { motion } from 'framer-motion'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Switch } from '@/components/ui/switch'
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 const SecuritySettingsPage = () => {
   return (
-    <div className="min-h-screen border bg-white  dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
-      <motion.div
-        className="bg-white border-none dark:bg-transparent dark:text-gray-50 p-4 sm:p-6 md:p-8 rounded-lg  w-full max-w-2xl"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900 dark:bg-transparent dark:text-gray-50">Security Settings</h2>
-        <div className="space-y-6 sm:space-y-8">
+    <motion.div
+      className="mt-20"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card className="w-full max-w-2xl mx-auto">
+        <CardHeader>
+          <CardTitle>Security Settings</CardTitle>
+          <CardDescription>Manage your account security preferences</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-6">
           <div className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:bg-transparent dark:text-gray-50">Change Password</h3>
+            <h3 className="text-lg font-semibold">Change Password</h3>
             <div className="space-y-2">
-              <Label htmlFor="current-password" className="text-gray-700 dark:bg-transparent dark:text-gray-50">Current Password</Label>
-              <Input id="current-password" type="password" className="bg-white  text-gray-900 dark:bg-transparent dark:text-gray-50" />
+              <Label htmlFor="current-password">Current Password</Label>
+              <Input 
+                id="current-password" 
+                type="password" 
+                className="bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100" 
+              />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="new-password" className="text-gray-700 dark:bg-transparent dark:text-gray-50">New Password</Label>
-              <Input id="new-password" type="password" className="bg-white  text-gray-900 dark:bg-transparent dark:text-gray-50"/>
+              <Label htmlFor="new-password">New Password</Label>
+              <Input 
+                id="new-password" 
+                type="password" 
+                className="bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100"
+              />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="confirm-password" className="text-gray-700 dark:bg-transparent dark:text-gray-50">Confirm New Password</Label>
-              <Input id="confirm-password" type="password" className="bg-white  text-gray-900 dark:bg-transparent dark:text-gray-50" />
+              <Label htmlFor="confirm-password">Confirm New Password</Label>
+              <Input 
+                id="confirm-password" 
+                type="password" 
+                className="bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100" 
+              />
             </div>
-            <Button className="w-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-50 dark:text-gray-950">
+            <Button className="w-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200">
               Update Password
             </Button>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">Two-Factor Authentication</h3>
-            <span className='text-gray-950 dark:text-gray-50 text-sm text-muted-foreground dark:text-muted-foreground'>Protect your account by adding an extra layer of security.</span>
+            <h3 className="text-lg font-semibold">Two-Factor Authentication</h3>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Protect your account by adding an extra layer of security.
+            </p>
             <div className="flex items-center justify-between">
-              <Label htmlFor="two-factor" className="text-base sm:text-md text-gray-700 dark:text-gray-300">Enable Two-Factor Authentication</Label>
-              <Switch id="two-factor" className="bg-gray-200  dark:bg-gray-600 data-[state=checked]:bg-blue-400 dark:data-[state=checked]:bg-blue-400" />
+              <Label htmlFor="two-factor" className="text-base">Enable Two-Factor Authentication</Label>
+              <Switch 
+                id="two-factor" 
+                className="bg-gray-200 dark:bg-gray-600 data-[state=checked]:bg-blue-400 dark:data-[state=checked]:bg-blue-400" 
+              />
             </div>
           </div>
           <div className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-200">Session Management</h3>
-            <Button variant="outline" className="w-full text-gray-900 dark:text-gray-50 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-50 dark:hover:text-gray-950">
+            <h3 className="text-lg font-semibold">Session Management</h3>
+            <Button 
+              variant="outline" 
+              className="w-full text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800"
+            >
               Log Out of All Devices
             </Button>
           </div>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full">Save Changes</Button>
+        </CardFooter>
+      </Card>
+    </motion.div>
+  );
+};
 
-export default SecuritySettingsPage
+export default SecuritySettingsPage;

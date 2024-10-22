@@ -10,14 +10,14 @@ const UserHistoryPage = () => {
   ];
 
   return (
-    <div className="w-full h-full mt-20 border">
+    <div className="w-full min-h-screen mt-20">
       <motion.div
         className="bg-white dark:bg-transparent dark:text-gray-50 p-8 rounded-lg shadow-sm w-full h-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl font-bold mb-6 text-gray-950 dark:text-gray-50">Login History</h2>
+        <h2 className="text-2xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">Login History</h2>
         <Table className="w-full">
           <TableHeader>
             <TableRow className="border-b border-gray-200 dark:border-gray-600">

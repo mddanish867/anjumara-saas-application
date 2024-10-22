@@ -3,9 +3,9 @@ export default function Footer() {
     return (       
 <>
 
-<footer className="bg-transparent mt-10">
-  <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-    {/* <div className="mx-auto max-w-md">
+<footer className="min-h-screen bg-transparent mt-20">
+  <div className="mx-auto w-full px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-md">
       <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
         Want us to email you with the latest blockbuster news?
       </strong>
@@ -28,7 +28,7 @@ export default function Footer() {
           </button>
         </div>
       </form>
-    </div> */}
+    </div>
 
     <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
       <div className="mx-auto max-w-sm lg:max-w-none">

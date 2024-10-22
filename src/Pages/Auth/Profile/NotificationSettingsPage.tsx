@@ -5,14 +5,14 @@ import { Label } from '@/components/ui/label'
 
 const NotificationSettingsPage = () => {
   return (
-    <div className="border min-h-screen bg-white dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-16">
+    <div className="border min-h-screen bg-white dark:bg-transparent dark:text-gray-50 flex items-center justify-center p-4 mt-20">
       <motion.div
         className="bg-white -mt-40 dark:bg-transparent dark:text-gray-50 p-4 sm:p-6 md:p-8 rounded-lg shadow-sm w-full"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">
+        <h2 className="text-2xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-900 dark:text-gray-100">
           Notification Settings
         </h2>
         <div className="space-y-4 sm:space-y-6">
