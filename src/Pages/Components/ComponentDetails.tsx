@@ -21,13 +21,7 @@ function ComponentDetails() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl mt-20">
-      <h1 className="text-3xl font-bold mb-4">Login Form Component</h1>
-
-      <p className="text-lg mb-8">
-        A customizable and responsive login form component with email and
-        password fields, remember me checkbox, and forgot password link. Built
-        with React and Tailwind CSS.
-      </p>
+      
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">LoginForm</h1>
@@ -58,7 +52,7 @@ function ComponentDetails() {
                 <input
                   type="email"
                   id="email"
-                  className="w-full p-2 border rounded"
+                  className="w-full p-2 border rounded bg-transparent"
                 />
               </div>
               <div className="mb-4">
@@ -68,7 +62,7 @@ function ComponentDetails() {
                 <input
                   type="password"
                   id="password"
-                  className="w-full p-2 border rounded"
+                  className="w-full p-2 border rounded bg-transparent"
                 />
               </div>
               <button

@@ -156,7 +156,7 @@ export default function AllComponents() {
             </div>
           </motion.div>
         </section>
-
+        <Link to="/component-details"><span>More</span></Link>
         {filteredCategories.map((category) => (
           <div key={category.name} className="mb-12">
             <h2 className="text-2xl font-semibold  mb-6">{category.name}</h2>
@@ -187,6 +187,8 @@ export default function AllComponents() {
             </div>
           </div>
         ))}
+
+        
       </div>
     </section>
   );
