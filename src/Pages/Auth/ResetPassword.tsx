@@ -3,8 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useResetPasswordMutation } from "@/API/AuthAPI/authApi";
 import toast from "react-hot-toast";
-import { ColorRing } from "react-loader-spinner";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader } from "lucide-react";
 
 // Define the interface for form data
 interface FormData {
@@ -158,21 +157,7 @@ function ResetPassword() {
               disabled={isLoading}
             >
               {isLoading ? (
-                <ColorRing
-                  visible={true}
-                  height="52"
-                  width="52"
-                  ariaLabel="color-ring-loading"
-                  wrapperStyle={{}}
-                  wrapperClass="color-ring-wrapper"
-                  colors={[
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                  ]}
-                />
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
               ) : (
                 "Reset your password"
               )}

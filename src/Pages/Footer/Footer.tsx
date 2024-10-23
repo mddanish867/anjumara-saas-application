@@ -6,7 +6,7 @@ export default function Footer() {
 <footer className="min-h-screen bg-transparent mt-20">
   <div className="mx-auto w-full px-4 pb-8 pt-16 sm:px-6 lg:px-8">
     <div className="mx-auto max-w-md">
-      <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
+      <strong className="block text-center text-xl font-bold  sm:text-3xl">
         Want us to email you with the latest blockbuster news?
       </strong>
 
@@ -15,14 +15,14 @@ export default function Footer() {
           <label className="sr-only" htmlFor="email"> Email </label>
 
           <input
-            className="w-full rounded-full border border-gray-300 bg-white p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
+            className="w-full rounded-full border border-gray-300 bg-transparent  p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
             id="email"
             type="email"
             placeholder="example@AetherAI.com"
           />
 
           <button
-            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700"
+            className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-[#38bdf8] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#0a6891]"
           >
             Subscribe
           </button>

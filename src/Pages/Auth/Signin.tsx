@@ -5,8 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useLoginMutation } from "@/API/AuthAPI/authApi"; // Import the login mutation
 import toast from "react-hot-toast";
-import { ColorRing } from "react-loader-spinner";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader } from "lucide-react";
 import axios from "axios";
 
 // Define the type for your form data
@@ -178,21 +177,7 @@ export default function Signin() {
               disabled={isLoading}
             >
               {isLoading ? (
-                <ColorRing
-                  visible={true}
-                  height="48"
-                  width="48"
-                  ariaLabel="color-ring-loading"
-                  wrapperStyle={{}}
-                  wrapperClass="color-ring-wrapper"
-                  colors={[
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                  ]}
-                />
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
               ) : (
                 "Sign in"
               )}

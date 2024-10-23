@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { useForgotPasswordMutation } from "@/API/AuthAPI/authApi";
 import toast from "react-hot-toast";
-import { ColorRing } from "react-loader-spinner";
+import { Loader } from "lucide-react";
 
 // Define the interface for form data
 interface FormData {
@@ -77,21 +77,9 @@ function ForgotPassword() {
               className="w-full px-4 py-2 rounded-lg duration-150"
               disabled={isLoading}
             >
-              {isLoading ? (<ColorRing
-                  visible={true}
-                  height="52"
-                  width="52"
-                  ariaLabel="color-ring-loading"
-                  wrapperStyle={{}}
-                  wrapperClass="color-ring-wrapper"
-                  colors={[
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                  ]}
-                />) : ("Send reset link")}
+              {isLoading ? (
+               <Loader className="mr-2 h-4 w-4 animate-spin" />
+               ) : ("Send reset link")}
               
             </Button>
           </form>

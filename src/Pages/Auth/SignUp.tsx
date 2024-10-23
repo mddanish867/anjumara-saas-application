@@ -5,8 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useRegisterMutation } from "@/API/AuthAPI/authApi"; // Adjust the path based on your setup
 import toast from "react-hot-toast";
-import { ColorRing } from "react-loader-spinner";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Loader } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -154,21 +153,8 @@ export default function SignUp() {
               disabled={isLoading}
             >
               {isLoading ? (
-                <ColorRing
-                  visible={true}
-                  height="64"
-                  width="64"
-                  ariaLabel="color-ring-loading"
-                  wrapperStyle={{}}
-                  wrapperClass="color-ring-wrapper"
-                  colors={[
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                    "#38bdf8",
-                  ]}
-                />
+                <Loader className="mr-2 h-4 w-4 animate-spin" />
+                
               ) : (
                 "Create account"
               )}
