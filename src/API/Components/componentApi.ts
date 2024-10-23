@@ -5,7 +5,8 @@ export const componentApi = createApi({
   reducerPath: "componentApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://secure-auth-app-gamma.vercel.app/api/",
-  }), // Next.js API base path
+    credentials: 'include',
+  }), 
   tagTypes: ["Component"],
   endpoints: (builder) => ({
     // Mutation to add a component
