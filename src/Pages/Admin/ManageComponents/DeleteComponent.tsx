@@ -118,9 +118,9 @@ export default function DeleteComponent({
     setActiveSection("Add New Components");
   };
 
-  const handleEdit = (id: string) => {   
-    navigate(`/manage-application/edit-component?componentId=${id}`);   
-  }
+  const handleEdit = (id: string) => {
+    navigate(`/manage-application/edit-component?componentId=${id}`);
+  };
   const handleDelete = (id: string) => {
     navigate(`${location.pathname}?componentId=${id}`);
     setComponentToDelete(id); // Set the component to be deleted
@@ -202,7 +202,9 @@ export default function DeleteComponent({
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="link">View Code</Button>
+                        <Button variant="link" className="text-blue-600">
+                          View Code
+                        </Button>
                       </DialogTrigger>
                       <DialogContent className="w-full max-w-none">
                         <DialogHeader>
@@ -223,17 +225,38 @@ export default function DeleteComponent({
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="link">View Steps</Button>
+                        <Button
+                          variant="link"
+                          className="text-blue-600 hover:text-blue-800 font-medium"
+                        >
+                          View Steps
+                        </Button>
                       </DialogTrigger>
-                      <DialogContent className="w-full max-w-none">
-                        <DialogHeader>
-                          <DialogTitle>Implementation Steps</DialogTitle>
-                          <DialogDescription>
+                      <DialogContent className="w-[90vw] max-w-3xl">
+                        <DialogHeader className="border-b pb-4">
+                          <DialogTitle className="text-xl font-semibold">
+                            Implementation Steps
+                          </DialogTitle>
+                          <DialogDescription className="text-gray-600">
                             Steps for {template.name}
                           </DialogDescription>
                         </DialogHeader>
-                        <ScrollArea className="h-[300px] w-full p-4">
-                          <pre>{template.implementationSteps}</pre>
+                        <ScrollArea className="h-[60vh] w-full p-6">
+                          <ul className="space-y-4">
+                            {template.implementationSteps
+                              .split(",")
+                              .map((step, index) => (
+                                <li
+                                  key={index}
+                                  className="flex gap-3 items-start text-gray-700"
+                                >
+                                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-medium">
+                                    {index + 1}
+                                  </span>
+                                  <span className="pt-0.5">{step.trim()}</span>
+                                </li>
+                              ))}
+                          </ul>
                         </ScrollArea>
                       </DialogContent>
                     </Dialog>
@@ -241,7 +264,9 @@ export default function DeleteComponent({
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="link">View API</Button>
+                        <Button variant="link" className="text-blue-600">
+                          View API
+                        </Button>
                       </DialogTrigger>
                       <DialogContent className="w-full max-w-none">
                         <DialogHeader>
@@ -251,7 +276,21 @@ export default function DeleteComponent({
                           </DialogDescription>
                         </DialogHeader>
                         <ScrollArea className="h-[300px] w-full p-4">
-                          <pre>{template.apiRequired}</pre>
+                          <ul className="space-y-4">
+                            {template.apiRequired
+                              .split(",")
+                              .map((step, index) => (
+                                <li
+                                  key={index}
+                                  className="flex gap-3 items-start text-gray-700"
+                                >
+                                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-medium">
+                                    {index + 1}
+                                  </span>
+                                  <span className="pt-0.5">{step.trim()}</span>
+                                </li>
+                              ))}
+                          </ul>
                         </ScrollArea>
                       </DialogContent>
                     </Dialog>
@@ -259,7 +298,9 @@ export default function DeleteComponent({
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="link">View Docs</Button>
+                        <Button variant="link" className="text-blue-600">
+                          View Docs
+                        </Button>
                       </DialogTrigger>
                       <DialogContent className="w-full max-w-none">
                         <DialogHeader>
@@ -277,7 +318,9 @@ export default function DeleteComponent({
                   <TableCell>
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button variant="link">View Image</Button>
+                        <Button variant="link" className="text-blue-600">
+                          View Image
+                        </Button>
                       </DialogTrigger>
                       <DialogContent className="w-full max-w-none">
                         <DialogHeader>

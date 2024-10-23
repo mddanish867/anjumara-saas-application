@@ -35,7 +35,6 @@ export const componentApi = createApi({
     // Mutation to update a component
     updateComponent: builder.mutation({
       query: ({ id, formData }) => {
-        console.log('Updating component:', id); // Debug log
         return {
           url: `components/update?id=${id}`,
           method: "PUT",
