@@ -20,8 +20,6 @@ export default function AllComponents() {
   const [searchTerm, setSearchTerm] = useState("");
   const [stars, setStars] = useState<React.CSSProperties[]>([]);
 
-  
-
   useEffect(() => {
     const newStars = Array.from({ length: 50 }, () => ({
       left: `${Math.random() * 100}%`,
@@ -38,13 +36,15 @@ export default function AllComponents() {
           name: "OTP Verification",
           link: `${location.pathname}/otp-verification`,
           img: "/otp-verification.png",
-          description: "Secure OTP verification component for user authentication.",
+          description:
+            "Secure OTP verification component for user authentication.",
         },
         {
           name: "Register",
           link: `${location.pathname}/register`,
           img: "/register.png",
-          description: "User-friendly registration form for new account creation.",
+          description:
+            "User-friendly registration form for new account creation.",
         },
         {
           name: "Login",
@@ -67,7 +67,8 @@ export default function AllComponents() {
           name: "Ecommerce Filter 1",
           link: `${location.pathname}/ecommerce-filter`,
           img: "/ecommerce-filter.png",
-          description: "Advanced product filtering system for e-commerce platforms.",
+          description:
+            "Advanced product filtering system for e-commerce platforms.",
         },
         {
           name: "Ecommerce Filter 2",
@@ -101,55 +102,60 @@ export default function AllComponents() {
           name: "Code Display",
           link: `${location.pathname}/display-components`,
           img: "/display-components.png",
-          description: "Component for displaying and highlighting code snippets.",
+          description:
+            "Component for displaying and highlighting code snippets.",
         },
       ],
     },
   ];
 
-  const filteredCategories = categories.map(category => ({
-    ...category,
-    components: category.components.filter(component =>
-      component.name.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  })).filter(category => category.components.length > 0);
+  const filteredCategories = categories
+    .map((category) => ({
+      ...category,
+      components: category.components.filter((component) =>
+        component.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    }))
+    .filter((category) => category.components.length > 0);
 
   return (
     <section className="bg-transparent min-h-screen mt-24">
       {stars.map((style, index) => (
-          <Star key={index} style={style} />
-        ))}
+        <Star key={index} style={style} />
+      ))}
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
-      <section className="flex items-center justify-center bg-grid-white/[0.2] relative">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center z-10"
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-orange-500 dark:text-orange-200 mb-6">
-          Beautifully crafted <span className="text-[#38bdf8]">Component Library</span>           </h1>
-          <p className="text-sm md:text-2xl text-orange-500 dark:text-orange-200 mb-8">
-          Explore our collection of pre-built, customizable components to accelerate   <br/> your web development process. From authentication forms to e-commerce filters, <br/>find the perfect building blocks for your next project.
-          </p>
-          <div className="mb-8 mt-10">
-          <div className="relative max-w-md mx-auto">
-            <input
-              type="text"
-              placeholder="Search new components..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 bg-transparent rounded-md focus:outline-none focus:border-none focus:ring-2 focus:ring-[#38bdf8]"
-            />
-            <Search className="absolute left-3 top-2.5 h-5 w-5 text-[#38bdf8]" />
-          </div>
-        </div>
-        </motion.div>
-      </section>
-       
-
-        
+        <section className="flex items-center justify-center bg-grid-white/[0.2] relative">
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center z-10"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold text-orange-500 dark:text-orange-200 mb-6">
+              Beautifully crafted{" "}
+              <span className="text-[#38bdf8]">Component Library</span>{" "}
+            </h1>
+            <p className="text-sm md:text-2xl text-orange-500 dark:text-orange-200 mb-8">
+              Explore our collection of pre-built, customizable components to
+              accelerate <br /> your web development process. From
+              authentication forms to e-commerce filters, <br />
+              find the perfect building blocks for your next project.
+            </p>
+            <div className="mb-8 mt-12">
+              <div className="relative max-w-md mx-auto">
+                <input
+                  type="text"
+                  placeholder="Search new components..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 bg-transparent rounded-md focus:outline-none focus:border-none focus:ring-2 focus:ring-[#38bdf8]"
+                />
+                <Search className="absolute left-3 top-2.5 h-5 w-5 text-[#38bdf8]" />
+              </div>
+            </div>
+          </motion.div>
+        </section>
 
         {filteredCategories.map((category) => (
           <div key={category.name} className="mb-12">
@@ -169,8 +175,12 @@ export default function AllComponents() {
                         className="object-cover rounded-lg w-full h-full"
                       />
                     </div>
-                    <h3 className="font-bold text-lg  mb-2">{component.name}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{component.description}</p>
+                    <h3 className="font-bold text-lg  mb-2">
+                      {component.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {component.description}
+                    </p>
                   </div>
                 </Link>
               ))}
