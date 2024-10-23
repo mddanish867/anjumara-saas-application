@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -52,7 +51,7 @@ export default function MobileMenu({token}: LoggedInprop) {
             <div className="text-left">
               <a href="/">
                 <h1 className="text-2xl font-semibold">
-                  Aether<span className="text-[#38bdf8]">AI</span>
+                  Soora<span className="text-[#38bdf8]">.ai</span>
                 </h1>
               </a>
             </div>

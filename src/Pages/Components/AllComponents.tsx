@@ -120,20 +120,20 @@ export default function AllComponents() {
           <Star key={index} style={style} />
         ))}
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
-        <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="text-center mb-10">
-          <h1 className="text-3xl font-bold  sm:text-4xl mb-4 ">
-            Beautifully crafted <span className="text-[#38bdf8]">Component Library</span> 
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Explore our collection of pre-built, customizable components to accelerate your web development process. From authentication forms to e-commerce filters, find the perfect building blocks for your next project.
+      <section className="flex items-center justify-center bg-grid-white/[0.2] relative">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center z-10"
+        >
+          <h1 className="text-5xl md:text-7xl font-bold text-orange-500 dark:text-orange-200 mb-6">
+          Beautifully crafted <span className="text-[#38bdf8]">Component Library</span>           </h1>
+          <p className="text-sm md:text-2xl text-orange-500 dark:text-orange-200 mb-8">
+          Explore our collection of pre-built, customizable components to accelerate   <br/> your web development process. From authentication forms to e-commerce filters, <br/>find the perfect building blocks for your next project.
           </p>
-        </motion.div>
-
-        <div className="mb-8">
+          <div className="mb-8 mt-10">
           <div className="relative max-w-md mx-auto">
             <input
               type="text"
@@ -145,6 +145,11 @@ export default function AllComponents() {
             <Search className="absolute left-3 top-2.5 h-5 w-5 text-[#38bdf8]" />
           </div>
         </div>
+        </motion.div>
+      </section>
+       
+
+        
 
         {filteredCategories.map((category) => (
           <div key={category.name} className="mb-12">

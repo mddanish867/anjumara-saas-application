@@ -18,7 +18,7 @@ export default function Footer() {
             className="w-full rounded-full border border-gray-300 bg-transparent  p-4 pe-32 text-sm font-medium focus:outline-none focus:border-[#38bdf8]"
             id="email"
             type="email"
-            placeholder="example@AetherAI.com"
+            placeholder="example@sooraai.com"
           />
 
           <button
@@ -196,7 +196,7 @@ export default function Footer() {
 
     <div className="mt-16 border-t border-gray-100 pt-8">
       <p className="text-center text-xs/relaxed text-gray-500 dark:text-white">
-        © AetherAI 2024. All rights reserved.        
+        © Soora.ai 2024. All rights reserved.        
       </p>
     </div>
   </div>
