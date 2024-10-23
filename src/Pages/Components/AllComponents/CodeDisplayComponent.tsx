@@ -6,108 +6,140 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 SyntaxHighlighter.registerLanguage('javascript', js);
 
-const codeString = `import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import cookie from 'cookie';
-import { PrismaClient } from "@prisma/client";
+const codeString = `
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const prisma = new PrismaClient();
+const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://anjumara-saas-application.vercel.app',
-];
-export default async function handler(req, res) {
 
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  } else {
-    res.setHeader('Access-Control-Allow-Origin', ''); // Or handle unauthorized origins
-  }
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  // Handle preflight OPTIONS request
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  } 
+  const validateEmail = (email:any) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-  if (req.method !== "POST") {
-    return res.status(405).json({
-      message: "Method not allowed",
-    });
-  }
+  const validatePassword = (password:any) => {
+    // Add your password validation logic here (e.g., minimum length, complexity)
+    return password.length >= 6;
+  };
 
-  const { email, password } = req.body;
+  const handleSubmit = (e:any) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setEmailError('');
+    setPasswordError('');
 
-  if (!email || !password) {
-    return res
-      .status(400)
-      .json({ message: "Email and password are required." });
-  }
-
-  try {
-    //Find the user by email
-    const user = await prisma.user.findUnique({
-      where: { email },
-    });
-
-    if (!user) {
-      return res.status(404).json({ message: "User not found." });
+    if (!validateEmail(email)) {
+      setEmailError('Please enter a valid email address.');
+    }
+    if (!validatePassword(password)) {
+      setPasswordError('Password must be at least 6 characters long.');
     }
 
-    // Check if the password is correct
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-
-    if (!isPasswordValid) {
-      return res.status(400).json({ message: "Invalid email or password" });
+    if (validateEmail(email) && validatePassword(password)) {
+      // Here you would typically make an API call to your backend to authenticate the user.
+      console.log('Form submitted:', { email, password });
+      //After successful login, redirect to another page
+      //window.location.href = "/dashboard"; //Replace with your dashboard route.
     }
+  };
 
-    // Check if the user is verified
-    if (!user.isVerified) {
-      return res.status(401).json({ message: "Account is not verified." });
-    }
-
-    
-  // Generate JWT token
-  const token = jwt.sign(
-    { userId: user.id, email: user.email, name: user.name },
-    process.env.JWT_SECRET,
-    { expiresIn: '1h' }
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-blue-950">
+      <div className="bg-white p-8 rounded shadow-sm w-96">
+        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              placeholder="Enter email address"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+            {formSubmitted && emailError && (
+              <p className="text-red-500 text-sm mt-1">{emailError}</p>
+            )}
+          </div>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+            {formSubmitted && passwordError && (
+              <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+            )}
+          </div>
+          <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                />
+                <label
+                  htmlFor="remember-me"
+                  className="ml-2 block text-sm text-gray-500"
+                >
+                  Remember me
+                </label>
+              </div>
+  
+              <div className="text-sm">
+                <a
+                  href="#"
+                  className="font-medium text-blue-600 hover:text-blue-500"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+            </div>
+          <div className="mb-4">
+            <button
+              type="submit"
+              className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Login
+            </button>
+          </div>
+          {/* Add a "Forgot Password?" link here if needed */}
+        </form>
+        <div className="text-center">
+            <p className="text-sm text-gray-500">
+              Don't have an account?{" "}
+              <Link
+                to="/register"
+                className="font-medium text-blue-600 hover:text-blue-500"
+              >
+                Sign up
+              </Link>
+            </p>
+          </div>
+      </div>
+    </div>
   );
+};
 
-  // Set the token in cookies
-  // res.setHeader('Set-Cookie', cookie.serialize('token', token, {
-  //   httpOnly: true,
-  //   secure: process.env.NODE_ENV !== 'development', // Use secure cookies in production
-  //   //maxAge: 3600, // 1 hour
-  //   sameSite: 'strict',
-  //   path: '/'
-  // }));
-
-  res.setHeader('Set-Cookie', cookie.serialize('token', token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // true in production, false in development
-    sameSite: process.env.NODE_ENV === 'production' ? 'lax' : 'strict', // Adjust according to your needs
-    path: '/',
-  }));
-
-  // Return the response
-  return res.status(200).json({
-    message: 'Logged in successfully',
-    token: token,
-    success: true,    
-  });
-
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      message: "Internal server error",
-    });
-  }
-}`;
+export default LoginForm;
+`;
 
 const CodeDisplayComponent = () => {
   const [copied, setCopied] = useState(false);
@@ -122,7 +154,7 @@ const CodeDisplayComponent = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 rounded-lg">
       <div className="mb-4 flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800">Code Sample</h2>
+        <h2 className="text-md font-medium text-gray-800">LoginForm.tsx</h2>
         <button
           onClick={handleCopy}
           className="flex items-center px-4 py-2 text-black transition-colors"

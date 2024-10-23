@@ -9,6 +9,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { CopyIcon, CheckIcon } from "lucide-react";
 import QandA from "../Common/Q&A";
+import CodeDisplayComponent from "./AllComponents/CodeDisplayComponent";
+import LoginForm from "./AllComponents/LoginForm";
 
 function ComponentDetails() {
   const [copied, setCopied] = useState(false);
@@ -42,52 +44,11 @@ function ComponentDetails() {
         </TabsList>
         <TabsContent value="preview">
           {/* Replace this with your actual login form component */}
-          <div className="border p-4 rounded-md">
-            <h3 className="text-xl font-semibold mb-4">Login</h3>
-            <form>
-              <div className="mb-4">
-                <label htmlFor="email" className="block mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full p-2 border rounded bg-transparent"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="password" className="block mb-2">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="w-full p-2 border rounded bg-transparent"
-                />
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded"
-              >
-                Log In
-              </button>
-            </form>
-          </div>
+         <LoginForm/>
         </TabsContent>
         <TabsContent value="code">
           <pre className="bg-transparent p-4 rounded-md overflow-x-auto">
-            {`import React from 'react';
-
-function LoginForm() {
-  // Component logic here
-  return (
-    <form>
-      {/* Form fields */}
-    </form>
-  );
-}
-
-export default LoginForm;`}
+            <CodeDisplayComponent/>
           </pre>
         </TabsContent>
       </Tabs>
