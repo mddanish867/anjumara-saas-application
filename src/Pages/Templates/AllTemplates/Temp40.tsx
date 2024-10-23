@@ -144,20 +144,23 @@ export default function Temp40() {
 }
 
 const NavItem = forwardRef(
-  ({
-    title,
-    mobile = false,
-    onMouseEnter,
-  }: {
-    title: string;
-    mobile?: boolean;
-    onMouseEnter: (title: string) => void;
-  }) => {
+  (
+    {
+      title,
+      mobile = false,
+      onMouseEnter,
+    }: {
+      title: string;
+      mobile?: boolean;
+      onMouseEnter: (title: string) => void;
+    },
+    ref: React.Ref<HTMLDivElement> // Accepting ref as the second parameter
+  ) => {
     return (
       <div
         className={`relative ${mobile ? "py-2" : ""}`}
         onMouseEnter={() => onMouseEnter(title)}
-        //ref={ref} // Forward the ref to this div
+        ref={ref} // Forward the ref to this div
       >
         <button className="flex items-center text-sm font-medium">
           {title}
@@ -167,6 +170,7 @@ const NavItem = forwardRef(
     );
   }
 );
+
 
 function MegaMenu({ title }: { title: string }) {
   const menuItems = {

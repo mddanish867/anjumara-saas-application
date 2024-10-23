@@ -6,6 +6,9 @@ export const componentApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://secure-auth-app-gamma.vercel.app/api/",
     credentials: 'include',
+    prepareHeaders: (headers) => {     
+      return headers;
+    },
   }), 
   tagTypes: ["Component"],
   endpoints: (builder) => ({
@@ -31,13 +34,18 @@ export const componentApi = createApi({
     }),
     // Mutation to update a component
     updateComponent: builder.mutation({
-      query: ({ id, formData }) => ({
-        url: `components/update/${id}`, // Updated to include the component ID in the URL path
-        method: "PUT",
-        body: formData, // Send only the updated data in the body
-        credentials: "include",
-      }),
-      invalidatesTags: ["Component"], // Invalidate cache after updating
+      query: ({ id, formData }) => {
+        console.log('Updating component:', id); // Debug log
+        return {
+          url: `components/update?id=${id}`,
+          method: "PUT",
+          body: formData,
+          formData: true,
+          credentials: "include",
+        };
+      },
+       
+      invalidatesTags: ["Component"],
     }),
 
     // Mutation to delete a component
