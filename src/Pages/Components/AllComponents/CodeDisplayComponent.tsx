@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Clipboard, ClipboardCheck, } from 'lucide-react';
+import { Clipboard, ClipboardCheck } from 'lucide-react';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import js from 'react-syntax-highlighter/dist/esm/languages/prism/javascript';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -141,7 +141,7 @@ const LoginForm = () => {
 export default LoginForm;
 `;
 
-const CodeDisplayComponent = () => {
+export default function Component() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -152,12 +152,12 @@ const CodeDisplayComponent = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 rounded-lg">
-      <div className="mb-4 flex justify-between items-center">
-        <h2 className="text-md font-medium text-gray-800">LoginForm.tsx</h2>
+    <div className="w-full max-w-full overflow-hidden">
+      <div className="mb-4 flex justify-between items-center px-4 sm:px-6">
+        <h2 className="text-md font-medium text-gray-800 dark:text-gray-400">LoginForm.tsx</h2>
         <button
           onClick={handleCopy}
-          className="flex items-center px-4 py-2 text-black transition-colors"
+          className="flex items-center px-4 py-2 text-black dark:text-gray-400 transition-colors"
         >
           {copied ? (
             <>
@@ -167,6 +167,7 @@ const CodeDisplayComponent = () => {
           ) : (
             <>
               <Clipboard className="w-5 h-5 mr-2" />
+              Copy
             </>
           )}
         </button>
@@ -181,12 +182,12 @@ const CodeDisplayComponent = () => {
             fontSize: '0.875rem',
             lineHeight: '1.25rem',
           }}
+          wrapLines={true}
+          wrapLongLines={true}
         >
           {codeString}
         </SyntaxHighlighter>
       </div>
     </div>
   );
-};
-
-export default CodeDisplayComponent;
+}
