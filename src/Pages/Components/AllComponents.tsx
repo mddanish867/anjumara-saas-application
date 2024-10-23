@@ -18,16 +18,9 @@ const Star = ({ style }: { style: React.CSSProperties }) => (
 export default function AllComponents() {
   const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
-  const [timer, setTimer] = useState(0);
   const [stars, setStars] = useState<React.CSSProperties[]>([]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer((prevTimer) => prevTimer + 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  
 
   useEffect(() => {
     const newStars = Array.from({ length: 50 }, () => ({
