@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
+import SVGs from "../SVGs/SVGs";
 
 function AllTemplates() {
   const location = useLocation();
@@ -442,16 +443,17 @@ function AllTemplates() {
               transition={{ duration: 0.8 }}
               className="text-center z-10"
             >
-              <h1 className="text-5xl md:text-7xl font-bold text-orange-500 dark:text-orange-200 mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-950 dark:text-orange-200 mb-6">
                 Beautifully crafted{" "}
                 <span className="text-[#38bdf8]">Template Library</span>{" "}
               </h1>
-              <p className="text-sm md:text-2xl text-orange-500 dark:text-orange-200 mb-8">
+              <p className="text-sm md:text-2xl text-gray-600 dark:text-orange-200 mb-8">
                 Explore our diverse collection of pre-built templates to
                 jumpstart <br/> your web development projects. From e-commerce to AI
                 tools, <br/> find the perfect starting point for your next website.
               </p>
-              <div className="mb-8 mt-12">
+              <div><SVGs/></div>
+              <div className="mb-8 mt-16">
                 <div className="relative max-w-md mx-auto">
                   <input
                     type="text"

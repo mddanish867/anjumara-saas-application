@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
+import SVGs from "../SVGs/SVGs";
 
 // Render Starts
 const Star = ({ style }: { style: React.CSSProperties }) => (
@@ -132,16 +133,17 @@ export default function AllComponents() {
             transition={{ duration: 0.8 }}
             className="text-center z-10"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-orange-500 dark:text-orange-200 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-950 dark:text-orange-200 mb-6">
               Beautifully crafted{" "}
               <span className="text-[#38bdf8]">Component Library</span>{" "}
             </h1>
-            <p className="text-sm md:text-2xl text-orange-500 dark:text-orange-200 mb-8">
+            <p className="text-sm md:text-2xl text-gray-600 dark:text-orange-200 mb-8">
               Explore our collection of pre-built, customizable components to
               accelerate <br /> your web development process. From
               authentication forms to e-commerce filters, <br />
               find the perfect building blocks for your next project.
             </p>
+            <div><SVGs/></div>
             <div className="mb-8 mt-12">
               <div className="relative max-w-md mx-auto">
                 <input
