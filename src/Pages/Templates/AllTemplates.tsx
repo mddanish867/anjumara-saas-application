@@ -89,7 +89,7 @@ function AllTemplates() {
   }, [templates]);
 
   return (
-    <section className="bg-transparent min-h-screen mt-20">
+    <section className="bg-transparent min-h-screen mt-24">
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-200 sm:text-4xl mb-4">
@@ -119,7 +119,7 @@ function AllTemplates() {
 
           return (
             <div key={category} className="mb-12">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-6">{category}</h2>
+              <h2 className="text-2xl font-semibold  mb-6">{category}</h2>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {categoryTemplates.map((template) => (
                   <Link
@@ -135,8 +135,8 @@ function AllTemplates() {
                           className="object-cover rounded-lg w-full h-full"
                         />
                       </div>
-                      <h3 className="font-bold text-lg text-gray-900 mb-2">{template.name}</h3>
-                      <p className="text-sm text-gray-600">
+                      <h3 className="font-bold text-lg  mb-2">{template.name}</h3>
+                      <p className="text-sm ">
                         {template.category}
                       </p>
                     </div>

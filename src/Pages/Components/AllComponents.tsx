@@ -1,10 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
+import { motion } from "framer-motion";
 
+// Render Starts
+const Star = ({ style }: { style: React.CSSProperties }) => (
+  <div
+    className="absolute dark:bg-orange-100 bg-red-700 rounded-full opacity-70"
+    style={{
+      width: "3px",
+      height: "3px",
+      ...style,
+      animation: `twinkle ${Math.random() * 5 + 3}s linear infinite`,
+    }}
+  />
+);
 export default function AllComponents() {
   const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
+  const [timer, setTimer] = useState(0);
+  const [stars, setStars] = useState<React.CSSProperties[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimer((prevTimer) => prevTimer + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const newStars = Array.from({ length: 50 }, () => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+    }));
+    setStars(newStars);
+  }, []);
 
   const categories = [
     {
@@ -91,38 +122,45 @@ export default function AllComponents() {
   })).filter(category => category.components.length > 0);
 
   return (
-    <section className="bg-gray-50 min-h-screen mt-10">
+    <section className="bg-transparent min-h-screen mt-24">
+      {stars.map((style, index) => (
+          <Star key={index} style={style} />
+        ))}
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
-            Component Library
+        <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="text-center mb-10">
+          <h1 className="text-3xl font-bold  sm:text-4xl mb-4 ">
+            Beautifully crafted <span className="text-[#38bdf8]">Component Library</span> 
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Explore our collection of pre-built, customizable components to accelerate your web development process. From authentication forms to e-commerce filters, find the perfect building blocks for your next project.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mb-8">
           <div className="relative max-w-md mx-auto">
             <input
               type="text"
-              placeholder="Search components..."
+              placeholder="Search new components..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 bg-transparent rounded-md focus:outline-none focus:border-none focus:ring-2 focus:ring-[#38bdf8]"
             />
-            <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-2.5 h-5 w-5 text-[#38bdf8]" />
           </div>
         </div>
 
         {filteredCategories.map((category) => (
           <div key={category.name} className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6">{category.name}</h2>
+            <h2 className="text-2xl font-semibold  mb-6">{category.name}</h2>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {category.components.map((component) => (
                 <Link
                   key={component.name}
-                  className="block bg-white rounded-xl border border-gray-200 shadow-sm hover:border-[#38bdf8] hover:ring-1 hover:ring-[#38bdf8] focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                  className="block bg-transparent rounded-xl border border-gray-200 shadow-sm hover:border-[#38bdf8] hover:ring-1 hover:ring-[#38bdf8] focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
                   to={component.link}
                 >
                   <div className="p-4">
@@ -133,8 +171,8 @@ export default function AllComponents() {
                         className="object-cover rounded-lg w-full h-full"
                       />
                     </div>
-                    <h3 className="font-bold text-lg text-gray-900 mb-2">{component.name}</h3>
-                    <p className="text-sm text-gray-600">{component.description}</p>
+                    <h3 className="font-bold text-lg  mb-2">{component.name}</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{component.description}</p>
                   </div>
                 </Link>
               ))}

@@ -177,7 +177,7 @@ export default function Signin() {
               disabled={isLoading}
             >
               {isLoading ? (
-                <Loader className="mr-2 h-4 w-4 animate-spin" />
+                <Loader className="mr-2 h-4 w-4 animate-spin text-[#38bdf8]" />
               ) : (
                 "Sign in"
               )}
