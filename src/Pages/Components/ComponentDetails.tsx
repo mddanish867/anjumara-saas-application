@@ -9,8 +9,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { CopyIcon, CheckIcon } from "lucide-react";
 import QandA from "../Common/Q&A";
-import CodeDisplayComponent from "./AllComponents/CodeDisplayComponent";
-import LoginForm from "./AllComponents/LoginForm";
+import CodeDisplayComponent from "./AllComponents/codeDisplay/CodeDisplayComponent";
+import LoginForm from "./AllComponents/auth/LoginForm";
 
 function ComponentDetails() {
   const [copied, setCopied] = useState(false);
