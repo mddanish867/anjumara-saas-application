@@ -6,13 +6,13 @@ const Client = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
-      className="py-14"
+      className="py-14 bg-transparent"
     >
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <h3 className="font-semibold text-sm text-gray-600 dark:text-gray-50 text-center">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-8 mt-20">
+        <h3 className="font-semibold text-3xl text-gray-600 dark:text-gray-50 text-center">
           TRUSTED BY TEAMS FROM AROUND THE WORLD
         </h3>
-        <div className="mt-6 ">
+        <div className="mt-20 ">
           <ul className="flex gap-x-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
             <li>
               <svg
@@ -36,7 +36,7 @@ const Client = () => {
             {/* LOGO 1 */}
             <li>
               <svg
-                className="w-28 text-gray-50"
+                className="w-28 text-gray-50 dark:text-gray-200"
                 viewBox="0 0 163 48"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

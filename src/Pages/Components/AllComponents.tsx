@@ -1,33 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Search } from "lucide-react";
 import { motion } from "framer-motion";
-import SVGs from "../SVGs/SVGs";
 
-// Render Starts
-const Star = ({ style }: { style: React.CSSProperties }) => (
-  <div
-    className="absolute dark:bg-orange-100 bg-red-700 rounded-full opacity-70"
-    style={{
-      width: "3px",
-      height: "3px",
-      ...style,
-      animation: `twinkle ${Math.random() * 5 + 3}s linear infinite`,
-    }}
-  />
-);
 export default function AllComponents() {
   const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
-  const [stars, setStars] = useState<React.CSSProperties[]>([]);
-
-  useEffect(() => {
-    const newStars = Array.from({ length: 50 }, () => ({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-    }));
-    setStars(newStars);
-  }, []);
 
   const categories = [
     {
@@ -121,9 +99,6 @@ export default function AllComponents() {
 
   return (
     <section className="bg-transparent min-h-screen mt-24">
-      {stars.map((style, index) => (
-        <Star key={index} style={style} />
-      ))}
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
         <section className="flex items-center justify-center bg-grid-white/[0.2] relative">
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
@@ -143,8 +118,63 @@ export default function AllComponents() {
               authentication forms to e-commerce filters, <br />
               find the perfect building blocks for your next project.
             </p>
-            <div><SVGs/></div>
+
             <div className="mb-8 mt-12">
+              <svg
+                className="absolute inset-0 -mt-24 blur-3xl"
+                style={{ zIndex: -1 }}
+                fill="none"
+                viewBox="0 0 400 400"
+                height="100%"
+                width="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_f_10_20)">
+                  <path
+                    d="M128.6 0H0V322.2L106.2 134.75L128.6 0Z"
+                    fill="#03FFE0"
+                    fillOpacity="0.5"
+                  />
+                  <path
+                    d="M0 322.2V400H240H320L106.2 134.75L0 322.2Z"
+                    fill="#7C87F8"
+                    fillOpacity="0.5"
+                  />
+                  <path
+                    d="M320 400H400V78.75L106.2 134.75L320 400Z"
+                    fill="#4C65E4"
+                    fillOpacity="0.5"
+                  />
+                  <path
+                    d="M400 0H128.6L106.2 134.75L400 78.75V0Z"
+                    fill="#043AFF"
+                    fillOpacity="0.5"
+                  />
+                </g>
+                <defs>
+                  <filter
+                    id="filter0_f_10_20"
+                    x="-160.333"
+                    y="-160.333"
+                    width="720.666"
+                    height="720.666"
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
+                  >
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="BackgroundImageFix"
+                      result="shape"
+                    />
+                    <feGaussianBlur
+                      stdDeviation="80.1666"
+                      result="effect1_foregroundBlur_10_20"
+                    />
+                  </filter>
+                </defs>
+              </svg>
               <div className="relative max-w-md mx-auto">
                 <input
                   type="text"
@@ -158,7 +188,9 @@ export default function AllComponents() {
             </div>
           </motion.div>
         </section>
-        <Link to="/component-details"><span>More</span></Link>
+        <Link to="/component-details">
+          <span>More</span>
+        </Link>
         {filteredCategories.map((category) => (
           <div key={category.name} className="mb-12">
             <h2 className="text-2xl font-semibold  mb-6">{category.name}</h2>
@@ -189,8 +221,6 @@ export default function AllComponents() {
             </div>
           </div>
         ))}
-
-        
       </div>
     </section>
   );

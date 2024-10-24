@@ -64,7 +64,7 @@ const SVGs = () => {
       </svg>
       
       <img
-        src="/temp47.png"
+        src="/soora.png"
         alt="Hero image"
         className="relative object-cover w-full border rounded-lg shadow-2xl lg:rounded-2xl"
       />

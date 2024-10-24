@@ -8,12 +8,10 @@ function Banner() {
   const navigate = useNavigate();
   const decodedToken = decodeToken();
 
-  const handleWithAIClick = () => {
-    if (!decodedToken) {
-      navigate("/signin");
-    } else {
-      navigate("/chatui");
-    }
+  const handlebrowseComponentClick = () => {
+    
+      navigate("/all-components");
+   
   };
 
   const handleAllAccess = () => {
@@ -67,9 +65,9 @@ function Banner() {
               <Button
                 variant="default"
                 className="flex w-full py-3 text-sm font-medium shadow sm:w-auto"
-                onClick={handleWithAIClick}
+                onClick={handlebrowseComponentClick}
               >
-                Start Building with AI <MoveRight className="ml-2" />
+                Browse Components <MoveRight className="ml-2" />
               </Button>
 
               <Button

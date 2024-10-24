@@ -12,12 +12,15 @@ import AnimatedStatistics from "../Common/AnimatedStatistics";
 import RealTimeCharts from "../Common/RealTimeCharts";
 import FeedbackCard from "../Common/FeedbackCard";
 import ReviewsCard from "../Common/ReviewsCard";
+import ChooseUs from "../Common/ChooseUs";
 function Home() {
   return (
     <>
       <Banner />
+      <ChooseUs/>
       <Template />
       <Components />
+      
       <Interviews />
       <Client />
       <TechNetworkDiagram/>

@@ -42,7 +42,7 @@ function Template() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <span className="relative flex justify-between -mt-20">
+      <span className="relative flex justify-between mt-20">
         <span className="relative z-10 px-6 font-semibold text-start">
           Templates
         </span>

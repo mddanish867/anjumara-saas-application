@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import SVGs from "@/Pages/SVGs/SVGs";
 import { motion } from "framer-motion";
 
 const navigation = [
@@ -125,7 +124,6 @@ function Interviews() {
           </Button>
         </div>
       </motion.div>
-      <SVGs />
     </div>
   );
 }
